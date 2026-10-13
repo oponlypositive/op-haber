@@ -167,13 +167,13 @@ test("yer_kurum_adi haber nesnesine taşınır ve görsel aramasında önce kull
   assert.equal(v.haber.yerKurum, "Harvard Graduate School of Education");
 });
 
-test("görsel arama stratejisi: model özne vermediyse yer/kurum adı yedek özne olarak önce aranır, ardından insansız konu nesnesi", async () => {
+test("görsel arama stratejisi: model özne vermediyse kurum adı özne sayılmaz; kendi binası ve insansız konu nesnesi aranır", async () => {
   const { gorselBul } = await import("../lib/gorsel.mjs");
   const sorgular = [];
   const araFn = async (q) => { sorgular.push(q); return []; };
   const haber = { en: { baslik: "Center opens at Harvard", ozet: "A new teaching center opened." }, gorselAra: "classroom desk", yerKurum: "Harvard Graduate School of Education" };
   await gorselBul(haber, { model: { yaz: async () => ({ metin: "{}" }) }, araFn, bekleFn: async () => {} });
-  assert.equal(sorgular[0], '"Harvard Graduate School of Education"');          // yedek özne (tür: yer) Commons'ta tam adla
+  assert.equal(sorgular[0], "Harvard Graduate School of Education building");   // kurum adı özne olarak aranmaz (yanlış kampüs fotoğrafı riski); yalnız konu yolunda kendi binası aranır
   assert.ok(sorgular.some((q) => /classroom|desk/.test(q)), "ardından insansız konu nesnesi");
 });
 

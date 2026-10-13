@@ -234,3 +234,15 @@ test("ayar: PEXELS_API_KEY, OPENVERSE_TUR_UST (varsayılan 6, 0 kapalı), isteğ
   const k = ayarOku({ PEXELS_API_KEY: "p", OPENVERSE_TUR_UST: "0", OPENVERSE_CLIENT_ID: "i", OPENVERSE_CLIENT_SECRET: "s" }, []);
   assert.deepEqual([k.pexelsAnahtar, k.openverseUst, k.openverseKimlik, k.openverseSir], ["p", 0, "i", "s"]);
 });
+
+test("kurum öznesi (üniversite/enstitü/şirket) Commons'ta özne olarak aranmaz; takım aranır", async () => {
+  const { gorselBul } = await import("../lib/gorsel.mjs");
+  const q1 = [];
+  await gorselBul({ en: { baslik: "Choline helps children", ozet: "A study followed children for years." }, gorselAra: "child nutrition", gorselOzne: { ad: "University of Minnesota", tur: "kurum" } },
+    { model: { yaz: async () => ({ metin: "{}" }) }, araFn: async (q, tur) => { q1.push(`${tur}:${q}`); return []; }, bekleFn: async () => {} });
+  assert.ok(!q1.some((x) => x.startsWith("ozne")), q1.join("|"));
+  const q2 = [];
+  await gorselBul({ en: { baslik: "Galatasaray win", ozet: "The team won the game." }, gorselAra: "football stadium", gorselOzne: { ad: "Galatasaray", tur: "kurum" } },
+    { model: { yaz: async () => ({ metin: "{}" }) }, araFn: async (q, tur) => { q2.push(`${tur}:${q}`); return []; }, bekleFn: async () => {} });
+  assert.ok(q2.some((x) => x.startsWith("ozne:")), q2.join("|"));
+});
