@@ -1,9 +1,8 @@
 name: haber
 
 on:
-  # İlk elle denemeden sonra açılacak:
-  # schedule:
-  #   - cron: "3,13,23,33,43,53 * * * *"   # her 10 dakikada bir (GitHub yoğunlukta kaydırabilir)
+  schedule:
+    - cron: "3,13,23,33,43,53 * * * *"   # her 10 dakikada bir (GitHub yoğunlukta kaydırabilir)
   workflow_dispatch:
 
 # Aynı anda tek koşu; yenisi sıraya girer ve eskisini kesmez.
