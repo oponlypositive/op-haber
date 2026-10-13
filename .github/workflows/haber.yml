@@ -17,7 +17,7 @@ permissions:
 jobs:
   tur:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
