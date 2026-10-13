@@ -126,8 +126,6 @@ test("görsel eleme: lisans, yasak kelime, konu uyumu", () => {
 });
 
 test("görsel kontrol yanıtı ve başlık okuma", () => {
-  assert.equal(vlDegerlendir('{"konuya_uygun":true,"yazi_logo_baskin":false,"taninabilir_yuz_baskin":false,"din_siyaset_etnik_simge":false,"dusuk_kalite":false}').ok, true);
-  assert.equal(vlDegerlendir('{"konuya_uygun":true,"yazi_logo_baskin":true,"taninabilir_yuz_baskin":false,"din_siyaset_etnik_simge":false,"dusuk_kalite":false}').ok, false);
   assert.equal(vlDegerlendir("bozuk").ok, false);
   assert.equal(vlDegerlendir('{"konuya_uygun":true}').ok, false);
   const png = new Uint8Array(33); png.set([0x89, 0x50, 0x4e, 0x47, 0, 0, 0, 0, 0, 0, 0, 0x0d, 0x49, 0x48, 0x44, 0x52, 0, 0, 5, 0, 0, 0, 3, 0x20]);

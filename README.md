@@ -6,7 +6,7 @@ Only Positive (OP) uygulaması için otomatik iyi haber hattı. GitHub Actions h
 
 1. **Tara:** `kaynaklar.json` içindeki RSS akışları (kaynak başına tek istek) ve Bing News RSS sorguları.
 2. **Görülenleri ele:** bağlantının sha256 özeti Supabase'deki `haber_gorulen` tablosuna sorulur (Actions koşusu durumsuzdur).
-3. **Ön eleme (modelsiz):** son 48 saat dışındakiler, hassas konular (siyaset, din, etnik kimlik, savaş/suç, afet/salgın, kamu kurumu icraatı) ve kaba dil elenir.
+3. **Ön eleme (modelsiz):** son 24 saat (`TAZELIK_SAAT`) dışındakiler, hassas konular (siyaset, din, etnik kimlik, savaş/suç, afet/salgın, kamu kurumu icraatı) ve kaba dil elenir.
 4. **Doğrulama:** `GUVENILIR_KAYNAKLAR` listesindeki siteler tek kaynakla geçer; diğerleri başka bir sitede aynı olayı anlatan ikinci bir haber bulunana kadar bekler (en çok `KAYNAK_DENEME_UST` tur).
 5. **Kaynak sayfası:** `robots.txt` saygılı, zaman aşımlı ve boyut sınırlı düz metin. Engel varsa sayfa kullanılmaz.
 6. **Yazım:** tek Gemini çağrısı hem uygunluğu hem TR/EN metni (5-8 cümle) üretir. Kod ayrıca doğrular: kaynakta olmayan rakam yok, cümle sayısı, bağlantı/markdown/emoji/ünlem yok, kaynaktan kopya yok, dil sezgisi, ikinci içerik filtresi.

@@ -21,7 +21,7 @@ const dur = (ms) => new Promise((r) => setTimeout(r, ms));
 /** Bir tur. Bağımlılıklar parametreyle gelir (testte taklit edilir). -> özet nesnesi */
 export async function turCalistir({ ayar, kaynaklar, bulut, model, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama }) {
   const baslangic = simdi();
-  const ozet = { aday: 0, yeniAday: 0, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, modelCagri: 0, durus: "tamam", ornekBaslik: [] };
+  const ozet = { aday: 0, yeniAday: 0, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, modelCagri: 0, kota: 0, sureSn: 0, red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, durus: "tamam", ornekBaslik: [] };
   const isaretler = [];
   const isaretle = (a, durum, neden, deneme = 0, yuk = null) => isaretler.push({ ozet: a.hash, durum, neden: String(neden).slice(0, 120), deneme, ...(yuk ? { yuk } : {}) });
 
@@ -54,7 +54,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model, fetchFn = fet
       else if (a.bekleyen) isaretle(a, "elendi", `on-eleme:${e.neden}`);
     }
   }
-  const sirali = tekrarlariEle(gecen.sort((x, y) => (Number(y.bekleyen) - Number(x.bekleyen)) || (Date.parse(y.zaman) - Date.parse(x.zaman))));
+  const sirali = tekrarlariEle(gecen.sort((x, y) => Date.parse(y.zaman) - Date.parse(x.zaman)));
   ozet.onElemeGecen = sirali.length;
   if (ayar.kuru) ozet.ornekBaslik = sirali.slice(0, 3).map((a) => `[${a.kaynak}] ${a.baslik}`);
 
@@ -63,6 +63,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model, fetchFn = fet
     // Kuru: model çağrısı, kaynak sayfası indirme ve yayın YOK. Doğrulama kararı gösterilir.
     for (const a of sirali) if (!dogrulandiMi(a, hepsi, ayar.guvenilir).ok) ozet.bekleyenKaynak++;
     ozet.durus = "kuru";
+    ozet.sureSn = Math.round((simdi() - baslangic) / 1000);
     return ozet;
   }
 
@@ -89,7 +90,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model, fetchFn = fet
         modelCagriSayisi++; ozet.modelCagri++;
         const y = await haberYaz(model, a, sayfa);
         await bekleFn(ayar.geminiBeklemeMs);
-        if (y.durum !== "ok") { isaretle(a, "elendi", y.neden); ozet.elenen++; continue; }
+        if (y.durum !== "ok") { ozet.red[redSinifi(y.neden)]++; isaretle(a, "elendi", y.neden); ozet.elenen++; continue; }
         haber = {
           id: "h" + a.hash.slice(0, 14), ...y.haber, emoji: EMOJI[y.haber.kategori], kaynak: a.kaynak, link: a.link,
           zaman: a.zaman, model: y.saglayici,
@@ -111,17 +112,31 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model, fetchFn = fet
         isaretle(a, "yayinlandi", sonuc.durum);
       } else { isaretle(a, "elendi", `yayin-red:${sonuc.neden || "?"}`); ozet.elenen++; }
     } catch (e) {
-      if (e instanceof KotaDoldu) { ozet.durus = "kota"; log("model kotası/hız sınırı doldu: tur zarifçe bitiriliyor"); break; }
+      if (e instanceof KotaDoldu) { ozet.durus = "kota"; ozet.kota++; log("model kotası/hız sınırı doldu: tur zarifçe bitiriliyor"); break; }
       if (e instanceof ModelHatasi) { ozet.durus = "model-hatasi"; log(`model hatası: ${e.message}`); break; }
       log(`aday atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 80)}`);
     }
   }
   await bitir();
+  ozet.sureSn = Math.round((simdi() - baslangic) / 1000);
   return ozet;
 }
 
+/** Model ret nedenini özet kırılımı için sınıflar (başlık/gizli değer yok). */
+export function redSinifi(neden) {
+  const n = String(neden || "");
+  if (/uygun (değil|bulmadı)/.test(n)) return "uygunDegil";
+  if (/rakam/.test(n)) return "rakam";
+  if (/dil sezgisi/.test(n)) return "dil";
+  if (/ikinci filtre|kapısı|engelledi/.test(n)) return "filtre";
+  return "diger";
+}
+
 export function ozetSatiri(o) {
-  return `ozet: aday=${o.aday} yeni=${o.yeniAday} onEleme=${o.onElemeGecen} elenen=${o.elenen} bekleyenKaynak=${o.bekleyenKaynak} bekleyenGorsel=${o.bekleyenGorsel} modelCagri=${o.modelCagri} yayinlanan=${o.yayinlanan} durus=${o.durus}`;
+  const r = o.red || {};
+  return `ozet: taranan=${o.aday} yeni=${o.yeniAday} onEleme=${o.onElemeGecen} modelCagri=${o.modelCagri} ` +
+    `modelRed=${(r.uygunDegil || 0) + (r.rakam || 0) + (r.dil || 0) + (r.filtre || 0) + (r.diger || 0)}(uygunDegil=${r.uygunDegil || 0},rakam=${r.rakam || 0},dil=${r.dil || 0},filtre=${r.filtre || 0},diger=${r.diger || 0}) ` +
+    `elenen=${o.elenen} bekleyenGorsel=${o.bekleyenGorsel} bekleyenKaynak=${o.bekleyenKaynak} yayinlanan=${o.yayinlanan} kota429=${o.kota || 0} sure=${o.sureSn || 0}s durus=${o.durus}`;
 }
 
 async function main() {
