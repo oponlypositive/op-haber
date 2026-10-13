@@ -27,7 +27,7 @@ let a_ek;
 test("alan kotası dolu: aday işaretlenmeden atlanır, model çağrılmaz", async () => {
   a_ek = aday();
   let cagri = 0;
-  const bulut = bulutKur(new Map([["gokbilim", { son24: 3, son7g: 3, sonZaman: "2026-10-13T10:00:00Z" }]]));
+  const bulut = bulutKur(new Map([["gokbilim", { son24: 5, son7g: 5, sonZaman: "2026-10-13T10:00:00Z" }]]));
   const o = await calis(bulut, ayar(), { yaz: async () => { cagri++; return { metin: YANIT }; } });
   assert.equal(cagri, 0); assert.equal(o.yayinlanan, 0); assert.equal(bulut.k.yayin.length, 0);
   assert.ok(!bulut.k.isaret.some((x) => /kota/.test(x.neden || "")));

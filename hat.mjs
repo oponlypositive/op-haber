@@ -54,7 +54,7 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 /** Bir tur. Bağımlılıklar parametreyle gelir (testte taklit edilir). -> özet nesnesi */
 export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama }) {
   const baslangic = simdi();
-  const ozet = { aday: 0, yeniAday: 0, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, gorselsiz: 0, ozneGorsel: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
+  const ozet = { aday: 0, yeniAday: 0, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
     red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, alanYayin: {} };
   const sayac = { vl: 0 };
   const model = modelSarmala(hamModel, { ayar, bekleFn, simdi, sayac });
@@ -91,6 +91,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     if (e.ok) gecen.push(a);
     else {
       ozet.elenen++;
+      if (/^eski/.test(e.neden)) ozet.eskiSay++;
       if (!/^(eski|tarih)/.test(e.neden)) isaretle(a, "elendi", `on-eleme:${e.neden}`);      // eskiler işaretlenmez: akıştan düşer
       else if (a.bekleyen) isaretle(a, "elendi", `on-eleme:${e.neden}`);
     }
@@ -216,7 +217,7 @@ export function ozetSatiri(o) {
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
     (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") +
     (o.gorselsiz || o.ozneGorsel || o.bekleyenYayin || o.vlCagri ? ` gorselsiz=${o.gorselsiz || 0} ozneGorsel=${o.ozneGorsel || 0} bekleyenYayin=${o.bekleyenYayin || 0} vl=${o.vlCagri || 0}` : "");
-  return `ozet: taranan=${o.aday} yeni=${o.yeniAday} onEleme=${o.onElemeGecen} modelCagri=${o.modelCagri} ` +
+  return `ozet: taranan=${o.aday} yeni=${o.yeniAday} taze=${Math.max(0, o.yeniAday - (o.eskiSay || 0))} onEleme=${o.onElemeGecen} modelCagri=${o.modelCagri} ` +
     `modelRed=${(r.uygunDegil || 0) + (r.rakam || 0) + (r.dil || 0) + (r.filtre || 0) + (r.diger || 0)}(uygunDegil=${r.uygunDegil || 0},rakam=${r.rakam || 0},dil=${r.dil || 0},filtre=${r.filtre || 0},diger=${r.diger || 0}) ` +
     `elenen=${o.elenen} bekleyenGorsel=${o.bekleyenGorsel} bekleyenKaynak=${o.bekleyenKaynak} yayinlanan=${o.yayinlanan} kota429=${o.kota || 0} sure=${o.sureSn || 0}s durus=${o.durus}${ek}`;
 }

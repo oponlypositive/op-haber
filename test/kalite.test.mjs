@@ -91,7 +91,7 @@ test("arşiv elemesi: yıl < 2005, bilinmeyen yıl + 19xx / anahtar kelime", () 
 test("özet satırı biçimi ve red sınıflaması", () => {
   const o = { aday: 40, yeniAday: 30, onElemeGecen: 21, modelCagri: 6, elenen: 3, bekleyenGorsel: 2, bekleyenKaynak: 5, yayinlanan: 1, kota: 0, sureSn: 95, durus: "tamam",
     red: { uygunDegil: 2, rakam: 1, dil: 0, filtre: 0, diger: 0 } };
-  assert.equal(ozetSatiri(o), "ozet: taranan=40 yeni=30 onEleme=21 modelCagri=6 modelRed=3(uygunDegil=2,rakam=1,dil=0,filtre=0,diger=0) elenen=3 bekleyenGorsel=2 bekleyenKaynak=5 yayinlanan=1 kota429=0 sure=95s durus=tamam");
+  assert.equal(ozetSatiri(o), "ozet: taranan=40 yeni=30 taze=30 onEleme=21 modelCagri=6 modelRed=3(uygunDegil=2,rakam=1,dil=0,filtre=0,diger=0) elenen=3 bekleyenGorsel=2 bekleyenKaynak=5 yayinlanan=1 kota429=0 sure=95s durus=tamam");
   assert.equal(redSinifi("model: uygun değil"), "uygunDegil");
   assert.equal(redSinifi("tr kaynakta olmayan rakam"), "rakam");
   assert.equal(redSinifi("en dil sezgisi tutmadı"), "dil");
