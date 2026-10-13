@@ -14,10 +14,10 @@ const adaylar = (n, ek = {}) => Array.from({ length: n }, (_, i) => ({ baslik: `
 test("girdi: numaralı satırlar, özet en çok 300 karakter, satır sonu ve ayırıcı temizlenir", () => {
   const g = onSinifGirdi([{ baslik: "A | B\nC", ozet: "x".repeat(900), kaynak: "pozitif.org", dil: "tr", alan: "spor" }, { baslik: "D", ozet: "", kaynak: "k", dil: "en" }]).split("\n");
   assert.equal(g.length, 2);
-  const [no, dil, alan, kaynak, baslik, ozet] = g[0].split("|");
-  assert.deepEqual([no, dil, alan, kaynak, baslik], ["1", "TR", "spor", "pozitif.org", "A / B C"]);
+  const [no, dil, alan, tur, kaynak, baslik, ozet] = g[0].split("|");
+  assert.deepEqual([no, dil, alan, tur, kaynak, baslik], ["1", "TR", "spor", "-", "pozitif.org", "A / B C"]);
   assert.equal(ozet.length, 300);
-  assert.match(g[1], /^2\|EN\|-\|k\|D\|$/);
+  assert.match(g[1], /^2\|EN\|-\|-\|k\|D\|$/);
   assert.match(ON_SINIF_ISTEM, /SADECE JSON dizisi/);
 });
 
@@ -32,8 +32,8 @@ test("diziAyikla: çit, dış metin, sarmalayıcı, sondaki virgül, dize içi s
 
 test("sonuclariDogrula: geçersiz öğeler atlanır, puan sıkıştırılır, neden koda iner, yarıdan azı geçerliyse null", () => {
   const m = sonuclariDogrula([{ i: 1, uygun: true, puan: 14, alan: "doga", neden: "ok" }, { i: 2, uygun: false, puan: 9, alan: "yok", neden: "Liste yazısı" }, { i: 2, uygun: true }, { i: 9, uygun: true }, { i: 3, uygun: "evet" }, { i: 4, uygun: true, puan: "x" }], 4);
-  assert.deepEqual(m.get(1), { uygun: true, puan: 10, alan: "doga", neden: "ok" });
-  assert.deepEqual(m.get(2), { uygun: false, puan: 0, alan: "", neden: "liste" });
+  assert.deepEqual(m.get(1), { uygun: true, puan: 10, alan: "doga", altKonu: "", cinsiyet: "", neden: "ok" });
+  assert.deepEqual(m.get(2), { uygun: false, puan: 0, alan: "", altKonu: "", cinsiyet: "", neden: "liste" });
   assert.equal(m.get(4).puan, 5);                                                  // sayı değil: uygunsa orta puan
   assert.equal(m.has(3) || m.has(9), false);
   assert.equal(sonuclariDogrula([{ i: 1, uygun: true, puan: 8 }], 4), null);
@@ -109,7 +109,7 @@ const OZET_KAYNAK = "Volunteers in Lakeside planted 5,000 trees along the river 
 const YAZIM_YANITI = JSON.stringify({ uygun: true, kategori: "doga", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } });
 const KONULAR = ["Volunteers plant thousands of trees beside Lakeside river", "Students build solar lantern library for village school", "Rescued hedgehog colony returns healthy to meadow", "Retired teachers teach coding to neighborhood children",
   "Young swimmer breaks regional record with homemade goggles", "Bakery shares free bread with night shift nurses", "Scientists grow coral nursery along restored reef", "Choir of grandparents records album for local hospital", "Cyclists collect thousands of books for rural libraries", "Garden club turns empty lot into butterfly meadow"];
-const ayar = (ek = {}) => ({ ...ayarOku({}, []), geminiAnahtar: "k", geminiBeklemeMs: 0, turBasinaEn: 20, gorselsizUst: 20, ...ek });
+const ayar = (ek = {}) => ({ ...ayarOku({}, []), geminiAnahtar: "k", geminiBeklemeMs: 0, sonOkuma: false, turBasinaEn: 20, gorselsizUst: 20, ...ek });
 const mk = (n, ek = {}) => ({ baslik: KONULAR[n], ozet: OZET_KAYNAK, link: `https://www.goodnewsnetwork.org/h/${n}`, kaynak: "goodnewsnetwork.org", dil: "en", zaman: "2026-10-13T08:00:00Z", ...ek });
 const fetchFn = async () => ({ ok: false, status: 404, headers: new Headers(), arrayBuffer: async () => new ArrayBuffer(0), json: async () => ({}) });
 function sahteBulut(onceki = new Map()) {
@@ -122,7 +122,7 @@ function taklitModel(karar) {
   return { k, yaz: async (sistem, girdi) => {
     if (sistem === ON_SINIF_ISTEM) {
       k.sinif++;
-      return yanit(girdi.split("\n").map((s) => { const [i, , , , baslik] = s.split("|"); const d = karar(baslik); return { i: Number(i), uygun: d.uygun, puan: d.puan ?? 0, alan: "doga", neden: d.neden || "ok" }; }));
+      return yanit(girdi.split("\n").map((s) => { const [i, , , , , baslik] = s.split("|"); const d = karar(baslik); return { i: Number(i), uygun: d.uygun, puan: d.puan ?? 0, alan: "doga", neden: d.neden || "ok" }; }));
     }
     k.yazim++; k.yazilan.push(girdi.match(/BAŞLIK: (.*)/)[1]);
     return { metin: YAZIM_YANITI, engellendi: "" };

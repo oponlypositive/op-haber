@@ -15,9 +15,10 @@ import { dilUygun } from "./lib/dogrula.mjs";
 import { gorselBul, openverseBelirtec } from "./lib/gorsel.mjs";
 import { alanDengele, alanKalan } from "./lib/alanlar.mjs";
 import { ozelIsleriCalistir, ozelOzetMetni } from "./lib/ozel.mjs";
-import { haberKur, hazirGorselHazirla } from "./lib/haber_yap.mjs";
+import { etiketYuku, haberKur, hazirGorselHazirla } from "./lib/haber_yap.mjs";
 import { bulutKur } from "./lib/bulut.mjs";
 import { onSinifAsamasi, onSinifOzetMetni } from "./lib/on_sinif.mjs";
+import { sonOkuma, sonOkumaOzetMetni } from "./lib/son_okuma.mjs";
 
 const burasi = dirname(fileURLToPath(import.meta.url));
 const dur = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -57,7 +58,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   const baslangic = simdi();
   const ozet = { aday: 0, yeniAday: 0, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
     red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, alanYayin: {},
-    onSinif: { durum: "kapali", sorulan: 0, gecen: 0, red: {}, cagri: 0 } };
+    onSinif: { durum: "kapali", sorulan: 0, gecen: 0, red: {}, cagri: 0 }, sonOkuma: { durum: "kapali", sorulan: 0, duzeltilen: 0, red: {} } };
   const sayac = { vl: 0 };
   const gorselButce = { openverse: { kalan: ayar.openverseUst ?? 6, dur: false } };   // Openverse istekleri tur boyunca ortak bütçe (haber başına değil)
   let ovBelirtec = null;
@@ -140,6 +141,9 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   let islenecek = sirali.filter((a) => !ozelKullanilan.has(a.hash) && !(a.alan && kalanHak[a.alan] !== undefined && kalanHak[a.alan] <= 0));
   const robots = new Map();
 
+  // Zamansız adaylar (söyleşi/portre/kişisel gelişim; tazelik 7-14 gün) ön sınıf slotlarını doldurmasın: tur başına en çok `zamansizSinifUst` tanesi sorulur, kalanı sonraki tura kalır (işaretlenmez).
+  { let z = 0; const ust = ayar.zamansizSinifUst ?? 5; islenecek = islenecek.filter((a) => !a.zamansiz || ++z <= ust); }
+
   // TOPLU ÖN SINIFLANDIRMA: yazım çağrısından önce ilk N aday TEK ucuz çağrıda uygunluk + puan alır; uygun olmayanlar yazıma hiç girmez (tekrar sorulmaz).
   // Saklı yüklü bekleyenler ve ikinci kaynağı henüz doğrulanmamış adaylar bu adımın dışında kalır. Çağrı başarısızsa sınıflandırmasız eski yol.
   if (ayar.onSinifAdet > 0) {
@@ -157,11 +161,16 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     }
   }
   let modelHataArdArda = 0;
+  const hazirlar = [];                                            // yazılmış + görseli belli haberler: tur sonunda son okumadan geçip yayınlanır
+  let gorselsizKuyruk = 0, zamansizKuyruk = 0;
+  const sonOkumaRezerv = ayar.sonOkuma !== false ? 1 : 0;         // son okuma çağrısı MODEL_CAGRI_UST bütçesinden 1 sayılır: döngü bütçeyi buna göre ayırır
+  const yazimUst = Math.max(1, ayar.modelCagriUst - sonOkumaRezerv);
   for (const a of islenecek) {
-    if (ozet.haberYayin >= ayar.turBasinaEn) { ozet.durus = "tur-siniri"; break; }
+    if (ozet.haberYayin + hazirlar.length >= ayar.turBasinaEn) { ozet.durus = "tur-siniri"; break; }
     if (simdi() - baslangic > ayar.turSureSn * 1000) { ozet.durus = "sure-doldu"; break; }
     const yuk = a.kayit?.yuk && a.kayit.durum === "bekliyor_gorsel" && a.kayit.yuk.tr?.baslik && a.kayit.yuk.en?.baslik && a.kayit.yuk.id ? a.kayit.yuk : null;
-    if (!yuk && ozet.modelCagri >= ayar.modelCagriUst) { ozet.durus = "cagri-siniri"; break; }
+    if (!yuk && ozet.modelCagri >= yazimUst) { ozet.durus = "cagri-siniri"; break; }
+    if (a.zamansiz && zamansizKuyruk >= (ayar.zamansizTurUst ?? 1)) continue;            // tur başına en çok 1 zamansız haber
     if (a.alan && kalanHak[a.alan] !== undefined && kalanHak[a.alan] <= 0) continue;   // alanın son 24 saatlik kotası dolu: işaretlenmez, sonraki turda yeniden bakılır
     try {
       let haber = yuk;
@@ -177,14 +186,14 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
         if (s.durum === "robots") { isaretle(a, "elendi", "robots"); ozet.elenen++; continue; }
         const sayfa = s.metin && sayfaEslesiyor(s.metin, a.baslik) ? s.metin : "";
         if (!sayfa && s.durum.startsWith("hata") && (a.ozet || "").length < 250) continue;   // geçici erişim sorunu: işaretlemeden sonraki tura bırak
-        const y = await haberYaz(model, a, sayfa, { cagriUst: Math.max(1, ayar.modelCagriUst - ozet.modelCagri) });
+        const y = await haberYaz(model, a, sayfa, { cagriUst: Math.max(1, yazimUst - ozet.modelCagri) });
         ozet.modelCagri += y.cagri || 0;
         if (y.durum !== "ok") {
           const kod = redKodu(y.neden);
           ozet.red[redSinifi(y.neden)]++; ozet.redKodlari[kod] = (ozet.redKodlari[kod] || 0) + 1;
           isaretle(a, "elendi", y.neden); ozet.elenen++; continue;
         }
-        haber = haberKur(a, y);
+        haber = haberKur(a, y, { altKonuGonder: ayar.altKonuGonder !== false });
       }
       // görsel: (i) kurumun kendi lisanslı görseli, (ii) haberin ADI GEÇEN öznesinin Commons görseli, (iii) insansız nötr konu görseli, (iv) görselsiz yayın
       const gb = { sonuc: null, notlar: [] };
@@ -203,23 +212,19 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
         if (g?.ozne) ozet.ozneGorsel++;
         log(`gorsel: [${haber.kategori}] ozne=${haber.gorselOzne ? haber.gorselOzne.tur + ":" + haber.gorselOzne.ad : "-"} sonuc=${g ? (g.saglayici || "var") : "yok"} ${gb.notlar.join(" | ").slice(0, 320)}`);
       }
-      if (!g && (!ayar.gorselsizYayin || ozet.gorselsiz >= ayar.gorselsizUst)) {
+      if (!g && (!ayar.gorselsizYayin || gorselsizKuyruk >= ayar.gorselsizUst)) {
         const deneme = a.deneme + 1;
         if (deneme >= ayar.gorselDenemeUst) { isaretle(a, "elendi", "gorsel bulunamadi"); ozet.elenen++; }
         else { isaretle(a, "bekliyor_gorsel", gb.notlar.join("|").slice(0, 100), deneme, haber); ozet.bekleyenGorsel++; }
         continue;
       }
       modelHataArdArda = 0;
-      const sonuc = await bulut.yayinla(haber, a.hash, g);
-      if (sonuc.durum === "eklendi" || sonuc.durum === "var") {
-        if (sonuc.durum === "eklendi") {
-          ozet.yayinlanan++; ozet.haberYayin++;
-          if (yuk) ozet.bekleyenYayin++;
-          if (!g) ozet.gorselsiz++;
-          const al = a.alan || "genel"; ozet.alanYayin[al] = (ozet.alanYayin[al] || 0) + 1; if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]--;
-        }
-        isaretle(a, "yayinlandi", sonuc.durum);
-      } else { isaretle(a, "elendi", `yayin-red:${sonuc.neden || "?"}`); ozet.elenen++; }
+      // Yayın ertelenir: tur sonunda TEK "son okuma" çağrısından geçtikten sonra yayınlanır (aşağıda). Sınırlar kuyruk anında sayılır.
+      if (ayar.altKonuGonder !== false && !haber.alt_konu && !haber.cinsiyet) Object.assign(haber, etiketYuku(a, haber.kategori, {}, haber));   // saklı (eski) yükte etiket eksikse kuraldan tamamlanır
+      hazirlar.push({ a, haber, g, yuk: !!yuk });
+      if (!g) gorselsizKuyruk++;
+      if (a.zamansiz) zamansizKuyruk++;
+      if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]--;
       if (gorselKota) { ozet.durus = "kota"; ozet.kota++; log("model kotası/hız sınırı görsel denetiminde doldu: tur zarifçe bitiriliyor"); break; }
     } catch (e) {
       if (e?.cagri) ozet.modelCagri += e.cagri;
@@ -232,6 +237,37 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       }
       log(`aday atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 80)}`);
     }
+  }
+
+  // SON OKUMA (ikinci geçiş): bu turda YENİ yazılan haberlerin TR metinleri TEK çağrıda noktalama/yazım/akıcılık için okunur; rakam ve özel ad değişirse özgün metin kalır.
+  const yeniHaberler = hazirlar.filter((h) => !h.yuk);
+  if (ayar.sonOkuma !== false && yeniHaberler.length) {
+    ozet.sonOkuma = { durum: "basarisiz", sorulan: yeniHaberler.length, duzeltilen: 0, red: {} };
+    try {
+      const r = await sonOkuma(model, yeniHaberler.map((h) => ({ baslik: h.haber.tr.baslik, ozet: h.haber.tr.ozet })));
+      ozet.modelCagri += r.cagri;
+      ozet.sonOkuma = { durum: r.durum, sorulan: yeniHaberler.length, duzeltilen: r.duzeltilen.size, red: r.red };
+      for (const [i, y] of r.duzeltilen) { const h = yeniHaberler[i - 1]; h.haber.tr.baslik = y.baslik; h.haber.tr.ozet = y.ozet; }
+    } catch (e) {
+      if (e instanceof KotaDoldu) { ozet.modelCagri += e.cagri || 1; ozet.kota++; ozet.durus = "kota"; log("model kotası son okumada doldu: haberler özgün metinle yayınlanıyor"); }
+      else log(`son okuma atlandı: ${String(e.message || e).slice(0, 60)}`);
+    }
+  }
+
+  // YAYIN
+  for (const { a, haber, g, yuk } of hazirlar) {
+    try {
+      const sonuc = await bulut.yayinla(haber, a.hash, g);
+      if (sonuc.durum === "eklendi" || sonuc.durum === "var") {
+        if (sonuc.durum === "eklendi") {
+          ozet.yayinlanan++; ozet.haberYayin++;
+          if (yuk) ozet.bekleyenYayin++;
+          if (!g) ozet.gorselsiz++;
+          const al = a.alan || "genel"; ozet.alanYayin[al] = (ozet.alanYayin[al] || 0) + 1;
+        } else if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]++;       // zaten yayında: kuyruk anında düşülen hak geri verilir
+        isaretle(a, "yayinlandi", sonuc.durum);
+      } else { isaretle(a, "elendi", `yayin-red:${sonuc.neden || "?"}`); ozet.elenen++; if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]++; }
+    } catch (e) { log(`yayın atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 80)}`); }
   }
   await bitir();
   ozet.vlCagri = sayac.vl;
@@ -250,7 +286,7 @@ export function ozetSatiri(o) {
   const kirilim = (m) => Object.entries(m || {}).map(([k, v]) => `${k}:${v}`).join(",");
   const ek = (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
-    (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") + onSinifOzetMetni(o.onSinif) +
+    (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") + onSinifOzetMetni(o.onSinif) + sonOkumaOzetMetni(o.sonOkuma) +
     (o.haberYayin !== undefined ? ` cagriBasinaYayin=${o.modelCagri > 0 ? (o.haberYayin / o.modelCagri).toFixed(2) : "0.00"}` : "") +
     (kirilim(o.vlRet) ? ` vlRet=${kirilim(o.vlRet)}` : "") + (kirilim(o.gorselKaynak) ? ` gorselKaynak=${kirilim(o.gorselKaynak)}` : "") +
     (o.gorselsiz || o.ozneGorsel || o.bekleyenYayin || o.vlCagri ? ` gorselsiz=${o.gorselsiz || 0} ozneGorsel=${o.ozneGorsel || 0} bekleyenYayin=${o.bekleyenYayin || 0} vl=${o.vlCagri || 0}` : "");

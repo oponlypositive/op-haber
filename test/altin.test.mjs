@@ -60,7 +60,7 @@ test("altın set: yapı (her örnekte id, grup, kontrol, beklenen; kimlikler ben
     assert.ok(!idler.has(o.id), `yinelenen kimlik: ${o.id}`);
     idler.add(o.id);
   }
-  for (const grup of ["a", "b", "c", "d", "e", "f", "g"]) {
+  for (const grup of ["a", "b", "c", "d", "e", "f", "g", "i"]) {
     const g = ornekler.filter((o) => o.grup === grup);
     assert.ok(g.some((o) => o.beklenen.karar === "ret"), `grup ${grup}: ret örneği yok`);
     assert.ok(g.some((o) => o.beklenen.karar === "gec"), `grup ${grup}: karşı örnek yok`);

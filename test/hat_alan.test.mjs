@@ -11,7 +11,7 @@ const TR = "Gözlemevindeki araştırmacılar bu hafta uzak bir gökada kümesin
   "Gökbilimciler kümenin kütle çekimiyle birbirine bağlı yüzlerce gökada içerdiğini söylüyor. Ekip kütleyi daha hassas ölçmek için yeni gözlemler planlıyor. Bu, sabırlı ve özenli çalışmanın güzel bir örneği.";
 const YANIT = JSON.stringify({ uygun: true, kategori: "bilim", yer: "Dünya", en: { baslik: "A new image of a distant galaxy cluster", ozet: EN }, tr: { baslik: "Uzak bir gökada kümesinin yeni görüntüsü", ozet: TR } });
 const KAYNAK = "Astronomers shared a fresh picture of a faraway cluster of galaxies. It stacks long exposures from many nights and the follow up work will refine the mass of the group considerably for later papers. ".repeat(2);
-const ayar = (ek = {}) => ({ ...ayarOku({}, []), geminiAnahtar: "k", geminiBeklemeMs: 0, ozelAcik: false, ...ek });
+const ayar = (ek = {}) => ({ ...ayarOku({}, []), geminiAnahtar: "k", geminiBeklemeMs: 0, sonOkuma: false, ozelAcik: false, ...ek });
 const jpeg = () => { const u = new Uint8Array(2500); u.set([0xff, 0xd8, 0xff, 0xc0, 0, 0x11, 8, 4, 0, 6, 0, 3], 0); return u; };
 const fetchFn = async (url) => String(url).startsWith("https://cdn.eso.org/")
   ? { ok: true, status: 200, headers: new Headers(), arrayBuffer: async () => jpeg().buffer }

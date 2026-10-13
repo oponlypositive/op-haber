@@ -1,218 +1,595 @@
 {
-  "_aciklama": "Altın örnek seti: sahibin ve şefin CANLIDA yakaladığı hatalar KALICI regresyon testi. Her örnek: id, grup (a-g), kontrol, girdi, beklenen. Karşı örnekler (karar: gec) doğru geçmesi gerekenlerdir. Gruplar: a özel ad çevirisi, b harfi düşmüş TR, c yazıyla yıl, d bozuk kelime, e yanlış yer görseli, f alıntı çevirisi/seçimi, g haber olmayan içerik.",
+  "_aciklama": "Altın örnek seti: sahibin ve şefin CANLIDA yakaladığı hatalar KALICI regresyon testi. Her örnek: id, grup (a-g), kontrol, girdi, beklenen. Karşı örnekler (karar: gec) doğru geçmesi gerekenlerdir. Gruplar: a özel ad çevirisi, b harfi düşmüş TR, c yazıyla yıl, d bozuk kelime, e yanlış yer görseli, f alıntı çevirisi/seçimi, g haber olmayan içerik, i Türkçe noktalama/uydurma terim.",
   "ornekler": [
     {
-      "id": "a1-cizgide-uzlas-cumle-cikarilir", "grup": "a", "kontrol": "haber_yaz",
+      "id": "a1-cizgide-uzlas-cumle-cikarilir",
+      "grup": "a",
+      "kontrol": "haber_yaz",
       "aciklama": "'Meet in the Middle Line' ders planı 'Çizgide Uzlaş' diye kelime kelime çevrilmiş; model düzeltmezse şüpheli cümle çıkarılır, ders planı adı yayına GİTMEZ.",
-      "girdi": { "kaynakOzetEk": " Teachers also use a lesson plan called \"Meet in the Middle Line\" with their students.", "trOzetEk": "Öğretmenler öğrencilerle “Çizgide Uzlaş” adlı ders planını da kullanıyor." },
-      "beklenen": { "karar": "gec", "icermez": ["Çizgide Uzlaş"] }
+      "girdi": {
+        "kaynakOzetEk": " Teachers also use a lesson plan called \"Meet in the Middle Line\" with their students.",
+        "trOzetEk": "Öğretmenler öğrencilerle “Çizgide Uzlaş” adlı ders planını da kullanıyor."
+      },
+      "beklenen": {
+        "karar": "gec",
+        "icermez": [
+          "Çizgide Uzlaş"
+        ]
+      }
     },
     {
-      "id": "a2-cizgide-uzlas-ret", "grup": "a", "kontrol": "haber_yaz",
+      "id": "a2-cizgide-uzlas-ret",
+      "grup": "a",
+      "kontrol": "haber_yaz",
       "aciklama": "Aynı hata, çıkarınca 3 cümleden az kalan kısa özet: haber atlanır.",
-      "girdi": { "kaynakOzetEk": " Teachers also use a lesson plan called \"Meet in the Middle Line\" with their students.", "trOzetKes": 2, "trOzetEk": "Öğretmenler öğrencilerle “Çizgide Uzlaş” adlı ders planını da kullanıyor." },
-      "beklenen": { "karar": "ret", "kod": "ozel-ad" }
+      "girdi": {
+        "kaynakOzetEk": " Teachers also use a lesson plan called \"Meet in the Middle Line\" with their students.",
+        "trOzetKes": 2,
+        "trOzetEk": "Öğretmenler öğrencilerle “Çizgide Uzlaş” adlı ders planını da kullanıyor."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "ozel-ad"
+      }
     },
     {
-      "id": "a3-ozgun-ad-korunur", "grup": "a", "kontrol": "haber_yaz",
+      "id": "a3-ozgun-ad-korunur",
+      "grup": "a",
+      "kontrol": "haber_yaz",
       "aciklama": "KARŞI ÖRNEK: özgün ad aynen bırakılmış, yayına geçmeli.",
-      "girdi": { "kaynakOzetEk": " Teachers also use a lesson plan called \"Meet in the Middle Line\" with their students.", "trOzetEk": "Öğretmenler öğrencilerle “Meet in the Middle Line” adlı ders planını da kullanıyor." },
-      "beklenen": { "karar": "gec", "icerir": ["Meet in the Middle Line"] }
+      "girdi": {
+        "kaynakOzetEk": " Teachers also use a lesson plan called \"Meet in the Middle Line\" with their students.",
+        "trOzetEk": "Öğretmenler öğrencilerle “Meet in the Middle Line” adlı ders planını da kullanıyor."
+      },
+      "beklenen": {
+        "karar": "gec",
+        "icerir": [
+          "Meet in the Middle Line"
+        ]
+      }
     },
     {
-      "id": "b1-ascii-dusmus-tum-metin", "grup": "b", "kontrol": "haber_yaz",
+      "id": "b1-ascii-dusmus-tum-metin",
+      "grup": "b",
+      "kontrol": "haber_yaz",
       "aciklama": "Başlık ve özet Türkçe karakterlerini yitirmiş ('Yuzen golgelikler mercanlarin ...').",
       "girdi": {
         "trBaslik": "Yuzen golgelikler genc mercanlari sicaktan koruyor",
         "trOzet": "Cebu'daki deniz bilimciler, genc mercanlari sicaktan korumanin nazik bir yolunu buldu. Bir mercan fidanliginin uzerine yuzen golgelikler gerdiler; bu golgelikler, 2025 yazinin en sicak haftalarinda dogrudan gunes isigini yaklasik yuzde 30 azaltti. Golgelerin altindaki mercanlar acik sudakilere gore cok daha az agardi ve yerel dalgiclar fidanligi her hafta kontrol etti. Bilim insanlari bu fikri gelecek yil iki resife daha tasimayi planliyor."
       },
-      "beklenen": { "karar": "ret", "kod": "dil" }
+      "beklenen": {
+        "karar": "ret",
+        "kod": "dil"
+      }
     },
     {
-      "id": "b2-ascii-dusmus-baslik", "grup": "b", "kontrol": "haber_yaz",
+      "id": "b2-ascii-dusmus-baslik",
+      "grup": "b",
+      "kontrol": "haber_yaz",
       "aciklama": "Gövde doğru, başlıkta hiç özel harf yok ve gövdeden onarılamıyor: model bir kez yeniden ister, düzelmezse haber atlanır.",
-      "girdi": { "trBaslik": "Mercanlarin gelecegi icin yeni umut dogdu" },
-      "beklenen": { "karar": "ret", "kod": "baslik" }
+      "girdi": {
+        "trBaslik": "Mercanlarin gelecegi icin yeni umut dogdu"
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "baslik"
+      }
     },
     {
-      "id": "b3-harf-dusmus-govde", "grup": "b", "kontrol": "haber_yaz",
+      "id": "b3-harf-dusmus-govde",
+      "grup": "b",
+      "kontrol": "haber_yaz",
       "aciklama": "Gövdede harfi düşmüş kelimeler: 'dünyann', 'insanlarn', 'arasnda'.",
-      "girdi": { "trOzetEk": "Bu çalışma dünyann dört bir yanındaki insanlarn arasnda ilgi görüyor." },
-      "beklenen": { "karar": "ret", "kod": "yazim" }
+      "girdi": {
+        "trOzetEk": "Bu çalışma dünyann dört bir yanındaki insanlarn arasnda ilgi görüyor."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "yazim"
+      }
     },
     {
-      "id": "b4-harf-dusmus-arasnda", "grup": "b", "kontrol": "haber_yaz",
+      "id": "b4-harf-dusmus-arasnda",
+      "grup": "b",
+      "kontrol": "haber_yaz",
       "aciklama": "Yalnız 'arasnda' (ı düşmüş).",
-      "girdi": { "trOzetEk": "Fidanlık bilimciler ve dalgıçlar arasnda konuşuluyor." },
-      "beklenen": { "karar": "ret", "kod": "yazim" }
+      "girdi": {
+        "trOzetEk": "Fidanlık bilimciler ve dalgıçlar arasnda konuşuluyor."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "yazim"
+      }
     },
     {
-      "id": "b5-dogru-tr-gecer", "grup": "b", "kontrol": "haber_yaz",
+      "id": "b5-dogru-tr-gecer",
+      "grup": "b",
+      "kontrol": "haber_yaz",
       "aciklama": "KARŞI ÖRNEK: doğru yazılmış Türkçe ('dünyanın', 'insanların', 'arasında') yanlış pozitif vermemeli.",
-      "girdi": { "trOzetEk": "Bu çalışma dünyanın dört bir yanındaki insanların arasında ilgi görüyor." },
-      "beklenen": { "karar": "gec", "icerir": ["insanların arasında"] }
+      "girdi": {
+        "trOzetEk": "Bu çalışma dünyanın dört bir yanındaki insanların arasında ilgi görüyor."
+      },
+      "beklenen": {
+        "karar": "gec",
+        "icerir": [
+          "insanların arasında"
+        ]
+      }
     },
     {
-      "id": "c1-yaziyla-yil-tr", "grup": "c", "kontrol": "haber_yaz",
+      "id": "c1-yaziyla-yil-tr",
+      "grup": "c",
+      "kontrol": "haber_yaz",
       "aciklama": "Yılı yazıyla yazmış: 'Bin dokuz yüz seksen yedi'.",
-      "girdi": { "trOzetEk": "Fidanlık, Bin dokuz yüz seksen yedi yılından beri bu bölgede çalışan bir kurum tarafından destekleniyor." },
-      "beklenen": { "karar": "ret", "kod": "rakam" }
+      "girdi": {
+        "trOzetEk": "Fidanlık, Bin dokuz yüz seksen yedi yılından beri bu bölgede çalışan bir kurum tarafından destekleniyor."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "rakam"
+      }
     },
     {
-      "id": "c2-yaziyla-yil-en", "grup": "c", "kontrol": "haber_yaz",
+      "id": "c2-yaziyla-yil-en",
+      "grup": "c",
+      "kontrol": "haber_yaz",
       "aciklama": "İngilizce metinde yazıyla yıl ('nineteen eighty seven').",
-      "girdi": { "enOzetEk": "The nursery has been supported since nineteen eighty seven by a local group." },
-      "beklenen": { "karar": "ret", "kod": "rakam" }
+      "girdi": {
+        "enOzetEk": "The nursery has been supported since nineteen eighty seven by a local group."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "rakam"
+      }
     },
     {
-      "id": "c3-rakamla-yil-gecer", "grup": "c", "kontrol": "haber_yaz",
+      "id": "c3-rakamla-yil-gecer",
+      "grup": "c",
+      "kontrol": "haber_yaz",
       "aciklama": "KARŞI ÖRNEK: yıl rakamla (kaynakta 1987 var) geçmeli.",
-      "girdi": { "kaynakOzetEk": " The nursery has been supported since 1987 by a local group.", "trOzetEk": "Fidanlık, 1987 yılından beri bu bölgede çalışan bir kurum tarafından destekleniyor." },
-      "beklenen": { "karar": "gec", "icerir": ["1987 yılından"] }
+      "girdi": {
+        "kaynakOzetEk": " The nursery has been supported since 1987 by a local group.",
+        "trOzetEk": "Fidanlık, 1987 yılından beri bu bölgede çalışan bir kurum tarafından destekleniyor."
+      },
+      "beklenen": {
+        "karar": "gec",
+        "icerir": [
+          "1987 yılından"
+        ]
+      }
     },
     {
-      "id": "d1-alikanlik", "grup": "d", "kontrol": "haber_yaz",
+      "id": "d1-alikanlik",
+      "grup": "d",
+      "kontrol": "haber_yaz",
       "aciklama": "Uydurma kelime 'alıkanlık'.",
-      "girdi": { "trOzetEk": "Haftalık kontroller dalgıçlar için bir alıkanlık haline geldi." },
-      "beklenen": { "karar": "ret", "kod": "yazim" }
+      "girdi": {
+        "trOzetEk": "Haftalık kontroller dalgıçlar için bir alıkanlık haline geldi."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "yazim"
+      }
     },
     {
-      "id": "d2-yurutulugunde", "grup": "d", "kontrol": "haber_yaz",
+      "id": "d2-yurutulugunde",
+      "grup": "d",
+      "kontrol": "haber_yaz",
       "aciklama": "Bozuk kelime 'yürütülüğünde'.",
-      "girdi": { "trOzetEk": "Proje yürütülüğünde yerel dalgıçlar da görev aldı." },
-      "beklenen": { "karar": "ret", "kod": "yazim" }
+      "girdi": {
+        "trOzetEk": "Proje yürütülüğünde yerel dalgıçlar da görev aldı."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "yazim"
+      }
     },
     {
-      "id": "d3-ev-sahipligind", "grup": "d", "kontrol": "haber_yaz",
+      "id": "d3-ev-sahipligind",
+      "grup": "d",
+      "kontrol": "haber_yaz",
       "aciklama": "Kesik kelime 'ev sahipliğind'.",
-      "girdi": { "trOzetEk": "Çalışmaya yerel bir kurum ev sahipliğind bulundu." },
-      "beklenen": { "karar": "ret", "kod": "yazim" }
+      "girdi": {
+        "trOzetEk": "Çalışmaya yerel bir kurum ev sahipliğind bulundu."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "yazim"
+      }
     },
     {
-      "id": "d4-dogru-kelimeler-gecer", "grup": "d", "kontrol": "haber_yaz",
+      "id": "d4-dogru-kelimeler-gecer",
+      "grup": "d",
+      "kontrol": "haber_yaz",
       "aciklama": "KARŞI ÖRNEK: 'alışkanlık', 'yürütülen', 'ev sahipliği' doğru yazımlarıyla geçmeli.",
-      "girdi": { "trOzetEk": "Haftalık kontroller dalgıçlar için bir alışkanlık oldu ve yürütülen çalışmaya yerel bir kurum ev sahipliği yaptı." },
-      "beklenen": { "karar": "gec", "icerir": ["ev sahipliği yaptı"] }
+      "girdi": {
+        "trOzetEk": "Haftalık kontroller dalgıçlar için bir alışkanlık oldu ve yürütülen çalışmaya yerel bir kurum ev sahipliği yaptı."
+      },
+      "beklenen": {
+        "karar": "gec",
+        "icerir": [
+          "ev sahipliği yaptı"
+        ]
+      }
     },
     {
-      "id": "e1-ankara-haberi-abd-amfisi", "grup": "e", "kontrol": "gorsel_yer",
+      "id": "e1-ankara-haberi-abd-amfisi",
+      "grup": "e",
+      "kontrol": "gorsel_yer",
       "aciklama": "Ankara haberine ABD üniversitesi amfisi görseli gelmişti: haberde geçmeyen yer/kurum adı taşıyan aday elenir.",
-      "girdi": { "adayMetin": "File:Lecture hall at Indiana University, Indianapolis, USA.jpg", "haberMetni": "Ankara students build solar lantern library for village school. Students in Ankara, Turkey, built a library of solar lanterns." },
-      "beklenen": { "karar": "ret" }
+      "girdi": {
+        "adayMetin": "File:Lecture hall at Indiana University, Indianapolis, USA.jpg",
+        "haberMetni": "Ankara students build solar lantern library for village school. Students in Ankara, Turkey, built a library of solar lanterns."
+      },
+      "beklenen": {
+        "karar": "ret"
+      }
     },
     {
-      "id": "e2-notr-nesne-gorseli-gecer", "grup": "e", "kontrol": "gorsel_yer",
+      "id": "e2-notr-nesne-gorseli-gecer",
+      "grup": "e",
+      "kontrol": "gorsel_yer",
       "aciklama": "KARŞI ÖRNEK: yer adı taşımayan nötr nesne görseli geçer.",
-      "girdi": { "adayMetin": "File:Solar lantern on a wooden table.jpg", "haberMetni": "Ankara students build solar lantern library for village school." },
-      "beklenen": { "karar": "gec" }
+      "girdi": {
+        "adayMetin": "File:Solar lantern on a wooden table.jpg",
+        "haberMetni": "Ankara students build solar lantern library for village school."
+      },
+      "beklenen": {
+        "karar": "gec"
+      }
     },
     {
-      "id": "f1-tecavuz-ceviri", "grup": "f", "kontrol": "alinti_ceviri",
+      "id": "f1-tecavuz-ceviri",
+      "grup": "f",
+      "kontrol": "alinti_ceviri",
       "aciklama": "Alıntı çevirisinde 'tecavüz' kelimesi ('Yalnızlığına tecavüz etmeyin').",
-      "girdi": { "orijinal": "Do not trespass upon his solitude, for it belongs to him alone.", "tr": "Onun yalnızlığına tecavüz etmeyin, çünkü o yalnızca ona aittir." },
-      "beklenen": { "karar": "ret", "nedenIcerir": "ikinci filtre" }
+      "girdi": {
+        "orijinal": "Do not trespass upon his solitude, for it belongs to him alone.",
+        "tr": "Onun yalnızlığına tecavüz etmeyin, çünkü o yalnızca ona aittir."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "nedenIcerir": "ikinci filtre"
+      }
     },
     {
-      "id": "f2-lords-of-creation", "grup": "f", "kontrol": "alinti_secim",
+      "id": "f2-lords-of-creation",
+      "grup": "f",
+      "kontrol": "alinti_secim",
       "aciklama": "Little Women: 'lords of creation' deyimi/cinsiyet genellemesi içeren alıntı seçilmemeli.",
-      "girdi": { "metin": "Men, the lords of creation, think the world was made for them alone.", "alan": "edebiyat" },
-      "beklenen": { "karar": "ret", "kod": "deyim" }
+      "girdi": {
+        "metin": "Men, the lords of creation, think the world was made for them alone.",
+        "alan": "edebiyat"
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "deyim"
+      }
     },
     {
-      "id": "f3-kadinlar-genelleme", "grup": "f", "kontrol": "alinti_secim",
+      "id": "f3-kadinlar-genelleme",
+      "grup": "f",
+      "kontrol": "alinti_secim",
       "aciklama": "Cinsiyet genellemesi ('Women are ...').",
-      "girdi": { "metin": "Women are by nature gentle and always ready to forgive every wrong.", "alan": "edebiyat" },
-      "beklenen": { "karar": "ret", "kod": "genelleme:grup" }
+      "girdi": {
+        "metin": "Women are by nature gentle and always ready to forgive every wrong.",
+        "alan": "edebiyat"
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "genelleme:grup"
+      }
     },
     {
-      "id": "f4-homeros-hekim-secim", "grup": "f", "kontrol": "alinti_secim",
+      "id": "f4-homeros-hekim-secim",
+      "grup": "f",
+      "kontrol": "alinti_secim",
       "aciklama": "KARŞI ÖRNEK: Homeros'un hekim alıntısı seçim süzgecinden geçmeli (metin temsilidir; canlıdaki Wikiquote metniyle doğrulanmadı).",
-      "girdi": { "metin": "A physician is worth many other men, for he can cut out arrows and spread soothing medicines.", "alan": "mitoloji" },
-      "beklenen": { "karar": "gec" }
+      "girdi": {
+        "metin": "A physician is worth many other men, for he can cut out arrows and spread soothing medicines.",
+        "alan": "mitoloji"
+      },
+      "beklenen": {
+        "karar": "gec"
+      }
     },
     {
-      "id": "f5-homeros-hekim-ceviri", "grup": "f", "kontrol": "alinti_ceviri",
+      "id": "f5-homeros-hekim-ceviri",
+      "grup": "f",
+      "kontrol": "alinti_ceviri",
       "aciklama": "KARŞI ÖRNEK: Homeros hekim alıntısının doğal Türkçe çevirisi doğrulamadan geçmeli.",
-      "girdi": { "orijinal": "A physician is worth many other men, for he can cut out arrows and spread soothing medicines.", "tr": "Bir hekim, okları çıkarıp yaraya yatıştırıcı ilaçlar sürebildiği için pek çok insana bedeldir." },
-      "beklenen": { "karar": "gec" }
+      "girdi": {
+        "orijinal": "A physician is worth many other men, for he can cut out arrows and spread soothing medicines.",
+        "tr": "Bir hekim, okları çıkarıp yaraya yatıştırıcı ilaçlar sürebildiği için pek çok insana bedeldir."
+      },
+      "beklenen": {
+        "karar": "gec"
+      }
     },
     {
-      "id": "f6-alcott-firtina-secim", "grup": "f", "kontrol": "alinti_secim",
+      "id": "f6-alcott-firtina-secim",
+      "grup": "f",
+      "kontrol": "alinti_secim",
       "aciklama": "KARŞI ÖRNEK: Little Women'dan umutlu, tek başına anlaşılan cümle seçilebilmeli.",
-      "girdi": { "metin": "I am not afraid of storms, for I am learning how to sail my ship.", "alan": "edebiyat" },
-      "beklenen": { "karar": "gec" }
+      "girdi": {
+        "metin": "I am not afraid of storms, for I am learning how to sail my ship.",
+        "alan": "edebiyat"
+      },
+      "beklenen": {
+        "karar": "gec"
+      }
     },
     {
-      "id": "g1-cilt-bakimi-hatalar", "grup": "g", "kontrol": "on_eleme",
+      "id": "g1-cilt-bakimi-hatalar",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "'Cilt bakımında yapılan yaygın hatalar' bir tavsiye listesidir, haber değildir: ön elemede elenir.",
-      "girdi": { "baslik": "Cilt bakımında yapılan yaygın hatalar", "ozet": "Uzmanlar cildin bakımında yapılan hataları ve doğru bakım adımlarını anlattı." },
-      "beklenen": { "karar": "ret", "neden": "liste" }
+      "girdi": {
+        "baslik": "Cilt bakımında yapılan yaygın hatalar",
+        "ozet": "Uzmanlar cildin bakımında yapılan hataları ve doğru bakım adımlarını anlattı."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "neden": "liste"
+      }
     },
     {
-      "id": "g2-cilt-bakimi-model-ciktisi", "grup": "g", "kontrol": "haber_yaz",
+      "id": "g2-cilt-bakimi-model-ciktisi",
+      "grup": "g",
+      "kontrol": "haber_yaz",
       "aciklama": "Aynı başlık ön elemeyi geçip model çıktısında gelirse doğrulayıcı reddeder (ikinci emniyet).",
-      "girdi": { "trBaslik": "Cilt bakımında yapılan yaygın hatalar" },
-      "beklenen": { "karar": "ret", "kod": "haber-degil" }
+      "girdi": {
+        "trBaslik": "Cilt bakımında yapılan yaygın hatalar"
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "haber-degil"
+      }
     },
     {
-      "id": "g3-numarali-liste", "grup": "g", "kontrol": "on_eleme",
+      "id": "g3-numarali-liste",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "Sayıyla başlayan liste yazısı.",
-      "girdi": { "baslik": "10 ways to save money on groceries this winter", "ozet": "A short guide." },
-      "beklenen": { "karar": "ret", "neden": "liste" }
+      "girdi": {
+        "baslik": "10 ways to save money on groceries this winter",
+        "ozet": "A short guide."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "neden": "liste"
+      }
     },
     {
-      "id": "g4-nasil-yapilir", "grup": "g", "kontrol": "on_eleme",
+      "id": "g4-nasil-yapilir",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "'How to ...' rehber yazısı.",
-      "girdi": { "baslik": "How to grow tomatoes on a small balcony", "ozet": "Step by step advice for beginners." },
-      "beklenen": { "karar": "ret", "neden": "liste" }
+      "girdi": {
+        "baslik": "How to grow tomatoes on a small balcony",
+        "ozet": "Step by step advice for beginners."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "neden": "liste"
+      }
     },
     {
-      "id": "g5-tarihte-bugun", "grup": "g", "kontrol": "on_eleme",
+      "id": "g5-tarihte-bugun",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "'Tarihte bugün' kalıbı.",
-      "girdi": { "baslik": "Tarihte bugün: 13 Ekim'de neler yaşandı", "ozet": "Geçmişten kısa notlar." },
-      "beklenen": { "karar": "ret", "neden": "liste" }
+      "girdi": {
+        "baslik": "Tarihte bugün: 13 Ekim'de neler yaşandı",
+        "ozet": "Geçmişten kısa notlar."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "neden": "liste"
+      }
     },
     {
-      "id": "g6-burc", "grup": "g", "kontrol": "on_eleme",
+      "id": "g6-burc",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "Günlük burç yorumu.",
-      "girdi": { "baslik": "Günlük burç yorumları: bugün sizi neler bekliyor", "ozet": "Burçlar için günün yorumu." },
-      "beklenen": { "karar": "ret", "neden": "liste" }
+      "girdi": {
+        "baslik": "Günlük burç yorumları: bugün sizi neler bekliyor",
+        "ozet": "Burçlar için günün yorumu."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "neden": "liste"
+      }
     },
     {
-      "id": "g7-montana-softbol", "grup": "g", "kontrol": "on_eleme",
+      "id": "g7-montana-softbol",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "KARŞI ÖRNEK (EN): Montana softbol haberi geçmeli.",
-      "girdi": { "baslik": "Montana softball player finds long-lost brother on the opposing team", "ozet": "During a tournament game, a Montana pitcher realized the catcher across the field was the brother she had been searching for." },
-      "beklenen": { "karar": "gec" }
+      "girdi": {
+        "baslik": "Montana softball player finds long-lost brother on the opposing team",
+        "ozet": "During a tournament game, a Montana pitcher realized the catcher across the field was the brother she had been searching for."
+      },
+      "beklenen": {
+        "karar": "gec"
+      }
     },
     {
-      "id": "g8-montana-softbol-tr", "grup": "g", "kontrol": "on_eleme",
+      "id": "g8-montana-softbol-tr",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "KARŞI ÖRNEK (TR): 'Montana'da softbol oyuncusu rakip takımda kayıp kardeşini buldu' geçmeli.",
-      "girdi": { "baslik": "Montana'da softbol oyuncusu rakip takımda kayıp kardeşini buldu", "ozet": "Turnuva maçında sahaya çıkan oyuncu, karşı takımdaki yakalayıcının yıllardır aradığı kardeşi olduğunu fark etti." },
-      "beklenen": { "karar": "gec" }
+      "girdi": {
+        "baslik": "Montana'da softbol oyuncusu rakip takımda kayıp kardeşini buldu",
+        "ozet": "Turnuva maçında sahaya çıkan oyuncu, karşı takımdaki yakalayıcının yıllardır aradığı kardeşi olduğunu fark etti."
+      },
+      "beklenen": {
+        "karar": "gec"
+      }
     },
     {
-      "id": "g9-teksas-arazi", "grup": "g", "kontrol": "on_eleme",
+      "id": "g9-teksas-arazi",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "KARŞI ÖRNEK (EN): Teksas ailesi arazisini park olsun diye sattı.",
-      "girdi": { "baslik": "Texas family sells 650 acres so the land can become a state park", "ozet": "A family that owned the ranch for generations sold it so that the public could enjoy the hills and creeks." },
-      "beklenen": { "karar": "gec" }
+      "girdi": {
+        "baslik": "Texas family sells 650 acres so the land can become a state park",
+        "ozet": "A family that owned the ranch for generations sold it so that the public could enjoy the hills and creeks."
+      },
+      "beklenen": {
+        "karar": "gec"
+      }
     },
     {
-      "id": "g10-teksas-arazi-tr", "grup": "g", "kontrol": "on_eleme",
+      "id": "g10-teksas-arazi-tr",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "KARŞI ÖRNEK (TR): 'Teksas'ta bir aile 650 dönümlük araziyi devlet parkı olması için sattı' geçmeli.",
-      "girdi": { "baslik": "Teksas'ta bir aile 650 dönümlük araziyi devlet parkı olması için sattı", "ozet": "Nesillerdir çiftliği işleten aile, tepeleri ve dereleri herkesin gezebilmesi için araziyi bıraktı." },
-      "beklenen": { "karar": "gec" }
+      "girdi": {
+        "baslik": "Teksas'ta bir aile 650 dönümlük araziyi devlet parkı olması için sattı",
+        "ozet": "Nesillerdir çiftliği işleten aile, tepeleri ve dereleri herkesin gezebilmesi için araziyi bıraktı."
+      },
+      "beklenen": {
+        "karar": "gec"
+      }
     },
     {
-      "id": "g11-yeni-yollar-olay-basligi", "grup": "g", "kontrol": "on_eleme",
+      "id": "g11-yeni-yollar-olay-basligi",
+      "grup": "g",
+      "kontrol": "on_eleme",
       "aciklama": "KARŞI ÖRNEK: 'new ways to' ile olay anlatan başlık liste sayılmamalı.",
-      "girdi": { "baslik": "Students find new ways to recycle old phones for their town", "ozet": "A school club collected and repaired old phones." },
-      "beklenen": { "karar": "gec" }
+      "girdi": {
+        "baslik": "Students find new ways to recycle old phones for their town",
+        "ozet": "A school club collected and repaired old phones."
+      },
+      "beklenen": {
+        "karar": "gec"
+      }
     },
     {
-      "id": "h1-temel-senaryo-gecer", "grup": "h", "kontrol": "haber_yaz",
+      "id": "h1-temel-senaryo-gecer",
+      "grup": "h",
+      "kontrol": "haber_yaz",
       "aciklama": "KARŞI ÖRNEK: temel senaryo (hiçbir hata yok) yayına geçmeli; diğer örneklerin ret nedeni gerçekten kendi hatalarıdır.",
       "girdi": {},
-      "beklenen": { "karar": "gec", "icerir": ["Yüzen gölgelikler"] }
+      "beklenen": {
+        "karar": "gec",
+        "icerir": [
+          "Yüzen gölgelikler"
+        ]
+      }
+    },
+    {
+      "id": "i1-kuantum-buyusu-uydurma-terim",
+      "grup": "i",
+      "kontrol": "haber_yaz",
+      "aciklama": "Canlıda 'quantum magic' için 'kuantum büyüsü' çıktı: yerleşik karşılığı olmayan terim uydurma çeviriyle verilemez; özgün terim tırnakta + açıklama olmalı.",
+      "girdi": {
+        "trOzetEk": "Ekip ayrıca kuantum büyüsü adı verilen özelliği ölçtü."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "uydurma-terim"
+      }
+    },
+    {
+      "id": "i2-kuantum-magic-aciklamali",
+      "grup": "i",
+      "kontrol": "haber_yaz",
+      "aciklama": "KARŞI ÖRNEK: özgün terim tırnak içinde, kısa açıklamayla: geçmeli.",
+      "girdi": {
+        "trOzetEk": "Ekip ayrıca kuantum “magic” kaynağı (klasik bilgisayarla taklit edilemeyen bir kuantum özelliği) üzerinde çalıştı."
+      },
+      "beklenen": {
+        "karar": "gec",
+        "icerir": [
+          "kuantum “magic” kaynağı"
+        ]
+      }
+    },
+    {
+      "id": "i3-ve-virgul",
+      "grup": "i",
+      "kontrol": "haber_yaz",
+      "aciklama": "'ve,' kalıbı (bağlaçtan sonra virgül) Türkçe noktalama hatasıdır.",
+      "girdi": {
+        "trOzetEk": "Ekip verileri topladı ve, sonuçları paylaştı."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "noktalama"
+      }
+    },
+    {
+      "id": "i4-cumle-basi-kucuk-harf",
+      "grup": "i",
+      "kontrol": "haber_yaz",
+      "aciklama": "Cümle başı küçük harf.",
+      "girdi": {
+        "trOzetEk": "Ekip verileri topladı. sonuçları paylaştı."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "noktalama"
+      }
+    },
+    {
+      "id": "i5-virgulden-once-bosluk-onarilir",
+      "grup": "i",
+      "kontrol": "haber_yaz",
+      "aciklama": "KARŞI ÖRNEK: virgülden önceki boşluk sessizce onarılır, haber geçer.",
+      "girdi": {
+        "trOzetEk": "Ekip verileri topladı , sonuçları paylaştı."
+      },
+      "beklenen": {
+        "karar": "gec",
+        "icerir": [
+          "topladı, sonuçları"
+        ],
+        "icermez": [
+          "topladı ,"
+        ]
+      }
+    },
+    {
+      "id": "i6-45-kelimeden-uzun-cumle",
+      "grup": "i",
+      "kontrol": "haber_yaz",
+      "aciklama": "45 kelimeyi aşan cümle yeniden yazım ister (anlam karışıklığı).",
+      "girdi": {
+        "trOzetEk": "Ekip dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı dikkatle çalıştı sonunda bitirdi."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "noktalama"
+      }
+    },
+    {
+      "id": "i7-ingilizce-kalinti",
+      "grup": "i",
+      "kontrol": "haber_yaz",
+      "aciklama": "Türkçe metinde İngilizce işlev sözcüğü (the) kalmış.",
+      "girdi": {
+        "trOzetEk": "Ekip the proje için çalıştı."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "noktalama"
+      }
+    },
+    {
+      "id": "i8-kapanmamis-tirnak",
+      "grup": "i",
+      "kontrol": "haber_yaz",
+      "aciklama": "Kapanmamış tırnak.",
+      "girdi": {
+        "trOzetEk": "Ekip “deneme adlı projeyi tamamladı."
+      },
+      "beklenen": {
+        "karar": "ret",
+        "kod": "noktalama"
+      }
     }
   ]
 }
