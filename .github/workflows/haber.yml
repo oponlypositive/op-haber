@@ -1,8 +1,9 @@
 name: haber
 
 on:
-  schedule:
-    - cron: "3,13,23,33,43,53 * * * *"   # her 10 dakikada bir (GitHub yoğunlukta kaydırabilir)
+  # Kalite duzeltmeleri bitene kadar zamanlama kapali (elle calistirilabilir):
+  # schedule:
+  #   - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
 
 # Aynı anda tek koşu; yenisi sıraya girer ve eskisini kesmez.
