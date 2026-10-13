@@ -234,9 +234,10 @@ test("ay evreleri: USNO verisi ayrıştırılır, yalnız bugün/yarın paylaş�
 
 // ---- sözleşmeler
 test("editör hesapları: 17 hesap, alan->hesap eşlemesi hat ile işlev aynı, kategori kümeleri tutarlı", { skip: !ED && "editorler.mjs bu depoda yok" }, () => {
-  assert.equal(EDITORLER.length, 19);
+  assert.equal(EDITORLER.length, 25);
   for (const [alan, liste] of Object.entries(ALINTI_HESAPLARI)) {
-    assert.deepEqual(HAT_HESAPLARI[alan], liste, alan);
+    // işlev tarafı konu hesaplarını da (op_klasikler, op_icecek...) taşır; hattın alıntı hesapları onun alt kümesi ve ilk hesap aynı olmalı
+    if (HAT_HESAPLARI[alan]) { assert.equal(HAT_HESAPLARI[alan][0], liste[0], alan); for (const h of HAT_HESAPLARI[alan]) assert.ok(liste.includes(h), h); }
     assert.ok(KATEGORILER.includes(alan));
     for (const hesap of liste) assert.ok(EDITORLER.some((e) => e[0] === hesap), hesap);
     assert.equal(KATEGORI_EDITOR[alan], liste[0]);
