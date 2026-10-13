@@ -11,6 +11,7 @@ import { dogrulandiMi, gorulenSinifi, onEleme, tekrarlariEle } from "./lib/on_el
 import { kaynakMetni, sayfaEslesiyor } from "./lib/sayfa.mjs";
 import { KotaDoldu, ModelHatasi, modelKur } from "./lib/model.mjs";
 import { haberYaz, redKodu } from "./lib/yaz.mjs";
+import { dilUygun } from "./lib/dogrula.mjs";
 import { gorselBul } from "./lib/gorsel.mjs";
 import { alanDengele, alanKalan } from "./lib/alanlar.mjs";
 import { ozelIsleriCalistir, ozelOzetMetni } from "./lib/ozel.mjs";
@@ -141,6 +142,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     if (a.alan && kalanHak[a.alan] !== undefined && kalanHak[a.alan] <= 0) continue;   // alanın son 24 saatlik kotası dolu: işaretlenmez, sonraki turda yeniden bakılır
     try {
       let haber = yuk;
+      if (yuk && !(dilUygun(yuk.tr.ozet, "tr") && dilUygun(yuk.tr.baslik + " " + yuk.tr.ozet.slice(0, 200), "tr") && dilUygun(yuk.en.ozet, "en"))) { isaretle(a, "elendi", "sakli yuk dil denetimi"); ozet.elenen++; continue; }   // eski kurallarla yazılmış saklı yük bugünkü denetimden geçmeli
       if (!haber) {
         const d = dogrulandiMi(a, hepsi, ayar.guvenilir);
         if (!d.ok) {
