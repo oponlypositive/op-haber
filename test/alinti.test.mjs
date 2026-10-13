@@ -10,7 +10,9 @@ import { apodDogrula, fazlariAyristir, yaklasanFaz, fazHaberi } from "../lib/gok
 import { ozelIsleriCalistir, siradakiAlanlar } from "../lib/ozel.mjs";
 import { yayinYuku } from "../lib/bulut.mjs";
 import { ayarOku } from "../lib/ayar.mjs";
-import { EDITORLER, ALINTI_HESAPLARI, haberEditoru, KATEGORILER, KATEGORI_EDITOR } from "../../functions/_shared/editorler.mjs";
+// Bu dosya yalnız ana depoda vardır (yayın deposunda yok): varsa tutarlılık denetlenir, yoksa o test atlanır.
+const ED = await import("../../functions/_shared/editorler.mjs").catch(() => null);
+const { EDITORLER, ALINTI_HESAPLARI, haberEditoru, KATEGORILER, KATEGORI_EDITOR } = ED || {};
 
 const WT = `[[File:Ralph Waldo Emerson by Josiah Johnson Hawes 1857.jpg|thumb|right|portre]]
 '''Ralph Waldo Emerson''' ([[25 May]] [[1803]] – [[27 April]] [[1882]]) was an American philosopher.
@@ -231,7 +233,7 @@ test("ay evreleri: USNO verisi ayrıştırılır, yalnız bugün/yarın paylaş�
 });
 
 // ---- sözleşmeler
-test("editör hesapları: 17 hesap, alan->hesap eşlemesi hat ile işlev aynı, kategori kümeleri tutarlı", () => {
+test("editör hesapları: 17 hesap, alan->hesap eşlemesi hat ile işlev aynı, kategori kümeleri tutarlı", { skip: !ED && "editorler.mjs bu depoda yok" }, () => {
   assert.equal(EDITORLER.length, 17);
   for (const [alan, liste] of Object.entries(ALINTI_HESAPLARI)) {
     assert.deepEqual(HAT_HESAPLARI[alan], liste, alan);
