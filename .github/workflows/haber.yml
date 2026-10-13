@@ -38,6 +38,7 @@ jobs:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           YEDEK_MODEL: ${{ vars.YEDEK_MODEL }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GEMINI_YEDEK_MODEL: ${{ vars.GEMINI_YEDEK_MODEL }}
           GORSELSIZ_YAYIN: ${{ vars.GORSELSIZ_YAYIN }}
           GUVENILIR_KAYNAKLAR: ${{ vars.GUVENILIR_KAYNAKLAR }}
           TUR_BASINA_EN: ${{ vars.TUR_BASINA_EN }}

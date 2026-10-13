@@ -156,6 +156,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       log(`ön sınıflandırma atlandı: ${String(e.message || e).slice(0, 60)}`);
     }
   }
+  let modelHataArdArda = 0;
   for (const a of islenecek) {
     if (ozet.haberYayin >= ayar.turBasinaEn) { ozet.durus = "tur-siniri"; break; }
     if (simdi() - baslangic > ayar.turSureSn * 1000) { ozet.durus = "sure-doldu"; break; }
@@ -208,6 +209,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
         else { isaretle(a, "bekliyor_gorsel", gb.notlar.join("|").slice(0, 100), deneme, haber); ozet.bekleyenGorsel++; }
         continue;
       }
+      modelHataArdArda = 0;
       const sonuc = await bulut.yayinla(haber, a.hash, g);
       if (sonuc.durum === "eklendi" || sonuc.durum === "var") {
         if (sonuc.durum === "eklendi") {
@@ -222,7 +224,12 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     } catch (e) {
       if (e?.cagri) ozet.modelCagri += e.cagri;
       if (e instanceof KotaDoldu) { ozet.durus = "kota"; ozet.kota++; log("model kotası/hız sınırı doldu: tur zarifçe bitiriliyor"); break; }
-      if (e instanceof ModelHatasi) { ozet.durus = "model-hatasi"; log(`model hatası: ${e.message}`); break; }
+      if (e instanceof ModelHatasi) {
+        ozet.modelHata = (ozet.modelHata || 0) + 1; modelHataArdArda++;
+        log(`model hatası (${modelHataArdArda}/3, aday atlandı): ${e.message}`);
+        if (modelHataArdArda >= 3) { ozet.durus = "model-hatasi"; break; }
+        continue;
+      }
       log(`aday atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 80)}`);
     }
   }
