@@ -486,7 +486,8 @@ test("konuIsleriCalistir: günlük toplam üst sınırı ve kota dolu kategorile
 const GUNLUK_KATEGORILER_TEST = ["felsefe", "edebiyat", "siir", "mitoloji", "gokbilim", "resim", "sohbet", "mutfak", "oyun", "tarih"];
 
 // ---------------------------------------------------------------- SQL / fonksiyon tutarlılığı
-test("gecis-015: 6 hesap, 3 yeni kategori, ilgi_kaydet listesi; haber-yukle eşlemesi", () => {
+test("gecis-015: 6 hesap, 3 yeni kategori, ilgi_kaydet listesi; haber-yukle eşlemesi", (t) => {
+  try { readFileSync(join(burasi, "..", "..", "gecis-015-konu-hesaplari.sql")); } catch { return t.skip("yayın kopyasında (op-haber deposu) üst klasör dosyaları yok"); }
   const sql = readFileSync(join(burasi, "..", "..", "gecis-015-konu-hesaplari.sql"), "utf8");
   for (const h of ["op_mutfak", "op_icecek", "op_oyun", "op_klasikler", "op_ronesans", "op_antik"]) assert.match(sql, new RegExp(`'${h}'`), h);
   for (const k of ["mutfak", "oyun", "tarih"]) assert.ok(sql.includes(`'${k}'`), k);
