@@ -166,14 +166,14 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       // görsel: (i) kurumun kendi lisanslı görseli, (ii) haberin ADI GEÇEN öznesinin Commons görseli, (iii) insansız nötr konu görseli, (iv) görselsiz yayın
       const gb = { sonuc: null, notlar: [] };
       let g = await hazirGorselHazirla(a, { fetchFn, notlar: gb.notlar });
-      const bekleyenGorselsiz = !!yuk && ayar.gorselsizYayin;        // d) bekleyen kayıt: yeniden arama/model çağrısı yok, saklı yükle görselsiz yayın
+      const bekleyenGorselsiz = false;        // d) bekleyen kayıt: yeniden arama/model çağrısı yok, saklı yükle görselsiz yayın
       let gorselKota = false;
       if (!g && !bekleyenGorselsiz) {
         try { const r = await gorselBul(haber, { model, pixabayAnahtar: ayar.pixabayAnahtar, fetchFn, bekleFn, vlUst: ayar.vlUst }); g = r.sonuc; gb.notlar.push(...r.notlar); }
         catch (e) { if (e instanceof KotaDoldu) gorselKota = true; else gb.notlar.push(`görsel hatası:${String(e.message).slice(0, 30)}`); }   // kota: yazılmış haber kaybolmasın, bu turda görselsiz çıkar, tur biter
         if (g?.ozne) ozet.ozneGorsel++;
       }
-      if (!g && !ayar.gorselsizYayin) {
+      if (!g && (!ayar.gorselsizYayin || ozet.gorselsiz >= ayar.gorselsizUst)) {
         const deneme = a.deneme + 1;
         if (deneme >= ayar.gorselDenemeUst) { isaretle(a, "elendi", "gorsel bulunamadi"); ozet.elenen++; }
         else { isaretle(a, "bekliyor_gorsel", gb.notlar.join("|").slice(0, 100), deneme, haber); ozet.bekleyenGorsel++; }

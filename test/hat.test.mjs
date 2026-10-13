@@ -122,7 +122,7 @@ test("tur: görülenler atlanır, hassas haber elenir, güvenilmeyen tek kaynak 
 test("tur: tur başına en çok N yeni haber", async () => {
   const model = { yaz: async () => ({ metin: MODEL_YANITI, engellendi: "", saglayici: "t" }) };
   const bulut = sahteBulut();
-  const o = await turCalistir({ ayar: ayar({ turBasinaEn: 2, gorselsizYayin: true }), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {},
+  const o = await turCalistir({ ayar: ayar({ turBasinaEn: 2, gorselsizYayin: true, gorselsizUst: 9 }), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {},
     tarama: { adaylar: [aday(10), aday(11), aday(12), aday(13)], hatalar: [] } });
   assert.equal(o.yayinlanan, 2);
   assert.equal(o.durus, "tur-siniri");
@@ -134,4 +134,14 @@ test("kuru mod: model ve yayın çağrılmaz", async () => {
   const o = await turCalistir({ ayar: ayar({ kuru: true }), kaynaklar: {}, bulut, model, fetchFn, simdi: () => SIMDI, log: () => {}, tarama: { adaylar: [aday(20)], hatalar: [] } });
   assert.equal(o.durus, "kuru");
   assert.equal(o.ornekBaslik.length, 1);
+});
+
+test("tur: görselsiz yayın tur başına gorselsizUst ile sınırlı; fazlası bekliyor_gorsel", async () => {
+  const model = { yaz: async () => ({ metin: MODEL_YANITI, engellendi: "", saglayici: "t" }) };
+  const bulut = sahteBulut();
+  const o = await turCalistir({ ayar: ayar({ turBasinaEn: 3, gorselsizYayin: true, gorselsizUst: 1 }), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {},
+    tarama: { adaylar: [aday(10), aday(11), aday(12)], hatalar: [] } });
+  assert.equal(o.gorselsiz, 1);
+  assert.equal(o.yayinlanan, 1);
+  assert.equal(o.bekleyenGorsel, 2);
 });

@@ -159,7 +159,7 @@ test("tur: özne görseli bulunursa haber o görselle yayınlanır (gorselsiz de
   assert.equal(bulut.k.yayinlar[0].g.gorsel.sahibi, "Ayşe");
 });
 
-test("tur: bekliyor_gorsel kayıtları saklı yükle, model ve görsel araması OLMADAN görselsiz yayınlanır; öncelik alır", async () => {
+test("tur: bekliyor_gorsel kayıtları saklı yükle, model çağrısı OLMADAN yayınlanır (görsel yine aranır); öncelik alır", async () => {
   const a1 = aday(3), a2 = aday(4);
   const yukHaber = { id: "hbekleyen000001", tr: { baslik: "Başlık", ozet: TR }, en: { baslik: "Title", ozet: EN }, kategori: "doga", yer: "Dünya", kaynak: "goodnewsnetwork.org", link: a1.link, zaman: a1.zaman, model: "t", emoji: "🌳" };
   const onceki = new Map([[baglantiOzeti(a1.link), { ozet: baglantiOzeti(a1.link), durum: "bekliyor_gorsel", deneme: 1, yuk: yukHaber }]]);
@@ -171,7 +171,6 @@ test("tur: bekliyor_gorsel kayıtları saklı yükle, model ve görsel araması 
   assert.equal(bulut.k.yayinlar[0].h.id, "hbekleyen000001");        // bekleyen önce işlendi (a2 daha yeni olsa da)
   assert.equal(bulut.k.yayinlar[0].g, null);
   assert.equal(modelCagri, 0);
-  assert.equal(istek, 0, "kaynak sayfası/görsel araması yok");
   assert.equal(bulut.k.isaretler.at(-1).durum, "yayinlandi");
 });
 
@@ -226,7 +225,7 @@ test("tur: model çağrı tavanı GERÇEK çağrıyı sayar (çağrısız retler
   const bulut = sahteBulut();
   let cagri = 0;
   const model = { yaz: async () => { cagri++; return { metin: yanit(), engellendi: "", saglayici: "t" }; } };
-  const o = await tur(ayar({ modelCagriUst: 6 }), bulut, model, adaylar);
+  const o = await tur(ayar({ modelCagriUst: 6, gorselsizUst: 9 }), bulut, model, adaylar);
   assert.equal(o.yayinlanan, 4); assert.equal(o.durus, "tur-siniri");
   assert.equal(o.modelCagri, cagri);
   assert.ok(o.modelCagri <= 6);
