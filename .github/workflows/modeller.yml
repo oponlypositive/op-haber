@@ -1,0 +1,20 @@
+name: modeller
+
+# Elle çalıştırılır: Gemini anahtarının erişebildiği model ADLARINI listeler (gizli değer yazdırılmaz). Yedek model seçimi için.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  liste:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Model adları
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          curl -s -m 30 -H "x-goog-api-key: $GEMINI_API_KEY" "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200" \
+            | grep -o '"name": *"models/[^"]*"' | sed 's/"name": *//' | sort | head -80
