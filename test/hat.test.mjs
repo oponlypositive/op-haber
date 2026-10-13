@@ -145,3 +145,13 @@ test("tur: görselsiz yayın tur başına gorselsizUst ile sınırlı; fazlası 
   assert.equal(o.yayinlanan, 1);
   assert.equal(o.bekleyenGorsel, 2);
 });
+
+test("bulut.isaretle: 100'den fazla kayıt 100'lük parçalarla gönderilir", async () => {
+  const { bulutKur } = await import("../lib/bulut.mjs");
+  const boylar = [];
+  const fetchFn = async (_u, o) => { const g = JSON.parse(o.body); boylar.push(g.kayitlar.length); return new Response(JSON.stringify({ yazildi: g.kayitlar.length }), { status: 200, headers: { "content-type": "application/json" } }); };
+  const b = bulutKur({ fnUrl: "https://ornek.invalid/fn", anahtar: "k", fetchFn });
+  const r = await b.isaretle(Array.from({ length: 230 }, (_, i) => ({ ozet: String(i).padStart(64, "0"), durum: "elendi" })));
+  assert.deepEqual(boylar, [100, 100, 30]);
+  assert.equal(r.yazildi, 230);
+});
