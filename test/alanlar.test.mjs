@@ -56,7 +56,7 @@ test("alan dengesi: aynı alandan art arda en çok 2; kota ayrıştırma ve kala
   assert.deepEqual(d, ["spor", "spor", "sanat", "spor", "spor", "bilim"]);
   assert.deepEqual(alanDengele(l.slice(0, 3), 2).map((x) => x.baslik), ["0", "1", "2"]);   // başka alan yoksa devam eder
   const k = kotaAyristir("spor:2, sanat:9, yok:3, bilim:x");
-  assert.equal(k.spor, 2); assert.equal(k.sanat, 9); assert.equal(k.bilim, 18); assert.ok(!("yok" in k));
+  assert.equal(k.spor, 2); assert.equal(k.sanat, 9); assert.equal(k.bilim, 22); assert.ok(!("yok" in k));   // 2026-10-13: varsayılan bilim kotası 18 -> 22
   const durum = new Map([["spor", { son24: 3 }], ["sanat", { son24: 1 }]]);
   const kalan = alanKalan(k, durum);
   assert.equal(kalan.spor, 0); assert.equal(kalan.sanat, 8); assert.equal(kalan.gokbilim, 5);

@@ -1,5 +1,5 @@
 {
-  "_not": "Yeni kaynak yalnız doğrulanmış besleme adresiyle eklenir (2026-10-13 oturumunda her adres tek istekle açılıp geçerli RSS ve güncel olduğu görüldü). Google News RSS kullanılmaz. alan: spor|sanat|bilim|teknoloji|gokbilim = nötr-olumlu ölçüt (lib/alanlar.mjs); alan yoksa 'iyi haber' sitesi. kosul: dogrulandi = kullanım koşulunda yeniden yazım/bağlantı açıkça serbest (lisans metni okundu); dogrulanamadi = koşul sayfası bulunamadı/okunamadı, açık yasak da görülmedi. hazir_gorsel: kurumun kendi lisanslı görseli beslemeden alınır (atıf zorunlu). tazelik_saat: seyrek yayın yapan kurumlar için özel tazelik süresi.",
+  "_not": "Yeni kaynak yalnız doğrulanmış besleme adresiyle eklenir (2026-10-13 oturumunda her adres tek istekle açılıp geçerli RSS ve güncel olduğu görüldü). gnews: Google News ARAMA RSS'leri yalnız KEŞİF kanalıdır (sahip 2026-10-13); sonuçta özet yoktur, asıl yayıncı <source> alanından alınır, adres lib/gnews.mjs ile asıl yayıncıya çözülür, sayfa robots.txt'e uyularak okunur, AJANS/toplayıcı sonuçları atılır, asıl yayıncı gnews_guvenilir listesinde değilse ikinci kaynak şartı aynen işler. gnews.alan = sorgunun alan ölçütü (spor/sanat/bilim/teknoloji). tz_yerel: yerel saati 'GMT' yazan kaynak. alan: spor|sanat|bilim|teknoloji|gokbilim = nötr-olumlu ölçüt (lib/alanlar.mjs); alan yoksa 'iyi haber' sitesi. kosul: dogrulandi = kullanım koşulunda yeniden yazım/bağlantı açıkça serbest (lisans metni okundu); dogrulanamadi = koşul sayfası bulunamadı/okunamadı, açık yasak da görülmedi. hazir_gorsel: kurumun kendi lisanslı görseli beslemeden alınır (atıf zorunlu). tazelik_saat: seyrek yayın yapan kurumlar için özel tazelik süresi.",
   "rss": [
     {
       "ad": "goodnewsnetwork.org",
@@ -163,7 +163,8 @@
       "alan": "spor",
       "en": 20,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir"
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir",
+      "tz_yerel": true
     },
     {
       "ad": "haberturk.com (Kültür-Sanat)",
@@ -735,7 +736,497 @@
       "pasif": true,
       "kosul": "dogrulanamadi",
       "kosul_not": "MIT News içeriği CC BY-NC-ND (bilinir, sayfa doğrulanmadı): ND uyarlamayı, NC ticari kullanımı kısıtlar. SAHİP/HUKUK ONAYI GEREKİR"
+    },
+    {
+      "ad": "webtekno.com",
+      "url": "https://www.webtekno.com/rss.xml",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "teknoloji",
+      "tazelik_saat": 24,
+      "en": 15,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "shiftdelete.net",
+      "url": "https://shiftdelete.net/feed",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "teknoloji",
+      "tazelik_saat": 24,
+      "en": 15,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "donanimhaber.com",
+      "url": "https://www.donanimhaber.com/rss/tum/",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "teknoloji",
+      "tazelik_saat": 24,
+      "en": 15,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "arkeofili.com",
+      "url": "https://www.arkeofili.com/feed/",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "sanat",
+      "tazelik_saat": 48,
+      "en": 10,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "kultur.istanbul",
+      "url": "https://kultur.istanbul/feed/",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "sanat",
+      "tazelik_saat": 48,
+      "en": 9,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "haberturk.com (Sağlık)",
+      "url": "https://www.haberturk.com/rss/saglik.xml",
+      "dil": "tr",
+      "guvenilir": true,
+      "tazelik_saat": 48,
+      "en": 15,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "haberturk.com (Yaşam)",
+      "url": "https://www.haberturk.com/rss/yasam.xml",
+      "dil": "tr",
+      "guvenilir": true,
+      "tazelik_saat": 36,
+      "en": 15,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "cnnturk.com (Sağlık)",
+      "url": "https://www.cnnturk.com/feed/rss/saglik/news",
+      "dil": "tr",
+      "guvenilir": true,
+      "tazelik_saat": 48,
+      "en": 15,
+      "tz_yerel": true,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "cnnturk.com (Kültür-Sanat)",
+      "url": "https://www.cnnturk.com/feed/rss/kultur-sanat/news",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "sanat",
+      "tazelik_saat": 48,
+      "en": 15,
+      "tz_yerel": true,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "hurriyet.com.tr (Teknoloji)",
+      "url": "https://www.hurriyet.com.tr/rss/teknoloji",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "teknoloji",
+      "tazelik_saat": 36,
+      "en": 15,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "hurriyet.com.tr (Eğitim)",
+      "url": "https://www.hurriyet.com.tr/rss/egitim",
+      "dil": "tr",
+      "guvenilir": true,
+      "tazelik_saat": 48,
+      "en": 15,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "sabah.com.tr (Sağlık)",
+      "url": "https://www.sabah.com.tr/rss/saglik.xml",
+      "dil": "tr",
+      "guvenilir": true,
+      "tazelik_saat": 72,
+      "en": 10,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "fotomac.com.tr",
+      "url": "https://www.fotomac.com.tr/rss/anasayfa.xml",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "spor",
+      "tazelik_saat": 24,
+      "en": 25,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "ntvspor.net",
+      "url": "https://www.ntvspor.net/rss/anasayfa",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "spor",
+      "tazelik_saat": 24,
+      "en": 25,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "aspor.com.tr",
+      "url": "https://www.aspor.com.tr/rss/anasayfa.xml",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "spor",
+      "tazelik_saat": 24,
+      "en": 25,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "taf.org.tr (Türkiye Atletizm Federasyonu)",
+      "url": "https://www.taf.org.tr/feed",
+      "dil": "tr",
+      "guvenilir": true,
+      "alan": "spor",
+      "tazelik_saat": 36,
+      "en": 10,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "dogadernegi.org",
+      "url": "https://www.dogadernegi.org/feed/",
+      "dil": "tr",
+      "guvenilir": true,
+      "tazelik_saat": 96,
+      "en": 10,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "dailysabah.com (Spor)",
+      "url": "https://www.dailysabah.com/rssFeed/sports",
+      "dil": "en",
+      "guvenilir": true,
+      "alan": "spor",
+      "tazelik_saat": 24,
+      "en": 20,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+    },
+    {
+      "ad": "dailysabah.com (Yaşam)",
+      "url": "https://www.dailysabah.com/rssFeed/life",
+      "dil": "en",
+      "guvenilir": true,
+      "alan": "sanat",
+      "tazelik_saat": 48,
+      "en": 15,
+      "kosul": "dogrulanamadi",
+      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
     }
+  ],
+  "gnews": [
+    {
+      "sorgu": "altın madalya kazandı",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "dünya şampiyonu oldu",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "Avrupa şampiyonu oldu",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "rekor kırdı milli sporcu",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "birinci oldu sporcu",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "filenin sultanları",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "12 dev adam",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "A Milli Takım galibiyet",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "milli sporcu madalya",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "milli yüzücü",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "milli atlet derece",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "olimpiyat madalyası milli",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "Türkiye şampiyonası genç sporcu birinci",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "paralimpik sporcu madalya",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "güreşçi milli madalya",
+      "alan": "spor",
+      "en": 8
+    },
+    {
+      "sorgu": "Türk bilim insanı",
+      "alan": "bilim",
+      "en": 8
+    },
+    {
+      "sorgu": "bilim insanları keşfetti Türkiye",
+      "alan": "bilim",
+      "en": 8
+    },
+    {
+      "sorgu": "TÜBİTAK destekli proje",
+      "alan": "bilim",
+      "en": 8
+    },
+    {
+      "sorgu": "TEKNOFEST",
+      "alan": "bilim",
+      "en": 8
+    },
+    {
+      "sorgu": "öğrenciler geliştirdi",
+      "alan": "bilim",
+      "en": 8
+    },
+    {
+      "sorgu": "öğrenciler ödül aldı",
+      "alan": "bilim",
+      "en": 8
+    },
+    {
+      "sorgu": "yeni tür keşfedildi",
+      "alan": "bilim",
+      "en": 8
+    },
+    {
+      "sorgu": "üniversite araştırması ödül aldı",
+      "alan": "bilim",
+      "en": 8
+    },
+    {
+      "sorgu": "üniversite öğrencileri geliştirdi",
+      "alan": "bilim",
+      "en": 8
+    },
+    {
+      "sorgu": "yerli üretim geliştirildi",
+      "alan": "teknoloji",
+      "en": 8
+    },
+    {
+      "sorgu": "yerli yazılım Türk mühendis",
+      "alan": "teknoloji",
+      "en": 8
+    },
+    {
+      "sorgu": "yapay zeka Türk girişim ödül",
+      "alan": "teknoloji",
+      "en": 8
+    },
+    {
+      "sorgu": "yerli robot geliştirildi",
+      "alan": "teknoloji",
+      "en": 8
+    },
+    {
+      "sorgu": "sergi açıldı",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "açılışı yapıldı müze",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "festival başlıyor",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "restorasyon tamamlandı",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "film ödül aldı",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "kitap fuarı",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "konser",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "UNESCO Türkiye",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "kazı çalışmalarında bulundu",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "tiyatro ödül",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "müze ziyaretçi sayısı rekor",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "ressam sergisi",
+      "alan": "sanat",
+      "en": 8
+    },
+    {
+      "sorgu": "yeniden doğaya salındı",
+      "en": 8
+    },
+    {
+      "sorgu": "yavru dünyaya geldi",
+      "en": 8
+    },
+    {
+      "sorgu": "nesli tehlike altında görüntülendi",
+      "en": 8
+    },
+    {
+      "sorgu": "itfaiye ekipleri kurtardı kedi yavru",
+      "en": 8
+    },
+    {
+      "sorgu": "gönüllüler",
+      "en": 8
+    },
+    {
+      "sorgu": "bağış kampanyası tamamlandı",
+      "en": 8
+    },
+    {
+      "sorgu": "burs",
+      "en": 8
+    },
+    {
+      "sorgu": "fidan dikildi",
+      "en": 8
+    },
+    {
+      "sorgu": "ödül aldı",
+      "en": 8
+    },
+    {
+      "sorgu": "rekor kırdı",
+      "en": 8
+    },
+    {
+      "sorgu": "birinci oldu",
+      "en": 8
+    },
+    {
+      "sorgu": "dünya birincisi",
+      "en": 8
+    },
+    {
+      "sorgu": "öğretmen ödül aldı",
+      "en": 8
+    },
+    {
+      "sorgu": "fotoğraf yarışması birincisi",
+      "en": 8
+    }
+  ],
+  "gnews_guvenilir": [
+    "haberturk.com",
+    "cnnturk.com",
+    "sabah.com.tr",
+    "hurriyet.com.tr",
+    "milliyet.com.tr",
+    "ntv.com.tr",
+    "ntvspor.net",
+    "trthaber.com",
+    "fotomac.com.tr",
+    "aspor.com.tr",
+    "fanatik.com.tr",
+    "sporx.com",
+    "webtekno.com",
+    "shiftdelete.net",
+    "donanimhaber.com",
+    "arkeofili.com",
+    "tubitak.gov.tr",
+    "kultur.istanbul",
+    "dogadernegi.org",
+    "dailysabah.com",
+    "hurriyetdailynews.com",
+    "tff.org",
+    "tbf.org.tr",
+    "tvf.org.tr",
+    "taf.org.tr"
   ],
   "bing": [
     {
@@ -807,7 +1298,26 @@
     "sabah.com.tr (Basketbol/Voleybol), hurriyet.com.tr (Basketbol/Kitap)": "besleme adresi 404 ya da öğesiz",
     "skysports.com": "besleme öğelerinde tarih yok",
     "insidegymnastics.com, skiracing.com": "düşük hacim (haftada 3-9 öğe) ve çok kısa özet; eklenmedi",
-    "stanford news": "HTTP 403"
+    "stanford news": "HTTP 403",
+    "evrimagaci.org": "robots.txt 'otomatik yollarla içerik toplamayı yazılı izin olmadan yasaklıyor' (2026-10-13 okundu); sayfa da 403: ALINMAZ",
+    "popsci.com.tr": "RSS adresleri (/feed, /feed/, /rss/) öğesiz döndü (2026-10-13)",
+    "bilimfili.com": "HTTP 404; arkeofili.com eklendi",
+    "milliyet.com.tr (Sanat/Spor rssnew)": "HTTP 404 (2026-10-13)",
+    "sanatkaravani.com": "besleme 2022'den beri donmuş (en yeni öğe 34.766 saat)",
+    "artfulliving.com.tr, oggito.com": "HTTP 404 (2026-10-13 yeniden denendi)",
+    "ntv.com.tr (spor.rss)": "HTTP 301 yönlendirme; ntvspor.net/rss/anasayfa eklendi",
+    "trtspor.com.tr": "HTTP 403; trthaber.com/spor_articles.rss çalışıyor ama 24 saatte 1 öğe (eklenmedi)",
+    "fanatik.com.tr (rss/anasayfa.xml)": "HTTP 404 (alternatif adres bulunamadı)",
+    "tema.org.tr, wwf.org.tr": "HTTP 404 / 403 (2026-10-13)",
+    "metu.edu.tr (ODTÜ) rss.xml": "besleme 1037 saattir donmuş",
+    "sabanciuniv.edu rss.xml": "yalnız iş ilanı akışı (325 saat eski)",
+    "bogazici.edu.tr, ku.edu.tr, bilkent.edu.tr": "besleme adresi bulunamadı / bağlantı kurulamadı; üniversite haberleri gnews sorgusuyla alınır",
+    "itu.edu.tr, istanbulmodern.org, peramuzesi.org.tr": "HTTP 404 (RSS yok)",
+    "iksv.org/rss, hurriyetdailynews.com/rss, cnnturk.com bilim-teknoloji": "öğesiz besleme (2026-10-13)",
+    "dailysabah.com (Teknoloji)": "teknoloji beslemesinde çatışma/siyaset haberleri geliyor; alınmadı",
+    "sabah.com.tr (Yaşam, Teknoloji, Eğitim)": "yaşam akışı suç/kaza ağırlıklı; teknoloji tek öğe; eğitim 83 saat eski",
+    "aa.com.tr, dha.com.tr, iha.com.tr, haberler.com": "ajans/toplayıcı: Google News sonuçlarında da atılır (AJANS_KALIBI)",
+    "sabancimuzesi.com (SSM)": "besleme adresleri (/feed, /tr/rss) bağlantı kurulamadı (2026-10-13); İKSV/İstanbul Modern/Pera de RSS sunmuyor (boş/404)"
   },
   "tr_adaylar": []
 }

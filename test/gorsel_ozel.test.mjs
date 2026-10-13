@@ -247,7 +247,7 @@ test("tur özeti: sırası gelmeyen özel alanların nedeni açık yazılır (es
   const gece = Date.parse("2026-10-13T22:30:00Z");
   const o = await turCalistir({ ayar: ayar({ ozelAcik: true }), kaynaklar: {}, bulut, model: { yaz: async () => { throw new Error("yok"); } }, fetchFn: f404, bekleFn: async () => {}, simdi: () => gece, log: () => {}, tarama: { adaylar: [], hatalar: [] } });
   const s = ozetSatiri(o);
-  assert.match(s, / ozel=felsefe\+edebiyat\+siir\+mitoloji\+gokbilim:saat-disi/);
+  assert.match(s, / ozel=felsefe\+edebiyat\+siir\+mitoloji\+gokbilim\+resim\+sohbet:saat-disi/);
   assert.doesNotMatch(s, /ozel=-/);
   const dolu = { ...sahteBulut(), kota: async () => new Map(["felsefe", "edebiyat", "siir"].map((k) => [k, { son24: 5, son7g: 5, sonZaman: "2026-10-13T07:00:00Z" }])) };
   const o2 = await turCalistir({ ayar: ayar({ ozelAcik: true, ozelCagriUst: 0 }), kaynaklar: {}, bulut: dolu, model: { yaz: async () => { throw new Error("yok"); } }, fetchFn: f404, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama: { adaylar: [], hatalar: [] } });
@@ -287,7 +287,7 @@ test("gökbilim: APOD DEMO_KEY ile 500 verirse kurumun hazır lisanslı görseli
 
 test("tur: özel işte yayınlanan yedek gökbilim haberi haber döngüsünde ikinci kez yazılmaz; özel işler haberden ÖNCE ve ayrı bütçeyle", async () => {
   const sira = [];
-  const bulut = { ...sahteBulut(), kota: async () => new Map(["felsefe", "edebiyat", "siir", "mitoloji"].map((k) => [k, { son24: 9, son7g: 9, sonZaman: "2026-10-13T11:00:00Z" }])) };
+  const bulut = { ...sahteBulut(), kota: async () => new Map(["felsefe", "edebiyat", "siir", "mitoloji", "resim", "sohbet"].map((k) => [k, { son24: 9, son7g: 9, sonZaman: "2026-10-13T11:00:00Z" }])) };
   bulut.yayinla = async (h, ozet, g) => { sira.push(h.kategori); bulut.k.yayinlar.push({ h, ozet, g }); return { durum: "eklendi" }; };
   const f = async (url) => {
     const u = String(url);
@@ -303,7 +303,7 @@ test("tur: özel işte yayınlanan yedek gökbilim haberi haber döngüsünde ik
   assert.equal(bulut.k.yayinlar.length, 2);                                        // gökbilim + iyi haber
   assert.equal(o.modelCagri, 1);                                                   // haber bütçesi yalnız haberin çağrısı; özel iş ayrı (cagri 1 + 1)
   assert.equal(cagri, 2);
-  assert.match(ozetSatiri(o), /ozel=gokbilim:yayin,felsefe\+edebiyat\+siir\+mitoloji:kota-dolu/);
+  assert.match(ozetSatiri(o), /ozel=gokbilim:yayin,felsefe\+edebiyat\+siir\+mitoloji\+resim\+sohbet:kota-dolu/);
 });
 
 test("özel işler: görseli çıkmayan alan sıradakileri tıkamaz; çağrı bütçesi ozelCagriUst'ı aşmaz", async () => {

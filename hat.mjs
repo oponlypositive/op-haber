@@ -8,6 +8,8 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { ayarOku } from "./lib/ayar.mjs";
 import { baglantiOzeti, kaynaklariTara } from "./lib/rss.mjs";
 import { dogrulandiMi, gorulenSinifi, onEleme, tekrarlariEle } from "./lib/on_eleme.mjs";
+import { gnewsBaslikSuzgeci, gnewsCoz, gnewsSayfaSuzgeci } from "./lib/gnews.mjs";
+import { kotaEngeli, yerliMi, yerliOnce, yerliRezervi } from "./lib/tr.mjs";
 import { kaynakMetni, sayfaEslesiyor } from "./lib/sayfa.mjs";
 import { KotaDoldu, ModelHatasi, modelKur } from "./lib/model.mjs";
 import { haberYaz, redKodu } from "./lib/yaz.mjs";
@@ -27,7 +29,7 @@ const dur = (ms) => new Promise((r) => setTimeout(r, ms));
  * Ön sıralama puanı (model çağrısı HARCAMADAN): çağrılar "uygun değil" çıkacak haberlerde tükenmesin diye.
  * Saklı yüklü bekleyen kayıt (modelsiz yayın) > güvenilir iyi-haber kaynağı > alan kaynağı > Bing; hazır görsel, tazelik ve yeterli özet artırır.
  */
-export function onPuan(a, { simdi = Date.now(), tazelikSaat = 24 } = {}) {
+export function onPuan(a, { simdi = Date.now(), tazelikSaat = 24, trAgirlik = 0 } = {}) {
   let p = 0;
   if (a.kayit?.yuk && a.kayit.durum === "bekliyor_gorsel") p += 100;
   if (a.kaynakGuvenilir && !a.alan) p += 30;       // iyi haber siteleri: model "uygun" deme olasılığı yüksek
@@ -36,7 +38,8 @@ export function onPuan(a, { simdi = Date.now(), tazelikSaat = 24 } = {}) {
   if (a.hazirGorsel?.url) p += 8;                  // kurumun lisanslı görseli hazır: görsel aramaya gerek yok
   const yas = simdi - Date.parse(a.zaman), pencere = (a.tazelikSaat || tazelikSaat) * 3600_000;
   if (Number.isFinite(yas)) p += Math.max(0, Math.round(20 * (1 - yas / pencere)));
-  p += (a.ozet || "").length >= 250 ? 10 : -15;   // kısa özet = "kaynak metni yetersiz" riski
+  if (!a.gnews) p += (a.ozet || "").length >= 250 ? 10 : -15;   // kısa özet = "kaynak metni yetersiz" riski (Google News sonucunda özet yoktur; metin asıl yayıncının sayfasından okunur)
+  if (trAgirlik > 0 && yerliMi(a)) p += 12;        // Türkiye ağırlığı: TR kaynaklı / Türkiye konulu adaylar öne geçer
   return p;
 }
 
@@ -56,7 +59,7 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 /** Bir tur. Bağımlılıklar parametreyle gelir (testte taklit edilir). -> özet nesnesi */
 export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama }) {
   const baslangic = simdi();
-  const ozet = { aday: 0, yeniAday: 0, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
+  const ozet = { aday: 0, yeniAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
     red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, alanYayin: {},
     onSinif: { durum: "kapali", sorulan: 0, gecen: 0, red: {}, cagri: 0 }, sonOkuma: { durum: "kapali", sorulan: 0, duzeltilen: 0, red: {} } };
   const sayac = { vl: 0 };
@@ -67,12 +70,14 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   const isaretle = (a, durum, neden, deneme = 0, yuk = null) => isaretler.push({ ozet: a.hash, durum, neden: String(neden).slice(0, 120), deneme, ...(yuk ? { yuk } : {}) });
 
   // (a) tara
-  const { adaylar: ham, hatalar } = tarama || await kaynaklariTara(kaynaklar, { bingAcik: ayar.bingAcik, fetchFn });
+  const { adaylar: ham, hatalar } = tarama || await kaynaklariTara(kaynaklar, { bingAcik: ayar.bingAcik, fetchFn, gnewsAcik: ayar.gnewsAcik !== false, gnewsGrup: ayar.gnewsGrup || 1, simdi: simdi() });
   if (hatalar.length) log(`kaynak hataları (${hatalar.length}): ${hatalar.join("; ")}`);
   const benzersiz = new Map();
   for (const a of ham) { const o = baglantiOzeti(a.link); if (!benzersiz.has(o)) benzersiz.set(o, { ...a, hash: o }); }
   const hepsi = [...benzersiz.values()];
   ozet.aday = hepsi.length;
+  ozet.yerli.aday = hepsi.filter(yerliMi).length;
+  ozet.gnews.aday = hepsi.filter((a) => a.gnews).length;
 
   // bulut kota kaydı (alan günlük kotası + alıntı/gökbilim sırası); bulut kota bilmiyorsa (eski sözleşme/test) kota uygulanmaz
   let kotaDurum = new Map();
@@ -92,7 +97,8 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   // (c) ön eleme (bekleyenler zaten geçmişti; tazelik yine de denetlenir)
   const gecen = [];
   for (const a of aktif) {
-    const e = onEleme(a, { simdi: simdi(), tazelikSaat: ayar.tazelikSaat });
+    const gb = a.gnews ? gnewsBaslikSuzgeci(a) : "";
+    const e = gb ? { ok: false, neden: `gnews:${gb}` } : onEleme(a, { simdi: simdi(), tazelikSaat: ayar.tazelikSaat });
     if (e.ok) gecen.push(a);
     else {
       ozet.elenen++;
@@ -102,10 +108,12 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     }
   }
   // ön puana göre sırala (eşitlikte en yeni önce), tekrarları ele, alanlar arasında dengele (aynı alandan art arda en çok ayar.alanArdaArdaUst)
-  const puanOpsiyon = { simdi: simdi(), tazelikSaat: ayar.tazelikSaat };
+  const puanOpsiyon = { simdi: simdi(), tazelikSaat: ayar.tazelikSaat, trAgirlik: ayar.trAgirlik ?? 0 };
   for (const a of gecen) a.onPuan = onPuan(a, puanOpsiyon);
-  const sirali = alanDengele(tekrarlariEle(gecen.sort((x, y) => (y.onPuan - x.onPuan) || (Date.parse(y.zaman) - Date.parse(x.zaman)))), ayar.alanArdaArdaUst || 2);
+  // Türkiye ağırlığı: alanlar dengelendikten sonra yerli adaylar ilk n öğenin en az `trAgirlik` oranında olacak şekilde öne alınır (her grubun kendi sırası korunur)
+  const sirali = yerliOnce(alanDengele(tekrarlariEle(gecen.sort((x, y) => (y.onPuan - x.onPuan) || (Date.parse(y.zaman) - Date.parse(x.zaman)))), ayar.alanArdaArdaUst || 2), ayar.trAgirlik ?? 0);
   ozet.onElemeGecen = sirali.length;
+  ozet.yerli.onEleme = sirali.filter(yerliMi).length;
   if (ayar.kuru) ozet.ornekBaslik = sirali.slice(0, 3).map((a) => `[${a.kaynak}] ${a.baslik}`);
 
   const bitir = async () => { if (!ayar.kuru) await bulut.isaretle(isaretler.splice(0)).catch((e) => log(`işaretleme hatası: ${e.message}`)); };
@@ -138,7 +146,8 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   if (ozet.durus === "kota") { await bitir(); ozet.vlCagri = sayac.vl; ozet.sureSn = Math.round((simdi() - baslangic) / 1000); return ozet; }
 
   // (d-h) işle: alan kotası dolu olanlar baştan çıkarılır (çağrı/sıra harcamasın), özel işte kullanılan haber atlanır
-  let islenecek = sirali.filter((a) => !ozelKullanilan.has(a.hash) && !(a.alan && kalanHak[a.alan] !== undefined && kalanHak[a.alan] <= 0));
+  const rezerv = yerliRezervi(ayar.alanKotalari || {}, ayar.trRezerv ?? 0);       // alan kotasının bir kısmı yerli adaylara ayrılır: yabancı kaynaklar kotayı doldurup yerli haberi boğmasın
+  let islenecek = sirali.filter((a) => !ozelKullanilan.has(a.hash) && !(a.alan && kalanHak[a.alan] !== undefined && kalanHak[a.alan] <= 0) && !kotaEngeli(a, kalanHak, rezerv));
   const robots = new Map();
 
   // Zamansız adaylar (söyleşi/portre/kişisel gelişim; tazelik 7-14 gün) ön sınıf slotlarını doldurmasın: tur başına en çok `zamansizSinifUst` tanesi sorulur, kalanı sonraki tura kalır (işaretlenmez).
@@ -162,7 +171,8 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   }
   let modelHataArdArda = 0;
   const hazirlar = [];                                            // yazılmış + görseli belli haberler: tur sonunda son okumadan geçip yayınlanır
-  let gorselsizKuyruk = 0, zamansizKuyruk = 0;
+  let gorselsizKuyruk = 0, zamansizKuyruk = 0, hazirYerli = 0, hazirDiger = 0, gnewsCozSay = 0, gnewsDur = false;
+  let yerliKalan = islenecek.filter(yerliMi).length;
   const sonOkumaRezerv = ayar.sonOkuma !== false ? 1 : 0;         // son okuma çağrısı MODEL_CAGRI_UST bütçesinden 1 sayılır: döngü bütçeyi buna göre ayırır
   const yazimUst = Math.max(1, ayar.modelCagriUst - sonOkumaRezerv);
   for (const a of islenecek) {
@@ -170,6 +180,10 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     if (simdi() - baslangic > ayar.turSureSn * 1000) { ozet.durus = "sure-doldu"; break; }
     const yuk = a.kayit?.yuk && a.kayit.durum === "bekliyor_gorsel" && a.kayit.yuk.tr?.baslik && a.kayit.yuk.en?.baslik && a.kayit.yuk.id ? a.kayit.yuk : null;
     if (!yuk && ozet.modelCagri >= yazimUst) { ozet.durus = "cagri-siniri"; break; }
+    const yerli = yerliMi(a);
+    if (yerli) yerliKalan--;
+    if (!yerli && ayar.trAgirlik > 0 && !a.kayit?.yuk && hazirDiger >= hazirYerli && yerliKalan > 0) continue;   // Türkiye ağırlığı: yerli adaylar sürerken yabancı haber, yerli sayısını geçemez (işaretlenmez; sonraki tura kalır)
+    if (kotaEngeli(a, kalanHak, rezerv)) continue;                                        // yabancı aday, alanın yerli rezervine girmez
     if (a.zamansiz && zamansizKuyruk >= (ayar.zamansizTurUst ?? 1)) continue;            // tur başına en çok 1 zamansız haber
     if (a.alan && kalanHak[a.alan] !== undefined && kalanHak[a.alan] <= 0) continue;   // alanın son 24 saatlik kotası dolu: işaretlenmez, sonraki turda yeniden bakılır
     try {
@@ -182,9 +196,34 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
           else { isaretle(a, "bekliyor_kaynak", d.neden, a.deneme + 1); ozet.bekleyenKaynak++; }
           continue;
         }
-        const s = await kaynakMetni(a.link, { fetchFn, robotsOnbellek: robots });
+        let hedef = a.link;
+        if (a.gnews) {
+          // Google News sonucu: asıl yayıncı adresine çöz (turda en çok gnewsCozUst); çözülemeyen aday atlanır, Google adresi hiçbir zaman kaynak olarak yayınlanmaz
+          if (gnewsDur || gnewsCozSay >= (ayar.gnewsCozUst ?? 10)) continue;
+          gnewsCozSay++;
+          const r = await gnewsCoz(a.gnewsId, { fetchFn, beklenenSite: a.kaynakSite });
+          await bekleFn(500);
+          if (r.durum !== "ok") {
+            ozet.gnews.cozHata++;
+            if (/^429|^ağ|zaman|aborted|fetch|HTTP 5/i.test(r.neden)) { gnewsDur = /^429/.test(r.neden); continue; }   // geçici: işaretleme, bu turda yeniden deneme
+            if (a.deneme + 1 >= 3) { isaretle(a, "elendi", `gnews-coz:${r.neden}`); ozet.elenen++; ozet.gnews.atlanan++; }
+            else isaretle(a, "bekliyor_kaynak", `gnews-coz:${r.neden}`, a.deneme + 1);
+            continue;
+          }
+          ozet.gnews.cozulen++;
+          hedef = r.url;
+          const oncekiler = await bulut.bilinenler([baglantiOzeti(hedef)]);
+          if (gorulenSinifi(oncekiler.get(baglantiOzeti(hedef))) === "atla") { isaretle(a, "elendi", "gnews:zaten-islendi"); ozet.elenen++; ozet.gnews.atlanan++; continue; }   // aynı haber yayıncının kendi beslemesinden zaten alınmış
+          a.link = hedef; a.cozumHash = baglantiOzeti(hedef);
+        }
+        const s = await kaynakMetni(hedef, { fetchFn, robotsOnbellek: robots });
         if (s.durum === "robots") { isaretle(a, "elendi", "robots"); ozet.elenen++; continue; }
         const sayfa = s.metin && sayfaEslesiyor(s.metin, a.baslik) ? s.metin : "";
+        if (a.gnews) {                                       // Google sonucunda özet yok: gerçek sayfa metni ŞART ve sayfa içeriği de konu/hassasiyet denetiminden geçer
+          const gn = sayfa ? gnewsSayfaSuzgeci(sayfa) : (s.durum.startsWith("hata") && a.deneme + 1 < 3 ? "hata-yeniden" : "sayfa-eslesmiyor");
+          if (gn === "hata-yeniden") { isaretle(a, "bekliyor_kaynak", "gnews:sayfa-hata", a.deneme + 1); continue; }
+          if (gn) { isaretle(a, "elendi", `gnews:${gn}`.slice(0, 60)); ozet.elenen++; ozet.gnews.atlanan++; continue; }
+        }
         if (!sayfa && s.durum.startsWith("hata") && (a.ozet || "").length < 250) continue;   // geçici erişim sorunu: işaretlemeden sonraki tura bırak
         const y = await haberYaz(model, a, sayfa, { cagriUst: Math.max(1, yazimUst - ozet.modelCagri) });
         ozet.modelCagri += y.cagri || 0;
@@ -222,6 +261,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       // Yayın ertelenir: tur sonunda TEK "son okuma" çağrısından geçtikten sonra yayınlanır (aşağıda). Sınırlar kuyruk anında sayılır.
       if (ayar.altKonuGonder !== false && !haber.alt_konu && !haber.cinsiyet) Object.assign(haber, etiketYuku(a, haber.kategori, {}, haber));   // saklı (eski) yükte etiket eksikse kuraldan tamamlanır
       hazirlar.push({ a, haber, g, yuk: !!yuk });
+      if (yerli) hazirYerli++; else hazirDiger++;
       if (!g) gorselsizKuyruk++;
       if (a.zamansiz) zamansizKuyruk++;
       if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]--;
@@ -264,8 +304,10 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
           if (yuk) ozet.bekleyenYayin++;
           if (!g) ozet.gorselsiz++;
           const al = a.alan || "genel"; ozet.alanYayin[al] = (ozet.alanYayin[al] || 0) + 1;
+          if (yerliMi(a)) ozet.yerli.yayin++;
         } else if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]++;       // zaten yayında: kuyruk anında düşülen hak geri verilir
         isaretle(a, "yayinlandi", sonuc.durum);
+        if (a.cozumHash) isaretle({ hash: a.cozumHash }, "yayinlandi", "gnews-asil-adres");      // yayıncının kendi adresi de görüldü sayılır: aynı haber RSS'ten ikinci kez yazılmaz
       } else { isaretle(a, "elendi", `yayin-red:${sonuc.neden || "?"}`); ozet.elenen++; if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]++; }
     } catch (e) { log(`yayın atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 80)}`); }
   }
@@ -284,7 +326,9 @@ export function ozetSatiri(o) {
   const r = o.red || {};
   const digerKirilim = Object.entries(o.redKodlari || {}).filter(([k]) => !["uygun-degil", "rakam", "dil", "filtre"].includes(k)).map(([k, v]) => `${k}:${v}`).join(",");
   const kirilim = (m) => Object.entries(m || {}).map(([k, v]) => `${k}:${v}`).join(",");
-  const ek = (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") +
+  const ek = (o.yerli ? ` yerli=${o.yerli.yayin}/${o.haberYayin ?? 0}(aday=${o.yerli.aday},onEleme=${o.yerli.onEleme})` : "") +
+    (o.gnews && (o.gnews.aday || o.gnews.cozulen || o.gnews.cozHata) ? ` gnews=aday:${o.gnews.aday},cozulen:${o.gnews.cozulen},cozHata:${o.gnews.cozHata},atlanan:${o.gnews.atlanan}` : "") +
+    (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
     (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") + onSinifOzetMetni(o.onSinif) + sonOkumaOzetMetni(o.sonOkuma) +
     (o.haberYayin !== undefined ? ` cagriBasinaYayin=${o.modelCagri > 0 ? (o.haberYayin / o.modelCagri).toFixed(2) : "0.00"}` : "") +
@@ -307,7 +351,9 @@ async function main() {
     : bulutKur({ fnUrl: ayar.fnUrl, anahtar: ayar.yukleAnahtari });
   const model = ayar.kuru ? { yaz: async () => { throw new Error("kuru modda model çağrılmaz"); } } : modelKur(ayar);
   try {
-    const o = await turCalistir({ ayar, kaynaklar, bulut, model });
+    const taramaArg = process.argv.slice(2).find((x) => x.startsWith("--tarama="));            // yalnız --kuru ile: önceden kaydedilmiş tarama (çevrimdışı deneme; ağ isteği yok)
+    const tarama = ayar.kuru && taramaArg ? JSON.parse(readFileSync(taramaArg.slice(9), "utf8")) : undefined;
+    const o = await turCalistir({ ayar, kaynaklar, bulut, model, tarama });
     console.log(ozetSatiri(o));
     if (ayar.kuru) { console.log("[kuru] model ve yayın TAKLİT: hiçbir çağrı yapılmadı. Örnek başlıklar:"); o.ornekBaslik.forEach((b) => console.log("  - " + b));
       const oz = o.ozel;

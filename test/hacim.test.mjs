@@ -48,7 +48,7 @@ test("kaynaklar.json: ölü beslemeler yok, yeni alan kaynakları var, tazelik v
   assert.ok(kaynaklar.rss.filter((k) => k.dil === "tr").length >= 8);
   for (const k of kaynaklar.rss) { assert.match(k.url, /^https:\/\//); assert.ok(!k.tazelik_saat || (k.tazelik_saat >= 24 && k.tazelik_saat <= 720), k.ad); if (k.alan === "spor") assert.ok(!k.tazelik_saat || k.tazelik_saat <= 36, "spor taze kalmalı: " + k.ad); }
   assert.ok(VARSAYILAN_ALAN_KOTALARI.spor >= 20 && VARSAYILAN_ALAN_KOTALARI.sanat >= 12);
-  assert.equal(ayarOku({}, []).ozelCagriUst, 4);
+  assert.equal(ayarOku({}, []).ozelCagriUst, 6);   // 2026-10-13: OP Resim + OP Sohbet eklendi (4 -> 6)
 });
 
 // ---------- spor ön eleme

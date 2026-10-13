@@ -50,4 +50,12 @@ jobs:
           OZEL_SAAT: ${{ vars.OZEL_SAAT }}
           OZEL_TUR_UST: ${{ vars.OZEL_TUR_UST }}
           OZEL_CAGRI_UST: ${{ vars.OZEL_CAGRI_UST }}
+          OZEL_DENEME_UST: ${{ vars.OZEL_DENEME_UST }}
+          TR_AGIRLIK: ${{ vars.TR_AGIRLIK }}
+          TR_REZERV: ${{ vars.TR_REZERV }}
+          GNEWS: ${{ vars.GNEWS }}
+          GNEWS_GRUP: ${{ vars.GNEWS_GRUP }}
+          GNEWS_COZ_UST: ${{ vars.GNEWS_COZ_UST }}
+          RESIM_TEKRAR_GUN: ${{ vars.RESIM_TEKRAR_GUN }}
+          SOHBET_MODEL: ${{ vars.SOHBET_MODEL }}
         run: node hat.mjs
