@@ -1,9 +1,9 @@
 name: haber
 
 on:
-  # Kalite denemesi bitene kadar zamanlama kapali (elle calistirilabilir):
-  # schedule:
-  #   - cron: "3,13,23,33,43,53 * * * *"
+  # Site on izleme kapisinin arkasinda; 20 dakikada bir (Gemini ucretsiz kota payi):
+  schedule:
+    - cron: "7,27,47 * * * *"
   workflow_dispatch:
 
 # Aynı anda tek koşu; yenisi sıraya girer ve eskisini kesmez.

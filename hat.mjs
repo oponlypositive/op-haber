@@ -172,6 +172,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
         try { const r = await gorselBul(haber, { model, pixabayAnahtar: ayar.pixabayAnahtar, fetchFn, bekleFn, vlUst: ayar.vlUst }); g = r.sonuc; gb.notlar.push(...r.notlar); }
         catch (e) { if (e instanceof KotaDoldu) gorselKota = true; else gb.notlar.push(`görsel hatası:${String(e.message).slice(0, 30)}`); }   // kota: yazılmış haber kaybolmasın, bu turda görselsiz çıkar, tur biter
         if (g?.ozne) ozet.ozneGorsel++;
+        log(`gorsel: [${haber.kategori}] ozne=${haber.gorselOzne ? haber.gorselOzne.tur + ":" + haber.gorselOzne.ad : "-"} sonuc=${g ? (g.saglayici || "var") : "yok"} ${gb.notlar.join(" | ").slice(0, 220)}`);
       }
       if (!g && (!ayar.gorselsizYayin || ozet.gorselsiz >= ayar.gorselsizUst)) {
         const deneme = a.deneme + 1;
