@@ -1,0 +1,267 @@
+sumer: Sümerler @Sumer
+sumer: Çivi yazısı @Cuneiform
+sumer: Kil tablet>Kil tabletler @Clay tablet
+sumer: Edubba @Edubba
+sumer: Ur Kraliyet Oyunu @Royal Game of Ur
+sumer: Ur @Ur
+sumer: Uruk
+sumer: Lagaş @Lagash
+sumer: Nippur
+sumer: Eridu
+sumer: Kiş @Kish (Sumer)
+sumer: Sümerce @Sumerian language
+sumer: Altmışlık sayı sistemi>Altmışlı sayı sistemi @Sexagesimal
+sumer: Babil matematiği @Babylonian mathematics
+sumer: Plimpton 322
+sumer: Silindir mühür @Cylinder seal
+sumer: Tekerlek @Wheel
+sumer: Çömlekçi çarkı @Potter's wheel
+sumer: Kerpiç @Mudbrick
+sumer: Mezopotamya @Mesopotamia
+sumer: Mezopotamya'da sulama>Sulama @Irrigation in Mesopotamia
+sumer: Bereketli Hilal @Fertile Crescent
+sumer: Mezopotamya mimarisi @Mesopotamian architecture
+sumer: Tarım tarihi>Tarım @History of agriculture
+sumer: Mezopotamya müziği @Music of Mesopotamia
+sumer: Ur'un lirleri @Lyres of Ur
+sumer: Sümer sanatı @Sumerian art
+sumer: Mezopotamya tıbbı @Medicine in ancient Mesopotamia
+sumer: Babil takvimi @Babylonian calendar
+sumer: Babil astronomisi @Babylonian astronomy
+sumer: Mezopotamya mutfağı @Mesopotamian cuisine
+sumer: Ekmek @Bread
+sumer: Eski Babil dönemi @Old Babylonian period
+sumer: Katip>Yazıcı @Scribe
+sumer: Ticaret @Trade
+sumer: Dokumacılık @Weaving
+sumer: Yazının tarihi @History of writing
+sumer: Proto-çivi yazısı @Proto-cuneiform
+sumer: Şehir @City
+sumer: Mühür @Seal (emblem)
+sumer: Kanal @Canal
+sumer: Sümer şehir devletleri @Sumerian city-states
+sumer: Ağırlıklar ve ölçüler @Weights and measures
+sumer: Sümer dili ve eğitimi>Sümerce @Sumerian language
+sumer: Bakır @Copper
+sumer: Bronz @Bronze
+sumer: Arpa @Barley
+sumer: Hurma @Date palm
+sumer: Nahır>Büyükbaş hayvan @Cattle
+sumer: Koyun @Sheep
+sumer: Sümer müziği>Mezopotamya müziği @Music of Mesopotamia
+misir: Papirüs @Papyrus
+misir: Mısır hiyeroglifleri @Egyptian hieroglyphs
+misir: Rosetta Taşı @Rosetta Stone
+misir: Mısır takvimi>Antik Mısır takvimi @Egyptian calendar
+misir: Nilometre @Nilometer
+misir: Nil @Nile
+misir: Şaduf @Shadoof
+misir: Senet @Senet
+misir: Rhind Matematik Papirüsü @Rhind Mathematical Papyrus
+misir: Mısır matematiği @Egyptian mathematics
+misir: Antik Mısır mutfağı @Ancient Egyptian cuisine
+misir: Sürme>Kohl @Kohl (cosmetics)
+misir: Antik Mısır'da giyim @Clothing in ancient Egypt
+misir: Antik Mısır takıları @Jewellery of ancient Egypt
+misir: Keten @Linen
+misir: Su saati @Water clock
+misir: Güneş saati @Sundial
+misir: Antik Mısır tarımı>Antik Mısır @Agriculture in ancient Egypt
+misir: Mısır gemiciliği @Ancient Egyptian ships
+misir: Antik Mısır mimarisi @Ancient Egyptian architecture
+misir: Mürekkep @Ink
+misir: Antik Mısır müziği @Music of ancient Egypt
+misir: Antik Mısır oyunları>Antik Mısır @Board games of ancient Egypt
+misir: Zanaatkâr @Artisan
+misir: İskenderiye Feneri @Lighthouse of Alexandria
+misir: İskenderiye Kütüphanesi @Library of Alexandria
+misir: Antik Mısır dokumacılığı>Dokumacılık @Textile production in ancient Egypt
+misir: Papirüs yapımı>Papirüs @Papyrus
+misir: Mısır ekmeği>Ekmek @Bread
+misir: Hasat>Hasat @Harvest
+misir: Sulama @Irrigation
+cin: Kâğıt @Paper
+cin: Cai Lun
+cin: Ahşap baskı @Woodblock printing
+cin: Hareketli harfli baskı @Movable type
+cin: Pusula @Compass
+cin: İpek @Silk
+cin: İpek Yolu @Silk Road
+cin: Porselen @Porcelain
+cin: Çay @Tea
+cin: Erişte @Noodle
+cin: Suanpan @Suanpan
+cin: Çin takvimi @Chinese calendar
+cin: Çin astronomisi @Chinese astronomy
+cin: Zhang Heng
+cin: Sismoskop @Seismoscope
+cin: Su değirmeni @Watermill
+cin: Dujiangyan @Dujiangyan
+cin: Büyük Kanal (Çin) @Grand Canal (China)
+cin: Pirinç @Rice
+cin: Bambu @Bamboo
+cin: Dougong
+cin: Uçurtma @Kite
+cin: Yemek çubuğu @Chopsticks
+cin: Çin karakterleri @Chinese characters
+cin: Çin kaligrafisi>Kaligrafi @East Asian calligraphy
+cin: İmparatorluk sınavı @Imperial examination
+cin: Çin bahçeleri @Chinese garden
+cin: Çin mimarisi @Chinese architecture
+cin: Çin mutfağı @Chinese cuisine
+cin: Pirinç kağıdı @Rice paper
+cin: Çin lakesi @Chinese lacquer
+cin: Çin seramiği @Chinese ceramics
+cin: Çin müziği @Music of China
+cin: Derin sondaj @Deep drilling
+cin: Mürekkep taşı>Mürekkep @Inkstone
+cin: Çin tıbbı için bitkiler>Bitki @Chinese herbology
+cin: Çin ipek üretimi>İpekböcekçiliği @Sericulture
+mezoamerika: Mısır (bitki)>Mısır @Maize
+mezoamerika: Çikolata @Chocolate
+mezoamerika: Kakao @Cacao
+mezoamerika: Kauçuk @Natural rubber
+mezoamerika: Maya hiyeroglifleri @Maya script
+mezoamerika: Maya takvimi @Maya calendar
+mezoamerika: Maya rakamları @Maya numerals
+mezoamerika: Maya astronomisi @Maya astronomy
+mezoamerika: Chinampa
+mezoamerika: Tenochtitlan
+mezoamerika: Tortilla
+mezoamerika: Nikstamalizasyon @Nixtamalization
+mezoamerika: Domates @Tomato
+mezoamerika: Avokado @Avocado
+mezoamerika: Vanilya @Vanilla
+mezoamerika: Amate @Amate
+mezoamerika: Maya mimarisi @Maya architecture
+mezoamerika: Tlatelolco @Tlatelolco (altepetl)
+mezoamerika: Üç Kız Kardeş @Three Sisters (agriculture)
+mezoamerika: Maya mutfağı @Maya cuisine
+mezoamerika: Aztek mutfağı @Aztec cuisine
+mezoamerika: Maya seramiği @Maya ceramics
+mezoamerika: Maya tekstilleri @Maya textiles
+mezoamerika: Maya matematiği @Maya mathematics
+mezoamerika: Sıfır @0
+mezoamerika: Mezoamerika @Mesoamerica
+mezoamerika: Tikal
+mezoamerika: Palenque
+mezoamerika: Maya uygarlığı @Maya civilization
+mezoamerika: Aztekler @Aztecs
+mezoamerika: Meksika mutfağı @Mexican cuisine
+mezoamerika: Acı biber @Chili pepper
+mezoamerika: Kabak @Squash (plant)
+mezoamerika: Fasulye @Common bean
+mezoamerika: Yüzen bahçe>Chinampa @Chinampa
+mezoamerika: Maya su depoları>Maya uygarlığı @Maya civilization
+mezoamerika: Aztek pazarı>Tlatelolco @Tlatelolco (altepetl)
+anadolu: Çatalhöyük
+anadolu: Göbeklitepe
+anadolu: Hititler @Hittites
+anadolu: Hattuşa @Hattusa
+anadolu: Alacahöyük
+anadolu: Lidya @Lydia
+anadolu: Sikke @Coin
+anadolu: Efes @Ephesus
+anadolu: Celsus Kütüphanesi @Library of Celsus
+anadolu: Bergama Kütüphanesi @Library of Pergamum
+anadolu: Parşömen @Parchment
+anadolu: Milet @Miletus
+anadolu: Hippodamos @Hippodamus of Miletus
+anadolu: Frigler @Phrygia
+anadolu: Aspendos
+anadolu: Kapadokya @Cappadocia
+anadolu: Kilim @Kilim
+anadolu: Anadolu'nun tarihi @History of Anatolia
+anadolu: Neolitik @Neolithic
+anadolu: Hititçe @Hittite language
+anadolu: Kral Yolu @Royal Road
+anadolu: Perge
+anadolu: Side
+anadolu: Priene
+anadolu: Kızılırmak
+anadolu: Alişar Höyük
+anadolu: Kültepe
+anadolu: Hitit mutfağı>Hititler @Hittites
+anadolu: Ahlat>Ahlat @Wild pear
+anadolu: Obsidyen @Obsidian
+anadolu: Aşıklı Höyük
+anadolu: Çayönü
+anadolu: Anadolu halıcılığı>Türk halısı @Turkish carpet
+hint-vadisi: İndus Vadisi Uygarlığı @Indus Valley Civilisation
+hint-vadisi: Mohenjo-daro
+hint-vadisi: Harappa
+hint-vadisi: Lothal
+hint-vadisi: Dholavira
+hint-vadisi: İndus yazısı @Indus script
+hint-vadisi: Mehrgarh
+hint-vadisi: Pamuk @Cotton
+hint-vadisi: Hint-Arap rakamları @Hindu–Arabic numeral system
+hint-vadisi: Kalibangan
+hint-vadisi: Rakhigarhi
+hint-vadisi: İndus Nehri @Indus River
+hint-vadisi: Kanalizasyon tarihi>Kanalizasyon @History of sewers
+hint-vadisi: Susam>Susam @Sesame
+hint-vadisi: Buğday @Wheat
+hint-vadisi: Arpa @Barley
+yunan-roma: Roma su kemeri>Su kemeri @Roman aqueduct
+yunan-roma: Cloaca Maxima
+yunan-roma: Roma yolları @Roman roads
+yunan-roma: Roma betonu @Roman concrete
+yunan-roma: Thermae @Thermae
+yunan-roma: Hipokaust @Hypocaust
+yunan-roma: Antik Roma mutfağı @Ancient Roman cuisine
+yunan-roma: Garum
+yunan-roma: Thermopolium @Thermopolium
+yunan-roma: Domus @Domus
+yunan-roma: Insula @Insula (building)
+yunan-roma: Roma rakamları @Roman numerals
+yunan-roma: Jülyen takvimi @Julian calendar
+yunan-roma: Cursus publicus
+yunan-roma: Antik Roma'da eğitim @Education in ancient Rome
+yunan-roma: Kodeks @Codex
+yunan-roma: Mozaik @Mosaic
+yunan-roma: Roma camı @Roman glass
+yunan-roma: Öklid @Euclid
+yunan-roma: Elemanlar>Öklid'in Elemanlar'ı @Euclid's Elements
+yunan-roma: Arşimet @Archimedes
+yunan-roma: Arşimet vidası @Archimedes' screw
+yunan-roma: Eratosthenes
+yunan-roma: Antikythera mekanizması
+yunan-roma: Heron @Hero of Alexandria
+yunan-roma: Aeolipile @Aeolipile
+yunan-roma: Vitruvius
+yunan-roma: Hippodamos planı>Hippodamos @Hippodamian plan
+yunan-roma: Akademi>Platon'un Akademisi @Platonic Academy
+yunan-roma: Lykeion @Lyceum (classical)
+yunan-roma: Antik Yunan sikkeleri @Ancient Greek coinage
+yunan-roma: Antik Yunan giyimi @Clothing in ancient Greece
+yunan-roma: Antik Yunan mutfağı @Food and drink in ancient Greece
+yunan-roma: Agora
+yunan-roma: Antik Yunan'da ev @Ancient Greek housing
+yunan-roma: Stoa
+yunan-roma: Roma mimarisi @Roman architecture
+yunan-roma: Roma ekonomisi @Roman economy
+yunan-roma: Barbegal su değirmeni @Barbegal aqueduct and mill
+yunan-roma: Roma tıbbı @Medicine in ancient Rome
+yunan-roma: Papirüs rulosu>Parşömen @Scroll
+yunan-roma: Triclinium @Triclinium
+yunan-roma: Roma bahçeleri @Roman gardens
+yunan-roma: Yunan matematiği @Greek mathematics
+yunan-roma: Pisagor teoremi @Pythagorean theorem
+yunan-roma: Thales @Thales of Miletus
+yunan-roma: Antik Yunan astronomisi @Ancient Greek astronomy
+yunan-roma: Aristarkhos @Aristarchus of Samos
+yunan-roma: Hipparkhos @Hipparchus
+yunan-roma: Batlamyus @Ptolemy
+yunan-roma: Mil taşı @Milestone
+yunan-roma: Horreum @Horreum
+yunan-roma: Antik Roma tarımı @Roman agriculture
+yunan-roma: Zeytinyağı @Olive oil
+yunan-roma: Zeytin @Olive
+yunan-roma: Bağcılık @Viticulture
+yunan-roma: Antik Yunan müziği @Music of ancient Greece
+yunan-roma: Lir @Lyre
+yunan-roma: Aulos
+yunan-roma: Antik Yunan seramiği @Pottery of ancient Greece
+yunan-roma: Roma postası>Cursus publicus @Cursus publicus
+yunan-roma: Pompeii

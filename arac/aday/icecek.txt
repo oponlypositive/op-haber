@@ -1,0 +1,110 @@
+Limonata @Lemonade
+Çilekli limonata>Limonata @Lemonade
+Naneli limonata>Limonata @Lemonade
+Zencefilli limonata>Limonata @Lemonade
+Portakallı limonata>Limonata @Lemonade
+Karpuzlu limonata>Limonata @Lemonade
+Ayran @Ayran
+Naneli ayran>Ayran @Ayran
+Sade soda ve limon>Soda @Soda water
+Şerbet @Sharbat
+Demirhindi şerbeti>Demirhindi @Tamarind
+Portakal şerbeti>Şerbet @Sharbat
+Limon şerbeti>Şerbet @Sharbat
+Vişne şerbeti>Vişne @Sour cherry
+Nar şerbeti>Nar @Pomegranate
+Kayısı hoşafı>Hoşaf @Hoshaf
+Hoşaf @Hoshaf
+Komposto @Compote
+Elma kompostosu>Komposto @Compote
+Vişne kompostosu>Komposto @Compote
+Erik kompostosu>Komposto @Compote
+Kayısı kompostosu>Komposto @Compote
+Kuru meyve kompostosu>Komposto @Compote
+Salep @Sahlab
+Sütlü salep>Salep @Sahlab
+Ihlamur @Linden tea
+Ihlamur çayı>Ihlamur @Linden tea
+Adaçayı @Sage
+Papatya çayı>Papatya @Chamomile
+Nane çayı>Nane @Mint
+Rezene çayı>Rezene @Fennel
+Kuşburnu çayı>Kuşburnu @Rose hip
+Elma çayı>Elma @Apple
+Türk çayı>Çay @Tea
+Çay @Tea
+Demleme çay>Çay @Tea
+Soğuk çay @Iced tea
+Şeftalili soğuk çay>Soğuk çay @Iced tea
+Limonlu soğuk çay>Soğuk çay @Iced tea
+Yeşil çay @Green tea
+Yeşil çay ve nane>Yeşil çay @Green tea
+Matcha @Matcha
+Masala çay @Masala chai
+Türk kahvesi @Turkish coffee
+Dibek kahvesi>Kahve @Coffee
+Menengiç kahvesi>Menengiç @Pistacia terebinthus
+Filtre kahve @Filter coffee
+Soğuk kahve @Iced coffee
+Sütlü kahve>Kahve @Coffee
+Latte @Caffè latte
+Kapuçino @Cappuccino
+Espresso
+Sıcak çikolata @Hot chocolate
+Kakao @Cocoa solids
+Sütlü kakao>Kakao @Chocolate milk
+Çikolatalı süt @Chocolate milk
+Süt @Milk
+Muzlu süt>Süt @Milk
+Çilekli süt>Süt @Milk
+Bademli süt @Almond milk
+Yulaf sütü @Oat milk
+Soya sütü @Soy milk
+Hindistan cevizi suyu @Coconut water
+Smoothie
+Çilekli smoothie>Smoothie @Smoothie
+Muzlu smoothie>Smoothie @Smoothie
+Yeşil smoothie>Smoothie @Smoothie
+Mangolu smoothie>Smoothie @Smoothie
+Böğürtlenli smoothie>Smoothie @Smoothie
+Milkshake @Milkshake
+Çilekli milkshake>Milkshake @Milkshake
+Muzlu milkshake>Milkshake @Milkshake
+Lassi @Lassi
+Mango lassi>Lassi @Lassi
+Horchata
+Agua fresca
+Kefir @Kefir
+Ayranlı soğuk çorba>Ayran @Ayran
+Portakal suyu @Orange juice
+Elma suyu @Apple juice
+Nar suyu @Pomegranate juice
+Havuç suyu @Carrot juice
+Domates suyu @Tomato juice
+Üzüm suyu @Grape juice
+Kayısı nektarı>Meyve suyu @Fruit juice
+Şeftali suyu>Meyve suyu @Fruit juice
+Meyve suyu @Juice
+Karpuz suyu>Karpuz @Watermelon
+Kavun suyu>Kavun @Melon
+Ananas suyu @Pineapple juice
+Limonlu su>Limon @Lemon
+Salatalıklı ve naneli su>Salatalık @Cucumber
+Çilekli ve naneli su>Çilek @Strawberry
+Maden suyu @Mineral water
+Soda @Soda water
+Gazoz
+Zencefilli çay>Zencefil @Ginger tea
+Tarçınlı elma çayı>Tarçın @Cinnamon
+Karanfilli portakal çayı>Karanfil @Clove
+Kuru incir içeceği>İncir @Fig
+Hurma sütü>Hurma @Date palm
+Pekmezli süt>Pekmez @Molasses
+Gül suyu içeceği>Gül suyu @Rose water
+Vanilyalı süt>Vanilya @Vanilla
+Bal ve limonlu su>Bal @Honey
+Ev yapımı buzlu çay>Soğuk çay @Iced tea
+Hibiskus çayı @Hibiscus tea
+Mate @Yerba mate
+Bubble tea @Bubble tea
+Şalgam suyu @Şalgam

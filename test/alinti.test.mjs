@@ -116,9 +116,9 @@ test("antik eser: `*` satırı özgün dil, ilk `**` satırı İngilizce çeviri
 
 test("sıklık planı: sıra, kota, aralık, saat penceresi; tekrar kimliği", () => {
   const t = Date.parse("2026-10-13T12:00:00Z"), saat = saatAraligi("5-21");
-  const plan = OZEL_PLAN.felsefe;   // günde 2, en az 8 saat ara
+  const plan = OZEL_PLAN.felsefe;   // günde 3 (2026-10-14), en az 5 saat ara
   assert.equal(siraGeldiMi(plan, undefined, t, saat), true);
-  assert.equal(siraGeldiMi(plan, { son24: 2, son7g: 5, sonZaman: "2026-10-12T20:00:00Z" }, t, saat), false);           // kota dolu
+  assert.equal(siraGeldiMi(plan, { son24: 3, son7g: 5, sonZaman: "2026-10-12T20:00:00Z" }, t, saat), false);           // kota dolu
   assert.equal(siraGeldiMi(plan, { son24: 1, son7g: 3, sonZaman: "2026-10-13T08:00:00Z" }, t, saat), false);           // 4 saat önce: erken
   assert.equal(siraGeldiMi(plan, { son24: 1, son7g: 3, sonZaman: "2026-10-13T02:00:00Z" }, t, saat), true);            // 10 saat önce
   assert.equal(siraGeldiMi(plan, undefined, Date.parse("2026-10-13T23:00:00Z"), saat), false);                         // saat penceresi dışı
@@ -126,7 +126,7 @@ test("sıklık planı: sıra, kota, aralık, saat penceresi; tekrar kimliği", (
   assert.equal(siraGeldiMi(mit, { son24: 0, son7g: 3 }, t, saat), false);
   assert.equal(siraGeldiMi(mit, { son24: 0, son7g: 2, sonZaman: "2026-10-10T12:00:00Z" }, t, saat), true);
   assert.equal(planAyristir("siir:1,mitoloji:2").siir.kota, 1);
-  assert.equal(planAyristir("siir:1").felsefe.kota, 2);
+  assert.equal(planAyristir("siir:1").felsefe.kota, 3);
   const k1 = alintiKimligi("A", "Hello, World!"), k2 = alintiKimligi("A", "hello   world"), k3 = alintiKimligi("B", "hello world");
   assert.equal(k1.ozet, k2.ozet); assert.notEqual(k1.ozet, k3.ozet); assert.match(k1.id, /^a-[0-9a-f]{16}$/);
   const d = new Map([["felsefe", { sonZaman: "2026-10-13T01:00:00Z", son24: 0, son7g: 0 }], ["siir", { sonZaman: "2026-10-12T01:00:00Z", son24: 0, son7g: 0 }]]);
@@ -234,7 +234,7 @@ test("ay evreleri: USNO verisi ayrıştırılır, yalnız bugün/yarın paylaş�
 
 // ---- sözleşmeler
 test("editör hesapları: 17 hesap, alan->hesap eşlemesi hat ile işlev aynı, kategori kümeleri tutarlı", { skip: !ED && "editorler.mjs bu depoda yok" }, () => {
-  assert.equal(EDITORLER.length, 17);
+  assert.equal(EDITORLER.length, 19);
   for (const [alan, liste] of Object.entries(ALINTI_HESAPLARI)) {
     assert.deepEqual(HAT_HESAPLARI[alan], liste, alan);
     assert.ok(KATEGORILER.includes(alan));
@@ -251,7 +251,7 @@ test("özel işler: sırası gelen alan çalışır, bütçe ve tur sınırı ko
   const sayac = { cagri: 0 };
   const bulut = { bilinenler: async () => new Map(), isaretle: async () => ({}), yayinla: async () => ({ durum: "eklendi" }) };
   const model = { yaz: async () => { sayac.cagri++; return { metin: TRYANIT }; } };
-  const ayar = { ...ayarOku({}, []), ozelTurUst: 1, ozelDenemeUst: 1, ozelCagriUst: 4 };   // ozelDenemeUst: tur başına en çok denenen alan
+  const ayar = { ...ayarOku({}, []), ozelTurUst: 1, ozelDenemeUst: 1, ozelCagriUst: 4, konuAcik: false };   // konu hesapları ayrı test edilir (konu.test.mjs); ozelDenemeUst: tur başına en çok denenen alan
   const simdi = Date.parse("2026-10-13T12:00:00Z");
   // felsefe'nin sırası gelmiş (hiç paylaşım yok); ama tur başına yalnız 1 iş
   const fetchFn = sahteFetch();

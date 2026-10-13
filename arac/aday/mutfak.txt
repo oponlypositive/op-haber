@@ -1,0 +1,175 @@
+Mercimek çorbası @Lentil soup
+Ezogelin çorbası
+Tarhana çorbası @Tarhana
+Domates çorbası @Tomato soup
+Yayla çorbası
+Düğün çorbası
+Kabak çorbası>Çorba @Soup
+Sebze çorbası>Çorba @Soup
+Tavuk suyu çorbası>Çorba @Chicken soup
+Menemen @Menemen (food)
+Karnıyarık
+İmam bayıldı
+Zeytinyağlı yaprak sarma>Sarma @Dolma
+Biber dolması>Dolma @Dolma
+Kabak dolması>Dolma @Dolma
+Kuru fasulye
+Taze fasulye>Fasulye @Green bean
+Barbunya pilaki
+Nohutlu pilav>Pilav @Pilaf
+Bulgur pilavı>Bulgur @Bulgur
+Pirinç pilavı>Pilav @Pilaf
+Mantı @Manti
+Lahmacun
+Pide
+Gözleme
+Su böreği>Börek @Börek
+Sigara böreği>Börek @Börek
+Poğaça @Poğaça
+Simit
+Kumpir
+İzmir köfte>Köfte @Köfte
+İnegöl köfte>Köfte @Köfte
+Kadınbudu köfte
+Mücver
+Cacık @Tzatziki
+Haydari
+Ezme
+Humus @Hummus
+Babagannuş @Baba ghanoush
+Çoban salatası
+Kısır
+Mercimek köftesi
+Enginar @Artichoke
+Hünkâr beğendi
+Tavuk göğsü
+Kazandibi
+Sütlaç
+Baklava
+Kadayıf
+Künefe
+Revani
+Şekerpare
+Tulumba
+İrmik helvası>Helva @Halva
+Lokum
+Muhallebi
+Kek>Pasta (yiyecek) @Cake
+Un kurabiyesi>Kurabiye @Biscuit
+Pişi
+Etli yaprak sarma>Sarma @Dolma
+Soğan dolması>Dolma @Dolma
+Patates oturtma>Patates @Potato
+Patates salatası @Potato salad
+Ispanak yemeği>Ispanak @Spinach
+Pırasa yemeği>Pırasa @Leek
+Türlü
+Güveç
+Hamsi tava>Hamsi @European anchovy
+Balık ekmek>Balık @Fish as food
+Köfte ekmek>Köfte @Köfte
+Kuzu tandır>Tandır @Tandoor
+Pilav üstü tavuk>Pilav @Pilaf
+Mercimekli bulgur pilavı>Bulgur @Bulgur
+Peynirli omlet>Omlet @Omelette
+Sahanda yumurta>Yumurta @Fried egg
+Çılbır
+Kaygana
+Mıhlama
+Kuymak
+Gül reçeli>Reçel @Jam
+Vişne reçeli>Reçel @Jam
+Ayva tatlısı>Ayva @Quince
+Kabak tatlısı>Kabak @Pumpkin
+İncir tatlısı>İncir @Fig
+Elmalı turta>Turta @Apple pie
+Elmalı kek>Pasta (yiyecek) @Apple cake
+Havuçlu kek>Pasta (yiyecek) @Carrot cake
+Krep @Crêpe
+Pankek @Pancake
+Omlet @Omelette
+Pizza @Pizza
+Pizza Margherita @Pizza Margherita
+Lazanya @Lasagne
+Spagetti @Spaghetti
+Makarna>Makarna @Pasta
+Risotto @Risotto
+Minestrone @Minestrone
+Ratatouille
+Kiş @Quiche
+Paella
+Gazpacho
+İspanyol omleti>Tortilla (İspanya) @Spanish omelette
+Guacamole
+Taco
+Burrito
+Enchilada
+Falafel
+Tabule @Tabbouleh
+Kuskus @Couscous
+Tajin @Tagine
+Dal @Dal
+Somsa @Samosa
+Pad thai
+Suşi @Sushi
+Ramen
+Tempura
+Miso çorbası @Miso soup
+Bibimbap
+Kimçi @Kimchi
+Pierogi
+Borş @Borscht
+Gulaş @Goulash
+Waffle
+Brownie
+Cheesecake
+Pavlova
+Elmalı turta @Apple pie
+Krem karamel>Krem karamel @Crème caramel
+Krem brülê @Crème brûlée
+Pesto
+Bruschetta
+Caprese salatası @Caprese salad
+Sezar salatası @Caesar salad
+Coleslaw
+Fransız tostu @French toast
+Granola
+Yulaf lapası @Porridge
+Müsli @Muesli
+Guguklof @Gugelhupf
+Börek
+Dolma
+Köfte
+Şakşuka
+Şakşuka @Shakshouka
+Frittata
+Gnocchi
+Polenta
+Focaccia
+Ciabatta
+Kruvasan @Croissant
+Baget @Baguette
+Pretzel
+Sandviç @Sandwich
+Hamburger
+Patates kızartması @French fries
+Mısır ekmeği>Mısır ekmeği @Cornbread
+Karalahana çorbası>Karalahana @Kale
+Kuru kayısı tatlısı>Kayısı @Apricot
+Pekmezli kek>Pekmez @Molasses
+Haşlama>Haşlama @Boiling
+Mantar sote>Mantar @Mushroom
+Soğanlı yumurta>Yumurta @Egg as food
+Tavuk sote>Sote @Sauté
+Tavuk haşlama>Tavuk @Chicken as food
+Bamya yemeği>Bamya @Okra
+Karışık turşu>Turşu @Pickling
+Salça>Salça @Tomato paste
+Yoğurt @Yogurt
+Tereyağlı makarna>Makarna @Pasta
+Mercimek salatası>Mercimek @Lentil
+Nohut yemeği>Nohut @Chickpea
+Pazı sarması>Sarma @Dolma
+Lahana sarması>Sarma @Cabbage roll
+Gül tatlısı>Tatlı @Dessert
+Keşkül @Keşkül

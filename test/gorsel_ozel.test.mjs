@@ -247,11 +247,11 @@ test("tur özeti: sırası gelmeyen özel alanların nedeni açık yazılır (es
   const gece = Date.parse("2026-10-13T22:30:00Z");
   const o = await turCalistir({ ayar: ayar({ ozelAcik: true }), kaynaklar: {}, bulut, model: { yaz: async () => { throw new Error("yok"); } }, fetchFn: f404, bekleFn: async () => {}, simdi: () => gece, log: () => {}, tarama: { adaylar: [], hatalar: [] } });
   const s = ozetSatiri(o);
-  assert.match(s, / ozel=felsefe\+edebiyat\+siir\+mitoloji\+gokbilim\+resim\+sohbet:saat-disi/);
+  assert.match(s, / ozel=felsefe\+edebiyat\+siir\+mitoloji\+gokbilim\+resim\+sohbet(?:\+op_\w+)*:saat-disi/);
   assert.doesNotMatch(s, /ozel=-/);
   const dolu = { ...sahteBulut(), kota: async () => new Map(["felsefe", "edebiyat", "siir"].map((k) => [k, { son24: 5, son7g: 5, sonZaman: "2026-10-13T07:00:00Z" }])) };
   const o2 = await turCalistir({ ayar: ayar({ ozelAcik: true, ozelCagriUst: 0 }), kaynaklar: {}, bulut: dolu, model: { yaz: async () => { throw new Error("yok"); } }, fetchFn: f404, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama: { adaylar: [], hatalar: [] } });
-  assert.match(ozetSatiri(o2), /felsefe\+edebiyat\+siir:kota-dolu/);
+  assert.match(ozetSatiri(o2), /felsefe\+edebiyat\+siir(?:\+op_klasikler)?:kota-dolu/);      // op_klasikler edebiyat kategorisini paylaşır: kota dolunca o da aynı nedenle atlanır
   assert.equal(ozelOzetMetni({ calisan: [{ alan: "felsefe", durum: "yayinlandi" }, { alan: "siir", durum: "yok", neden: "gorsel-yok" }, { alan: "gokbilim", durum: "yok", neden: "apod-hata/yedek-yok/ay-evre-yok" }], atlanan: [{ alan: "edebiyat", neden: "aralik" }] }),
     "felsefe:yayin,siir:gorsel-yok,gokbilim:apod-hata/yedek-yok/ay-evre-yok,edebiyat:aralik");
   assert.equal(ozelOzetMetni({ calisan: [], atlanan: [] }), "-");
@@ -310,7 +310,7 @@ test("özel işler: görseli çıkmayan alan sıradakileri tıkamaz; çağrı b�
   let cagri = 0;
   const bulut = { bilinenler: async () => new Map(), isaretle: async () => ({}), yayinla: async () => ({ durum: "eklendi" }) };
   const model = { yaz: async () => { cagri++; return { metin: JSON.stringify({ uygun: true, tr: "Çeviri: sabır her şeyin anahtarıdır ve herkes bunu bilir." }) }; } };
-  const o = await ozelIsleriCalistir({ ayar: { ...ayarOku({}, []), ozelTurUst: 1, ozelDenemeUst: 5, ozelCagriUst: 2 }, bulut, model, fetchFn: f404, simdi: SIMDI, kotaDurum: new Map(), bekleFn: async () => {}, rastgele: () => 0 });
+  const o = await ozelIsleriCalistir({ ayar: { ...ayarOku({}, []), ozelTurUst: 1, ozelDenemeUst: 5, ozelCagriUst: 2, konuAcik: false }, bulut, model, fetchFn: f404, simdi: SIMDI, kotaDurum: new Map(), bekleFn: async () => {}, rastgele: () => 0 });
   assert.equal(o.calisan.length, 5, "hepsi denendi, hiçbiri yayınlanamadı (sayfa yok) ama sıra tıkanmadı");
   assert.ok(o.calisan.every((c) => c.neden), "her alanın nedeni var");
   assert.ok(cagri <= 2);
