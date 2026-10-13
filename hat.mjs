@@ -43,6 +43,20 @@ export function onPuan(a, { simdi = Date.now(), tazelikSaat = 24, trAgirlik = 0 
   return p;
 }
 
+/**
+ * Google News adayları özetsiz ve "alan"sız geldiği için ön puanda hep geride kalır; doğrulanmış (güvenilir site ya da ikinci kaynak) ve yerli
+ * olanlardan en çok `adet` tanesi sıranın başına (saklı yüklü bekleyenlerin ardına) alınır. Diğerlerinin sırası korunur.
+ */
+export function gnewsOneAl(liste, adet, dogrulandi = () => true) {
+  if (!(adet > 0)) return liste;
+  const secilen = [];
+  for (const a of liste) { if (secilen.length >= adet) break; if (a.gnews && !a.kayit?.yuk && yerliMi(a) && dogrulandi(a)) secilen.push(a); }
+  if (!secilen.length) return liste;
+  const s = new Set(secilen), kalan = liste.filter((a) => !s.has(a));
+  let i = 0; while (i < kalan.length && kalan[i].kayit?.yuk && kalan[i].kayit.durum === "bekliyor_gorsel") i++;
+  return [...kalan.slice(0, i), ...secilen, ...kalan.slice(i)];
+}
+
 /** Model sarmalayıcı: çağrılar arası en az `ayar.geminiBeklemeMs` (geçen süre sayılır) + görsel denetim çağrılarını sayar. */
 function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
   let son = null;
@@ -148,6 +162,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   // (d-h) işle: alan kotası dolu olanlar baştan çıkarılır (çağrı/sıra harcamasın), özel işte kullanılan haber atlanır
   const rezerv = yerliRezervi(ayar.alanKotalari || {}, ayar.trRezerv ?? 0);       // alan kotasının bir kısmı yerli adaylara ayrılır: yabancı kaynaklar kotayı doldurup yerli haberi boğmasın
   let islenecek = sirali.filter((a) => !ozelKullanilan.has(a.hash) && !(a.alan && kalanHak[a.alan] !== undefined && kalanHak[a.alan] <= 0) && !kotaEngeli(a, kalanHak, rezerv));
+  islenecek = gnewsOneAl(islenecek, ayar.gnewsOneAl ?? 3, (a) => dogrulandiMi(a, hepsi, ayar.guvenilir).ok);
   const robots = new Map();
 
   // Zamansız adaylar (söyleşi/portre/kişisel gelişim; tazelik 7-14 gün) ön sınıf slotlarını doldurmasın: tur başına en çok `zamansizSinifUst` tanesi sorulur, kalanı sonraki tura kalır (işaretlenmez).
