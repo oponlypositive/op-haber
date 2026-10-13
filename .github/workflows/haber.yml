@@ -42,6 +42,7 @@ jobs:
           GORSELSIZ_YAYIN: ${{ vars.GORSELSIZ_YAYIN }}
           GUVENILIR_KAYNAKLAR: ${{ vars.GUVENILIR_KAYNAKLAR }}
           TUR_BASINA_EN: ${{ vars.TUR_BASINA_EN }}
+          MODEL_CAGRI_UST: ${{ vars.MODEL_CAGRI_UST }}
           NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
           ALAN_KOTALARI: ${{ vars.ALAN_KOTALARI }}
           ALAN_ARDA_ARDA_UST: ${{ vars.ALAN_ARDA_ARDA_UST }}
