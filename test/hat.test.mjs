@@ -32,7 +32,9 @@ test("ayar: varsayılanlar", () => {
   const a = ayarOku({}, ["--kuru"]);
   assert.equal(a.kuru, true);
   assert.equal(a.turBasinaEn, 4);
-  assert.equal(a.gorselsizYayin, false);
+  assert.equal(a.gorselsizYayin, true);                                  // 2026-10-13: varsayılan AÇIK (doğru görsel ya da görselsiz tasarım kartı)
+  assert.equal(ayarOku({ GORSELSIZ_YAYIN: "0" }, []).gorselsizYayin, false);
+  assert.equal(ayarOku({ GORSELSIZ_YAYIN: "" }, []).gorselsizYayin, true);   // Actions boş değişkeni "" gönderir
   assert.equal(a.geminiModel, "gemini-3.5-flash-lite");
   assert.ok(a.guvenilir.includes("positive.news"));
   assert.equal(ayarOku({ GORSELSIZ_YAYIN: "1", TUR_BASINA_EN: "" }, []).gorselsizYayin, true);
@@ -77,7 +79,7 @@ test("tur: yeni haber yazılır, görselle yayınlanır, yayinlandi işaretlenir
 test("tur: görsel yoksa bekliyor_gorsel (yük saklanır), deneme sınırında elendi", async () => {
   const model = { yaz: async () => ({ metin: MODEL_YANITI, engellendi: "", saglayici: "taklit" }) };
   const bulut = sahteBulut();
-  const o = await turCalistir({ ayar: ayar(), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama: { adaylar: [aday(2)], hatalar: [] } });
+  const o = await turCalistir({ ayar: ayar({ gorselsizYayin: false }), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama: { adaylar: [aday(2)], hatalar: [] } });   // eski bekleme yolu (GORSELSIZ_YAYIN=0)
   assert.equal(o.bekleyenGorsel, 1);
   assert.equal(bulut.k.yayinlar.length, 0);
   const kayit = bulut.k.isaretler.at(-1);
@@ -89,7 +91,7 @@ test("tur: görsel yoksa bekliyor_gorsel (yük saklanır), deneme sınırında e
   const model2 = { yaz: async () => { cagri++; return { metin: "{}", engellendi: "" }; } };
   const onceki = new Map([[baglantiOzeti(aday(2).link), { ozet: baglantiOzeti(aday(2).link), durum: "bekliyor_gorsel", deneme: 2, yuk: { ...kayit.yuk } }]]);
   const bulut2 = sahteBulut(onceki);
-  await turCalistir({ ayar: ayar(), kaynaklar: {}, bulut: bulut2, model: model2, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama: { adaylar: [aday(2)], hatalar: [] } });
+  await turCalistir({ ayar: ayar({ gorselsizYayin: false }), kaynaklar: {}, bulut: bulut2, model: model2, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama: { adaylar: [aday(2)], hatalar: [] } });
   assert.equal(bulut2.k.isaretler.at(-1).durum, "elendi");
   assert.equal(cagri, 0);
 });

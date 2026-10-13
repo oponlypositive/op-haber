@@ -251,7 +251,7 @@ test("özel işler: sırası gelen alan çalışır, bütçe ve tur sınırı ko
   const sayac = { cagri: 0 };
   const bulut = { bilinenler: async () => new Map(), isaretle: async () => ({}), yayinla: async () => ({ durum: "eklendi" }) };
   const model = { yaz: async () => { sayac.cagri++; return { metin: TRYANIT }; } };
-  const ayar = { ...ayarOku({}, []), ozelTurUst: 1, ozelCagriUst: 4 };
+  const ayar = { ...ayarOku({}, []), ozelTurUst: 1, ozelDenemeUst: 1, ozelCagriUst: 4 };   // ozelDenemeUst: tur başına en çok denenen alan
   const simdi = Date.parse("2026-10-13T12:00:00Z");
   // felsefe'nin sırası gelmiş (hiç paylaşım yok); ama tur başına yalnız 1 iş
   const fetchFn = sahteFetch();
