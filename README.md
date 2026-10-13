@@ -94,3 +94,40 @@ GitHub, herkese açık depolarda 60 gün boyunca depo etkinliği olmazsa zamanla
 - **Pexels:** `PEXELS_API_KEY` varsa yedek kaynak ("Pexels License", atıf saklanır). Anahtar yoksa sessizce atlanır. NOT: `haber-yukle` Edge Function'ının `LISANS_OK` ifadesi (functions/haber-yukle/index.ts:26) "Pexels License"ı da kabul edecek biçimde güncellenip yeniden dağıtılmadıkça Pexels görselli haber reddedilir; o zamana dek `PEXELS_API_KEY` tanımlamayın.
 - **Kural tabanlı sıralama:** başlıkta terim örtüşmesi, yatay oran, çözünürlük, yeni tarih; çizim/vektör/harita/şema/logo ve siyah-beyaz etiketli adaylar elenir, PNG cezalıdır. İki kelimelik terimde ikisi de geçmeli.
 - **Görsel denetimi:** `konuya_uygun` artık "konuyu temsil eden, yanıltıcı olmayan görsel" kabul eder; güvenlik alanları ve yer/kurum çelişkisi AYNEN durur. Özet satırında `vlRet=n.konu:3,n.insan:1,o.ozne-yok:2` (n = konu yolu, o = özne yolu) ve `gorselKaynak=wikimedia:2,openverse:1` görünür.
+
+## Toplu ön sınıflandırma ve karar bütçesi (2026-10-13)
+
+Sorun: tur başına model çağrı tavanı 14; canlı ölçümde tipik turda `modelCagri=14 modelRed=7(uygunDegil=3,rakam=2,dil=1,filtre=1)` ve yalnız 1-2 haber yayınlanıyordu. "Uygun değil" çıkacak bir haber de tam bir yazım çağrısı harcıyordu. Çözüm: ön puana göre sıralı ilk `ON_SINIF_ADET` (24) aday, yazımdan ÖNCE TEK ucuz çağrıda sınıflandırılır (`lib/on_sinif.mjs`).
+
+- **Girdi (küçük):** aday başına sıra no, dil, alan, kaynak, başlık, özet (en çok 300 karakter). Sayfa metni yok. 24 aday yaklaşık 3-4 bin girdi jetonu; yazım çağrısı başına gönderilen kaynak metninden çok azdır.
+- **Çıktı:** katı JSON dizi `[{"i":1,"uygun":true,"puan":7,"alan":"doga","neden":"ok"}]`. `uygun` OP kuralları (yalnız pozitif/umut veren/nötr-olumlu; siyaset, din, etnik kimlik, şiddet, kaza, felaket, ölüm, suç, skandal, reklam, liste/tavsiye, burç, bahis YOK); `puan` 0-10 (haber değeri + pozitiflik + güncellik + somutluk); `neden` kısa kod (`siyaset, din, etnik, siddet, kaza, felaket, olum, suc, skandal, reklam, liste, burc, bahis, negatif, haber-degil, diger`; eşik altı = `dusuk-puan`). Alan kaynaklı adaylarda (spor, sanat, bilim, teknoloji, gökbilim) mutlu haber şartı aranmaz.
+- **Kod kararı:** yalnız `uygun && puan >= ON_SINIF_ESIK` (6) olanlar yazıma girer; puana göre sıralanır, alan dengesi (`ALAN_ARDA_ARDA_UST`) korunur. Reddedilenler `elendi: on-sinif:<neden>` işaretlenir ve bir daha sorulmaz. Yanıtta eksik kalan aday elenmez (sınıfsız sayılır).
+- **Dışında kalanlar:** saklı yüklü bekleyen kayıtlar (modelsiz yayın), ikinci kaynağı henüz doğrulanmamış adaylar ve özel işler (alıntı/gökbilim) bu adıma girmez. 3'ten az aday varsa toplu çağrı atlanır.
+- **Yedek yol:** çağrı hatası ya da bozuk JSON'da bir kez yeniden denenir; yine olmazsa sınıflandırmasız eski sıra sürer (tur kırılmaz, özet satırında `onSinif=yedek`). 429 gelirse tur zarifçe biter (`durus=kota`).
+- **Bütçe:** bu çağrı (yeniden deneme dahil) `MODEL_CAGRI_UST` bütçesinden sayılır.
+- **Yazım istemi:** `uygun` kararı yazım çağrısında AYNEN durur (ikinci emniyet); ön sınıftan geçmiş adayda yalnız "ön sınıf uygun buldu, açık ihlal yoksa uygun=true ver" ipucu eklenir.
+
+Ortam değişkenleri: `ON_SINIF_ADET` (varsayılan 24, 0 = kapalı, en çok 60), `ON_SINIF_ESIK` (varsayılan 6, 0-10).
+
+Özet satırı: `onSinif=gecen/sorulan` (ya da `onSinif=yedek`), `onSinifRed=liste:3,siyaset:2,dusuk-puan:1` (ret kodu kırılımı), `cagriBasinaYayin=` (bu turda yayınlanan haber / model çağrısı; özel işler ve görsel denetimi hariç). Başarı ölçütü bu sayının artmasıdır.
+
+### Karar bütçesi: hangi karar nerede verilir
+
+| Karar | Nerede | Maliyet |
+|---|---|---|
+| Tarih/tazelik, görülmüş bağlantı, tekrar haber | kod (`on_eleme.mjs`, `rss.mjs`) | ücretsiz |
+| Hassas konu (siyaset, din, etnik, savaş/suç, afet, salgın), kaba dil, bahis, reklam, burç | kod (`on_eleme.mjs`, `moderasyon.mjs`, `alanlar.mjs`) | ücretsiz |
+| Haber olmayan içerik: tavsiye/ipucu/liste/"nasıl yapılır"/"tarihte bugün" (başlık kalıbı) | kod (`on_eleme.haberOlmayan`, ön elemede `liste`; model çıktısında `haber değil kapısı`) | ücretsiz |
+| İkinci bağımsız kaynak (doğrulama) | kod (`dogrulandiMi`) | ücretsiz |
+| Ön puan sıralaması (kaynak güveni, tazelik, özet uzunluğu, hazır görsel) | kod (`onPuan`) | ücretsiz |
+| Rakam, kopya, dil, yazıyla yıl, bozuk/harfi düşmüş kelime, çevrilmiş özel ad şüphesi, cümle sayısı | kod (`dogrula.mjs`) | ücretsiz (ret olursa yazım çağrısı zaten harcanmıştır) |
+| Uygunluk + haber değeri puanı (24 adayda tek seferde) | TOPLU UCUZ ÇAĞRI (`on_sinif.mjs`) | tur başına 1 çağrı (hata olursa 2) |
+| Haber yazımı (TR + EN), kategori, görsel arama terimi, ikinci emniyet olarak uygunluk | TAM YAZIM ÇAĞRISI (`yaz.mjs`) | aday başına 1-2 çağrı (+ özel ad/başlık düzeltme gerekirse 1) |
+| Görsel uygunluğu | görsel denetim çağrısı (`gorsel.mjs`, `VL_UST`) | görsel adayı başına 1 (ayrı sayılır) |
+| Alıntı çevirisi | özel iş çağrısı (`OZEL_CAGRI_UST`) | ayrı bütçe |
+
+Beklenen tasarruf (varsayım: canlı ölçüm, tur başına 14 çağrının 3'ü "uygunDegil", yalnız kalanlar yayınlanıyor): ön sınıf 1 çağrıya mal olur, "uygun değil" ve düşük puanlı adayların çoğunu yazımdan önce eler (varsayım: 3 çağrıdan ~2,5'i kurtulur) ve kalan bütçeyi daha somut, yüksek puanlı adaylara bırakır. Net kazanç tur başına ~1,5-2,5 yazım çağrısı (yaklaşık %10-18), yayın/çağrı oranında kabaca %15-30 artış beklenir; kesin sayı canlı turlarda `cagriBasinaYayin` ve `onSinifRed` ile ölçülür (bu hesap canlıda doğrulanmadı).
+
+## Altın örnek seti (regresyon)
+
+`test/altin/ornekler.json` (etiketli örnekler, gruplar a-h) + `test/altin/ortak.json` (ortak senaryo) + `test/altin.test.mjs`: sahibin ve şefin canlıda yakaladığı hatalar KALICI testtir. a: kelime kelime çevrilmiş özel ad ("Çizgide Uzlaş"), b: harfi düşmüş Türkçe, c: yazıyla yıl, d: bozuk kelime, e: yanlış yer görseli, f: alıntı çevirisi/seçimi ("tecavüz", "lords of creation", cinsiyet genellemesi), g: haber olmayan içerik (tavsiye/liste). Her grupta DOĞRU geçmesi gereken karşı örnekler de vardır. Yeni canlı hata bulununca ÖNCE bu dosyaya örnek eklenir (test kırmızı), sonra kural yazılır.

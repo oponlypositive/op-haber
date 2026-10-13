@@ -1,0 +1,21 @@
+{
+  "_aciklama": "Altın örnek seti ortak senaryosu: model çıktısı ve kaynak. Her örnek bunun üzerine alan alan ekleme/değiştirme yapar (haber_yaz denetimi).",
+  "kaynak": {
+    "baslik": "Floating shade structures help young corals survive heat",
+    "ozet": "Marine scientists in Cebu placed floating shade covers over a coral nursery this summer. The covers reduced direct sunlight by about 30 percent during the hottest weeks of 2025. Young corals under the covers showed far less bleaching than those left uncovered, and local divers helped to check the nursery every week. The team plans to expand the project to two more reefs next year."
+  },
+  "model": {
+    "uygun": true,
+    "kategori": "doga",
+    "yer": "Cebu, Filipinler",
+    "gorsel_arama": "coral reef",
+    "en": {
+      "baslik": "Floating shades protect young corals from heat",
+      "ozet": "A team of marine scientists in Cebu has found a gentle way to protect young corals from heat. They stretched floating shade covers over a nursery, and the covers cut direct sunlight by about 30 percent in the warmest weeks of 2025. The corals under the covers were far less bleached than the ones in the open water, and local divers checked the nursery every week. The scientists now plan to bring the idea to two more reefs next year."
+    },
+    "tr": {
+      "baslik": "Yüzen gölgelikler genç mercanları sıcaktan koruyor",
+      "ozet": "Cebu'daki deniz bilimciler, genç mercanları sıcaktan korumanın nazik bir yolunu buldu. Bir mercan fidanlığının üzerine yüzen gölgelikler gerdiler; bu gölgelikler, 2025 yazının en sıcak haftalarında doğrudan güneş ışığını yaklaşık yüzde 30 azalttı. Gölgelerin altındaki mercanlar açık sudakilere göre çok daha az ağardı ve yerel dalgıçlar fidanlığı her hafta kontrol etti. Bilim insanları bu fikri gelecek yıl iki resife daha taşımayı planlıyor."
+    }
+  }
+}

@@ -17,6 +17,7 @@ import { alanDengele, alanKalan } from "./lib/alanlar.mjs";
 import { ozelIsleriCalistir, ozelOzetMetni } from "./lib/ozel.mjs";
 import { haberKur, hazirGorselHazirla } from "./lib/haber_yap.mjs";
 import { bulutKur } from "./lib/bulut.mjs";
+import { onSinifAsamasi, onSinifOzetMetni } from "./lib/on_sinif.mjs";
 
 const burasi = dirname(fileURLToPath(import.meta.url));
 const dur = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -55,7 +56,8 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama }) {
   const baslangic = simdi();
   const ozet = { aday: 0, yeniAday: 0, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
-    red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, alanYayin: {} };
+    red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, alanYayin: {},
+    onSinif: { durum: "kapali", sorulan: 0, gecen: 0, red: {}, cagri: 0 } };
   const sayac = { vl: 0 };
   const gorselButce = { openverse: { kalan: ayar.openverseUst ?? 6, dur: false } };   // Openverse istekleri tur boyunca ortak bütçe (haber başına değil)
   let ovBelirtec = null;
@@ -135,8 +137,25 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   if (ozet.durus === "kota") { await bitir(); ozet.vlCagri = sayac.vl; ozet.sureSn = Math.round((simdi() - baslangic) / 1000); return ozet; }
 
   // (d-h) işle: alan kotası dolu olanlar baştan çıkarılır (çağrı/sıra harcamasın), özel işte kullanılan haber atlanır
-  const islenecek = sirali.filter((a) => !ozelKullanilan.has(a.hash) && !(a.alan && kalanHak[a.alan] !== undefined && kalanHak[a.alan] <= 0));
+  let islenecek = sirali.filter((a) => !ozelKullanilan.has(a.hash) && !(a.alan && kalanHak[a.alan] !== undefined && kalanHak[a.alan] <= 0));
   const robots = new Map();
+
+  // TOPLU ÖN SINIFLANDIRMA: yazım çağrısından önce ilk N aday TEK ucuz çağrıda uygunluk + puan alır; uygun olmayanlar yazıma hiç girmez (tekrar sorulmaz).
+  // Saklı yüklü bekleyenler ve ikinci kaynağı henüz doğrulanmamış adaylar bu adımın dışında kalır. Çağrı başarısızsa sınıflandırmasız eski yol.
+  if (ayar.onSinifAdet > 0) {
+    try {
+      const dokunma = (a) => (a.kayit?.yuk && a.kayit.durum === "bekliyor_gorsel") || !dogrulandiMi(a, hepsi, ayar.guvenilir).ok;
+      const s = await onSinifAsamasi({ model, islenecek, adet: ayar.onSinifAdet, esik: ayar.onSinifEsik ?? 6, dokunma, alanArdaArdaUst: ayar.alanArdaArdaUst || 2 });
+      ozet.modelCagri += s.ozet.cagri;
+      ozet.onSinif = s.ozet;
+      for (const e of s.elenenler) { isaretle(e.aday, "elendi", `on-sinif:${e.neden}`); ozet.elenen++; }
+      islenecek = s.sirali;
+    } catch (e) {
+      if (e?.cagri) { ozet.modelCagri += e.cagri; ozet.onSinif = { ...ozet.onSinif, durum: "yedek", cagri: e.cagri }; }
+      if (e instanceof KotaDoldu) { ozet.durus = "kota"; ozet.kota++; log("model kotası/hız sınırı ön sınıflandırmada doldu: tur zarifçe bitiriliyor"); await bitir(); ozet.vlCagri = sayac.vl; ozet.sureSn = Math.round((simdi() - baslangic) / 1000); return ozet; }
+      log(`ön sınıflandırma atlandı: ${String(e.message || e).slice(0, 60)}`);
+    }
+  }
   for (const a of islenecek) {
     if (ozet.haberYayin >= ayar.turBasinaEn) { ozet.durus = "tur-siniri"; break; }
     if (simdi() - baslangic > ayar.turSureSn * 1000) { ozet.durus = "sure-doldu"; break; }
@@ -224,7 +243,8 @@ export function ozetSatiri(o) {
   const kirilim = (m) => Object.entries(m || {}).map(([k, v]) => `${k}:${v}`).join(",");
   const ek = (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
-    (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") +
+    (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") + onSinifOzetMetni(o.onSinif) +
+    (o.haberYayin !== undefined ? ` cagriBasinaYayin=${o.modelCagri > 0 ? (o.haberYayin / o.modelCagri).toFixed(2) : "0.00"}` : "") +
     (kirilim(o.vlRet) ? ` vlRet=${kirilim(o.vlRet)}` : "") + (kirilim(o.gorselKaynak) ? ` gorselKaynak=${kirilim(o.gorselKaynak)}` : "") +
     (o.gorselsiz || o.ozneGorsel || o.bekleyenYayin || o.vlCagri ? ` gorselsiz=${o.gorselsiz || 0} ozneGorsel=${o.ozneGorsel || 0} bekleyenYayin=${o.bekleyenYayin || 0} vl=${o.vlCagri || 0}` : "");
   return `ozet: taranan=${o.aday} yeni=${o.yeniAday} taze=${Math.max(0, o.yeniAday - (o.eskiSay || 0))} onEleme=${o.onElemeGecen} modelCagri=${o.modelCagri} ` +
