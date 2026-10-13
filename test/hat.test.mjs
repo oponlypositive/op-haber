@@ -155,3 +155,18 @@ test("bulut.isaretle: 100'den fazla kayıt 100'lük parçalarla gönderilir", as
   assert.deepEqual(boylar, [100, 100, 30]);
   assert.equal(r.yazildi, 230);
 });
+
+test("modelKur: birincil model ağ hatası verince tur boyunca ikinci Gemini modeline geçilir (devre kesici)", async () => {
+  const { modelKur } = await import("../lib/model.mjs");
+  const cagrilar = [];
+  const fetchFn = async (u) => {
+    const m = decodeURIComponent(String(u).split("/models/")[1].split(":")[0]); cagrilar.push(m);
+    if (m === "birincil") throw new Error("timeout");
+    return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: "{}" }] } }] }), { status: 200, headers: { "content-type": "application/json" } });
+  };
+  const model = modelKur({ geminiAnahtar: "k", geminiModel: "birincil", geminiYedekModel: "ikinci" }, { fetchFn, bekleFn: async () => {} });
+  const r1 = await model.yaz("s", "g"); assert.equal(r1.saglayici, "ikinci");
+  const n = cagrilar.filter((x) => x === "birincil").length;
+  const r2 = await model.yaz("s", "g"); assert.equal(r2.saglayici, "ikinci");
+  assert.equal(cagrilar.filter((x) => x === "birincil").length, n, "ikinci çağrıda birincil yeniden denenmez");
+});
