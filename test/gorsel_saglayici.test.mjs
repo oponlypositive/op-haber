@@ -230,7 +230,7 @@ test("model çıktısı: gorsel_arama2 ayıklanır (aynıysa düşer); istem som
 
 test("ayar: PEXELS_API_KEY, OPENVERSE_TUR_UST (varsayılan 6, 0 kapalı), isteğe bağlı OpenVerse kimliği; anahtar yoksa boş", () => {
   const v = ayarOku({}, []);
-  assert.equal(v.pexelsAnahtar, ""); assert.equal(v.openverseUst, 6); assert.equal(v.vlUst, 4);
+  assert.equal(v.pexelsAnahtar, ""); assert.equal(v.openverseUst, 6); assert.equal(v.vlUst, 3);
   const k = ayarOku({ PEXELS_API_KEY: "p", OPENVERSE_TUR_UST: "0", OPENVERSE_CLIENT_ID: "i", OPENVERSE_CLIENT_SECRET: "s" }, []);
   assert.deepEqual([k.pexelsAnahtar, k.openverseUst, k.openverseKimlik, k.openverseSir], ["p", 0, "i", "s"]);
 });
