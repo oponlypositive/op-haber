@@ -1,7 +1,7 @@
 name: haber
 
 on:
-  # Kalite duzeltmeleri bitene kadar zamanlama kapali (elle calistirilabilir):
+  # Kalite denemesi bitene kadar zamanlama kapali (elle calistirilabilir):
   # schedule:
   #   - cron: "3,13,23,33,43,53 * * * *"
   workflow_dispatch:
@@ -36,4 +36,12 @@ jobs:
           GORSELSIZ_YAYIN: ${{ vars.GORSELSIZ_YAYIN }}
           GUVENILIR_KAYNAKLAR: ${{ vars.GUVENILIR_KAYNAKLAR }}
           TUR_BASINA_EN: ${{ vars.TUR_BASINA_EN }}
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+          ALAN_KOTALARI: ${{ vars.ALAN_KOTALARI }}
+          ALAN_ARDA_ARDA_UST: ${{ vars.ALAN_ARDA_ARDA_UST }}
+          OZEL_ISLER: ${{ vars.OZEL_ISLER }}
+          OZEL_KOTALARI: ${{ vars.OZEL_KOTALARI }}
+          OZEL_SAAT: ${{ vars.OZEL_SAAT }}
+          OZEL_TUR_UST: ${{ vars.OZEL_TUR_UST }}
+          OZEL_CAGRI_UST: ${{ vars.OZEL_CAGRI_UST }}
         run: node hat.mjs

@@ -31,7 +31,7 @@ const GORSEL = { sonuc: { gorsel: { sahibi: "X", lisans: "CC BY 4.0", lisans_url
 test("ayar: varsayılanlar", () => {
   const a = ayarOku({}, ["--kuru"]);
   assert.equal(a.kuru, true);
-  assert.equal(a.turBasinaEn, 6);
+  assert.equal(a.turBasinaEn, 4);
   assert.equal(a.gorselsizYayin, false);
   assert.equal(a.geminiModel, "gemini-3.5-flash-lite");
   assert.ok(a.guvenilir.includes("positive.news"));

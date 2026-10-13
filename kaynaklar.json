@@ -1,10 +1,34 @@
 {
-  "_not": "Kaynaklar yerel haber hattıyla aynıdır. Yeni kaynak yalnız sahip onayıyla eklenir. Google News RSS kullanılmaz.",
+  "_not": "Yeni kaynak yalnız doğrulanmış besleme adresiyle eklenir (2026-10-13 oturumunda her adres tek istekle açılıp geçerli RSS ve güncel olduğu görüldü). Google News RSS kullanılmaz. alan: spor|sanat|bilim|teknoloji|gokbilim = nötr-olumlu ölçüt (lib/alanlar.mjs); alan yoksa 'iyi haber' sitesi. kosul: dogrulandi = kullanım koşulunda yeniden yazım/bağlantı açıkça serbest (lisans metni okundu); dogrulanamadi = koşul sayfası bulunamadı/okunamadı, açık yasak da görülmedi. hazir_gorsel: kurumun kendi lisanslı görseli beslemeden alınır (atıf zorunlu). tazelik_saat: seyrek yayın yapan kurumlar için özel tazelik süresi.",
   "rss": [
     { "ad": "goodnewsnetwork.org", "url": "https://www.goodnewsnetwork.org/feed/", "dil": "en", "guvenilir": true },
     { "ad": "positive.news", "url": "https://www.positive.news/feed/", "dil": "en", "guvenilir": true },
     { "ad": "optimistdaily.com", "url": "https://www.optimistdaily.com/feed/", "dil": "en", "guvenilir": true },
-    { "ad": "reasonstobecheerful.world", "url": "https://reasonstobecheerful.world/feed/", "dil": "en", "guvenilir": true }
+    { "ad": "reasonstobecheerful.world", "url": "https://reasonstobecheerful.world/feed/", "dil": "en", "guvenilir": true },
+
+    { "ad": "nasa.gov", "url": "https://www.nasa.gov/feed/", "dil": "en", "guvenilir": true, "alan": "gokbilim", "kosul": "dogrulandi", "kosul_not": "NASA medya kullanım yönergesi: içerik genel olarak telifsiz, bilgi/eğitim amaçlı kullanım serbest (nasa.gov/nasa-brand-center/images-and-media)" },
+    { "ad": "eso.org", "url": "https://www.eso.org/public/news/feed/", "dil": "en", "guvenilir": true, "alan": "gokbilim", "tazelik_saat": 720, "hazir_gorsel": true,
+      "gorsel_lisans": { "sahibi": "ESO", "lisans": "CC BY 4.0", "lisans_url": "https://creativecommons.org/licenses/by/4.0/" }, "kosul": "dogrulandi", "kosul_not": "ESO basın bültenleri, metin ve görseller CC BY 4.0 (eso.org/public/outreach/copyright); uyarlama serbest, atıf şart" },
+    { "ad": "eso.org (Haftanın Fotoğrafı)", "url": "https://www.eso.org/public/images/potw/feed/", "dil": "en", "guvenilir": true, "alan": "gokbilim", "tazelik_saat": 240, "hazir_gorsel": true,
+      "gorsel_lisans": { "sahibi": "ESO", "lisans": "CC BY 4.0", "lisans_url": "https://creativecommons.org/licenses/by/4.0/" }, "kosul": "dogrulandi", "kosul_not": "ESO görselleri CC BY 4.0; beslemede fotoğrafçı adı yok, kaynak sayfa bağlantısı kayıtlı" },
+    { "ad": "esahubble.org", "url": "https://esahubble.org/news/feed/", "dil": "en", "guvenilir": true, "alan": "gokbilim", "tazelik_saat": 720, "hazir_gorsel": true,
+      "gorsel_lisans": { "sahibi": "ESA/Hubble", "lisans": "CC BY 4.0", "lisans_url": "https://creativecommons.org/licenses/by/4.0/" }, "kosul": "dogrulandi", "kosul_not": "ESA/Hubble görsel ve web metinleri CC BY 4.0 (esahubble.org/copyright); kredi açık yazılmalı" },
+    { "ad": "esa.int (Uzay Bilimi)", "url": "https://www.esa.int/rssfeed/Our_Activities/Space_Science", "dil": "en", "guvenilir": true, "alan": "gokbilim", "tazelik_saat": 480, "kosul": "dogrulanamadi", "kosul_not": "ESA kullanım koşulları sayfası bulunamadı (adres 404); açık yasak görülmedi" },
+
+    { "ad": "phys.org", "url": "https://phys.org/rss-feed/", "dil": "en", "guvenilir": true, "alan": "bilim", "kosul": "dogrulanamadi", "kosul_not": "koşul sayfası okunamadı (çerez duvarı); açık yasak görülmedi" },
+    { "ad": "bilimgenc.tubitak.gov.tr", "url": "https://bilimgenc.tubitak.gov.tr/rss.xml", "dil": "tr", "guvenilir": true, "alan": "bilim", "tazelik_saat": 72, "kosul": "dogrulanamadi", "kosul_not": "koşul sayfası bu oturumda incelenmedi" },
+
+    { "ad": "spectrum.ieee.org", "url": "https://spectrum.ieee.org/feeds/feed.rss", "dil": "en", "guvenilir": true, "alan": "teknoloji", "tazelik_saat": 48, "kosul": "dogrulanamadi", "kosul_not": "koşullar sayfası okunamadı" },
+    { "ad": "trthaber.com (Bilim-Teknoloji)", "url": "https://www.trthaber.com/bilim_teknoloji_articles.rss", "dil": "tr", "guvenilir": true, "alan": "teknoloji", "kosul": "dogrulanamadi", "kosul_not": "koşullar incelenmedi" },
+
+    { "ad": "thisiscolossal.com", "url": "https://www.thisiscolossal.com/feed/", "dil": "en", "guvenilir": true, "alan": "sanat", "tazelik_saat": 72, "kosul": "dogrulanamadi", "kosul_not": "kullanım koşulları adresi 404" },
+    { "ad": "openculture.com", "url": "https://www.openculture.com/feed", "dil": "en", "guvenilir": true, "alan": "sanat", "tazelik_saat": 48, "kosul": "dogrulanamadi", "kosul_not": "koşullar incelenmedi" },
+    { "ad": "smithsonianmag.com (Sanat-Kültür)", "url": "https://www.smithsonianmag.com/rss/arts-culture/", "dil": "en", "guvenilir": true, "alan": "sanat", "tazelik_saat": 168, "kosul": "dogrulanamadi", "kosul_not": "koşullar sayfası adresi 404" },
+    { "ad": "trthaber.com (Kültür-Sanat)", "url": "https://www.trthaber.com/kultur_sanat_articles.rss", "dil": "tr", "guvenilir": true, "alan": "sanat", "tazelik_saat": 48, "kosul": "dogrulanamadi", "kosul_not": "koşullar incelenmedi" },
+
+    { "ad": "trthaber.com (Spor)", "url": "https://www.trthaber.com/spor_articles.rss", "dil": "tr", "guvenilir": true, "alan": "spor", "tazelik_saat": 36, "kosul": "dogrulanamadi", "kosul_not": "koşullar incelenmedi" },
+    { "ad": "sabah.com.tr (Spor)", "url": "https://www.sabah.com.tr/rss/spor.xml", "dil": "tr", "guvenilir": true, "alan": "spor", "kosul": "dogrulanamadi", "kosul_not": "koşullar incelenmedi" },
+    { "ad": "hurriyet.com.tr (Spor)", "url": "https://www.hurriyet.com.tr/rss/spor", "dil": "tr", "guvenilir": true, "alan": "spor", "kosul": "dogrulanamadi", "kosul_not": "koşullar incelenmedi" }
   ],
   "bing": [
     { "sorgu": "gönüllüler", "dil": "tr" },
@@ -16,5 +40,16 @@
     { "sorgu": "minik kahraman", "dil": "tr" },
     { "sorgu": "rekor kırdı genç sporcu", "dil": "tr" }
   ],
+  "eklenmeyenler": {
+    "technologyreview.com": "kullanım şartlarında robot/kazıyıcı ile otomatik veri çıkarma yasağı okundu",
+    "sciencedaily.com": "RSS koşulu metin ve bağlantıların DEĞİŞTİRİLMESİNİ yasaklıyor (okundu); kendi cümlelerimizle yazım bununla çelişir",
+    "news.mit.edu": "içerik CC BY-NC-ND bilinir (bu oturumda doğrulanmadı); ND uyarlamayı engeller",
+    "nature.com": "besleme başlık odaklı ve tarih alanı farklı biçimde; koşullar doğrulanmadı",
+    "home.cern": "besleme adresi 404",
+    "olympics.com, atptour.com, nba.com, tff.org": "bağlantı kurulamadı ya da 403",
+    "worldathletics.org": "besleme 2022'de donmuş",
+    "formula1.com": "besleme öğelerinde tarih yok",
+    "bbc.co.uk/sport, espn.com, theguardian.com, skysports.com, cbssports.com": "bilinen genel koşulları kişisel/ticari olmayan kullanımla sınırlı; bu oturumda okunmadı, eklenmedi"
+  },
   "tr_adaylar": []
 }
