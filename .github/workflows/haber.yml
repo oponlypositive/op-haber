@@ -1,0 +1,39 @@
+name: haber
+
+on:
+  # İlk elle denemeden sonra açılacak:
+  # schedule:
+  #   - cron: "3,13,23,33,43,53 * * * *"   # her 10 dakikada bir (GitHub yoğunlukta kaydırabilir)
+  workflow_dispatch:
+
+# Aynı anda tek koşu; yenisi sıraya girer ve eskisini kesmez.
+concurrency:
+  group: haber-hatti
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  tur:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20.18.0"
+      - name: Haber turu
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          HABER_YUKLE_ANAHTARI: ${{ secrets.HABER_YUKLE_ANAHTARI }}
+          SUPABASE_FN_URL: ${{ secrets.SUPABASE_FN_URL }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          YEDEK_MODEL: ${{ vars.YEDEK_MODEL }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GORSELSIZ_YAYIN: ${{ vars.GORSELSIZ_YAYIN }}
+          GUVENILIR_KAYNAKLAR: ${{ vars.GUVENILIR_KAYNAKLAR }}
+          TUR_BASINA_EN: ${{ vars.TUR_BASINA_EN }}
+        run: node hat.mjs

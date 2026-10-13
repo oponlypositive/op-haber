@@ -1,0 +1,20 @@
+{
+  "_not": "Kaynaklar yerel haber hattıyla aynıdır. Yeni kaynak yalnız sahip onayıyla eklenir. Google News RSS kullanılmaz.",
+  "rss": [
+    { "ad": "goodnewsnetwork.org", "url": "https://www.goodnewsnetwork.org/feed/", "dil": "en", "guvenilir": true },
+    { "ad": "positive.news", "url": "https://www.positive.news/feed/", "dil": "en", "guvenilir": true },
+    { "ad": "optimistdaily.com", "url": "https://www.optimistdaily.com/feed/", "dil": "en", "guvenilir": true },
+    { "ad": "reasonstobecheerful.world", "url": "https://reasonstobecheerful.world/feed/", "dil": "en", "guvenilir": true }
+  ],
+  "bing": [
+    { "sorgu": "gönüllüler", "dil": "tr" },
+    { "sorgu": "sokak hayvanları sahiplendi", "dil": "tr" },
+    { "sorgu": "bilim insanları başardı", "dil": "tr" },
+    { "sorgu": "öğrenciler ödül kazandı", "dil": "tr" },
+    { "sorgu": "fidan dikildi", "dil": "tr" },
+    { "sorgu": "mahalle dayanışma", "dil": "tr" },
+    { "sorgu": "minik kahraman", "dil": "tr" },
+    { "sorgu": "rekor kırdı genç sporcu", "dil": "tr" }
+  ],
+  "tr_adaylar": []
+}
