@@ -12,7 +12,7 @@ import { kaynakMetni, sayfaEslesiyor } from "./lib/sayfa.mjs";
 import { KotaDoldu, ModelHatasi, modelKur } from "./lib/model.mjs";
 import { haberYaz, redKodu } from "./lib/yaz.mjs";
 import { dilUygun } from "./lib/dogrula.mjs";
-import { gorselBul } from "./lib/gorsel.mjs";
+import { gorselBul, openverseBelirtec } from "./lib/gorsel.mjs";
 import { alanDengele, alanKalan } from "./lib/alanlar.mjs";
 import { ozelIsleriCalistir, ozelOzetMetni } from "./lib/ozel.mjs";
 import { haberKur, hazirGorselHazirla } from "./lib/haber_yap.mjs";
@@ -54,9 +54,11 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 /** Bir tur. Bağımlılıklar parametreyle gelir (testte taklit edilir). -> özet nesnesi */
 export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama }) {
   const baslangic = simdi();
-  const ozet = { aday: 0, yeniAday: 0, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
+  const ozet = { aday: 0, yeniAday: 0, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
     red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, alanYayin: {} };
   const sayac = { vl: 0 };
+  const gorselButce = { openverse: { kalan: ayar.openverseUst ?? 6, dur: false } };   // Openverse istekleri tur boyunca ortak bütçe (haber başına değil)
+  let ovBelirtec = null;
   const model = modelSarmala(hamModel, { ayar, bekleFn, simdi, sayac });
   const isaretler = [];
   const isaretle = (a, durum, neden, deneme = 0, yuk = null) => isaretler.push({ ozet: a.hash, durum, neden: String(neden).slice(0, 120), deneme, ...(yuk ? { yuk } : {}) });
@@ -170,10 +172,16 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       const bekleyenGorselsiz = false;        // d) bekleyen kayıt: yeniden arama/model çağrısı yok, saklı yükle görselsiz yayın
       let gorselKota = false;
       if (!g && !bekleyenGorselsiz) {
-        try { const r = await gorselBul(haber, { model, pixabayAnahtar: ayar.pixabayAnahtar, fetchFn, bekleFn, vlUst: ayar.vlUst }); g = r.sonuc; gb.notlar.push(...r.notlar); }
+        try {
+          if (ovBelirtec === null) ovBelirtec = ayar.openverseKimlik && ayar.openverseSir && ayar.openverseUst > 0 ? await openverseBelirtec(ayar.openverseKimlik, ayar.openverseSir, { fetchFn }) : "";
+          const r = await gorselBul(haber, { model, pixabayAnahtar: ayar.pixabayAnahtar, pexelsAnahtar: ayar.pexelsAnahtar || "", fetchFn, bekleFn, vlUst: ayar.vlUst, butce: gorselButce, ovBelirtec });
+          g = r.sonuc; gb.notlar.push(...r.notlar);
+          for (const [k, v] of Object.entries(r.retKodlari || {})) ozet.vlRet[k] = (ozet.vlRet[k] || 0) + v;
+          if (g?.gorsel?.saglayici) ozet.gorselKaynak[g.gorsel.saglayici] = (ozet.gorselKaynak[g.gorsel.saglayici] || 0) + 1;
+        }
         catch (e) { if (e instanceof KotaDoldu) gorselKota = true; else gb.notlar.push(`görsel hatası:${String(e.message).slice(0, 30)}`); }   // kota: yazılmış haber kaybolmasın, bu turda görselsiz çıkar, tur biter
         if (g?.ozne) ozet.ozneGorsel++;
-        log(`gorsel: [${haber.kategori}] ozne=${haber.gorselOzne ? haber.gorselOzne.tur + ":" + haber.gorselOzne.ad : "-"} sonuc=${g ? (g.saglayici || "var") : "yok"} ${gb.notlar.join(" | ").slice(0, 220)}`);
+        log(`gorsel: [${haber.kategori}] ozne=${haber.gorselOzne ? haber.gorselOzne.tur + ":" + haber.gorselOzne.ad : "-"} sonuc=${g ? (g.saglayici || "var") : "yok"} ${gb.notlar.join(" | ").slice(0, 320)}`);
       }
       if (!g && (!ayar.gorselsizYayin || ozet.gorselsiz >= ayar.gorselsizUst)) {
         const deneme = a.deneme + 1;
@@ -213,9 +221,11 @@ export function redSinifi(neden) {
 export function ozetSatiri(o) {
   const r = o.red || {};
   const digerKirilim = Object.entries(o.redKodlari || {}).filter(([k]) => !["uygun-degil", "rakam", "dil", "filtre"].includes(k)).map(([k, v]) => `${k}:${v}`).join(",");
+  const kirilim = (m) => Object.entries(m || {}).map(([k, v]) => `${k}:${v}`).join(",");
   const ek = (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
     (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") +
+    (kirilim(o.vlRet) ? ` vlRet=${kirilim(o.vlRet)}` : "") + (kirilim(o.gorselKaynak) ? ` gorselKaynak=${kirilim(o.gorselKaynak)}` : "") +
     (o.gorselsiz || o.ozneGorsel || o.bekleyenYayin || o.vlCagri ? ` gorselsiz=${o.gorselsiz || 0} ozneGorsel=${o.ozneGorsel || 0} bekleyenYayin=${o.bekleyenYayin || 0} vl=${o.vlCagri || 0}` : "");
   return `ozet: taranan=${o.aday} yeni=${o.yeniAday} taze=${Math.max(0, o.yeniAday - (o.eskiSay || 0))} onEleme=${o.onElemeGecen} modelCagri=${o.modelCagri} ` +
     `modelRed=${(r.uygunDegil || 0) + (r.rakam || 0) + (r.dil || 0) + (r.filtre || 0) + (r.diger || 0)}(uygunDegil=${r.uygunDegil || 0},rakam=${r.rakam || 0},dil=${r.dil || 0},filtre=${r.filtre || 0},diger=${r.diger || 0}) ` +

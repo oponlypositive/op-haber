@@ -113,8 +113,8 @@ test("modelKur: Gemini kotası dolunca yedek yoksa KotaDoldu, varsa yedek", asyn
 });
 
 test("lisans beyaz listesi", () => {
-  for (const l of ["CC0 1.0", "CC BY 4.0", "CC BY-SA 3.0", "Public domain", "Pixabay Content License"]) assert.equal(lisansOk(l), true, l);
-  for (const l of ["CC BY-NC 4.0", "CC BY-ND 2.0", "CC BY-NC-SA 4.0", "All rights reserved", "", "Pexels License"]) assert.equal(lisansOk(l), false, l);
+  for (const l of ["CC0 1.0", "CC BY 4.0", "CC BY-SA 3.0", "Public domain", "Pixabay Content License", "Pexels License"]) assert.equal(lisansOk(l), true, l);
+  for (const l of ["CC BY-NC 4.0", "CC BY-ND 2.0", "CC BY-NC-SA 4.0", "All rights reserved", "", "Pexels License NC"]) assert.equal(lisansOk(l), false, l);
 });
 
 test("görsel eleme: lisans, yasak kelime, konu uyumu", () => {

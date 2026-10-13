@@ -29,6 +29,11 @@ jobs:
           HABER_YUKLE_ANAHTARI: ${{ secrets.HABER_YUKLE_ANAHTARI }}
           SUPABASE_FN_URL: ${{ secrets.SUPABASE_FN_URL }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          OPENVERSE_CLIENT_ID: ${{ secrets.OPENVERSE_CLIENT_ID }}
+          OPENVERSE_CLIENT_SECRET: ${{ secrets.OPENVERSE_CLIENT_SECRET }}
+          OPENVERSE_TUR_UST: ${{ vars.OPENVERSE_TUR_UST }}
+          VL_UST: ${{ vars.VL_UST }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           YEDEK_MODEL: ${{ vars.YEDEK_MODEL }}
