@@ -59,4 +59,8 @@ jobs:
           GNEWS_COZ_UST: ${{ vars.GNEWS_COZ_UST }}
           RESIM_TEKRAR_GUN: ${{ vars.RESIM_TEKRAR_GUN }}
           SOHBET_MODEL: ${{ vars.SOHBET_MODEL }}
+          OP_AKIS_URL: ${{ vars.OP_AKIS_URL || 'https://yixyvsspetwjatixfaki.supabase.co/rest/v1/rpc/akis' }}
+          OP_AKIS_ANAHTAR: ${{ vars.OP_AKIS_ANAHTAR || 'sb_publishable_bCB8NUDn3O25K9SD6-UtwQ_yP9EVaP5' }}   # herkese açık yayın anahtarı (istemcide de açık); gizli değil
+          AYNI_OLAY: ${{ vars.AYNI_OLAY }}
+          HAYVAN_REZERV: ${{ vars.HAYVAN_REZERV }}
         run: node hat.mjs

@@ -79,7 +79,7 @@ test("kaynaklar.json şeması: besleme adresi, alan, koşul işareti, hazır gö
     if (k.tazelik_saat) assert.ok(k.tazelik_saat >= 1 && k.tazelik_saat <= 2000, k.ad);
     if (k.hazir_gorsel) { assert.match(k.gorsel_lisans?.lisans || "", /^CC BY/, k.ad); assert.ok(k.gorsel_lisans.sahibi, k.ad); assert.equal(k.kosul, "dogrulandi", `hazır görsel yalnız doğrulanmış lisansla: ${k.ad}`); }
   }
-  for (const a of Object.keys(ALANLAR)) assert.ok(kaynaklar.rss.some((k) => k.alan === a), `alan için kaynak var: ${a}`);
+  for (const a of Object.keys(ALANLAR)) if (!ALANLAR[a].sezgi) assert.ok(kaynaklar.rss.some((k) => k.alan === a), `alan için kaynak var: ${a}`);   // sezgi alanı (hayvanlar) başlık sezgisiyle etiketlenir, kaynağı yoktur
 });
 
 test("rss: enclosure ve açıklamadaki görsel (yalnız https)", () => {
