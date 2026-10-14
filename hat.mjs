@@ -73,7 +73,7 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 /** Bir tur. Bağımlılıklar parametreyle gelir (testte taklit edilir). -> özet nesnesi */
 export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama }) {
   const baslangic = simdi();
-  const ozet = { aday: 0, yeniAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
+  const ozet = { aday: 0, yeniAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, gorselTur: {}, gorselSureMs: 0, gorselSureAsim: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
     red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, alanYayin: {},
     onSinif: { durum: "kapali", sorulan: 0, gecen: 0, red: {}, cagri: 0 }, sonOkuma: { durum: "kapali", sorulan: 0, duzeltilen: 0, red: {} } };
   const sayac = { vl: 0 };
@@ -252,17 +252,25 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       // görsel: (i) kurumun kendi lisanslı görseli, (ii) haberin ADI GEÇEN öznesinin Commons görseli, (iii) insansız nötr konu görseli, (iv) görselsiz yayın
       const gb = { sonuc: null, notlar: [] };
       let g = await hazirGorselHazirla(a, { fetchFn, notlar: gb.notlar });
+      if (g) ozet.gorselTur.kaynak = (ozet.gorselTur.kaynak || 0) + 1;
       const bekleyenGorselsiz = false;        // d) bekleyen kayıt: yeniden arama/model çağrısı yok, saklı yükle görselsiz yayın
       let gorselKota = false;
-      if (!g && !bekleyenGorselsiz) {
+      const turKalanMs = (ayar.gorselTurSureSn ?? 300) * 1000 - ozet.gorselSureMs;
+      if (!g && !bekleyenGorselsiz && turKalanMs <= 0) { gb.notlar.push("tur görsel süresi doldu"); ozet.gorselSureAsim++; }
+      else if (!g && !bekleyenGorselsiz) {
+        const gBasla = simdi();
         try {
           if (ovBelirtec === null) ovBelirtec = ayar.openverseKimlik && ayar.openverseSir && ayar.openverseUst > 0 ? await openverseBelirtec(ayar.openverseKimlik, ayar.openverseSir, { fetchFn }) : "";
-          const r = await gorselBul(haber, { model, pixabayAnahtar: ayar.pixabayAnahtar, pexelsAnahtar: ayar.pexelsAnahtar || "", fetchFn, bekleFn, vlUst: ayar.vlUst, butce: gorselButce, ovBelirtec });
+          const r = await gorselBul(haber, { model, pixabayAnahtar: ayar.pixabayAnahtar, pexelsAnahtar: ayar.pexelsAnahtar || "", fetchFn, bekleFn, vlUst: ayar.vlUst, butce: gorselButce, ovBelirtec,
+            simdi, sureSn: Math.min(ayar.gorselSureSn ?? 50, turKalanMs / 1000), plan: ayar.gorselPlan !== false, logoIzin: ayar.gorselLogo === true });
           g = r.sonuc; gb.notlar.push(...r.notlar);
+          if (r.sureAsildi) ozet.gorselSureAsim++;
+          if (g?.adayTur) ozet.gorselTur[g.adayTur] = (ozet.gorselTur[g.adayTur] || 0) + 1;
           for (const [k, v] of Object.entries(r.retKodlari || {})) ozet.vlRet[k] = (ozet.vlRet[k] || 0) + v;
           if (g?.gorsel?.saglayici) ozet.gorselKaynak[g.gorsel.saglayici] = (ozet.gorselKaynak[g.gorsel.saglayici] || 0) + 1;
         }
         catch (e) { if (e instanceof KotaDoldu) gorselKota = true; else gb.notlar.push(`görsel hatası:${String(e.message).slice(0, 30)}`); }   // kota: yazılmış haber kaybolmasın, bu turda görselsiz çıkar, tur biter
+        ozet.gorselSureMs += Math.max(0, simdi() - gBasla);
         if (g?.ozne) ozet.ozneGorsel++;
         log(`gorsel: [${haber.kategori}] ozne=${haber.gorselOzne ? haber.gorselOzne.tur + ":" + haber.gorselOzne.ad : "-"} sonuc=${g ? (g.saglayici || "var") : "yok"} ${gb.notlar.join(" | ").slice(0, 320)}`);
       }
@@ -348,6 +356,7 @@ export function ozetSatiri(o) {
     (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") + onSinifOzetMetni(o.onSinif) + sonOkumaOzetMetni(o.sonOkuma) +
     (o.haberYayin !== undefined ? ` cagriBasinaYayin=${o.modelCagri > 0 ? (o.haberYayin / o.modelCagri).toFixed(2) : "0.00"}` : "") +
     (kirilim(o.vlRet) ? ` vlRet=${kirilim(o.vlRet)}` : "") + (kirilim(o.gorselKaynak) ? ` gorselKaynak=${kirilim(o.gorselKaynak)}` : "") +
+    (kirilim(o.gorselTur) ? ` gorselTur=${kirilim(o.gorselTur)}` : "") + (o.gorselSureMs ? ` gorselSure=${Math.round(o.gorselSureMs / 1000)}s` : "") + (o.gorselSureAsim ? ` gorselSureAsim=${o.gorselSureAsim}` : "") +
     (o.gorselsiz || o.ozneGorsel || o.bekleyenYayin || o.vlCagri ? ` gorselsiz=${o.gorselsiz || 0} ozneGorsel=${o.ozneGorsel || 0} bekleyenYayin=${o.bekleyenYayin || 0} vl=${o.vlCagri || 0}` : "");
   return `ozet: taranan=${o.aday} yeni=${o.yeniAday} taze=${Math.max(0, o.yeniAday - (o.eskiSay || 0))} onEleme=${o.onElemeGecen} modelCagri=${o.modelCagri} ` +
     `modelRed=${(r.uygunDegil || 0) + (r.rakam || 0) + (r.dil || 0) + (r.filtre || 0) + (r.diger || 0)}(uygunDegil=${r.uygunDegil || 0},rakam=${r.rakam || 0},dil=${r.dil || 0},filtre=${r.filtre || 0},diger=${r.diger || 0}) ` +
