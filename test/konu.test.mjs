@@ -293,21 +293,22 @@ test("ayarlar: varsayılanlar (günlük üst 35, tur başına 4 çağrı, 2 gön
   const a = ayarOku({}, []);
   assert.equal(a.konuAcik, true); assert.equal(a.konuGunlukUst, 35); assert.equal(a.konuCagriUst, 4); assert.equal(a.konuTurUst, 2);
   assert.deepEqual(a.konuSaat, { bas: 4, son: 21 });
-  assert.deepEqual(a.konuKotalari, { op_mutfak: 3, op_icecek: 2, op_oyun: 2, op_klasikler: 2, op_ronesans: 2, op_antik: 4 });
+  assert.deepEqual(a.konuKotalari, { op_mutfak: 3, op_icecek: 2, op_oyun: 2, op_klasikler: 2, op_ronesans: 2, op_antik: 4, op_hayvanlar: 2, op_sanat: 1 });
   const e = ayarOku({ KONU_GUNLUK_UST: "20", KONU_CAGRI_UST: "6", KONU_TUR_UST: "1", KONU_KOTALARI: "op_antik:6,op_oyun:0", KONU_SAAT: "5-20", KONU_HESAPLARI: "0" }, []);
   assert.equal(e.konuGunlukUst, 20); assert.equal(e.konuCagriUst, 6); assert.equal(e.konuTurUst, 1); assert.equal(e.konuKotalari.op_antik, 6); assert.equal(e.konuKotalari.op_oyun, 0); assert.deepEqual(e.konuSaat, { bas: 5, son: 20 }); assert.equal(e.konuAcik, false);
   assert.deepEqual(konuSaatAraligi("x"), { bas: 4, son: 21 });
   assert.equal(konuKotaAyristir("op_antik:99").op_antik, 4, "uç değer yok sayılır");
   assert.equal(OZEL_PLAN.felsefe.kota, 3);
   // günlük toplam hacim: mevcut özel işler + yeni konu hesapları ~30-35
-  const yeni = Object.values(a.konuKotalari).reduce((t, x) => t + x, 0);
+  // haberOrtak hesaplar (op_hayvanlar, op_sanat) günlük toplamın (konuGunlukUst) dışındadır: kategorileri haberlerle paylaşılır ve kendi yuva kotasıyla çalışır (test/hayvan_heykel.test.mjs)
+  const yeni = Object.entries(a.konuKotalari).filter(([h]) => !KONU_HESAPLARI[h].haberOrtak).reduce((t, [, x]) => t + x, 0);
   const eski = ["felsefe", "edebiyat", "siir", "gokbilim", "resim", "sohbet"].reduce((t, k) => t + OZEL_PLAN[k].kota, 0);
   assert.ok(eski + yeni >= 30 && eski + yeni <= 36, `günlük toplam ${eski + yeni}`);
   assert.equal(EMOJI.mutfak, "🍲"); assert.equal(EMOJI.oyun, "🎲"); assert.equal(EMOJI.tarih, "🏺");
 });
 test("gruplar: ortak kategoriler serpiştirilmiş sıra, aynı hesap art arda gelmez; kategori paylaşan op_edebiyat gruba dahil", () => {
   const a = ayarOku({}, []), g = gruplariKur(a);
-  assert.deepEqual([...g.keys()].sort(), ["edebiyat", "mutfak", "oyun", "tarih"]);
+  assert.deepEqual([...g.keys()].sort(), ["edebiyat", "hayvanlar", "mutfak", "oyun", "sanat", "tarih"]);
   for (const kat of ["mutfak", "edebiyat"]) { const s = g.get(kat).sira; for (let i = 1; i < s.length; i++) assert.notEqual(s[i], s[i - 1], `${kat}: art arda ${s[i]}`); }
   { const s = g.get("tarih").sira; let en = 1, k = 1; for (let i = 1; i < s.length; i++) { k = s[i] === s[i - 1] ? k + 1 : 1; en = Math.max(en, k); } assert.ok(en <= 2, "4:2 oranında en çok 2 art arda (aralık ≥ 2 saat ile ayrılır)"); }
   assert.equal(g.get("edebiyat").sira.filter((h) => h === "op_klasikler").length, 2);
@@ -480,7 +481,7 @@ test("konuIsleriCalistir: günlük toplam üst sınırı ve kota dolu kategorile
   const dolu = new Map(GUNLUK_KATEGORILER_TEST.map((k) => [k, { son24: 5, son7g: 20, sonZaman: "2026-10-14T05:00:00Z" }]));
   const o = await konuIsleriCalistir({ ayar: ayarOku({}, []), bulut: bulutKur(), model: { yaz: async () => { throw new Error("çağrılmamalı"); } }, fetchFn: sahteAg(), simdi: SIMDI, kotaDurum: dolu, bekleFn: async () => {} });
   assert.equal(o.calisan.length, 0); assert.ok(o.atlanan.every((x) => ["gunluk-ust", "kota-dolu"].includes(x.neden)), JSON.stringify(o.atlanan));
-  assert.deepEqual(KONU_HESAP_ADLARI.sort(), ["op_antik", "op_icecek", "op_klasikler", "op_mutfak", "op_oyun", "op_ronesans"]);
+  assert.deepEqual(KONU_HESAP_ADLARI.sort(), ["op_antik", "op_hayvanlar", "op_icecek", "op_klasikler", "op_mutfak", "op_oyun", "op_ronesans", "op_sanat"]);
   for (const h of KONU_HESAP_ADLARI) assert.ok(KONU_HESAPLARI[h].kategori && KONU_HESAPLARI[h].tur);
 });
 const GUNLUK_KATEGORILER_TEST = ["felsefe", "edebiyat", "siir", "mitoloji", "gokbilim", "resim", "sohbet", "mutfak", "oyun", "tarih"];

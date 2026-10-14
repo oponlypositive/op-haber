@@ -71,8 +71,9 @@
       "dil": "en",
       "guvenilir": true,
       "alan": "bilim",
+      "pasif": true,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşul sayfası okunamadı (çerez duvarı); açık yasak görülmedi",
+      "kosul_not": "2026-10-14: Science X koşulları türev/uyarlama kullanımı ve makine öğrenmesini yasaklıyor (işçi raporu); avukat görüşüne kadar PASİF (sahip kuralı: risksiz seçenek). SAHİP ONAYI GEREKİR (pasif: true kaldırılınca etkinleşir)",
       "en": 30,
       "tazelik_saat": 36
     },
