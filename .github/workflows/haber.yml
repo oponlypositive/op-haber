@@ -64,7 +64,7 @@ jobs:
           AYNI_OLAY: ${{ vars.AYNI_OLAY }}
           HAYVAN_REZERV: ${{ vars.HAYVAN_REZERV }}
           MUFREDAT: ${{ vars.MUFREDAT }}
-          MUFREDAT_UST: ${{ vars.MUFREDAT_UST || 'op_meditasyon:0,op_yoga:0,op_gelisim:0,op_saglikli:0,op_hareket:0' }}   # sahip (hekim) dersleri gozden gecirene kadar ic huzur hesaplari kapali
+          MUFREDAT_UST: ${{ vars.MUFREDAT_UST }}   # 2026-10-14 sahip ic huzur mufredatlarini onayladi (hepsi acik)
           MUFREDAT_TUR_UST: ${{ vars.MUFREDAT_TUR_UST }}
           MUFREDAT_CAGRI_UST: ${{ vars.MUFREDAT_CAGRI_UST }}
           MUFREDAT_DENEME_UST: ${{ vars.MUFREDAT_DENEME_UST }}
