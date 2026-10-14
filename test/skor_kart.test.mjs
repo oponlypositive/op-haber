@@ -153,7 +153,7 @@ test("tur: skor kartlı haberde görsel ARANMAZ, kart yükte, görselsizYayin ka
   assert.equal(bulut.k.yayinlar[0].h.kart.skor1, 99);
   assert.equal(o.skorKart, 1); assert.equal(o.gorselsiz, 0); assert.equal(o.vlCagri, 0);
   assert.ok(!url.some((u) => /wikimedia|wikidata|pixabay|pexels|openverse/.test(u)), "görsel araması yapılmamalı: " + url.join(","));
-  assert.match(ozetSatiri(o), / skorKart=1/);
+  assert.match(ozetSatiri(o), / skorKart=tek:1,liste:0,puan:0/);
 });
 
 test("tur: skor kartı yoksa özet satırında skorKart görünmez", () => {

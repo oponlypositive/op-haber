@@ -415,3 +415,115 @@ test("planlayıcı istemi: alan, mevcut ağaç, yasaklar ve dürüstlük kuralı
   for (const r of [/yoga eğitmeni/, /EN ÇOK 12 ders/, /Yogaya Başlangıç: Yoga nedir\?/, /yapay zekâ/, /din, tanrı/, /Vikipedi maddesi/, /DEĞİŞTİRME/, /gerekce/]) assert.match(s, r);
   assert.equal(gonderiKimligi("op_x", "a").id.length <= 80, true);
 });
+
+// ---------------------------------------------------------------- KALICI DURUM (gecis-020 hat_durum): imleç + öğretmen planı temizlenmeyen tabloda
+// Sahte hat_durum: durumOku/durumYaz; hata anahtarlarıyla "uç yok" (eski işlev, HTTP 400) ve "yazılamadı" (HTTP 500) davranışları denenir.
+import { imlecDurumAnahtari, planDurumAnahtari, planKaydet, planOku, durumOkuGuvenli, durumYazGuvenli } from "../lib/mufredat.mjs";
+function durumluBulut({ okuHata = false, yazHata = false } = {}) {
+  const b = sahteBulut(), durum = new Map();
+  Object.assign(b, { durum, okuCagri: [], yazCagri: [] });
+  b.durumOku = async (a) => { b.okuCagri.push(a); if (okuHata) throw new Error("haber-yukle durum_oku: HTTP 400"); const m = new Map(); for (const k of a) if (durum.has(k)) m.set(k, structuredClone(durum.get(k))); return m; };
+  b.durumYaz = async (k, v) => { b.yazCagri.push([k, structuredClone(v)]); if (yazHata) throw new Error("haber-yukle durum_yaz: HTTP 500"); durum.set(k, structuredClone(v)); return true; };
+  return b;
+}
+const bes = () => muf("op_felsefe", ["a1", "a2", "a3", "a4", "a5"].map((i) => dersNesne(i)));
+
+test("hat_durum: anahtarlar sunucu biçimine uyar (^[a-z0-9_:-]{3,80}$)", () => {
+  for (const h of ["op_felsefe", "op_meditasyon", "op_antik"]) for (const a of [imlecDurumAnahtari(h), planDurumAnahtari(h)]) assert.match(a, /^[a-z0-9_:-]{3,80}$/);
+  assert.equal(imlecDurumAnahtari("op_felsefe"), "mufredat:op_felsefe:imlec"); assert.equal(planDurumAnahtari("op_felsefe"), "mufredat:op_felsefe:plan");
+});
+test("hat_durum: yardımcılar uç yoksa/hata verirse null/false döner (atmaz); geçersiz anahtar çağrılmaz", async () => {
+  assert.equal(await durumOkuGuvenli(sahteBulut(), ["mufredat:x:imlec"]), null, "bulut.durumOku yok");
+  assert.equal(await durumOkuGuvenli(durumluBulut({ okuHata: true }), ["mufredat:x:imlec"]), null);
+  const b = durumluBulut();
+  assert.equal(await durumOkuGuvenli(b, ["Büyük Harf"]), null); assert.equal(b.okuCagri.length, 0, "geçersiz anahtar ağa çıkmaz");
+  assert.equal(await durumYazGuvenli(b, "x", { n: 1 }), false); assert.equal(b.yazCagri.length, 0);
+  assert.equal(await durumYazGuvenli(durumluBulut({ yazHata: true }), "mufredat:x:imlec", { n: 1 }), false);
+  assert.equal(await durumYazGuvenli(b, "mufredat:x:imlec", { n: 1 }), true);
+});
+test("hat_durum: yayında imleç hat_durum'a yazılır (haber_gorulen imleci YAZILMAZ); 45 gün sonra ders anahtarları silinse de ilerleme kalır", async () => {
+  const m = bes(), bulut = durumluBulut(), model = sahteModel(dersCevap), f = sahteFetch();
+  for (let g = 0; g < 2; g++) await mufredatUret({ m, dersler: m.dersler, bulut, model, fetchFn: f, simdi: Date.UTC(2026, 9, 14 + g, 6, 0), cagriHakki: 4, bekleFn: bekle });
+  assert.equal(bulut.yayin.length, 2);
+  assert.equal(bulut.durum.get(imlecDurumAnahtari("op_felsefe")).n, 2);
+  assert.match(bulut.durum.get(imlecDurumAnahtari("op_felsefe")).z, /^2026-10-15T/);
+  assert.ok(!bulut.kayit.has(imlecAnahtari("op_felsefe", 1)) && !bulut.kayit.has(imlecAnahtari("op_felsefe", 2)), "eski yol kullanılmadı");
+  // haber_gorulen'in tümü temizlendi (45 gün + 3 gün temizliği); hat_durum temizlenmez
+  bulut.kayit.clear();
+  const il = await ilerlemeOku({ bulut, hesap: "op_felsefe", dersler: m.dersler });
+  assert.deepEqual(il, { n: 2, sira: 2, toplam: 5, bitti: false });
+  // kalıcı imleç varken eski imleçler HİÇ sorulmaz (yalnız ders-anahtarı penceresi)
+  bulut.kayit.clear();
+  const sorulan = []; const orijinal = bulut.bilinenler; bulut.bilinenler = async (o) => { sorulan.push(...o); return orijinal(o); };
+  await ilerlemeOku({ bulut, hesap: "op_felsefe", dersler: m.dersler });
+  assert.ok(!sorulan.some((k) => k === imlecAnahtari("op_felsefe", 1) || k === imlecAnahtari("op_felsefe", 5)), "haber_gorulen imleci sorulmadı");
+  // tekrar başa dönmez
+  const r = await mufredatUret({ m, dersler: m.dersler, bulut, model, fetchFn: f, simdi: Date.UTC(2026, 9, 20, 6, 0), cagriHakki: 4, bekleFn: bekle });
+  assert.equal(r.durum, "yayinlandi"); assert.equal(bulut.yayin[2].haber.tr.baslik, "Ders a3");
+  assert.equal(bulut.durum.get(imlecDurumAnahtari("op_felsefe")).n, 3);
+});
+test("hat_durum: GERİYE UYUM — canlıdaki haber_gorulen imleci ilk okumada hat_durum'a taşınır (haber_gorulen kaydı silinmez)", async () => {
+  const m = bes(), bulut = durumluBulut();
+  bulut.kayit.set(imlecAnahtari("op_felsefe", 3), { ozet: imlecAnahtari("op_felsefe", 3), durum: "yayinlandi" });
+  bulut.kayit.set(imlecAnahtari("op_felsefe", 1), { ozet: imlecAnahtari("op_felsefe", 1), durum: "yayinlandi" });
+  const il = await ilerlemeOku({ bulut, hesap: "op_felsefe", dersler: m.dersler });
+  assert.deepEqual(il, { n: 3, sira: 3, toplam: 5, bitti: false });
+  assert.equal(bulut.durum.get(imlecDurumAnahtari("op_felsefe")).n, 3); assert.equal(bulut.durum.get(imlecDurumAnahtari("op_felsefe")).kaynak, "tasima");
+  assert.ok(bulut.kayit.has(imlecAnahtari("op_felsefe", 3)), "eski kayıt silinmedi");
+  // ikinci okuma artık hat_durum'dan: eski imleç silinse de n = 3
+  bulut.kayit.clear();
+  assert.equal((await ilerlemeOku({ bulut, hesap: "op_felsefe", dersler: m.dersler })).n, 3);
+  // imleç hiç yok (yeni hesap): n = 0, hat_durum'a SIFIR yazılmaz
+  const b2 = durumluBulut();
+  assert.equal((await ilerlemeOku({ bulut: b2, hesap: "op_yeni", dersler: m.dersler })).n, 0); assert.equal(b2.yazCagri.length, 0);
+});
+test("hat_durum: uç yoksa/hata verirse haber_gorulen yoluna düşer — okuma (imleç) ve yazma (imleç + günlük yuva) aynen eski davranış", async () => {
+  const m = bes(), model = sahteModel(dersCevap), f = sahteFetch();
+  // okuma hatası (eski işlev: HTTP 400): imleç haber_gorulen'den, yazım haber_gorulen'e (durumYaz da denenir ama hata)
+  const eski = durumluBulut({ okuHata: true, yazHata: true });
+  eski.kayit.set(imlecAnahtari("op_felsefe", 2), { ozet: imlecAnahtari("op_felsefe", 2), durum: "yayinlandi" });
+  assert.equal((await ilerlemeOku({ bulut: eski, hesap: "op_felsefe", dersler: m.dersler })).n, 2);
+  assert.equal(eski.yazCagri.length, 0, "okuma hatasındaysa taşıma denenmez (hat_durum çalışmıyor)");
+  const r = await mufredatUret({ m, dersler: m.dersler, bulut: eski, model, fetchFn: f, simdi: SIMDI, cagriHakki: 4, bekleFn: bekle });
+  assert.equal(r.durum, "yayinlandi");
+  assert.ok(eski.kayit.has(imlecAnahtari("op_felsefe", 3)), "imleç haber_gorulen'e yazıldı");
+  // durumYaz tek başına hata verirse de imleç kaybolmaz
+  const yarim = durumluBulut({ yazHata: true });
+  const r2 = await mufredatUret({ m, dersler: m.dersler, bulut: yarim, model, fetchFn: f, simdi: SIMDI, cagriHakki: 4, bekleFn: bekle });
+  assert.equal(r2.durum, "yayinlandi"); assert.ok(yarim.kayit.has(imlecAnahtari("op_felsefe", 1)));
+  // hiç durum ucu olmayan eski bulut nesnesi (mevcut testler): değişmedi
+  const duz = sahteBulut();
+  await mufredatUret({ m, dersler: m.dersler, bulut: duz, model, fetchFn: f, simdi: SIMDI, cagriHakki: 4, bekleFn: bekle });
+  assert.ok(duz.kayit.has(imlecAnahtari("op_felsefe", 1)));
+});
+test("hat_durum: öğretmen planı hat_durum'a yazılır, oradan okunur, temizlikten etkilenmez; haber_gorulen'deki eski plan taşınır", async () => {
+  const m = muf("op_felsefe", [dersNesne("a", { kaynak: { wiki_en: "Topic 9" } }), dersNesne("b", { kaynak: { wiki_en: "Topic 8" } })]);
+  const bulut = durumluBulut(), model = sahteModel(planCevap([planDers(1), planDers(2), planDers(3), planDers(4), planDers(5)]));
+  const p = await ogretmenPlanla({ m, dersler: m.dersler, planYuku: null, bulut, model, fetchFn: planFetch(), bekleFn: bekle, simdi: SIMDI, son: "Ders a" });
+  assert.equal(p.durum, "eklendi"); assert.equal(p.eklenen, 5);
+  assert.ok(!bulut.kayit.has(planAnahtari("op_felsefe")), "plan haber_gorulen'e yazılmadı");
+  const kayitli = bulut.durum.get(planDurumAnahtari("op_felsefe"));
+  assert.equal(kayitli.v, 1); assert.equal(kayitli.e.length, 5);
+  assert.ok(JSON.stringify(kayitli).length < 65536);
+  // 3 gün sonra haber_gorulen boşalsa da plan yaşar; tur planı hat_durum'dan okur ve ek dersleri yayınlar
+  bulut.kayit.clear();
+  assert.deepEqual((await planOku({ bulut, hesap: "op_felsefe" })).kaynak, "durum");
+  const r = await mufredatIsleriCalistir({ ayar: ayarT({ ogretmenPlan: true, ogretmenTurUst: 0 }), bulut, model: sahteModel(dersCevap), fetchFn: planFetch(), simdi: SIMDI, bekleFn: bekle, yukleme: { harita: new Map([["op_felsefe", m]]), hatalar: [] } });
+  assert.equal(r.yayin, 1); assert.match(r.ozet, /op_felsefe:1\/7/, "çekirdek 2 + hat_durum'daki 5 ek ders = 7");
+  // tazele: hat_durum'a yazar
+  assert.equal(await planTazele({ hesap: "op_felsefe", bulut, yuk: kayitli, simdi: SIMDI + 86400000 }), true);
+  assert.equal(bulut.durum.get(planDurumAnahtari("op_felsefe")).y, new Date(SIMDI + 86400000).toISOString()); assert.ok(!bulut.kayit.has(planAnahtari("op_felsefe")));
+  // GERİYE UYUM: plan yalnız haber_gorulen'de (canlı) -> okunur ve hat_durum'a taşınır
+  const eski = durumluBulut(); eski.kayit.set(planAnahtari("op_felsefe"), { ozet: planAnahtari("op_felsefe"), durum: "bekliyor_gorsel", yuk: kayitli });
+  const o = await planOku({ bulut: eski, hesap: "op_felsefe" });
+  assert.equal(o.kaynak, "gorulen"); assert.equal(o.yuk.e.length, 5); assert.equal(eski.durum.get(planDurumAnahtari("op_felsefe")).e.length, 5, "taşındı");
+  assert.ok(eski.kayit.has(planAnahtari("op_felsefe")), "eski kayıt silinmedi");
+});
+test("hat_durum: plan yazımı uç yokken haber_gorulen'e (bekliyor_gorsel) düşer; ikisi de olmazsa hata atar; plan yok -> kaynak null", async () => {
+  const bulut = durumluBulut({ yazHata: true }), yuk = { v: 1, z: "2026-10-14T00:00:00Z", y: "2026-10-14T00:00:00Z", g: "", s: [], e: [] };
+  assert.equal(await planKaydet(bulut, "op_felsefe", yuk, "deneme"), "gorulen");
+  assert.equal(bulut.kayit.get(planAnahtari("op_felsefe")).durum, "bekliyor_gorsel");
+  const ikisiDe = { ...durumluBulut({ yazHata: true }), isaretle: async () => { throw new Error("haber-yukle isaretle: HTTP 500"); } };
+  await assert.rejects(planKaydet(ikisiDe, "op_felsefe", yuk, "x"), /HTTP 500/);
+  assert.deepEqual(await planOku({ bulut: durumluBulut(), hesap: "op_yok" }), { yuk: null, kaynak: null });
+});
