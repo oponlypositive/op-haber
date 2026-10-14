@@ -392,7 +392,7 @@ export function ozetSatiri(o) {
   const ek = (o.yerli ? ` yerli=${o.yerli.yayin}/${o.haberYayin ?? 0}(aday=${o.yerli.aday},onEleme=${o.yerli.onEleme})` : "") +
     (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
     (o.gnews && (o.gnews.aday || o.gnews.cozulen || o.gnews.cozHata) ? ` gnews=aday:${o.gnews.aday},cozulen:${o.gnews.cozulen},cozHata:${o.gnews.cozHata},atlanan:${o.gnews.atlanan}` : "") +
-    (o.skorKart ? ` skorKart=${o.skorKart}` : "") + (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") + botOzetMetni(o.bot) +
+    (o.skorKart ? ` skorKart=${o.skorKart}` : "") + (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") + (o.ozel?.mufredatOzet ? ` mufredat=${o.ozel.mufredatOzet}` : "") + (o.ozel?.planOzet ? ` plan=${o.ozel.planOzet}` : "") + botOzetMetni(o.bot) +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
     (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") + onSinifOzetMetni(o.onSinif) + sonOkumaOzetMetni(o.sonOkuma) +
     (o.haberYayin !== undefined ? ` cagriBasinaYayin=${o.modelCagri > 0 ? (o.haberYayin / o.modelCagri).toFixed(2) : "0.00"}` : "") +

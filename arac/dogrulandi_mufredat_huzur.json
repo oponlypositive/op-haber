@@ -1,0 +1,1181 @@
+{
+ "tarih": "2026-10-14",
+ "basliklar": {
+  "en:Meditation": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Meditation"
+  },
+  "en:Silence": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Silence"
+  },
+  "en:Sitting": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Sitting"
+  },
+  "en:Concentration": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Concentration"
+  },
+  "en:Mind-wandering": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Mind-wandering"
+  },
+  "en:Attention": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Attention"
+  },
+  "en:Mindfulness": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Mindfulness"
+  },
+  "en:Awareness": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Awareness"
+  },
+  "en:Sense": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Sense"
+  },
+  "en:Thought": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Thought"
+  },
+  "en:Emotion": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Emotion"
+  },
+  "en:Attentional control": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Attentional_control"
+  },
+  "en:Breathing": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Breathing"
+  },
+  "en:Diaphragmatic breathing": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Diaphragmatic_breathing"
+  },
+  "en:Inhalation": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Inhalation"
+  },
+  "en:Exhalation": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Exhalation"
+  },
+  "en:Respiratory rate": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Respiratory_rate"
+  },
+  "en:Lung": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Lung"
+  },
+  "en:Proprioception": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Proprioception"
+  },
+  "en:Foot": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Foot"
+  },
+  "en:Shoulder": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Shoulder"
+  },
+  "en:Jaw": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Jaw"
+  },
+  "en:Progressive muscle relaxation": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Progressive_muscle_relaxation"
+  },
+  "en:Walking": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Walking"
+  },
+  "en:Walking meditation": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Walking_meditation"
+  },
+  "en:Nature therapy": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Nature_therapy"
+  },
+  "en:Pedometer": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Pedometer"
+  },
+  "en:Kindness": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Kindness"
+  },
+  "en:Compassion": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Compassion"
+  },
+  "en:Self-compassion": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Self-compassion"
+  },
+  "en:Gratitude": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Gratitude"
+  },
+  "en:Empathy": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Empathy"
+  },
+  "en:Altruism": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Altruism"
+  },
+  "en:Sleep": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Sleep"
+  },
+  "en:Sleep hygiene": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Sleep_hygiene"
+  },
+  "en:Lullaby": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Lullaby"
+  },
+  "en:Diary": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Diary"
+  },
+  "en:Ambient music": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Ambient_music"
+  },
+  "en:Reading": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Reading"
+  },
+  "en:Tea": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Tea"
+  },
+  "en:Cloud": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Cloud"
+  },
+  "en:Rain": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Rain"
+  },
+  "en:Sunset": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Sunset"
+  },
+  "en:Bird vocalization": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Bird_vocalization"
+  },
+  "en:Hand washing": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Hand_washing"
+  },
+  "en:Introspection": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Introspection"
+  },
+  "en:Jon Kabat-Zinn": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Jon_Kabat-Zinn"
+  },
+  "en:Effects of meditation": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Effects_of_meditation"
+  },
+  "en:Yoga as exercise": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Yoga_as_exercise"
+  },
+  "en:Yoga mat": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Yoga_mat"
+  },
+  "en:Flexibility (anatomy)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Flexibility_(anatomy)"
+  },
+  "en:Balance (ability)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Balance_(ability)"
+  },
+  "en:Hatha yoga": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Hatha_yoga"
+  },
+  "en:Tadasana": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Tadasana"
+  },
+  "en:Tree pose": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Tree_pose"
+  },
+  "en:Balasana": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Balasana"
+  },
+  "en:Uttanasana": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Uttanasana"
+  },
+  "en:Utkatasana": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Utkatasana"
+  },
+  "en:Virabhadrasana": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Virabhadrasana"
+  },
+  "en:Trikonasana": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Trikonasana"
+  },
+  "en:Setu Bandha Sarvangasana": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Setu_Bandha_Sarvangasana"
+  },
+  "en:Cobra pose": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Cobra_pose"
+  },
+  "en:Downward Dog Pose": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Downward_Dog_Pose"
+  },
+  "en:Shavasana": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Shavasana"
+  },
+  "en:Thoracic diaphragm": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Thoracic_diaphragm"
+  },
+  "en:Stretching": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Stretching"
+  },
+  "en:Spinal column": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Spinal_column"
+  },
+  "en:Hip": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Hip"
+  },
+  "en:Hamstring": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Hamstring"
+  },
+  "en:Sedentary lifestyle": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Sedentary_lifestyle"
+  },
+  "en:Ergonomics": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Ergonomics"
+  },
+  "en:Neck": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Neck"
+  },
+  "en:Wrist": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Wrist"
+  },
+  "en:Habit": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Habit"
+  },
+  "en:Implementation intention": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Implementation_intention"
+  },
+  "en:Motivation": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Motivation"
+  },
+  "en:Self-control": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Self-control"
+  },
+  "en:Procrastination": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Procrastination"
+  },
+  "en:Time management": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Time_management"
+  },
+  "en:Pomodoro Technique": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Pomodoro_Technique"
+  },
+  "en:Human multitasking": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Human_multitasking"
+  },
+  "en:Planning": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Planning"
+  },
+  "en:Positive psychology": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Positive_psychology"
+  },
+  "en:Optimism": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Optimism"
+  },
+  "en:Savoring": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Savoring"
+  },
+  "en:Subjective well-being": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Subjective_well-being"
+  },
+  "en:Psychological resilience": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Psychological_resilience"
+  },
+  "en:Flow (psychology)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Flow_(psychology)"
+  },
+  "en:Mindset": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Mindset"
+  },
+  "en:Self-efficacy": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Self-efficacy"
+  },
+  "en:Grit (personality trait)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Grit_(personality_trait)"
+  },
+  "en:Failure": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Failure"
+  },
+  "en:Curiosity": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Curiosity"
+  },
+  "en:Learning": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Learning"
+  },
+  "en:Spaced repetition": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Spaced_repetition"
+  },
+  "en:Memory": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Memory"
+  },
+  "en:Creativity": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Creativity"
+  },
+  "en:Lifelong learning": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Lifelong_learning"
+  },
+  "en:Note-taking": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Note-taking"
+  },
+  "en:Communication": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Communication"
+  },
+  "en:Active listening": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Active_listening"
+  },
+  "en:Assertiveness": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Assertiveness"
+  },
+  "en:Personal boundaries": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Personal_boundaries"
+  },
+  "en:Feedback": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Feedback"
+  },
+  "en:Goal setting": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Goal_setting"
+  },
+  "en:SMART criteria": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/SMART_criteria"
+  },
+  "en:Self-determination theory": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Self-determination_theory"
+  },
+  "en:Reflective practice": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Reflective_practice"
+  },
+  "en:Circadian rhythm": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Circadian_rhythm"
+  },
+  "en:Nap": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Nap"
+  },
+  "en:Bedroom": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Bedroom"
+  },
+  "en:Drinking water": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Drinking_water"
+  },
+  "en:Vegetable": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Vegetable"
+  },
+  "en:Fruit": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Fruit"
+  },
+  "en:Breakfast": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Breakfast"
+  },
+  "en:Salad": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Salad"
+  },
+  "en:Seasonal food": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Seasonal_food"
+  },
+  "en:Daylight": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Daylight"
+  },
+  "en:Nature": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Nature"
+  },
+  "en:Gardening": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Gardening"
+  },
+  "en:Urban park": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Urban_park"
+  },
+  "en:Screen time": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Screen_time"
+  },
+  "en:Break (work)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Break_(work)"
+  },
+  "en:Eye": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Eye"
+  },
+  "en:Smartphone": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Smartphone"
+  },
+  "en:Friendship": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Friendship"
+  },
+  "en:Conversation": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Conversation"
+  },
+  "en:Community": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Community"
+  },
+  "en:Volunteering": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Volunteering"
+  },
+  "en:Letter (message)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Letter_(message)"
+  },
+  "en:Sunrise": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Sunrise"
+  },
+  "en:Morning": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Morning"
+  },
+  "en:Stairs": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Stairs"
+  },
+  "en:Hiking": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Hiking"
+  },
+  "en:Nordic walking": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Nordic_walking"
+  },
+  "en:Calf (leg)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Calf_(leg)"
+  },
+  "en:Gait (human)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Gait_(human)"
+  },
+  "en:Spinal posture": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Spinal_posture"
+  },
+  "en:Scapula": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Scapula"
+  },
+  "en:Warming up": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Warming_up"
+  },
+  "en:Joint": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Joint"
+  },
+  "en:Muscle": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Muscle"
+  },
+  "en:Cooling down": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Cooling_down"
+  },
+  "en:Calisthenics": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Calisthenics"
+  },
+  "en:Squat (exercise)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Squat_(exercise)"
+  },
+  "en:Push-up": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Push-up"
+  },
+  "en:Plank (exercise)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Plank_(exercise)"
+  },
+  "en:Lunge (exercise)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Lunge_(exercise)"
+  },
+  "en:Standing desk": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Standing_desk"
+  },
+  "en:Fidgeting": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Fidgeting"
+  },
+  "en:Dance": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Dance"
+  },
+  "en:Skipping rope": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Skipping_rope"
+  },
+  "en:Hopscotch": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Hopscotch"
+  },
+  "en:Cycling": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Cycling"
+  },
+  "en:Hula hoop": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://en.wikipedia.org/wiki/Hula_hoop"
+  },
+  "tr:Meditasyon": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Meditasyon"
+  },
+  "tr:Sessizlik": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Sessizlik"
+  },
+  "tr:Dikkat": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Dikkat"
+  },
+  "tr:Bilinçli farkındalık": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Bilin%C3%A7li_fark%C4%B1ndal%C4%B1k"
+  },
+  "tr:Farkındalık": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Fark%C4%B1ndal%C4%B1k"
+  },
+  "tr:Duyu": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Duyu"
+  },
+  "tr:Düşünce": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/D%C3%BC%C5%9F%C3%BCnce"
+  },
+  "tr:Duygu": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Duygu"
+  },
+  "tr:Akciğer": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Akci%C4%9Fer"
+  },
+  "tr:Propriyosepsiyon": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Propriyosepsiyon"
+  },
+  "tr:Ayak": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Ayak"
+  },
+  "tr:Omuz": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Omuz"
+  },
+  "tr:Çene": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C3%87ene"
+  },
+  "tr:Yürüme": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Y%C3%BCr%C3%BCme"
+  },
+  "tr:Nezaket": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Nezaket"
+  },
+  "tr:Şefkat": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C5%9Eefkat"
+  },
+  "tr:Empati": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Empati"
+  },
+  "tr:Diğerkâmlık": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Di%C4%9Ferk%C3%A2ml%C4%B1k"
+  },
+  "tr:Uyku": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Uyku"
+  },
+  "tr:Uyku hijyeni": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Uyku_hijyeni"
+  },
+  "tr:Ninni": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Ninni"
+  },
+  "tr:Günlük": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/G%C3%BCnl%C3%BCk"
+  },
+  "tr:Ambient müzik": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Ambient_m%C3%BCzik"
+  },
+  "tr:Okuma": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Okuma"
+  },
+  "tr:Bulut": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Bulut"
+  },
+  "tr:Yağmur": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Ya%C4%9Fmur"
+  },
+  "tr:Gün batımı": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/G%C3%BCn_bat%C4%B1m%C4%B1"
+  },
+  "tr:El yıkama": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/El_y%C4%B1kama"
+  },
+  "tr:İçgözlem": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C4%B0%C3%A7g%C3%B6zlem"
+  },
+  "tr:Omurga": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Omurga"
+  },
+  "tr:Kalça": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Kal%C3%A7a"
+  },
+  "tr:Ergonomi": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Ergonomi"
+  },
+  "tr:Boyun": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Boyun"
+  },
+  "tr:Alışkanlık": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Al%C4%B1%C5%9Fkanl%C4%B1k"
+  },
+  "tr:Motivasyon": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Motivasyon"
+  },
+  "tr:Zaman yönetimi": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Zaman_y%C3%B6netimi"
+  },
+  "tr:Planlama": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Planlama"
+  },
+  "tr:Pozitif psikoloji": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Pozitif_psikoloji"
+  },
+  "tr:İyimserlik": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C4%B0yimserlik"
+  },
+  "tr:Akış (psikoloji)": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Ak%C4%B1%C5%9F_(psikoloji)"
+  },
+  "tr:Merak": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Merak"
+  },
+  "tr:Öğrenme": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C3%96%C4%9Frenme"
+  },
+  "tr:Aralıklı tekrar": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Aral%C4%B1kl%C4%B1_tekrar"
+  },
+  "tr:Hafıza": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Haf%C4%B1za"
+  },
+  "tr:Yaratıcılık": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Yarat%C4%B1c%C4%B1l%C4%B1k"
+  },
+  "tr:Yaşam boyu öğrenme": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Ya%C5%9Fam_boyu_%C3%B6%C4%9Frenme"
+  },
+  "tr:Not alma": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Not_alma"
+  },
+  "tr:İletişim": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C4%B0leti%C5%9Fim"
+  },
+  "tr:Aktif dinleme": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Aktif_dinleme"
+  },
+  "tr:Geri bildirim": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Geri_bildirim"
+  },
+  "tr:Şekerleme": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C5%9Eekerleme"
+  },
+  "tr:Yatak odası": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Yatak_odas%C4%B1"
+  },
+  "tr:İçme suyu": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C4%B0%C3%A7me_suyu"
+  },
+  "tr:Sebze": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Sebze"
+  },
+  "tr:Meyve": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Meyve"
+  },
+  "tr:Kahvaltı": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Kahvalt%C4%B1"
+  },
+  "tr:Salata": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Salata"
+  },
+  "tr:Güneş ışığı": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/G%C3%BCne%C5%9F_%C4%B1%C5%9F%C4%B1%C4%9F%C4%B1"
+  },
+  "tr:Doğa": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Do%C4%9Fa"
+  },
+  "tr:Bahçecilik": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Bah%C3%A7ecilik"
+  },
+  "tr:Şehir parkı": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C5%9Eehir_park%C4%B1"
+  },
+  "tr:Ekran süresi": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Ekran_s%C3%BCresi"
+  },
+  "tr:Göz": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/G%C3%B6z"
+  },
+  "tr:Akıllı telefon": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Ak%C4%B1ll%C4%B1_telefon"
+  },
+  "tr:Arkadaşlık": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Arkada%C5%9Fl%C4%B1k"
+  },
+  "tr:Sohbet": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Sohbet"
+  },
+  "tr:Topluluk": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Topluluk"
+  },
+  "tr:Gönüllü": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/G%C3%B6n%C3%BCll%C3%BC"
+  },
+  "tr:Gün doğumu": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/G%C3%BCn_do%C4%9Fumu"
+  },
+  "tr:Sabah": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Sabah"
+  },
+  "tr:Merdiven": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Merdiven"
+  },
+  "tr:Doğa yürüyüşü": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Do%C4%9Fa_y%C3%BCr%C3%BCy%C3%BC%C5%9F%C3%BC"
+  },
+  "tr:Kürek kemiği": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/K%C3%BCrek_kemi%C4%9Fi"
+  },
+  "tr:Eklem": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Eklem"
+  },
+  "tr:Kas": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Kas"
+  },
+  "tr:Kalistenik": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Kalistenik"
+  },
+  "tr:Şınav": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C5%9E%C4%B1nav"
+  },
+  "tr:Dans": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Dans"
+  },
+  "tr:İp atlama": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/%C4%B0p_atlama"
+  },
+  "tr:Seksek": {
+   "durum": "ok",
+   "neden": "",
+   "url": "https://tr.wikipedia.org/wiki/Seksek"
+  }
+ },
+ "gorseller": {}
+}

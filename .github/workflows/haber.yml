@@ -63,6 +63,17 @@ jobs:
           OP_AKIS_ANAHTAR: ${{ vars.OP_AKIS_ANAHTAR || 'sb_publishable_bCB8NUDn3O25K9SD6-UtwQ_yP9EVaP5' }}   # herkese açık yayın anahtarı (istemcide de açık); gizli değil
           AYNI_OLAY: ${{ vars.AYNI_OLAY }}
           HAYVAN_REZERV: ${{ vars.HAYVAN_REZERV }}
+          MUFREDAT: ${{ vars.MUFREDAT }}
+          MUFREDAT_UST: ${{ vars.MUFREDAT_UST || 'op_meditasyon:0,op_yoga:0,op_gelisim:0,op_saglikli:0,op_hareket:0' }}   # sahip (hekim) dersleri gozden gecirene kadar ic huzur hesaplari kapali
+          MUFREDAT_TUR_UST: ${{ vars.MUFREDAT_TUR_UST }}
+          MUFREDAT_CAGRI_UST: ${{ vars.MUFREDAT_CAGRI_UST }}
+          MUFREDAT_DENEME_UST: ${{ vars.MUFREDAT_DENEME_UST }}
+          MUFREDAT_SAAT: ${{ vars.MUFREDAT_SAAT }}
+          OGRETMEN_PLAN: ${{ vars.OGRETMEN_PLAN }}
+          OGRETMEN_ESIK: ${{ vars.OGRETMEN_ESIK }}
+          OGRETMEN_GUN: ${{ vars.OGRETMEN_GUN }}
+          OGRETMEN_TUR_UST: ${{ vars.OGRETMEN_TUR_UST }}
+          OGRETMEN_EK_UST: ${{ vars.OGRETMEN_EK_UST }}
           BOT_YANIT: ${{ vars.BOT_YANIT }}
           BOT_YANIT_TUR_UST: ${{ vars.BOT_YANIT_TUR_UST }}
           BOT_YANIT_CAGRI_UST: ${{ vars.BOT_YANIT_CAGRI_UST }}
