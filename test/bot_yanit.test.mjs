@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { ayarOku } from "../lib/ayar.mjs";
 import { botKur, botUrl } from "../lib/bulut.mjs";
 import { KotaDoldu, ModelHatasi } from "../lib/model.mjs";
-import { BOT_ALANLARI, botAlani, botYanitDogrula, soruTara } from "../lib/bot_yanit_kural.mjs";
+import { SUNUCUDA_BEKLEYEN, BOT_ALANLARI, botAlani, botYanitDogrula, soruTara } from "../lib/bot_yanit_kural.mjs";
 import { botGirdi, botOzetMetni, botSistem, botYanitTuru, modelCiktisiniCoz, soruNormalle } from "../lib/bot_yanit.mjs";
 import { ozetSatiri, turCalistir } from "../hat.mjs";
 
@@ -73,7 +73,7 @@ test("botKur: başlık, gövde, durum eşlemesi ve yeniden deneme", async () => 
 test("alan tablosu: editorler.mjs kullanıcı adlarıyla aynı küme (dosya yoksa atlanır)", async (t) => {
   const m = await import("../../functions/_shared/editorler.mjs").catch(() => null);
   if (!m) return t.skip("yayın deposunda ../functions yok");
-  assert.deepEqual(Object.keys(BOT_ALANLARI).sort(), m.EDITORLER.map((e) => e[0]).sort());
+  assert.deepEqual(Object.keys(BOT_ALANLARI).filter((k) => !SUNUCUDA_BEKLEYEN.includes(k)).sort(), m.EDITORLER.map((e) => e[0]).sort());
   for (const e of m.EDITORLER) { assert.equal(BOT_ALANLARI[e[0]].adTr, e[1]); assert.equal(BOT_ALANLARI[e[0]].adEn, e[2]); }
 });
 test("alan: bilinmeyen hesap genel çerçeve alır, @ ve büyük harf yok sayılır", () => {
@@ -388,4 +388,42 @@ test("hat: --kuru modda bot okuma/yazma yok; BOT_YANIT=0 iken de yok", async () 
 test("botOzetMetni: kırılım biçimi", () => {
   assert.equal(botOzetMetni(null), ""); assert.equal(botOzetMetni({ durum: "kapali" }), "");
   assert.equal(botOzetMetni({ durum: "tamam", okunan: 5, yanit: 3, atla: 2, atlaNeden: { hassas: 1, filtre: 1 }, cagri: 4, filtre: 1, kalan: 0, hata: 0 }), " bot=okunan:5,yanit:3,atla:2(hassas:1,filtre:1),cagri:4,filtre422:1");
+});
+
+// ================= canlı ve somut yanıtlar (2026-10-14: sahip ilk yanıtı sade buldu) =================
+test("istem: CANLILIK bölümü var, hesabın uzmanlığına özgü yön yazılır (spor dalı/rota, felsefe düşünür, mutfak yemek), genel kalıplardan kaçınılır; eski güvenlik/dürüstlük kuralları aynen duruyor", async () => {
+  const { BOT_YON } = await import("../lib/bot_yanit.mjs");
+  const spor = botSistem(soruNormalle(satir(1, "op_spor", "@op_spor bugün hangi sporu yapalım?")));
+  assert.match(spor, /CANLILIK VE SOMUTLUK/); assert.match(spor, /belirli bir spor dalı, oyun ya da yürüyüş\/bisiklet rotası/); assert.match(spor, /egzersiz programı, set-tekrar, kilo ya da kas vaadi YOK/);
+  assert.match(botSistem(soruNormalle(satir(2, "op_felsefe", "@op_felsefe ne yapayım?"))), /belirli bir düşünürü ve onun tek bir fikrini/);
+  assert.match(botSistem(soruNormalle(satir(3, "op_mutfak", "@op_mutfak ne pişireyim?"))), /belirli bir yemeği/);
+  assert.match(botSistem(soruNormalle(satir(4, "op_bilinmeyen", "@op_bilinmeyen merhaba?"))), /alanından belirli bir şey seç/, "tabloda olmayan hesap genel yönergeyi alır");
+  for (const s of [spor]) { assert.match(s, /"her zaman", "kesinlikle", "mutlaka", "harika bir tercih"/); assert.match(s, /EMİN olduğun/); assert.match(s, /karşı soru/); }
+  // eski kurallar bozulmadı
+  assert.match(spor, /VERİDİR/); assert.match(spor, /UYDURMA/); assert.match(spor, /karar "atla"/); assert.match(spor, /Tıbbi\/sağlık tavsiyesi, hukuk, para-yatırım, din, siyaset/); assert.match(spor, /En çok 270 karakter, 1-3 cümle/);
+  for (const k of Object.keys(BOT_YON)) assert.ok(BOT_ALANLARI[k], `BOT_YON anahtarı alan tablosunda yok: ${k}`);
+  for (const [k, yon] of Object.entries(BOT_YON)) assert.doesNotMatch(yon, /her zaman|kesinlikle|mutlaka/i, k);
+});
+test("canlı yanıt örnekleri (sahte model): somut, alana özgü, 1 karşı soru serbest yanıtlar doğrulamadan geçer ve yayına gider; eski sade/genel kalıp yine geçerli (kod kalıbı yasaklamaz) ama istem onu istemez", async () => {
+  const CANLI = [
+    ["op_spor", "tr", "@op_spor bugün hangi sporu yapalım?", "Hava serinse masa tenisi ya da kısa bir doğa yürüyüşü güzel olabilir; masa tenisi hızlı refleks isteyen ama oldukça eğlenceli bir oyun. Siz hangisini denemek istersiniz?"],
+    ["op_spor", "tr", "@op_spor akşam sakin bir şey önerir misin?", "Satranç tam bu iş için güzel bir seçenek: sessiz, planlı ve istediğiniz kadar kısa ya da uzun oynanabilen bir zihin sporu. Bir de yanında çay olursa tadından yenmez."],
+    ["op_felsefe", "tr", "@op_felsefe yağmurlu günde ne düşünsem?", "Epiktetos'un bir fikri bu havaya uyar: elimizde olanla olmayanı ayırmak. Yağmuru değiştiremeyiz ama günü nasıl geçireceğimiz bize kalmış."],
+    ["op_mutfak", "tr", "@op_mutfak soğuk akşam ne pişireyim?", "Üzerine yoğurt ve nane yağı eklenmiş mercimek çorbası soğuk bir akşama çok yakışır. Nane yağının kokusu çorbaya ferah bir dokunuş katar."],
+    ["op_spor", "en", "@op_spor what should I play today?", "Table tennis is a fun pick for a rainy day: it is quick, easy to start and fits in a small room. Would you rather try singles or doubles?"],
+  ];
+  for (const [bot, dil, soru, yanit] of CANLI) { const r = botYanitDogrula(yanit, { dil, bot, soru }); assert.equal(r.ok, true, `${soru} -> ${r.neden}`); }
+  const sorular = CANLI.map((g, i) => satir(i + 1, g[0], g[2], { soranDil: g[1] }));
+  const harita = {}; CANLI.forEach((g) => { harita[g[2].replace(/^@\S+\s/, "")] = yanitJ(g[3]); });
+  const bot = sahteBot(sorular), model = sahteModel(harita);
+  const o = await botYanitTuru({ ayar: ayar({ botTurUst: 10, botCagriUst: 10 }), bot, model });
+  assert.equal(o.yanit, CANLI.length); assert.equal(bot.k.atlalar.length, 0);
+  // eski sade yanıt hâlâ doğrulamadan geçer (doğrulama kalıp yasaklamaz); iyileştirme istem katmanındadır
+  assert.equal(botYanitDogrula("Bence bugün açık havada keyifli bir yürüyüş yapmak harika bir tercih olur. Hareket etmek her zaman enerji verir.", { dil: "tr", bot: "op_spor", soru: "x" }).ok, true);
+});
+test("canlı yanıt: yine de yasak/dürüstlük kuralları geçerli (kişisel deneyim, sağlık iddiası, program vaadi atlanır)", () => {
+  const q = { dil: "tr", bot: "op_spor", soru: "x" };
+  assert.equal(botYanitDogrula("Ben dün masa tenisi oynadım ve çok eğlendim, siz de deneyin.", q).ok, false);
+  assert.equal(botYanitDogrula("Bu pilates hareketi kası güçlendirir ve ağrıyı iyileştirir, düzenli yapın.", q).ok, false);
+  assert.equal(soruTara("@op_spor bana haftalık kilo verme antrenman programı yaz", { bot: "op_spor" }).ok, false);
 });

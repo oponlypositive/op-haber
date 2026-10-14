@@ -280,3 +280,34 @@ test("kaynaklar.json: tür/zamansız/pasif şeması; zamansız kaynaklar uzun pe
   for (const k of kaynaklar.rss.filter((x) => /news\.un\.org/.test(x.url))) assert.match(k.url, /topic\/(health|sdgs|culture-and-education|women|climate-change)\//, k.ad);
   assert.ok(!kaynaklar.rss.some((k) => /peace-and-security|human-rights|law-and-crime|migrants-and-refugees|un-affairs/.test(k.url)));
 });
+
+// ---------------- spor alt dalları (2026-10-14) + haber gönderisi seriye girmez ----------------
+test("alt konu: spor dalları (bisiklet, jimnastik, güreş, satranç, fitness, kalistenik, pilates) tanınır; mevcut dallar ve geçersizler bozulmaz", () => {
+  for (const d of ["futbol", "basketbol", "voleybol", "atletizm", "yuzme", "tenis", "bisiklet", "jimnastik", "gures", "satranc", "fitness", "kalistenik", "pilates", "motor", "kis", "diger"]) assert.ok(ALT_KONULAR.spor.includes(d), d);
+  assert.deepEqual(ALT_KONULAR.spor.slice(0, 6), ["futbol", "basketbol", "voleybol", "tenis", "atletizm", "yuzme"], "eski sıra korunur");
+  const ornek = { bisiklet: "Local cyclist wins sprint stage at the Tour de France", jimnastik: "Young gymnastics team wins regional title", gures: "Wrestler from Edirne wins Kırkpınar title",
+    satranc: "Teenage grandmaster wins international chess tournament", kalistenik: "City opens a new calisthenics park for the community", pilates: "Free pilates classes start in the park", fitness: "Community gym opens its doors to seniors",
+    voleybol: "Fenerbahçe Women's volleyball team wins title", motor: "Formula 1 driver wins the grand prix", kis: "Skiing season opens early", yuzme: "Swimmer sets a new record", atletizm: "Marathon runner finishes first" };
+  for (const [beklenen, metin] of Object.entries(ornek)) assert.equal(altKonuTahmin("spor", metin), beklenen, metin);
+  assert.equal(altKonuDogrula("spor", "Güreş".replace("ü", "u").replace("ş", "s")), "gures");
+  assert.equal(altKonuDogrula("spor", "Satranc"), "satranc"); assert.equal(altKonuDogrula("spor", "kriket"), "");
+  assert.equal(etiketSec({ kategori: "spor", yaz: { altKonu: "pilates" }, metin: "x" }).altKonu, "pilates");
+});
+test("haber gönderisi seriye GİRMEZ: haber yayın yükünde `seri` / `seri_aciklama` yok; `seri` yalnız müfredat motoru (lib/mufredat.mjs) tarafından kurulur", async () => {
+  const model = taklit({ sinif: () => ({ alan: "spor", k: "futbol", c: "erkek" }) });
+  const spor = mk(0, { baslik: "Local football club wins the regional cup after final", alan: "spor", kaynak: "haberturk.com (Spor)", link: "https://x.com/f", kaynakGuvenilir: true });
+  const a = await tur(model, [spor, mk(1, { alan: "spor", baslik: "Local club wins title", link: "https://x.com/f2", kaynakGuvenilir: true })], { sonOkuma: false, onSinifAdet: 24 });
+  assert.ok(a.bulut.k.yayinlar.length >= 1);
+  for (const { h } of a.bulut.k.yayinlar) { assert.equal("seri" in h, false); assert.equal("seri_aciklama" in h, false); }
+  const yuk = yayinYuku(a.bulut.k.yayinlar[0].h, "a".repeat(64), null).haber;
+  assert.equal("seri" in yuk, false); assert.equal("seri_aciklama" in yuk, false);
+  // statik kanıt: lib/ içinde `seri:` alanını kuran tek kaynak mufredat.mjs (bulut.mjs yalnız varsa iletir)
+  const { readdirSync } = await import("node:fs");
+  const kuran = readdirSync(new URL("../lib/", import.meta.url)).filter((f) => f.endsWith(".mjs") && /(^|[\s{,])seri\s*:\s*\{/.test(readFileSync(new URL("../lib/" + f, import.meta.url), "utf8")));
+  assert.deepEqual(kuran, ["mufredat.mjs"]);
+  // müfredat dersi ise `seri` taşır
+  const { mufredatHaberi } = await import("../lib/mufredat.mjs");
+  const ders = { id: "futbol-nedir", baslik_tr: "Futbol Nedir?", baslik_en: "What Is Football?", yol: ["Spor Dalları", "Futbol"], seriSira: 1, seriAciklamaTr: "Futbolun tarihi.", alt_konu: "futbol" };
+  const mh = mufredatHaberi({ m: { hesap: "op_spor", kategori: "spor" }, d: ders, id: "m-x", trBas: "Futbol Nedir?", enBas: "What Is Football?", trOzet: "a b c.", enOzet: "a b c.", link: "https://tr.wikipedia.org/wiki/Futbol", kaynakTr: "", kaynakEn: "", simdi: SIMDI });
+  assert.deepEqual(mh.seri, { yol: ["Spor Dalları", "Futbol"], sira: 1 }); assert.equal(mh.alt_konu, "futbol"); assert.equal(mh.editor, "op_spor");
+});

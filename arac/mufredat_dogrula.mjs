@@ -2,6 +2,8 @@
 //   node arac/mufredat_dogrula.mjs                      -> tüm dosyalar, yalnız rapor
 //   node arac/mufredat_dogrula.mjs op_felsefe op_mutfak -> yalnız bu hesaplar
 //   node arac/mufredat_dogrula.mjs op_felsefe --yaz     -> doğrulanamayan maddeyi/dersi dosyadan ÇIKARIR (dosya JSON olarak yeniden yazılır)
+//   node arac/mufredat_dogrula.mjs op_spor --kaynak     -> ek olarak motorun gerçek kaynak toplama yolunu (önce TR, TR kısaysa EN) taklit eder: kaynak metin < 600 karakter ("kaynak-yetersiz")
+//                                                          ya da din/ritüel/ölüm/savaş ağırlıklı ("kaynak-hassas") ise o ders de çıkarılır (motor zaten yayında atlardı; boşa ders bırakmamak için)
 // Kural: her ders için wiki_en / wiki_tr maddesi VAR, anlam ayrımı sayfası DEĞİL (yönlendirme izlenir). İki kaynaktan biri bozuksa o anahtar silinir;
 // ikisi de bozuksa (ya da klasik/sabit-olmayan derste kaynak yoksa) ders çıkarılır. Boşalan seri de çıkarılır. Tür "klasik" dersler Vikipedi'ye bağlı değildir (atlanır).
 import fs from "node:fs";
@@ -10,7 +12,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const MUF = fileURLToPath(new URL("../lib/mufredat/", import.meta.url));
 const UA = "OPMufredat/1.0 (salt okuma dogrulama; OP haber hatti)";
 const dur = (ms) => new Promise((r) => setTimeout(r, ms));
-const argv = process.argv.slice(2), YAZ = argv.includes("--yaz");
+const argv = process.argv.slice(2), YAZ = argv.includes("--yaz"), KAYNAK = argv.includes("--kaynak");
 const secili = argv.filter((a) => !a.startsWith("--"));
 
 async function api(host, params) {
@@ -57,6 +59,30 @@ for (const h of dosyalar) {
   for (const s of m.seriler) for (const d of s.dersler) for (const k of ["en", "tr"]) if (d.kaynak?.["wiki_" + k]) istenen[k].add(d.kaynak["wiki_" + k]);
 }
 const durum = await maddeleriDenetle(istenen);
+const iyiAnahtarlar = (d) => ["en", "tr"].filter((dil) => d.kaynak?.["wiki_" + dil] && durum.get(`${dil}:${d.kaynak["wiki_" + dil]}`)?.ok);
+
+/** --kaynak: motorun kaynakTopla sırası (TR önce; TR < 1200 karakterse EN de) ve eşikleri (>= 600 karakter, hassas değil). -> Map("hesap/id" -> neden) */
+async function kaynakDenetle() {
+  const { maddeGetir, kaynakHassasMi } = await import(new URL("../lib/konu.mjs", import.meta.url).href).then(async (k) => ({ maddeGetir: k.maddeGetir, kaynakHassasMi: k.kaynakHassasMi }));
+  const onbellek = new Map();
+  const getir = async (dil, b) => {
+    const a = `${dil}:${b}`;
+    if (!onbellek.has(a)) { await dur(1000); onbellek.set(a, await maddeGetir(dil, b).then((x) => x.extract, () => "")); }
+    return onbellek.get(a);
+  };
+  const red = new Map();
+  for (const [h, m] of veri) for (const s of m.seriler) for (const d of s.dersler) {
+    if (d.tur === "klasik" || d.tur === "hayvan" || d.tur === "heykel" || d.sabit) continue;
+    const iyi = iyiAnahtarlar(d), parcalar = [];
+    if (iyi.includes("tr")) parcalar.push(await getir("tr", d.kaynak.wiki_tr));
+    if (iyi.includes("en") && (!parcalar.length || parcalar[0].length < 1200)) parcalar.push(await getir("en", d.kaynak.wiki_en));
+    const metin = parcalar.filter(Boolean).join("\n\n");
+    if (metin.length < 600) red.set(`${h}/${d.id}`, `kaynak-yetersiz:${metin.length}`);
+    else if (kaynakHassasMi(metin)) red.set(`${h}/${d.id}`, "kaynak-hassas");
+  }
+  return red;
+}
+const kaynakRed = KAYNAK ? await kaynakDenetle() : new Map();
 let cikarilanDers = 0, cikarilanAnahtar = 0;
 const rapor = [];
 for (const [h, m] of veri) {
@@ -71,6 +97,7 @@ for (const [h, m] of veri) {
       const kalan = ["en", "tr"].filter((dil) => k["wiki_" + dil] && !kotu.some((x) => x.dil === dil));
       for (const x of kotu) { rapor.push(`${h}/${d.id}: ${x.dil}:${x.b} -> ${x.neden}`); if (YAZ) { delete k["wiki_" + x.dil]; cikarilanAnahtar++; } }
       if (!kalan.length) { rapor.push(`${h}/${d.id}: DERS ÇIKARILIR (doğrulanmış kaynak kalmadı)`); if (YAZ) cikarilanDers++; return !YAZ; }
+      if (kaynakRed.has(`${h}/${d.id}`)) { rapor.push(`${h}/${d.id}: DERS ÇIKARILIR (${kaynakRed.get(`${h}/${d.id}`)})`); if (YAZ) cikarilanDers++; return !YAZ; }
       return true;
     });
   }
