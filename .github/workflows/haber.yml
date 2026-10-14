@@ -64,7 +64,7 @@ jobs:
           AYNI_OLAY: ${{ vars.AYNI_OLAY }}
           HAYVAN_REZERV: ${{ vars.HAYVAN_REZERV }}
           MUFREDAT: ${{ vars.MUFREDAT }}
-          MUFREDAT_UST: ${{ vars.MUFREDAT_UST || 'op_psikoloji:0' }}   # 2026-10-14 sahip ic huzur mufredatlarini onayladi (hepsi acik); op_psikoloji sunucuda hesap acilana dek kapali
+          MUFREDAT_UST: ${{ vars.MUFREDAT_UST }}   # 2026-10-15 tum mufredatlar acik (op_psikoloji hesabi sunucuda acildi)
           MUFREDAT_TUR_UST: ${{ vars.MUFREDAT_TUR_UST }}
           MUFREDAT_CAGRI_UST: ${{ vars.MUFREDAT_CAGRI_UST }}
           MUFREDAT_DENEME_UST: ${{ vars.MUFREDAT_DENEME_UST }}
