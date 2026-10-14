@@ -15,7 +15,9 @@ import { konuYasak } from "../lib/on_eleme.mjs";
 import { lisansOk } from "../lib/gorsel.mjs";
 import { ayarOku } from "../lib/ayar.mjs";
 import { KONU_HESAPLARI, KONU_HESAP_ADLARI, donemNo, gruplariKur, gunlukYuva, havuzBoyu, konuIsleriCalistir, konuKimligi, konuSiraNedeni, konuUret, yuvaOzeti } from "../lib/konu.mjs";
-import { haberEditoru, KATEGORILER } from "../../functions/_shared/editorler.mjs";
+// Bu dosya yalnız ana depoda vardır (yayın deposunda yok): varsa sözleşme denetlenir, yoksa o denetim atlanır.
+const ED = await import("../../functions/_shared/editorler.mjs").catch(() => null);
+const { haberEditoru, KATEGORILER } = ED || {};
 
 const ALAN_RE = /^[a-z0-9-]{2,40}$/;
 const EN_ISLEV = /(?<![\p{L}])(?:the|and|of|is|in|a|its|it)(?![\p{L}])/i;
@@ -157,6 +159,7 @@ test("alt konu ve davet: sanat altında 'heykel'; hayvan alt konuları mevcut li
 });
 
 test("sunucu sözleşmesi (yalnız okuma): kategori hayvanlar -> op_hayvanlar, sanat -> op_sanat; alt_konu slug kuralına uyar", () => {
+  if (!ED) return;   // yayın deposunda sunucu dosyası yok
   assert.ok(KATEGORILER.includes("hayvanlar") && KATEGORILER.includes("sanat"));
   assert.equal(haberEditoru({ kategori: "hayvanlar", yer: "Dünya", editor: "op_hayvanlar" }), "op_hayvanlar");
   assert.equal(haberEditoru({ kategori: "sanat", yer: "Dünya", editor: "op_sanat" }), "op_sanat");
