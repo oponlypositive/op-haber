@@ -19,7 +19,8 @@ import { alanDengele, alanKalan, hayvanMi } from "./lib/alanlar.mjs";
 import { adayImzasi, ayniOlayBul, haberImzasi } from "./lib/ayni_olay.mjs";
 import { ozelIsleriCalistir, ozelOzetMetni } from "./lib/ozel.mjs";
 import { etiketYuku, haberKur, hazirGorselHazirla } from "./lib/haber_yap.mjs";
-import { bulutKur } from "./lib/bulut.mjs";
+import { botKur, bulutKur } from "./lib/bulut.mjs";
+import { botOzetMetni, botYanitTuru } from "./lib/bot_yanit.mjs";
 import { onSinifAsamasi, onSinifOzetMetni } from "./lib/on_sinif.mjs";
 import { sonOkuma, sonOkumaOzetMetni } from "./lib/son_okuma.mjs";
 
@@ -72,10 +73,10 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 }
 
 /** Bir tur. Bağımlılıklar parametreyle gelir (testte taklit edilir). -> özet nesnesi */
-export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama }) {
+export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama, bot = null }) {
   const baslangic = simdi();
   const ozet = { aday: 0, yeniAday: 0, ayniOlay: 0, hayvanAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, gorselTur: {}, gorselSureMs: 0, gorselSureAsim: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
-    red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, alanYayin: {},
+    red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, bot: null, alanYayin: {},
     onSinif: { durum: "kapali", sorulan: 0, gecen: 0, red: {}, cagri: 0 }, sonOkuma: { durum: "kapali", sorulan: 0, duzeltilen: 0, red: {} } };
   const sayac = { vl: 0 };
   const gorselButce = { openverse: { kalan: ayar.openverseUst ?? 6, dur: false } };   // Openverse istekleri tur boyunca ortak bütçe (haber başına değil)
@@ -135,6 +136,12 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   if (ayar.kuru) ozet.ornekBaslik = sirali.slice(0, 3).map((a) => `[${a.kaynak}] ${a.baslik}`);
 
   const bitir = async () => { if (!ayar.kuru) await bulut.isaretle(isaretler.splice(0)).catch((e) => log(`işaretleme hatası: ${e.message}`)); };
+
+  // BOT YANITLARI (lib/bot_yanit.mjs): OP hesabı etiketlenerek sorulan sorulara kısa yanıt. Turun başında, KENDİ bütçesiyle (botTurUst yanıt, botCagriUst çağrı, botSureSn süre); uç erişilemezse tur aksamaz; --kuru modda okuma/yazma yok.
+  if (!ayar.kuru && bot && ayar.botYanit !== false) {
+    try { ozet.bot = await botYanitTuru({ ayar, bot, model, simdi, log }); }
+    catch (e) { ozet.bot = { durum: "hata", okunan: 0, yanit: 0, atla: 0, atlaNeden: {}, cagri: 0 }; log(`bot adımı atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 60)}`); }
+  }
 
   // ÖZEL İŞLER (alıntı, şiir, mitoloji, gökbilim): turun BAŞINDA ve KENDİ model bütçesiyle (ayar.ozelCagriUst); haber bütçesi ayrı.
   const ozelCalistir = async () => {
@@ -381,7 +388,7 @@ export function ozetSatiri(o) {
   const ek = (o.yerli ? ` yerli=${o.yerli.yayin}/${o.haberYayin ?? 0}(aday=${o.yerli.aday},onEleme=${o.yerli.onEleme})` : "") +
     (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
     (o.gnews && (o.gnews.aday || o.gnews.cozulen || o.gnews.cozHata) ? ` gnews=aday:${o.gnews.aday},cozulen:${o.gnews.cozulen},cozHata:${o.gnews.cozHata},atlanan:${o.gnews.atlanan}` : "") +
-    (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") +
+    (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") + botOzetMetni(o.bot) +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
     (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") + onSinifOzetMetni(o.onSinif) + sonOkumaOzetMetni(o.sonOkuma) +
     (o.haberYayin !== undefined ? ` cagriBasinaYayin=${o.modelCagri > 0 ? (o.haberYayin / o.modelCagri).toFixed(2) : "0.00"}` : "") +
@@ -403,11 +410,12 @@ async function main() {
   }
   const bulut = ayar.kuru ? { bilinenler: async () => new Map(), isaretle: async () => ({ yazildi: 0 }), yayinla: async () => ({ durum: "taklit" }) }
     : bulutKur({ fnUrl: ayar.fnUrl, anahtar: ayar.yukleAnahtari, akis: ayar.akisUrl && ayar.akisAnahtar ? { url: ayar.akisUrl, anahtar: ayar.akisAnahtar } : null, log: console.log });
+  const bot = !ayar.kuru && ayar.botYanit !== false ? botKur({ fnUrl: ayar.fnUrl, anahtar: ayar.yukleAnahtari }) : null;      // aynı kökteki /bot-sorulari
   const model = ayar.kuru ? { yaz: async () => { throw new Error("kuru modda model çağrılmaz"); } } : modelKur(ayar);
   try {
     const taramaArg = process.argv.slice(2).find((x) => x.startsWith("--tarama="));            // yalnız --kuru ile: önceden kaydedilmiş tarama (çevrimdışı deneme; ağ isteği yok)
     const tarama = ayar.kuru && taramaArg ? JSON.parse(readFileSync(taramaArg.slice(9), "utf8")) : undefined;
-    const o = await turCalistir({ ayar, kaynaklar, bulut, model, tarama });
+    const o = await turCalistir({ ayar, kaynaklar, bulut, model, tarama, bot });
     console.log(ozetSatiri(o));
     if (ayar.kuru) { console.log("[kuru] model ve yayın TAKLİT: hiçbir çağrı yapılmadı. Örnek başlıklar:"); o.ornekBaslik.forEach((b) => console.log("  - " + b));
       const oz = o.ozel;

@@ -63,4 +63,8 @@ jobs:
           OP_AKIS_ANAHTAR: ${{ vars.OP_AKIS_ANAHTAR || 'sb_publishable_bCB8NUDn3O25K9SD6-UtwQ_yP9EVaP5' }}   # herkese açık yayın anahtarı (istemcide de açık); gizli değil
           AYNI_OLAY: ${{ vars.AYNI_OLAY }}
           HAYVAN_REZERV: ${{ vars.HAYVAN_REZERV }}
+          BOT_YANIT: ${{ vars.BOT_YANIT }}
+          BOT_YANIT_TUR_UST: ${{ vars.BOT_YANIT_TUR_UST }}
+          BOT_YANIT_CAGRI_UST: ${{ vars.BOT_YANIT_CAGRI_UST }}
+          BOT_YANIT_SURE_SN: ${{ vars.BOT_YANIT_SURE_SN }}
         run: node hat.mjs
