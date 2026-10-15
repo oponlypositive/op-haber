@@ -204,7 +204,7 @@ test("etkinlik: tekrar denetimi ve defter", () => {
 });
 
 test("etkinlik: yayın yükü -- geçerli etkinlik taşınır, bozuk etkinlik yüke girmez", () => {
-  const h = { id: "habc", tr: { baslik: "t", ozet: "o" }, en: { baslik: "e", ozet: "o" }, kategori: "sanat", yer: "Dünya", kaynak: "k", link: "https://a.b/c", zaman: ZAMAN, model: "m" };
+  const h = { id: "habc", tr: { baslik: "t", ozet: "o" }, en: { baslik: "e", ozet: "o" }, kategori: "mahalle", yer: "Dünya", kaynak: "k", link: "https://a.b/c", zaman: ZAMAN, model: "m" };
   const e = { ad: "Meşk Sergisi", sehir: "Kocaeli", baslangic: "2026-10-14", bitis: "2026-10-29", tur: "sergi" };
   assert.deepEqual(yayinYuku({ ...h, etkinlik: e }, "ab".repeat(32), null).haber.etkinlik, e);
   assert.ok(!("etkinlik" in yayinYuku(h, "ab".repeat(32), null).haber));
@@ -215,8 +215,8 @@ test("etkinlik: yayın yükü -- geçerli etkinlik taşınır, bozuk etkinlik y�
 // ---------------------------------------------------------------- yazım + hat entegrasyonu (sahte model)
 const EN = "The Meshk Exhibition will open its doors at the SEKA Paper Museum in Izmit and will stay open until 29 October. It is the first time that the works of this calligraphy tradition are shown in the city in one place. Visitors can walk through the rooms, and the entry is free for all of them. Art historians will also introduce the works to the guests, and the museum has planned workshops for the public.";
 const TR = "Meşk Sergisi, İzmit'teki SEKA Kâğıt Müzesi'nde 29 Ekim'e kadar sanatseverleri ağırlayacak. Hat geleneğinden seçilen eserler ilk kez bu şehirde bir arada görülecek. Ziyaretçiler salonları gezebilecek ve giriş herkes için ücretsiz olacak. Sanat tarihçileri eserleri konuklara tanıtacak ve müze halk için atölye çalışmaları hazırladı.";
-const YANIT = (ek = {}) => JSON.stringify({ uygun: true, kategori: "sanat", yer: "İzmit, Türkiye", alt_konu: "resim-sergi", en: { baslik: "Meshk Exhibition opens in Izmit", ozet: EN }, tr: { baslik: "Meşk Sergisi İzmit'te sanatseverlerle buluşuyor", ozet: TR }, etkinlik: H(), ...ek });
-const ADAY = (n = 1, ek = {}) => ({ baslik: BASLIK, ozet: KAYNAK_TR.split("\n")[1] + " " + "Sergi alanı geniş bir salonda kurulacak ve her yaştan ziyaretçi gelecek. ".repeat(2), link: `https://www.kocaelihaber.example/h/${n}`, kaynak: "kocaelihaber.example", dil: "tr", zaman: ZAMAN, alan: "sanat", kaynakGuvenilir: true, ...ek });
+const YANIT = (ek = {}) => JSON.stringify({ uygun: true, kategori: "mahalle", yer: "İzmit, Türkiye", alt_konu: "topluluk-projesi", en: { baslik: "Meshk Exhibition opens in Izmit", ozet: EN }, tr: { baslik: "Meşk Sergisi İzmit'te sanatseverlerle buluşuyor", ozet: TR }, etkinlik: H(), ...ek });
+const ADAY = (n = 1, ek = {}) => ({ baslik: BASLIK, ozet: KAYNAK_TR.split("\n")[1] + " " + "Sergi alanı geniş bir salonda kurulacak ve her yaştan ziyaretçi gelecek. ".repeat(2), link: `https://www.kocaelihaber.example/h/${n}`, kaynak: "kocaelihaber.example", dil: "tr", zaman: ZAMAN, alan: "mahalle", kaynakGuvenilir: true, ...ek });
 
 test("yaz: etkinlik açıkken yazım çıktısında doğrulanmış etkinlik döner; kapalıyken alan yok; ret nedeni raporlanır", async () => {
   const model = (metin) => ({ yaz: async () => ({ metin, engellendi: "", saglayici: "taklit" }) });

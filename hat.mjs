@@ -25,6 +25,7 @@ import { onSinifAsamasi, onSinifOzetMetni } from "./lib/on_sinif.mjs";
 import { sonOkuma, sonOkumaOzetMetni } from "./lib/son_okuma.mjs";
 import { ETKINLIK_DEFTER_ANAHTARI, etkinlikAyniMi, etkinlikDefterKaydi, etkinlikDefteriTemizle, etkinlikSuresiDoldu } from "./lib/etkinlik.mjs";
 import { durumOkuGuvenli, durumYazGuvenli } from "./lib/mufredat.mjs";
+import { gorselZorunluMu, sunucuRedTuru } from "./lib/gorsel_zorunlu.mjs";
 
 const burasi = dirname(fileURLToPath(import.meta.url));
 const dur = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -78,7 +79,7 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama, bot = null }) {
   const baslangic = simdi();
   const ozet = { aday: 0, yeniAday: 0, ayniOlay: 0, etkinlik: 0, etkinlikRet: {}, hayvanAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, skorKart: 0, skorKartTur: { tek: 0, liste: 0, puan: 0 }, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, gorselTur: {}, gorselSureMs: 0, gorselSureAsim: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
-    red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, bot: null, alanYayin: {},
+    red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, bot: null, alanYayin: {}, gorselZorunlu: { bekletilen: 0, atlanan: 0 }, gorselAtlananDersler: [], kategoriUyari: [],
     onSinif: { durum: "kapali", sorulan: 0, gecen: 0, red: {}, cagri: 0 }, sonOkuma: { durum: "kapali", sorulan: 0, duzeltilen: 0, red: {} } };
   const sayac = { vl: 0 };
   const gorselButce = { openverse: { kalan: ayar.openverseUst ?? 6, dur: false } };   // Openverse istekleri tur boyunca ortak bütçe (haber başına değil)
@@ -157,6 +158,8 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     try {
       const o = await ozelCalistir();
       ozet.yayinlanan += o.yayin;
+      if (o.gorselZorunlu) { ozet.gorselZorunlu.bekletilen += o.gorselZorunlu.bekletilen; ozet.gorselZorunlu.atlanan += o.gorselZorunlu.atlanan; ozet.gorselAtlananDersler.push(...(o.gorselAtlananDersler || [])); }
+      if (o.kategoriUyari?.length) { ozet.kategoriUyari.push(...o.kategoriUyari); log(`UYARI kategori tanımsız (sunucu): ${o.kategoriUyari.join(",")}`); }
       ozelKullanilan = new Set(o.kullanilan);
       for (const c of o.calisan) if (c.alan === "gokbilim" && c.durum === "yayinlandi" && kalanHak.gokbilim !== undefined) kalanHak.gokbilim = Math.max(0, kalanHak.gokbilim - 1);
       if (o.kota) { ozet.kota++; ozet.durus = "kota"; }
@@ -308,13 +311,15 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       // TEK MAÇ skor kartı olan haberde (lib/skor_kart.mjs) görsel ARANMAZ: kart istemcide CSS ile çizilir; stok/kişi fotoğrafı yerine kart önceliklidir (süre de kazanılır)
       // skorlar (derleme) / puan (puan durumu) kartında görsel normal aranır: fotoğraf varsa ÜSTTE, kart ALTTA; fotoğraf yoksa kartın kendisi görsel sayılır (görselsiz kuyruğuna girmez)
       const kartli = haber.kart?.tur === "skor", listeKart = haber.kart?.tur === "skorlar" || haber.kart?.tur === "puan";
+      const zorunlu = gorselZorunluMu(haber.kategori);   // sahip ana kuralı 2026-10-15: mutfak/oyun/sanat/resim görselsiz yayınlanmaz
       let g = kartli ? null : await hazirGorselHazirla(a, { fetchFn, notlar: gb.notlar });
+      let gorselAranmadi = false;
       if (g) ozet.gorselTur.kaynak = (ozet.gorselTur.kaynak || 0) + 1;
       const bekleyenGorselsiz = false;        // d) bekleyen kayıt: yeniden arama/model çağrısı yok, saklı yükle görselsiz yayın
       let gorselKota = false;
       const turKalanMs = (ayar.gorselTurSureSn ?? 300) * 1000 - ozet.gorselSureMs;
       if (kartli) gb.notlar.push("skor kartı: görsel aranmadı");
-      else if (!g && !bekleyenGorselsiz && turKalanMs <= 0) { gb.notlar.push("tur görsel süresi doldu"); ozet.gorselSureAsim++; }
+      else if (!g && !bekleyenGorselsiz && turKalanMs <= 0) { gb.notlar.push("tur görsel süresi doldu"); ozet.gorselSureAsim++; gorselAranmadi = true; }
       else if (!g && !bekleyenGorselsiz) {
         const gBasla = simdi();
         try {
@@ -331,6 +336,12 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
         ozet.gorselSureMs += Math.max(0, simdi() - gBasla);
         if (g?.ozne) ozet.ozneGorsel++;
         log(`gorsel: [${haber.kategori}] ozne=${haber.gorselOzne ? haber.gorselOzne.tur + ":" + haber.gorselOzne.ad : "-"} sonuc=${g ? (g.saglayici || "var") : "yok"} ${gb.notlar.join(" | ").slice(0, 320)}`);
+      }
+      if (!g && zorunlu) {      // görsel zorunlu kategori: görselsiz kuyruk kuralı UYGULANMAZ; yük saklı beklenir, sonraki turlarda yalnız görsel aranır
+        const deneme = gorselAranmadi ? a.deneme : a.deneme + 1, ust = ayar.gorselZorunluDenemeUst ?? 3;
+        if (deneme >= ust) { isaretle(a, "elendi", "gorsel-yok"); ozet.elenen++; ozet.gorselZorunlu.atlanan++; }
+        else { isaretle(a, "bekliyor_gorsel", gb.notlar.join("|").slice(0, 100) || "gorsel yok", deneme, haber); ozet.bekleyenGorsel++; ozet.gorselZorunlu.bekletilen++; }
+        continue;
       }
       if (!g && !kartli && !listeKart && (!ayar.gorselsizYayin || gorselsizKuyruk >= ayar.gorselsizUst)) {
         const deneme = a.deneme + 1;
@@ -391,7 +402,18 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
         } else if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]++;       // zaten yayında: kuyruk anında düşülen hak geri verilir
         isaretle(a, "yayinlandi", sonuc.durum);
         if (a.cozumHash) isaretle({ hash: a.cozumHash }, "yayinlandi", "gnews-asil-adres");      // yayıncının kendi adresi de görüldü sayılır: aynı haber RSS'ten ikinci kez yazılmaz
-      } else { isaretle(a, "elendi", `yayin-red:${sonuc.neden || "?"}`); ozet.elenen++; if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]++; }
+      } else {
+        if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]++;
+        const rt = sunucuRedTuru(sonuc.neden);
+        if (rt === "gorsel-zorunlu") {         // sunucu/yerel kapı görselsizi reddetti: elenmez, bekletme yolu (yük saklı); eşikte "gorsel-yok"
+          const deneme = a.deneme + 1;
+          if (deneme >= (ayar.gorselZorunluDenemeUst ?? 3)) { isaretle(a, "elendi", "gorsel-yok"); ozet.elenen++; ozet.gorselZorunlu.atlanan++; }
+          else { isaretle(a, "bekliyor_gorsel", "yayin-red:gorsel-zorunlu", deneme, haber); ozet.bekleyenGorsel++; ozet.gorselZorunlu.bekletilen++; }
+        } else if (rt === "kategori-tanimsiz") {   // asla başka kategoriye kaydırılmaz; özet satırına uyarı
+          isaretle(a, "elendi", "yayin-red:kategori-tanimsiz"); ozet.elenen++; ozet.kategoriUyari.push(String(haber.kategori || "?").slice(0, 30));
+          log("UYARI kategori tanımsız (sunucu): haber kategorisi sunucuda yok");
+        } else { isaretle(a, "elendi", `yayin-red:${sonuc.neden || "?"}`); ozet.elenen++; }
+      }
     } catch (e) { log(`yayın atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 80)}`); }
   }
   if (etkinlikDefteri?.yeni.length) await durumYazGuvenli(bulut, ETKINLIK_DEFTER_ANAHTARI, { k: [...etkinlikDefteri.liste, ...etkinlikDefteri.yeni].slice(-300), z: new Date(simdi()).toISOString() });
@@ -415,6 +437,7 @@ export function ozetSatiri(o) {
     (o.gnews && (o.gnews.aday || o.gnews.cozulen || o.gnews.cozHata) ? ` gnews=aday:${o.gnews.aday},cozulen:${o.gnews.cozulen},cozHata:${o.gnews.cozHata},atlanan:${o.gnews.atlanan}` : "") +
     (o.skorKart ? ` skorKart=tek:${o.skorKartTur?.tek ?? o.skorKart},liste:${o.skorKartTur?.liste ?? 0},puan:${o.skorKartTur?.puan ?? 0}` : "") + (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") + (o.ozel?.mufredatOzet ? ` mufredat=${o.ozel.mufredatOzet}` : "") + (o.ozel?.planOzet ? ` plan=${o.ozel.planOzet}` : "") + botOzetMetni(o.bot) +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
+    (o.gorselZorunlu ? ` gorselZorunlu=bekletilen:${o.gorselZorunlu.bekletilen ?? 0},atlanan:${o.gorselZorunlu.atlanan ?? 0}` : "") + (o.gorselAtlananDersler?.length ? ` gorselAtlananDers=${o.gorselAtlananDersler.join("+")}` : "") + (o.kategoriUyari?.length ? ` kategoriUyari=${[...new Set(o.kategoriUyari)].join("+")}` : "") +
     (digerKirilim ? ` digerKirilim=${digerKirilim}` : "") + onSinifOzetMetni(o.onSinif) + sonOkumaOzetMetni(o.sonOkuma) +
     (o.haberYayin !== undefined ? ` cagriBasinaYayin=${o.modelCagri > 0 ? (o.haberYayin / o.modelCagri).toFixed(2) : "0.00"}` : "") +
     (kirilim(o.vlRet) ? ` vlRet=${kirilim(o.vlRet)}` : "") + (kirilim(o.gorselKaynak) ? ` gorselKaynak=${kirilim(o.gorselKaynak)}` : "") +

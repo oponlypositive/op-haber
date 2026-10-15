@@ -388,13 +388,13 @@ test("uçtan uca op_mutfak: Vikipedi kaynağı, model tarifi, kod doğrulaması,
   assert.match(h.id, /^k-[a-z0-9-]+-[0-9a-f]{6}-\d+$/);
   assert.equal(g.gorsel.lisans, "CC BY-SA 4.0"); assert.equal(g.gorsel.saglayici, "wikimedia"); assert.equal(g.tur, "image/jpeg");
 });
-test("uçtan uca: model görseli reddederse görselsiz yayınlanır; çağrı hakkı yoksa görsel denetimi atlanır (görselsiz), yazım yine yapılır", async () => {
+test("uçtan uca: görsel zorunlu kategori (mutfak): model görseli reddederse ya da çağrı hakkı yoksa YAYINLANMAZ (sahip ana kuralı 2026-10-15); işaretlenmez, sonraki turda yeniden denenir", async () => {
   const bulut = bulutKur(), vlRet = { yaz: async (sistem, girdi, sec = {}) => sec.resim ? { metin: JSON.stringify({ konuya_uygun: false }) } : { metin: JSON.stringify(TARIF_IYI), saglayici: "t" } };
   const s = await konuUret({ hesap: "op_mutfak", bulut, model: vlRet, fetchFn: sahteAg(), rastgele: () => 0, simdi: SIMDI, cagriHakki: 2, bekleFn: async () => {}, ...tekOge("op_mutfak", "Mercimek çorbası", "Mercimek çorbası") });
-  assert.equal(s.durum, "yayinlandi"); assert.equal(bulut.yayin[0].g, null);
+  assert.equal(s.durum, "yok"); assert.equal(s.neden, "gorsel-ret"); assert.equal(bulut.yayin.length, 0);
   const bulut2 = bulutKur(), model2 = modelKur({ tarif: TARIF_IYI });
   const s2 = await konuUret({ hesap: "op_mutfak", bulut: bulut2, model: model2, fetchFn: sahteAg(), rastgele: () => 0, simdi: SIMDI, cagriHakki: 1, bekleFn: async () => {}, ...tekOge("op_mutfak", "Mercimek çorbası", "Mercimek çorbası") });
-  assert.equal(s2.durum, "yayinlandi"); assert.equal(model2.sayac.vl, 0); assert.equal(bulut2.yayin[0].g, null); assert.ok(s2.cagri <= 1);
+  assert.equal(s2.durum, "yok"); assert.equal(model2.sayac.vl, 0); assert.equal(bulut2.yayin.length, 0); assert.ok(s2.cagri <= 1);
 });
 test("uçtan uca op_oyun ve op_antik; antik başlığı ≤ 70, kaynak bağlantısı, alt_konu öğeden", async () => {
   const b1 = bulutKur();
