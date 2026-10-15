@@ -23,6 +23,8 @@ import { botKur, bulutKur } from "./lib/bulut.mjs";
 import { botOzetMetni, botYanitTuru } from "./lib/bot_yanit.mjs";
 import { onSinifAsamasi, onSinifOzetMetni } from "./lib/on_sinif.mjs";
 import { sonOkuma, sonOkumaOzetMetni } from "./lib/son_okuma.mjs";
+import { ETKINLIK_DEFTER_ANAHTARI, etkinlikAyniMi, etkinlikDefterKaydi, etkinlikDefteriTemizle, etkinlikSuresiDoldu } from "./lib/etkinlik.mjs";
+import { durumOkuGuvenli, durumYazGuvenli } from "./lib/mufredat.mjs";
 
 const burasi = dirname(fileURLToPath(import.meta.url));
 const dur = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -75,7 +77,7 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 /** Bir tur. Bağımlılıklar parametreyle gelir (testte taklit edilir). -> özet nesnesi */
 export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama, bot = null }) {
   const baslangic = simdi();
-  const ozet = { aday: 0, yeniAday: 0, ayniOlay: 0, hayvanAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, skorKart: 0, skorKartTur: { tek: 0, liste: 0, puan: 0 }, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, gorselTur: {}, gorselSureMs: 0, gorselSureAsim: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
+  const ozet = { aday: 0, yeniAday: 0, ayniOlay: 0, etkinlik: 0, etkinlikRet: {}, hayvanAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, skorKart: 0, skorKartTur: { tek: 0, liste: 0, puan: 0 }, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, gorselTur: {}, gorselSureMs: 0, gorselSureAsim: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
     red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, bot: null, alanYayin: {},
     onSinif: { durum: "kapali", sorulan: 0, gecen: 0, red: {}, cagri: 0 }, sonOkuma: { durum: "kapali", sorulan: 0, duzeltilen: 0, red: {} } };
   const sayac = { vl: 0 };
@@ -117,7 +119,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
   const gecen = [];
   for (const a of aktif) {
     const gb = a.gnews ? gnewsBaslikSuzgeci(a) : "";
-    const e = gb ? { ok: false, neden: `gnews:${gb}` } : onEleme(a, { simdi: simdi(), tazelikSaat: ayar.tazelikSaat });
+    const e = gb ? { ok: false, neden: `gnews:${gb}` } : onEleme(a, { simdi: simdi(), tazelikSaat: ayar.tazelikSaat, etkinlikTazelikSaat: ayar.etkinlik === false ? 0 : (ayar.etkinlikTazelikSaat ?? 0) });
     if (e.ok) gecen.push(a);
     else {
       ozet.elenen++;
@@ -209,6 +211,13 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     }
     return gecmis;
   };
+  let etkinlikDefteri = null;                                      // kalıcı etkinlik defteri (tur başına en çok bir okuma); uç yoksa/hata: yalnız tur içi denetim
+  const etkinlikDefteriAl = async () => {
+    if (etkinlikDefteri) return etkinlikDefteri;
+    const hr = ayar.kuru ? null : await durumOkuGuvenli(bulut, [ETKINLIK_DEFTER_ANAHTARI]);
+    etkinlikDefteri = { liste: etkinlikDefteriTemizle(hr?.get(ETKINLIK_DEFTER_ANAHTARI)?.k, simdi()), yeni: [] };
+    return etkinlikDefteri;
+  };
   const hazirlar = [];                                            // yazılmış + görseli belli haberler: tur sonunda son okumadan geçip yayınlanır
   let gorselsizKuyruk = 0, zamansizKuyruk = 0, hazirYerli = 0, hazirDiger = 0, gnewsCozSay = 0, gnewsDur = false;
   let yerliKalan = islenecek.filter(yerliMi).length;
@@ -233,6 +242,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     }
     try {
       let haber = yuk;
+      if (yuk?.etkinlik && etkinlikSuresiDoldu(yuk.etkinlik, simdi())) { delete yuk.etkinlik; ozet.etkinlikRet["suresi-doldu"] = (ozet.etkinlikRet["suresi-doldu"] || 0) + 1; }   // saklı yükte etkinlik bitmişse alan atılır, haber yayınlanır
       if (yuk && !(dilUygun(yuk.tr.ozet, "tr") && dilUygun(yuk.tr.baslik + " " + yuk.tr.ozet.slice(0, 200), "tr") && dilUygun(yuk.en.ozet, "en"))) { isaretle(a, "elendi", "sakli yuk dil denetimi"); ozet.elenen++; continue; }   // eski kurallarla yazılmış saklı yük bugünkü denetimden geçmeli
       if (!haber) {
         const d = dogrulandiMi(a, hepsi, ayar.guvenilir);
@@ -270,14 +280,22 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
           if (gn) { isaretle(a, "elendi", `gnews:${gn}`.slice(0, 60)); ozet.elenen++; ozet.gnews.atlanan++; continue; }
         }
         if (!sayfa && s.durum.startsWith("hata") && (a.ozet || "").length < 250) continue;   // geçici erişim sorunu: işaretlemeden sonraki tura bırak
-        const y = await haberYaz(model, a, sayfa, { cagriUst: Math.max(1, yazimUst - ozet.modelCagri) });
+        const y = await haberYaz(model, a, sayfa, { cagriUst: Math.max(1, yazimUst - ozet.modelCagri), etkinlik: ayar.etkinlik !== false, simdi: simdi() });
         ozet.modelCagri += y.cagri || 0;
         if (y.durum !== "ok") {
           const kod = redKodu(y.neden);
           ozet.red[redSinifi(y.neden)]++; ozet.redKodlari[kod] = (ozet.redKodlari[kod] || 0) + 1;
           isaretle(a, "elendi", y.neden); ozet.elenen++; continue;
         }
+        if (y.etkinlikRet) ozet.etkinlikRet[y.etkinlikRet] = (ozet.etkinlikRet[y.etkinlikRet] || 0) + 1;
         haber = haberKur(a, y, { altKonuGonder: ayar.altKonuGonder !== false });
+      }
+      // AYNI ETKİNLİK denetimi (ad + şehir + başlangıç): bu turdaki haberlere ve kalıcı etkinlik defterine (hat_durum "etkinlik:defter") karşı; ikinci kez yayınlanmaz.
+      if (haber.etkinlik) {
+        const defter = await etkinlikDefteriAl();
+        if (hazirlar.some((x) => x.haber.etkinlik && etkinlikAyniMi(haber.etkinlik, x.haber.etkinlik)) || defter.liste.some((k) => etkinlikAyniMi(haber.etkinlik, k))) {
+          isaretle(a, "elendi", "ayni-olay:etkinlik"); ozet.elenen++; ozet.ayniOlay++; ozet.etkinlikRet.tekrar = (ozet.etkinlikRet.tekrar || 0) + 1; continue;
+        }
       }
       // KESİN aynı olay denetimi: yazılmış TR+EN başlık/özetle (görsel aramasına geçmeden). Sonra gelen yayınlanmaz.
       const imza = ayniOlayAcik ? haberImzasi(haber) : null;
@@ -364,6 +382,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       if (sonuc.durum === "eklendi" || sonuc.durum === "var") {
         if (sonuc.durum === "eklendi") {
           ozet.yayinlanan++; ozet.haberYayin++;
+          if (haber.etkinlik) { ozet.etkinlik++; (await etkinlikDefteriAl()).yeni.push(etkinlikDefterKaydi(haber.etkinlik)); }
           if (yuk) ozet.bekleyenYayin++;
           if (haber.kart?.tur) { ozet.skorKart++; const kt = haber.kart.tur === "skor" ? "tek" : haber.kart.tur === "skorlar" ? "liste" : "puan"; ozet.skorKartTur[kt]++; }
           else if (!g) ozet.gorselsiz++;
@@ -375,6 +394,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       } else { isaretle(a, "elendi", `yayin-red:${sonuc.neden || "?"}`); ozet.elenen++; if (kalanHak[a.alan] !== undefined) kalanHak[a.alan]++; }
     } catch (e) { log(`yayın atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 80)}`); }
   }
+  if (etkinlikDefteri?.yeni.length) await durumYazGuvenli(bulut, ETKINLIK_DEFTER_ANAHTARI, { k: [...etkinlikDefteri.liste, ...etkinlikDefteri.yeni].slice(-300), z: new Date(simdi()).toISOString() });
   await bitir();
   ozet.vlCagri = sayac.vl;
   ozet.sureSn = Math.round((simdi() - baslangic) / 1000);
@@ -391,7 +411,7 @@ export function ozetSatiri(o) {
   const digerKirilim = Object.entries(o.redKodlari || {}).filter(([k]) => !["uygun-degil", "rakam", "dil", "filtre"].includes(k)).map(([k, v]) => `${k}:${v}`).join(",");
   const kirilim = (m) => Object.entries(m || {}).map(([k, v]) => `${k}:${v}`).join(",");
   const ek = (o.yerli ? ` yerli=${o.yerli.yayin}/${o.haberYayin ?? 0}(aday=${o.yerli.aday},onEleme=${o.yerli.onEleme})` : "") +
-    (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
+    (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.etkinlik !== undefined ? ` etkinlik=${o.etkinlik}` : "") + (Object.keys(o.etkinlikRet || {}).length ? ` etkinlikRet=${kirilim(o.etkinlikRet)}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
     (o.gnews && (o.gnews.aday || o.gnews.cozulen || o.gnews.cozHata) ? ` gnews=aday:${o.gnews.aday},cozulen:${o.gnews.cozulen},cozHata:${o.gnews.cozHata},atlanan:${o.gnews.atlanan}` : "") +
     (o.skorKart ? ` skorKart=tek:${o.skorKartTur?.tek ?? o.skorKart},liste:${o.skorKartTur?.liste ?? 0},puan:${o.skorKartTur?.puan ?? 0}` : "") + (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") + (o.ozel?.mufredatOzet ? ` mufredat=${o.ozel.mufredatOzet}` : "") + (o.ozel?.planOzet ? ` plan=${o.ozel.planOzet}` : "") + botOzetMetni(o.bot) +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +

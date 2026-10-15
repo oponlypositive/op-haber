@@ -223,9 +223,9 @@ test("Google News sayfa içeriği konu denetimi: başlık masum ama sayfa siyase
   assert.equal(o.haberYayin, 0); assert.ok(b.k.isaretler.some((x) => /^elendi$/.test(x.durum) && /^gnews:sayfa:/.test(x.neden)), JSON.stringify(b.k.isaretler));
 });
 
-test("kaynaklar.json: Google News sorguları (40-60, Türkçe, tekrarsız), güvenilir yayıncı listesi (ajans yok), yeni TR RSS kaynakları, eklenmeyenlerin gerekçeleri", () => {
+test("kaynaklar.json: Google News sorguları (40-72: 54 haber + en çok 12 etkinlik sorgusu, Türkçe, tekrarsız), güvenilir yayıncı listesi (ajans yok), yeni TR RSS kaynakları, eklenmeyenlerin gerekçeleri", () => {
   const q = kaynaklar.gnews;
-  assert.ok(q.length >= 40 && q.length <= 60, `sorgu sayısı ${q.length}`);
+  assert.ok(q.length >= 40 && q.length <= 72, `sorgu sayısı ${q.length}`);
   assert.equal(new Set(q.map((x) => x.sorgu)).size, q.length);
   for (const x of q) { assert.ok(/[a-zA-ZçğıöşüÇĞİÖŞÜ]{3}/.test(x.sorgu), x.sorgu); assert.ok(!x.alan || ["spor", "sanat", "bilim", "teknoloji"].includes(x.alan), x.sorgu); }
   for (const kalip of ["altın madalya kazandı", "dünya şampiyonu oldu", "rekor kırdı", "ödül aldı", "birinci oldu", "Türk bilim insanı", "yerli üretim geliştirildi", "açılışı yapıldı müze", "sergi açıldı", "festival başlıyor", "restorasyon tamamlandı", "yeniden doğaya salındı", "yavru dünyaya geldi", "gönüllüler", "bağış kampanyası tamamlandı", "burs", "TEKNOFEST", "kazı çalışmalarında bulundu", "UNESCO Türkiye", "konser", "kitap fuarı", "filenin sultanları", "12 dev adam"])

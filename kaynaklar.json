@@ -1200,6 +1200,89 @@
     {
       "sorgu": "fotoğraf yarışması birincisi",
       "en": 8
+    },
+    {
+      "sorgu": "İstanbul sergi açılıyor",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "Ankara konser sahne alacak",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "İzmir tiyatro oyunu sahnelenecek",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "festival başlıyor ücretsiz",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "Bursa sergi sanatseverlerle buluşuyor",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "Antalya festival programı",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "Eskişehir konser etkinlik",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "İstanbul söyleşi imza günü",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "Ankara tiyatro oyunu",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "İzmir sergi açılış",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "kitap fuarı kapılarını açıyor",
+      "alan": "sanat",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
+    },
+    {
+      "sorgu": "halk koşusu maraton kayıt",
+      "pencere": "7d",
+      "en": 8,
+      "etkinlik": true
     }
   ],
   "gnews_guvenilir": [

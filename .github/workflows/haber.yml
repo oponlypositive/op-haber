@@ -78,4 +78,6 @@ jobs:
           BOT_YANIT_TUR_UST: ${{ vars.BOT_YANIT_TUR_UST }}
           BOT_YANIT_CAGRI_UST: ${{ vars.BOT_YANIT_CAGRI_UST }}
           BOT_YANIT_SURE_SN: ${{ vars.BOT_YANIT_SURE_SN }}
+          ETKINLIK: ${{ vars.ETKINLIK }}
+          ETKINLIK_TAZELIK_SAAT: ${{ vars.ETKINLIK_TAZELIK_SAAT }}
         run: node hat.mjs
