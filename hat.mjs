@@ -24,6 +24,7 @@ import { botOzetMetni, botYanitTuru } from "./lib/bot_yanit.mjs";
 import { onSinifAsamasi, onSinifOzetMetni } from "./lib/on_sinif.mjs";
 import { sonOkuma, sonOkumaOzetMetni } from "./lib/son_okuma.mjs";
 import { ETKINLIK_DEFTER_ANAHTARI, etkinlikAyniMi, etkinlikDefterKaydi, etkinlikDefteriTemizle, etkinlikSuresiDoldu } from "./lib/etkinlik.mjs";
+import { etkinlikKonumlari, konumOzetMetni } from "./lib/etkinlik_konum.mjs";
 import { durumOkuGuvenli, durumYazGuvenli } from "./lib/mufredat.mjs";
 import { gorselZorunluMu, sunucuRedTuru } from "./lib/gorsel_zorunlu.mjs";
 
@@ -386,6 +387,15 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     }
   }
 
+  // ETKİNLİK KONUMU: yayınlanacak etkinliklere mekân koordinatı (Wikidata P625 -> Photon; önbellekli, tur başına en çok ayar.etkinlikKonumUst istek). Bulunamazsa konum yok: sunucu şehir merkezini atar.
+  if (ayar.etkinlikKonum !== false && !ayar.kuru) {
+    const ekler = hazirlar.filter((h) => h.haber.etkinlik).map((h) => h.haber.etkinlik);
+    if (ekler.length) {
+      try { const k = await etkinlikKonumlari({ etkinlikler: ekler, bulut, fetchFn, bekleFn, simdi: simdi(), ust: ayar.etkinlikKonumUst ?? 6, log }); ozet.etkinlikKonum = { kesin: k.kesin, yok: k.yok, onbellek: k.onbellek }; }
+      catch (e) { log(`etkinlik konumu atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 60)}`); }
+    }
+  }
+
   // YAYIN
   for (const { a, haber, g, yuk } of hazirlar) {
     try {
@@ -433,7 +443,7 @@ export function ozetSatiri(o) {
   const digerKirilim = Object.entries(o.redKodlari || {}).filter(([k]) => !["uygun-degil", "rakam", "dil", "filtre"].includes(k)).map(([k, v]) => `${k}:${v}`).join(",");
   const kirilim = (m) => Object.entries(m || {}).map(([k, v]) => `${k}:${v}`).join(",");
   const ek = (o.yerli ? ` yerli=${o.yerli.yayin}/${o.haberYayin ?? 0}(aday=${o.yerli.aday},onEleme=${o.yerli.onEleme})` : "") +
-    (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.etkinlik !== undefined ? ` etkinlik=${o.etkinlik}` : "") + (Object.keys(o.etkinlikRet || {}).length ? ` etkinlikRet=${kirilim(o.etkinlikRet)}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
+    (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.etkinlik !== undefined ? ` etkinlik=${o.etkinlik}` : "") + (Object.keys(o.etkinlikRet || {}).length ? ` etkinlikRet=${kirilim(o.etkinlikRet)}` : "") + (o.etkinlikKonum ? ` etkinlikKonum=${konumOzetMetni(o.etkinlikKonum)}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
     (o.gnews && (o.gnews.aday || o.gnews.cozulen || o.gnews.cozHata) ? ` gnews=aday:${o.gnews.aday},cozulen:${o.gnews.cozulen},cozHata:${o.gnews.cozHata},atlanan:${o.gnews.atlanan}` : "") +
     (o.skorKart ? ` skorKart=tek:${o.skorKartTur?.tek ?? o.skorKart},liste:${o.skorKartTur?.liste ?? 0},puan:${o.skorKartTur?.puan ?? 0}` : "") + (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") + (o.ozel?.mufredatOzet ? ` mufredat=${o.ozel.mufredatOzet}` : "") + (o.ozel?.planOzet ? ` plan=${o.ozel.planOzet}` : "") + botOzetMetni(o.bot) +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
