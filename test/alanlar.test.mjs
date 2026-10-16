@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { ALANLAR, alanOnEleme, alanDengele, kotaAyristir, alanKalan } from "../lib/alanlar.mjs";
+import { ALANLAR, alanOnEleme, alanDengele, kotaAyristir, alanKalan, kategoriKapaliMi } from "../lib/alanlar.mjs";
 import { onEleme, guvenilirMi } from "../lib/on_eleme.mjs";
 import { rssAyristir } from "../lib/rss.mjs";
 import { ozelAdSuphesi, ciktiDogrula } from "../lib/dogrula.mjs";
@@ -32,11 +32,12 @@ test("alan ön elemesi: kabul/ret tablosu", () => {
     ["gokbilim", "Webb telescope finds new galaxy cluster", "", true],
     ["gokbilim", "Horoscope for Mars retrograde", "", false],
     ["bilim", "Researchers grow coral nursery on restored reef", "", true],
-    ["teknoloji", "Engineers build a solar powered sensor", "", true],
+    ["teknoloji", "Engineers build a solar powered sensor", "", false],       // 2026-10-16 sahip: teknoloji KAPALI, nötr-olumlu bile olsa hiçbir teknoloji adayı geçmez
     ["teknoloji", "Best deals on laptops this week", "", false],
     ["teknoloji", "Hack exposes data breach at large company", "", false],
   ];
   for (const [alan, baslik, ozet, beklenen] of T) assert.equal(alanOnEleme({ alan, baslik, ozet }).ok, beklenen, `${alan}: ${baslik}`);
+  assert.deepEqual(alanOnEleme({ alan: "teknoloji", baslik: "Engineers build a solar powered sensor", ozet: "" }), { ok: false, neden: "alan:kategori-kapali" });
   assert.equal(alanOnEleme({ baslik: "Her şey serbest", ozet: "" }).ok, true);   // alan yok = iyi haber sitesi, bu kapı uygulanmaz
 });
 
@@ -72,7 +73,8 @@ test("kaynaklar.json şeması: besleme adresi, alan, koşul işareti, hazır gö
     assert.ok(["tr", "en"].includes(k.dil), k.ad);
     assert.equal(typeof k.guvenilir, "boolean", k.ad);
     if (k.alan) {
-      assert.ok(k.alan in ALANLAR, `alan geçerli: ${k.ad}`);
+      assert.ok(k.alan in ALANLAR || (k.pasif && kategoriKapaliMi(k.alan)), `alan geçerli: ${k.ad}`);      // kapalı kategori (teknoloji) yalnız pasif kaynakta durabilir
+      if (kategoriKapaliMi(k.alan)) { assert.equal(k.pasif, true, `kapalı kategori kaynağı pasif: ${k.ad}`); assert.match(k.kosul_not, /SAHİP ONAYI GEREKİR/, k.ad); }
       assert.ok(["dogrulandi", "dogrulanamadi"].includes(k.kosul), `koşul işareti: ${k.ad}`);
       assert.ok(k.kosul_not, `koşul notu: ${k.ad}`);
     }

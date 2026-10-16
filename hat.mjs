@@ -79,7 +79,7 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 /** Bir tur. Bağımlılıklar parametreyle gelir (testte taklit edilir). -> özet nesnesi */
 export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama, bot = null }) {
   const baslangic = simdi();
-  const ozet = { aday: 0, yeniAday: 0, ayniOlay: 0, etkinlik: 0, etkinlikRet: {}, hayvanAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, skorKart: 0, skorKartTur: { tek: 0, liste: 0, puan: 0 }, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, gorselTur: {}, gorselSureMs: 0, gorselSureAsim: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
+  const ozet = { aday: 0, yeniAday: 0, ayniOlay: 0, etkinlik: 0, etkinlikRet: {}, hayvanAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, kategoriKapali: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, skorKart: 0, skorKartTur: { tek: 0, liste: 0, puan: 0 }, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, gorselTur: {}, gorselSureMs: 0, gorselSureAsim: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
     red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, bot: null, alanYayin: {}, gorselZorunlu: { bekletilen: 0, atlanan: 0 }, gorselAtlananDersler: [], kategoriUyari: [],
     onSinif: { durum: "kapali", sorulan: 0, gecen: 0, red: {}, cagri: 0 }, sonOkuma: { durum: "kapali", sorulan: 0, duzeltilen: 0, red: {} } };
   const sayac = { vl: 0 };
@@ -125,6 +125,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     if (e.ok) gecen.push(a);
     else {
       ozet.elenen++;
+      if (/kategori-kapali/.test(e.neden)) ozet.kategoriKapali++;      // sahip 2026-10-16: teknoloji kapalı
       if (/^eski/.test(e.neden)) ozet.eskiSay++;
       if (!/^(eski|tarih)/.test(e.neden)) isaretle(a, "elendi", `on-eleme:${e.neden}`);      // eskiler işaretlenmez: akıştan düşer
       else if (a.bekleyen) isaretle(a, "elendi", `on-eleme:${e.neden}`);
@@ -193,7 +194,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
       const s = await onSinifAsamasi({ model, islenecek, adet: ayar.onSinifAdet, esik: ayar.onSinifEsik ?? 6, dokunma, alanArdaArdaUst: ayar.alanArdaArdaUst || 2, rezerv: ayar.hayvanRezerv > 0 ? { hayvanlar: ayar.hayvanRezerv } : {} });
       ozet.modelCagri += s.ozet.cagri;
       ozet.onSinif = s.ozet;
-      for (const e of s.elenenler) { isaretle(e.aday, "elendi", `on-sinif:${e.neden}`); ozet.elenen++; }
+      for (const e of s.elenenler) { isaretle(e.aday, "elendi", `on-sinif:${e.neden}`); ozet.elenen++; if (e.neden === "kategori-kapali") ozet.kategoriKapali++; }
       islenecek = s.sirali;
     } catch (e) {
       if (e?.cagri) { ozet.modelCagri += e.cagri; ozet.onSinif = { ...ozet.onSinif, durum: "yedek", cagri: e.cagri }; }
@@ -288,7 +289,7 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
         ozet.modelCagri += y.cagri || 0;
         if (y.durum !== "ok") {
           const kod = redKodu(y.neden);
-          ozet.red[redSinifi(y.neden)]++; ozet.redKodlari[kod] = (ozet.redKodlari[kod] || 0) + 1;
+          ozet.red[redSinifi(y.neden)]++; ozet.redKodlari[kod] = (ozet.redKodlari[kod] || 0) + 1; if (kod === "kategori-kapali") ozet.kategoriKapali++;
           isaretle(a, "elendi", y.neden); ozet.elenen++; continue;
         }
         if (y.etkinlikRet) ozet.etkinlikRet[y.etkinlikRet] = (ozet.etkinlikRet[y.etkinlikRet] || 0) + 1;
@@ -443,7 +444,7 @@ export function ozetSatiri(o) {
   const digerKirilim = Object.entries(o.redKodlari || {}).filter(([k]) => !["uygun-degil", "rakam", "dil", "filtre"].includes(k)).map(([k, v]) => `${k}:${v}`).join(",");
   const kirilim = (m) => Object.entries(m || {}).map(([k, v]) => `${k}:${v}`).join(",");
   const ek = (o.yerli ? ` yerli=${o.yerli.yayin}/${o.haberYayin ?? 0}(aday=${o.yerli.aday},onEleme=${o.yerli.onEleme})` : "") +
-    (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.etkinlik !== undefined ? ` etkinlik=${o.etkinlik}` : "") + (Object.keys(o.etkinlikRet || {}).length ? ` etkinlikRet=${kirilim(o.etkinlikRet)}` : "") + (o.etkinlikKonum ? ` etkinlikKonum=${konumOzetMetni(o.etkinlikKonum)}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
+    (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.kategoriKapali !== undefined ? ` kategoriKapali=${o.kategoriKapali}` : "") + (o.etkinlik !== undefined ? ` etkinlik=${o.etkinlik}` : "") + (Object.keys(o.etkinlikRet || {}).length ? ` etkinlikRet=${kirilim(o.etkinlikRet)}` : "") + (o.etkinlikKonum ? ` etkinlikKonum=${konumOzetMetni(o.etkinlikKonum)}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
     (o.gnews && (o.gnews.aday || o.gnews.cozulen || o.gnews.cozHata) ? ` gnews=aday:${o.gnews.aday},cozulen:${o.gnews.cozulen},cozHata:${o.gnews.cozHata},atlanan:${o.gnews.atlanan}` : "") +
     (o.skorKart ? ` skorKart=tek:${o.skorKartTur?.tek ?? o.skorKart},liste:${o.skorKartTur?.liste ?? 0},puan:${o.skorKartTur?.puan ?? 0}` : "") + (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") + (o.ozel?.mufredatOzet ? ` mufredat=${o.ozel.mufredatOzet}` : "") + (o.ozel?.planOzet ? ` plan=${o.ozel.planOzet}` : "") + botOzetMetni(o.bot) +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +

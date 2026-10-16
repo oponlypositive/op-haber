@@ -106,7 +106,7 @@ const TR = "Lakeside'daki komşular, üç hafta sonu boyunca nehir kıyısına 5
   "Genç ağaçlar kısa süre sonra, birçok ailenin her gün kullandığı yürüyüş yoluna gölge verecek. Parkta ayrıca herkese açık küçük bir alet kütüphanesi bulunuyor. " +
   "Bu, insanlar işi ve zamanı paylaştığında bir topluluğun birlikte neler başarabileceğinin sade bir örneği.";
 const OZET_KAYNAK = "Volunteers in Lakeside planted 5,000 trees along the river over three weekends. " + "Neighbors and local schools shared the work and a small tool library now serves the park. ".repeat(3);
-const YAZIM_YANITI = JSON.stringify({ uygun: true, kategori: "doga", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } });
+const YAZIM_YANITI = JSON.stringify({ uygun: true, kategori: "iyilik", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } });
 const KONULAR = ["Volunteers plant thousands of trees beside Lakeside river", "Students build solar lantern library for village school", "Rescued hedgehog colony returns healthy to meadow", "Retired teachers teach coding to neighborhood children",
   "Young swimmer breaks regional record with homemade goggles", "Bakery shares free bread with night shift nurses", "Scientists grow coral nursery along restored reef", "Choir of grandparents records album for local hospital", "Cyclists collect thousands of books for rural libraries", "Garden club turns empty lot into butterfly meadow"];
 const ayar = (ek = {}) => ({ ...ayarOku({}, []), geminiAnahtar: "k", geminiBeklemeMs: 0, sonOkuma: false, turBasinaEn: 20, gorselsizUst: 20, ...ek });
@@ -172,7 +172,7 @@ test("hat: ON_SINIF_ADET=0 kapalı (çağrı yok); adet sınırı: yalnız ilk N
 });
 
 test("hat: saklı yüklü bekleyen sınıflandırmaya girmez ve modelsiz yayınlanır; sınıflandırma onun bütçesini yemez", async () => {
-  const yuk = { id: "habsakli", tr: { baslik: "Saklı haber", ozet: TR }, en: { baslik: "Stored story", ozet: EN }, kategori: "doga", yer: "Dünya", kaynak: "goodnewsnetwork.org", link: "https://www.goodnewsnetwork.org/h/0", zaman: "2026-10-13T08:00:00Z", model: "m" };
+  const yuk = { id: "habsakli", tr: { baslik: "Saklı haber", ozet: TR }, en: { baslik: "Stored story", ozet: EN }, kategori: "iyilik", yer: "Dünya", kaynak: "goodnewsnetwork.org", link: "https://www.goodnewsnetwork.org/h/0", zaman: "2026-10-13T08:00:00Z", model: "m" };
   const hash0 = (await import("../lib/rss.mjs")).baglantiOzeti("https://www.goodnewsnetwork.org/h/0");
   const onceki = new Map([[hash0, { ozet: hash0, durum: "bekliyor_gorsel", deneme: 1, yuk }]]);
   const sorulan = [];

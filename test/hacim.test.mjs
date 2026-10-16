@@ -44,7 +44,7 @@ test("kaynaklar.json: ölü beslemeler yok, yeni alan kaynakları var, tazelik v
   const adlar = kaynaklar.rss.map((k) => k.ad);
   for (const olu of ["eso.org", "esahubble.org", "trthaber.com (Spor)", "trthaber.com (Kültür-Sanat)"]) assert.ok(!adlar.includes(olu), olu);
   const sayim = {}; for (const k of kaynaklar.rss) sayim[k.alan || "iyi"] = (sayim[k.alan || "iyi"] || 0) + 1;
-  assert.ok(sayim.spor >= 4 && sayim.sanat >= 8 && sayim.bilim >= 6 && sayim.teknoloji >= 4 && sayim.iyi >= 6, JSON.stringify(sayim));
+  assert.ok(sayim.spor >= 4 && sayim.sanat >= 8 && sayim.bilim >= 6 && sayim.iyi >= 6, JSON.stringify(sayim));
   assert.ok(kaynaklar.rss.filter((k) => k.dil === "tr").length >= 8);
   for (const k of kaynaklar.rss) { assert.match(k.url, /^https:\/\//); assert.ok(!k.tazelik_saat || (k.tazelik_saat >= 24 && k.tazelik_saat <= 720), k.ad); if (k.alan === "spor") assert.ok(!k.tazelik_saat || k.tazelik_saat <= 36, "spor taze kalmalı: " + k.ad); }
   assert.ok(VARSAYILAN_ALAN_KOTALARI.spor >= 20 && VARSAYILAN_ALAN_KOTALARI.sanat >= 12);
@@ -82,7 +82,7 @@ const EN = "A group of neighbors in Lakeside spent three weekends planting 5000 
 const TR = "Lakeside'daki komşular, üç hafta sonu boyunca nehir kıyısına 5000 ağaç dikti. Yerel okullar da sınıflarıyla birlikte bu çalışmaya katıldı. " +
   "Genç ağaçlar kısa süre sonra, birçok ailenin her gün kullandığı yürüyüş yoluna gölge verecek. Parkta ayrıca herkese açık küçük bir alet kütüphanesi bulunuyor. " +
   "Bu, insanlar işi ve zamanı paylaştığında bir topluluğun birlikte neler başarabileceğinin sade bir örneği.";
-const iyi = () => ({ uygun: true, kategori: "doga", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } });
+const iyi = () => ({ uygun: true, kategori: "iyilik", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } });
 const aday = { baslik: "Volunteers plant trees", ozet: KAYNAK, dil: "en" };
 
 test("ciktiDogrula: TR metinde yazıyla yıl ve bozuk kelime ret (kalıcı değil)", () => {

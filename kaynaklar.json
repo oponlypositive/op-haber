@@ -1,5 +1,5 @@
 {
-  "_not": "Yeni kaynak yalnız doğrulanmış besleme adresiyle eklenir (2026-10-13 oturumunda her adres tek istekle açılıp geçerli RSS ve güncel olduğu görüldü). gnews: Google News ARAMA RSS'leri yalnız KEŞİF kanalıdır (sahip 2026-10-13); sonuçta özet yoktur, asıl yayıncı <source> alanından alınır, adres lib/gnews.mjs ile asıl yayıncıya çözülür, sayfa robots.txt'e uyularak okunur, AJANS/toplayıcı sonuçları atılır, asıl yayıncı gnews_guvenilir listesinde değilse ikinci kaynak şartı aynen işler. gnews.alan = sorgunun alan ölçütü (spor/sanat/bilim/teknoloji). tz_yerel: yerel saati 'GMT' yazan kaynak. alan: spor|sanat|bilim|teknoloji|gokbilim = nötr-olumlu ölçüt (lib/alanlar.mjs); alan yoksa 'iyi haber' sitesi. kosul: dogrulandi = kullanım koşulunda yeniden yazım/bağlantı açıkça serbest (lisans metni okundu); dogrulanamadi = koşul sayfası bulunamadı/okunamadı, açık yasak da görülmedi. hazir_gorsel: kurumun kendi lisanslı görseli beslemeden alınır (atıf zorunlu). tazelik_saat: seyrek yayın yapan kurumlar için özel tazelik süresi.",
+  "_not": "Yeni kaynak yalnız doğrulanmış besleme adresiyle eklenir (2026-10-13 oturumunda her adres tek istekle açılıp geçerli RSS ve güncel olduğu görüldü). gnews: Google News ARAMA RSS'leri yalnız KEŞİF kanalıdır (sahip 2026-10-13); sonuçta özet yoktur, asıl yayıncı <source> alanından alınır, adres lib/gnews.mjs ile asıl yayıncıya çözülür, sayfa robots.txt'e uyularak okunur, AJANS/toplayıcı sonuçları atılır, asıl yayıncı gnews_guvenilir listesinde değilse ikinci kaynak şartı aynen işler. gnews.alan = sorgunun alan ölçütü (spor/sanat/bilim/teknoloji). tz_yerel: yerel saati 'GMT' yazan kaynak. alan: spor|sanat|bilim|teknoloji|gokbilim = nötr-olumlu ölçüt (lib/alanlar.mjs); alan yoksa 'iyi haber' sitesi. kosul: dogrulandi = kullanım koşulunda yeniden yazım/bağlantı açıkça serbest (lisans metni okundu); dogrulanamadi = koşul sayfası bulunamadı/okunamadı, açık yasak da görülmedi. hazir_gorsel: kurumun kendi lisanslı görseli beslemeden alınır (atıf zorunlu). tazelik_saat: seyrek yayın yapan kurumlar için özel tazelik süresi. 2026-10-16: alan teknoloji KAPALI (sahip): teknoloji alanlı rss ve gnews kayıtları pasif:true, hat teknoloji kategorisinde üretmez/yayınlamaz.",
   "rss": [
     {
       "ad": "goodnewsnetwork.org",
@@ -95,7 +95,8 @@
       "alan": "teknoloji",
       "tazelik_saat": 72,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar sayfası okunamadı"
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR",
+      "pasif": true
     },
     {
       "ad": "trthaber.com (Bilim-Teknoloji)",
@@ -104,8 +105,9 @@
       "guvenilir": true,
       "alan": "teknoloji",
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar incelenmedi",
-      "tazelik_saat": 72
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR",
+      "tazelik_saat": 72,
+      "pasif": true
     },
     {
       "ad": "thisiscolossal.com",
@@ -256,7 +258,8 @@
       "tazelik_saat": 36,
       "en": 30,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir"
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR",
+      "pasif": true
     },
     {
       "ad": "medicalxpress.com",
@@ -310,7 +313,8 @@
       "tazelik_saat": 36,
       "en": 30,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir"
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR",
+      "pasif": true
     },
     {
       "ad": "space.com",
@@ -675,7 +679,8 @@
       "alan": "teknoloji",
       "tazelik_saat": 72,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir"
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR",
+      "pasif": true
     },
     {
       "ad": "bbc.co.uk/sport (genel)",
@@ -747,7 +752,8 @@
       "tazelik_saat": 24,
       "en": 15,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR",
+      "pasif": true
     },
     {
       "ad": "shiftdelete.net",
@@ -758,7 +764,8 @@
       "tazelik_saat": 24,
       "en": 15,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR",
+      "pasif": true
     },
     {
       "ad": "donanimhaber.com",
@@ -769,7 +776,8 @@
       "tazelik_saat": 24,
       "en": 15,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR",
+      "pasif": true
     },
     {
       "ad": "arkeofili.com",
@@ -845,7 +853,8 @@
       "tazelik_saat": 36,
       "en": 15,
       "kosul": "dogrulanamadi",
-      "kosul_not": "koşullar incelenmedi; RSS herkese açık, yalnız başlık+özet kullanılır, kendi cümlelerimizle yazılır, kaynak bağlantısı verilir (2026-10-13 tek istekle doğrulandı)"
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR",
+      "pasif": true
     },
     {
       "ad": "hurriyet.com.tr (Eğitim)",
@@ -1068,22 +1077,30 @@
     {
       "sorgu": "yerli üretim geliştirildi",
       "alan": "teknoloji",
-      "en": 8
+      "en": 8,
+      "pasif": true,
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR"
     },
     {
       "sorgu": "yerli yazılım Türk mühendis",
       "alan": "teknoloji",
-      "en": 8
+      "en": 8,
+      "pasif": true,
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR"
     },
     {
       "sorgu": "yapay zeka Türk girişim ödül",
       "alan": "teknoloji",
-      "en": 8
+      "en": 8,
+      "pasif": true,
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR"
     },
     {
       "sorgu": "yerli robot geliştirildi",
       "alan": "teknoloji",
-      "en": 8
+      "en": 8,
+      "pasif": true,
+      "kosul_not": "2026-10-16 sahip: teknoloji sistemden çıkarıldı. SAHİP ONAYI GEREKİR"
     },
     {
       "sorgu": "sergi açıldı",

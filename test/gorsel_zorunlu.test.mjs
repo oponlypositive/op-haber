@@ -19,16 +19,16 @@ const TR = "Meşk Sergisi, İzmit'teki SEKA Kâğıt Müzesi'nde 29 Ekim'e kadar
 const ADAY = (n = 1, ek = {}) => ({ baslik: BASLIK, ozet: KAYNAK_TR.split("\n")[1] + " " + "Sergi alanı geniş bir salonda kurulacak ve her yaştan ziyaretçi gelecek. ".repeat(2), link: `https://www.kocaelihaber.example/h/${n}`, kaynak: "kocaelihaber.example", dil: "tr", zaman: ZAMAN, alan: "mahalle", kaynakGuvenilir: true, ...ek });
 
 // ================================================================ yerel kapı + tanıma
-test("kategori kümesi: mutfak, oyun, sanat, resim; öbürleri serbest", () => {
-  assert.deepEqual([...GORSEL_ZORUNLU_KATEGORILER].sort(), ["mutfak", "oyun", "resim", "sanat"]);
-  for (const k of ["mutfak", "oyun", "sanat", "resim"]) assert.equal(gorselZorunluMu(k), true, k);
-  for (const k of ["iyilik", "spor", "bilim", "felsefe", "hayvanlar", "tarih", "", undefined]) assert.equal(gorselZorunluMu(k), false, String(k));
+test("kategori kümesi: mutfak, oyun, sanat, resim + (2026-10-16) doga, tarih, astroloji; öbürleri serbest", () => {
+  assert.deepEqual([...GORSEL_ZORUNLU_KATEGORILER].sort(), ["astroloji", "doga", "mutfak", "oyun", "resim", "sanat", "tarih"]);
+  for (const k of ["mutfak", "oyun", "sanat", "resim", "doga", "tarih", "astroloji"]) assert.equal(gorselZorunluMu(k), true, k);
+  for (const k of ["iyilik", "spor", "bilim", "felsefe", "hayvanlar", "gokbilim", "huzur", "mahalle", "", undefined]) assert.equal(gorselZorunluMu(k), false, String(k));
   assert.equal(gorselVarMi(null), false); assert.equal(gorselVarMi({ gorsel: {}, b64: "" }), false); assert.equal(gorselVarMi({ gorsel: { sahibi: "x" }, b64: "AAAA", tur: "image/jpeg" }), true);
 });
 test("yayinYuku: görsel zorunlu kategoride görsel yoksa yük HİÇ kurulmaz; görselle kurulur; serbest kategori görselsiz kurulur", () => {
   const h = (kategori) => ({ id: "habc", tr: { baslik: "t", ozet: "o" }, en: { baslik: "e", ozet: "o" }, kategori, yer: "Dünya", kaynak: "k", link: "https://a.b/c", zaman: "2026-10-15T08:00:00Z", model: "m" });
   const g = { gorsel: { sahibi: "x", lisans: "CC0", lisans_url: "", kaynak_url: "", saglayici: "wikimedia" }, b64: "AAAA", tur: "image/jpeg" };
-  for (const k of ["mutfak", "oyun", "sanat", "resim"]) {
+  for (const k of ["mutfak", "oyun", "sanat", "resim", "doga", "tarih", "astroloji"]) {
     assert.throws(() => yayinYuku(h(k), "ab".repeat(32), null), GorselZorunluHatasi, k);
     assert.throws(() => yayinYuku(h(k), "ab".repeat(32), { gorsel: g.gorsel, b64: "" }), GorselZorunluHatasi, k);
     assert.equal(yayinYuku(h(k), "ab".repeat(32), g).gorselB64, "AAAA");

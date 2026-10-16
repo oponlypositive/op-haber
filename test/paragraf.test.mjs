@@ -63,7 +63,7 @@ test("paragraf: metinParagrafla başlığa dokunmaz, değişmeyen nesneyi aynen 
 });
 
 test("paragraf: yayın yükü özetleri paragraflar, başlık ve diğer alanlar aynen", () => {
-  const h = { id: "habc", tr: { baslik: "Komşular ağaç dikti", ozet: TR6 }, en: { baslik: "Neighbors plant trees", ozet: EN5 }, kategori: "doga", yer: "Dünya", kaynak: "k", link: "https://a.b/c", zaman: "2026-10-13T08:00:00Z", model: "m" };
+  const h = { id: "habc", tr: { baslik: "Komşular ağaç dikti", ozet: TR6 }, en: { baslik: "Neighbors plant trees", ozet: EN5 }, kategori: "iyilik", yer: "Dünya", kaynak: "k", link: "https://a.b/c", zaman: "2026-10-13T08:00:00Z", model: "m" };
   const y = yayinYuku(h, "ab".repeat(32), null).haber;
   assert.deepEqual(y.tr.ozet.split("\n\n").map(cumleSay), [3, 3]); assert.deepEqual(y.en.ozet.split("\n\n").map(cumleSay), [3, 2]);
   assert.equal(y.tr.baslik, "Komşular ağaç dikti");

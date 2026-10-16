@@ -14,7 +14,7 @@ const TR = "Lakeside'daki komşular, üç hafta sonu boyunca nehir kıyısına 5
   "Genç ağaçlar kısa süre sonra, birçok ailenin her gün kullandığı yürüyüş yoluna gölge verecek. Parkta ayrıca herkese açık küçük bir alet kütüphanesi bulunuyor. " +
   "Bu, insanlar işi ve zamanı paylaştığında bir topluluğun birlikte neler başarabileceğinin sade bir örneği.";
 const OZET_KAYNAK = "Volunteers in Lakeside planted 5,000 trees along the river over three weekends. " + "Neighbors and local schools shared the work and a small tool library now serves the park. ".repeat(3);
-const MODEL_YANITI = JSON.stringify({ uygun: true, kategori: "doga", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } });
+const MODEL_YANITI = JSON.stringify({ uygun: true, kategori: "iyilik", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } });
 const KONULAR = ["Volunteers plant thousands of trees beside Lakeside river", "Students build solar lantern library for village school", "Rescued hedgehog colony returns healthy to meadow", "Retired teachers teach coding to neighborhood children", "Young swimmer breaks regional record with homemade goggles", "Bakery shares free bread with night shift nurses", "Scientists grow coral nursery along restored reef", "Choir of grandparents records album for local hospital", "Cyclists collect thousands of books for rural libraries", "Garden club turns empty lot into butterfly meadow", "Robotics club wins national award with recycling robot", "Fishermen rescue stranded dolphin calf near harbor", "Painters decorate children ward corridors", "Teen inventor designs low cost water filter"];
 const ayar = (ek = {}) => ({ ...ayarOku({}, []), geminiAnahtar: "k", geminiBeklemeMs: 0, sonOkuma: false, ...ek });
 const aday = (n, ek = {}) => ({ baslik: KONULAR[n % KONULAR.length] + ` (${n})`, ozet: OZET_KAYNAK, link: `https://www.goodnewsnetwork.org/h/${n}`, kaynak: "goodnewsnetwork.org", dil: "en", zaman: "2026-10-13T08:00:00Z", ...ek });
@@ -41,7 +41,7 @@ test("ayar: varsayılanlar", () => {
 });
 
 test("yayın yükü sözleşmesi", () => {
-  const h = { id: "habc", tr: { baslik: "t", ozet: "o" }, en: { baslik: "e", ozet: "o" }, kategori: "doga", yer: "Dünya", kaynak: "k", link: "https://a.b/c", zaman: "2026-10-13T08:00:00Z", model: "m" };
+  const h = { id: "habc", tr: { baslik: "t", ozet: "o" }, en: { baslik: "e", ozet: "o" }, kategori: "iyilik", yer: "Dünya", kaynak: "k", link: "https://a.b/c", zaman: "2026-10-13T08:00:00Z", model: "m" };
   const y = yayinYuku(h, "ab".repeat(32), GORSEL.sonuc);
   assert.equal(y.islem, "yayinla");
   assert.match(y.ozet, /^[0-9a-f]{64}$/);
