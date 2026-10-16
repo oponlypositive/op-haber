@@ -1,0 +1,6748 @@
+{
+ "zaman": "2026-10-16T19:48:04.545Z",
+ "istek": 0,
+ "ozet": [
+  {
+   "seri": "Rock Klasikleri",
+   "aday": 50,
+   "gecen": 43,
+   "videolu": 12,
+   "fotolu": 33
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "aday": 60,
+   "gecen": 56,
+   "videolu": 28,
+   "fotolu": 41
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "aday": 150,
+   "gecen": 56,
+   "videolu": 0,
+   "fotolu": 56
+  },
+  {
+   "seri": "Caz ve Blues",
+   "aday": 48,
+   "gecen": 41,
+   "videolu": 0,
+   "fotolu": 12
+  },
+  {
+   "seri": "Soul ve Funk",
+   "aday": 45,
+   "gecen": 39,
+   "videolu": 11,
+   "fotolu": 17
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "aday": 42,
+   "gecen": 33,
+   "videolu": 14,
+   "fotolu": 28
+  },
+  {
+   "seri": "Film Müzikleri",
+   "aday": 48,
+   "gecen": 38,
+   "videolu": 5,
+   "fotolu": 20
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "aday": 61,
+   "gecen": 54,
+   "videolu": 0,
+   "fotolu": 0
+  }
+ ],
+ "enstruman": {
+  "gecerli": [
+   "Electric guitar=Q78987",
+   "Acoustic guitar=Q31561",
+   "Piano=Q271510",
+   "Violin=Q8355",
+   "Drum kit=Q128309",
+   "Synthesizer=Q163829",
+   "Cello=Q8371",
+   "Orchestra=Q42998",
+   "Microphone=Q46384",
+   "Double bass=Q80019"
+  ],
+  "toplam": 12
+ },
+ "dersler": [
+  {
+   "seri": "Rock Klasikleri",
+   "id": "sweet-child-o-mine",
+   "wiki_en": "Sweet Child o' Mine",
+   "wiki_tr": "Sweet Child o' Mine",
+   "qid": "Q835013",
+   "sanatci": {
+    "ad_en": "Guns N' Roses",
+    "qid": "Q11895",
+    "tur": "kurum"
+   },
+   "foto": "ok:GNR London Stadium 2017 3 (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "patience",
+   "wiki_en": "Patience (Guns N' Roses song)",
+   "wiki_tr": "Patience (Guns N' Roses şarkısı)",
+   "qid": "Q1592145",
+   "sanatci": {
+    "ad_en": "Guns N' Roses",
+    "qid": "Q11895",
+    "tur": "kurum"
+   },
+   "foto": "ok:GNR London Stadium 2017 3 (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "paradise-city",
+   "wiki_en": "Paradise City",
+   "wiki_tr": "",
+   "qid": "Q843032",
+   "sanatci": {
+    "ad_en": "Guns N' Roses",
+    "qid": "Q11895",
+    "tur": "kurum"
+   },
+   "foto": "ok:GNR London Stadium 2017 3 (cropped).jpg",
+   "video": {
+    "id": "Rbm6GXllBiw",
+    "kanal": "GunsNRosesVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "november-rain",
+   "wiki_en": "November Rain",
+   "wiki_tr": "November Rain",
+   "qid": "Q1142302",
+   "sanatci": {
+    "ad_en": "Guns N' Roses",
+    "qid": "Q11895",
+    "tur": "kurum"
+   },
+   "foto": "ok:GNR London Stadium 2017 3 (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "welcome-to-the-jungle",
+   "wiki_en": "Welcome to the Jungle",
+   "wiki_tr": "",
+   "qid": "Q943552",
+   "sanatci": {
+    "ad_en": "Guns N' Roses",
+    "qid": "Q11895",
+    "tur": "kurum"
+   },
+   "foto": "ok:GNR London Stadium 2017 3 (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "bohemian-rhapsody",
+   "wiki_en": "Bohemian Rhapsody",
+   "wiki_tr": "Bohemian Rhapsody",
+   "qid": "Q187745",
+   "sanatci": {
+    "ad_en": "Queen",
+    "qid": "Q15862",
+    "tur": "kurum"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": {
+    "id": "fJ9rUzIMcZQ",
+    "kanal": "Queen Official"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "don-t-stop-me-now",
+   "wiki_en": "Don't Stop Me Now",
+   "wiki_tr": "Don't Stop Me Now",
+   "qid": "Q262417",
+   "sanatci": {
+    "ad_en": "Queen",
+    "qid": "Q15862",
+    "tur": "kurum"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "we-are-the-champions",
+   "wiki_en": "We Are the Champions",
+   "wiki_tr": "We Are the Champions",
+   "qid": "Q238564",
+   "sanatci": {
+    "ad_en": "Queen",
+    "qid": "Q15862",
+    "tur": "kurum"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "radio-ga-ga",
+   "wiki_en": "Radio Ga Ga",
+   "wiki_tr": "Radio Ga Ga",
+   "qid": "Q605031",
+   "sanatci": {
+    "ad_en": "Queen",
+    "qid": "Q15862",
+    "tur": "kurum"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "i-want-to-break-free",
+   "wiki_en": "I Want to Break Free",
+   "wiki_tr": "I Want to Break Free",
+   "qid": "Q219209",
+   "sanatci": {
+    "ad_en": "Queen",
+    "qid": "Q15862",
+    "tur": "kurum"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "under-pressure",
+   "wiki_en": "Under Pressure",
+   "wiki_tr": "Under Pressure",
+   "qid": "Q836667",
+   "sanatci": {
+    "ad_en": "Queen",
+    "qid": "Q15862",
+    "tur": "kurum"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "another-one-bites-the-dust",
+   "wiki_en": "Another One Bites the Dust",
+   "wiki_tr": "Another One Bites the Dust",
+   "qid": "Q568065",
+   "sanatci": {
+    "ad_en": "Queen",
+    "qid": "Q15862",
+    "tur": "kurum"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": {
+    "id": "rY0WxgSXdEE",
+    "kanal": "Queen Official"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "hotel-california",
+   "wiki_en": "Hotel California",
+   "wiki_tr": "Hotel California (şarkı)",
+   "qid": "Q780394",
+   "sanatci": {
+    "ad_en": "Eagles",
+    "qid": "Q189635",
+    "tur": "kurum"
+   },
+   "foto": "ok:The Eagles in performance, 2008.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "take-it-easy",
+   "wiki_en": "Take It Easy",
+   "wiki_tr": "",
+   "qid": "Q2524459",
+   "sanatci": {
+    "ad_en": "Eagles",
+    "qid": "Q189635",
+    "tur": "kurum"
+   },
+   "foto": "ok:The Eagles in performance, 2008.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "hey-jude",
+   "wiki_en": "Hey Jude",
+   "wiki_tr": "",
+   "qid": "Q607742",
+   "sanatci": {
+    "ad_en": "The Beatles",
+    "qid": "Q1299",
+    "tur": "kurum"
+   },
+   "foto": "ok:Beatles Trenter 1963.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "here-comes-the-sun",
+   "wiki_en": "Here Comes the Sun",
+   "wiki_tr": "Here Comes the Sun",
+   "qid": "Q210401",
+   "sanatci": {
+    "ad_en": "The Beatles",
+    "qid": "Q1299",
+    "tur": "kurum"
+   },
+   "foto": "ok:Beatles Trenter 1963.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "yesterday",
+   "wiki_en": "Yesterday (song)",
+   "wiki_tr": "Yesterday",
+   "qid": "Q202698",
+   "sanatci": {
+    "ad_en": "The Beatles",
+    "qid": "Q1299",
+    "tur": "kurum"
+   },
+   "foto": "ok:Beatles Trenter 1963.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "penny-lane",
+   "wiki_en": "Penny Lane",
+   "wiki_tr": "",
+   "qid": "Q842168",
+   "sanatci": {
+    "ad_en": "The Beatles",
+    "qid": "Q1299",
+    "tur": "kurum"
+   },
+   "foto": "ok:Beatles Trenter 1963.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "let-it-be",
+   "wiki_en": "Let It Be (song)",
+   "wiki_tr": "Let It Be (şarkı)",
+   "qid": "Q184259",
+   "sanatci": {
+    "ad_en": "The Beatles",
+    "qid": "Q1299",
+    "tur": "kurum"
+   },
+   "foto": "ok:Beatles Trenter 1963.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video atLK2RIZzWk (The Beatles - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "wish-you-were-here",
+   "wiki_en": "Wish You Were Here (Pink Floyd song)",
+   "wiki_tr": "Wish You Were Here (Pink Floyd şarkısı)",
+   "qid": "Q1130223",
+   "sanatci": {
+    "ad_en": "Pink Floyd",
+    "qid": "Q2306",
+    "tur": "kurum"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video hjpF8ukSrvk (PINK FLOYD - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "sultans-of-swing",
+   "wiki_en": "Sultans of Swing",
+   "wiki_tr": "",
+   "qid": "Q2270916",
+   "sanatci": {
+    "ad_en": "Dire Straits",
+    "qid": "Q50040",
+    "tur": "kurum"
+   },
+   "foto": "ok:Dire straits 22101985 23 800.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "layla",
+   "wiki_en": "Layla",
+   "wiki_tr": "",
+   "qid": "Q923966",
+   "sanatci": {
+    "ad_en": "Derek and the Dominos",
+    "qid": "Q724406",
+    "tur": "kurum"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "born-to-run",
+   "wiki_en": "Born to Run (song)",
+   "wiki_tr": "",
+   "qid": "Q2734366",
+   "sanatci": {
+    "ad_en": "Bruce Springsteen",
+    "qid": "Q1225",
+    "tur": "kisi"
+   },
+   "foto": "ok:Bruce Springsteen 2025.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "africa",
+   "wiki_en": "Africa (song)",
+   "wiki_tr": "",
+   "qid": "Q383842",
+   "sanatci": {
+    "ad_en": "Toto",
+    "qid": "Q207472",
+    "tur": "kurum"
+   },
+   "foto": "ok:TOTO live 2010 in Copenhagen in KB Hallen.JPG",
+   "video": {
+    "id": "FTQbiNvZqaY",
+    "kanal": "TotoVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "don-t-stop-believin",
+   "wiki_en": "Don't Stop Believin'",
+   "wiki_tr": "",
+   "qid": "Q2307832",
+   "sanatci": {
+    "ad_en": "Journey",
+    "qid": "Q464749",
+    "tur": "kurum"
+   },
+   "foto": "ok:Journey band.JPG",
+   "video": {
+    "id": "1k8craCGpgs",
+    "kanal": "journeyVEVO"
+   },
+   "videoAdaylari": 2,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "eye-of-the-tiger",
+   "wiki_en": "Eye of the Tiger",
+   "wiki_tr": "Eye of the Tiger",
+   "qid": "Q1165305",
+   "sanatci": {
+    "ad_en": "Survivor",
+    "qid": "Q1135315",
+    "tur": "kurum",
+    "ad_tr": "Survivor (müzik grubu)"
+   },
+   "foto": "ok:Survivor sweden.jpg",
+   "video": {
+    "id": "btPJPFnesV4",
+    "kanal": "SurvivorVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "dream-on",
+   "wiki_en": "Dream On (Aerosmith song)",
+   "wiki_tr": "Dream On (Aerosmith şarkısı)",
+   "qid": "Q686850",
+   "sanatci": {
+    "ad_en": "Aerosmith",
+    "qid": "Q126826",
+    "tur": "kurum"
+   },
+   "foto": "ok:Aerosmith B.jpg",
+   "video": {
+    "id": "sZfZ8uWaOFI",
+    "kanal": "AerosmithVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "kashmir",
+   "wiki_en": "Kashmir (song)",
+   "wiki_tr": "Kashmir (şarkı)",
+   "qid": "Q978391",
+   "sanatci": {
+    "ad_en": "Led Zeppelin",
+    "qid": "Q2331",
+    "tur": "kurum"
+   },
+   "foto": "ok:Led zeppelin revista pelo 1971.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "free-bird",
+   "wiki_en": "Free Bird",
+   "wiki_tr": "",
+   "qid": "Q251304",
+   "sanatci": {
+    "ad_en": "Lynyrd Skynyrd",
+    "qid": "Q158462",
+    "tur": "kurum"
+   },
+   "foto": "ok:Hellfest2019LynyrdSkynyrd 07.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "wonderwall",
+   "wiki_en": "Wonderwall",
+   "wiki_tr": "Wonderwall",
+   "qid": "Q1045517",
+   "sanatci": {
+    "ad_en": "Oasis",
+    "qid": "Q382890",
+    "tur": "kurum"
+   },
+   "foto": "ok:Oasis - Wembley Stadium - Saturday 27th September 2025.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "don-t-look-back-in-anger",
+   "wiki_en": "Don't Look Back in Anger",
+   "wiki_tr": "Don't Look Back in Anger",
+   "qid": "Q1070349",
+   "sanatci": {
+    "ad_en": "Oasis",
+    "qid": "Q382890",
+    "tur": "kurum"
+   },
+   "foto": "ok:Oasis - Wembley Stadium - Saturday 27th September 2025.jpg",
+   "video": {
+    "id": "r8OipmKFDeM",
+    "kanal": "Oasis"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "yellow",
+   "wiki_en": "Yellow (Coldplay song)",
+   "wiki_tr": "Yellow (Coldplay şarkısı)",
+   "qid": "Q529026",
+   "sanatci": {
+    "ad_en": "Coldplay",
+    "qid": "Q45188",
+    "tur": "kurum"
+   },
+   "foto": "ok:ColdplayWembley120925 (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video 1MwjX4dG72s: oEmbed 403"
+   ]
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "fix-you",
+   "wiki_en": "Fix You",
+   "wiki_tr": "Fix You",
+   "qid": "Q1991309",
+   "sanatci": {
+    "ad_en": "Coldplay",
+    "qid": "Q45188",
+    "tur": "kurum"
+   },
+   "foto": "ok:ColdplayWembley120925 (cropped).jpg",
+   "video": {
+    "id": "k4V3Mo61fJM",
+    "kanal": "Coldplay"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "clocks",
+   "wiki_en": "Clocks (song)",
+   "wiki_tr": "Clocks",
+   "qid": "Q615063",
+   "sanatci": {
+    "ad_en": "Coldplay",
+    "qid": "Q45188",
+    "tur": "kurum"
+   },
+   "foto": "ok:ColdplayWembley120925 (cropped).jpg",
+   "video": {
+    "id": "d020hcWA_Wg",
+    "kanal": "Coldplay"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "rock-and-roll",
+   "wiki_en": "Rock and Roll (Led Zeppelin song)",
+   "wiki_tr": "",
+   "qid": "Q2331674",
+   "sanatci": {
+    "ad_en": "Led Zeppelin",
+    "qid": "Q2331",
+    "tur": "kurum"
+   },
+   "foto": "ok:Led zeppelin revista pelo 1971.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "jump",
+   "wiki_en": "Jump (Van Halen song)",
+   "wiki_tr": "",
+   "qid": "Q720547",
+   "sanatci": {
+    "ad_en": "Van Halen",
+    "qid": "Q190155",
+    "tur": "kurum"
+   },
+   "foto": "ok:VanHalenwithHagar.jpg",
+   "video": {
+    "id": "SwYN7mTi6HM",
+    "kanal": "Van Halen"
+   },
+   "videoAdaylari": 1,
+   "notlar": [
+    "tür?:Q7302866"
+   ]
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "tom-sawyer",
+   "wiki_en": "Tom Sawyer (song)",
+   "wiki_tr": "",
+   "qid": "Q2630950",
+   "sanatci": {
+    "ad_en": "Rush",
+    "qid": "Q203871",
+    "tur": "kurum"
+   },
+   "foto": "ok:Rush-in-concert.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "walk-this-way",
+   "wiki_en": "Walk This Way",
+   "wiki_tr": "Walk This Way",
+   "qid": "Q965422",
+   "sanatci": {
+    "ad_en": "Aerosmith",
+    "qid": "Q126826",
+    "tur": "kurum"
+   },
+   "foto": "ok:Aerosmith B.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "hold-the-line",
+   "wiki_en": "Hold the Line",
+   "wiki_tr": "",
+   "qid": "Q2319497",
+   "sanatci": {
+    "ad_en": "Toto",
+    "qid": "Q207472",
+    "tur": "kurum"
+   },
+   "foto": "ok:TOTO live 2010 in Copenhagen in KB Hallen.JPG",
+   "video": {
+    "id": "htgr3pvBr-I",
+    "kanal": "TotoVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "more-than-a-feeling",
+   "wiki_en": "More Than a Feeling",
+   "wiki_tr": "",
+   "qid": "Q602095",
+   "sanatci": {
+    "ad_en": "Boston",
+    "qid": "Q204289",
+    "tur": "kurum"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "is-this-love",
+   "wiki_en": "Is This Love (Whitesnake song)",
+   "wiki_tr": "",
+   "qid": "Q1581239",
+   "sanatci": {
+    "ad_en": "Whitesnake",
+    "qid": "Q189965",
+    "tur": "kurum"
+   },
+   "foto": "ok:Whitesnake - Wacken Open Air 2016-AL1161.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "sunshine-of-your-love",
+   "wiki_en": "Sunshine of Your Love",
+   "wiki_tr": "",
+   "qid": "Q2314748",
+   "sanatci": {
+    "ad_en": "Cream",
+    "qid": "Q203736",
+    "tur": "kurum",
+    "ad_tr": "Cream (müzik grubu)"
+   },
+   "foto": "ok:Cream Clapton Bruce Baker 1960s.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "id": "owner-of-a-lonely-heart",
+   "wiki_en": "Owner of a Lonely Heart",
+   "wiki_tr": "",
+   "qid": "Q1091275",
+   "sanatci": {
+    "ad_en": "Yes",
+    "qid": "Q184386",
+    "tur": "kurum"
+   },
+   "foto": "ok:Yes concert.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "billie-jean",
+   "wiki_en": "Billie Jean",
+   "wiki_tr": "Billie Jean",
+   "qid": "Q193319",
+   "sanatci": {
+    "ad_en": "Michael Jackson",
+    "qid": "Q2831",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": {
+    "id": "Zi_XLOBDo_Y",
+    "kanal": "michaeljacksonVEVO"
+   },
+   "videoAdaylari": 2,
+   "notlar": [
+    "video A9pd3M1Sxe8 (Michael Jackson - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "man-in-the-mirror",
+   "wiki_en": "Man in the Mirror",
+   "wiki_tr": "Man in the Mirror",
+   "qid": "Q380379",
+   "sanatci": {
+    "ad_en": "Michael Jackson",
+    "qid": "Q2831",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "don-t-stop-til-you-get-enough",
+   "wiki_en": "Don't Stop 'Til You Get Enough",
+   "wiki_tr": "Don't Stop 'Til You Get Enough",
+   "qid": "Q49816",
+   "sanatci": {
+    "ad_en": "Michael Jackson",
+    "qid": "Q2831",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "rock-with-you",
+   "wiki_en": "Rock with You",
+   "wiki_tr": "Rock with You (Michael Jackson şarkısı)",
+   "qid": "Q49818",
+   "sanatci": {
+    "ad_en": "Michael Jackson",
+    "qid": "Q2831",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "bad",
+   "wiki_en": "Bad (Michael Jackson song)",
+   "wiki_tr": "Bad (Michael Jackson şarkısı)",
+   "qid": "Q275422",
+   "sanatci": {
+    "ad_en": "Michael Jackson",
+    "qid": "Q2831",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": {
+    "id": "dsUXAEzaC3Q",
+    "kanal": "michaeljacksonVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "dancing-queen",
+   "wiki_en": "Dancing Queen",
+   "wiki_tr": "Dancing Queen",
+   "qid": "Q870786",
+   "sanatci": {
+    "ad_en": "ABBA",
+    "qid": "Q18233",
+    "tur": "kurum"
+   },
+   "foto": "ok:ABBA - TopPop 1974 5.png",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "take-a-chance-on-me",
+   "wiki_en": "Take a Chance on Me",
+   "wiki_tr": "",
+   "qid": "Q1418336",
+   "sanatci": {
+    "ad_en": "ABBA",
+    "qid": "Q18233",
+    "tur": "kurum"
+   },
+   "foto": "ok:ABBA - TopPop 1974 5.png",
+   "video": {
+    "id": "-crgQGdpZR0",
+    "kanal": "AbbaVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "super-trouper",
+   "wiki_en": "Super Trouper (song)",
+   "wiki_tr": "",
+   "qid": "Q114159",
+   "sanatci": {
+    "ad_en": "ABBA",
+    "qid": "Q18233",
+    "tur": "kurum"
+   },
+   "foto": "ok:ABBA - TopPop 1974 5.png",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "chiquitita",
+   "wiki_en": "Chiquitita",
+   "wiki_tr": "Chiquitita",
+   "qid": "Q1074676",
+   "sanatci": {
+    "ad_en": "ABBA",
+    "qid": "Q18233",
+    "tur": "kurum"
+   },
+   "foto": "ok:ABBA - TopPop 1974 5.png",
+   "video": {
+    "id": "p4QqMKe3rwY",
+    "kanal": "AbbaVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "thank-you-for-the-music",
+   "wiki_en": "Thank You for the Music",
+   "wiki_tr": "",
+   "qid": "Q1298754",
+   "sanatci": {
+    "ad_en": "ABBA",
+    "qid": "Q18233",
+    "tur": "kurum"
+   },
+   "foto": "ok:ABBA - TopPop 1974 5.png",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "sos",
+   "wiki_en": "SOS (ABBA song)",
+   "wiki_tr": "",
+   "qid": "Q1585621",
+   "sanatci": {
+    "ad_en": "ABBA",
+    "qid": "Q18233",
+    "tur": "kurum"
+   },
+   "foto": "ok:ABBA - TopPop 1974 5.png",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "voulez-vous",
+   "wiki_en": "Voulez-Vous (song)",
+   "wiki_tr": "",
+   "qid": "Q2001623",
+   "sanatci": {
+    "ad_en": "ABBA",
+    "qid": "Q18233",
+    "tur": "kurum"
+   },
+   "foto": "ok:ABBA - TopPop 1974 5.png",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "i-wanna-dance-with-somebody",
+   "wiki_en": "I Wanna Dance with Somebody (Who Loves Me)",
+   "wiki_tr": "I Wanna Dance with Somebody (Who Loves Me)",
+   "qid": "Q1458883",
+   "sanatci": {
+    "ad_en": "Whitney Houston",
+    "qid": "Q34389",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "eH3giaIzONA",
+    "kanal": "whitneyhoustonVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "i-will-always-love-you",
+   "wiki_en": "I Will Always Love You",
+   "wiki_tr": "I Will Always Love You",
+   "qid": "Q666856",
+   "sanatci": {
+    "ad_en": "Whitney Houston",
+    "qid": "Q34389",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "how-will-i-know",
+   "wiki_en": "How Will I Know",
+   "wiki_tr": "How Will I Know",
+   "qid": "Q656014",
+   "sanatci": {
+    "ad_en": "Whitney Houston",
+    "qid": "Q34389",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "rolling-in-the-deep",
+   "wiki_en": "Rolling in the Deep",
+   "wiki_tr": "Rolling in the Deep",
+   "qid": "Q170165",
+   "sanatci": {
+    "ad_en": "Adele",
+    "qid": "Q23215",
+    "tur": "kisi"
+   },
+   "foto": "ok:Adele 2016.jpg",
+   "video": {
+    "id": "rYEDA3JcQqw",
+    "kanal": "Adele"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "someone-like-you",
+   "wiki_en": "Someone like You (Adele song)",
+   "wiki_tr": "Someone like You (Adele şarkısı)",
+   "qid": "Q166904",
+   "sanatci": {
+    "ad_en": "Adele",
+    "qid": "Q23215",
+    "tur": "kisi"
+   },
+   "foto": "ok:Adele 2016.jpg",
+   "video": {
+    "id": "hLQl3WQQoQ0",
+    "kanal": "Adele"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "hello",
+   "wiki_en": "Hello (Adele song)",
+   "wiki_tr": "Hello (Adele şarkısı)",
+   "qid": "Q21172725",
+   "sanatci": {
+    "ad_en": "Adele",
+    "qid": "Q23215",
+    "tur": "kisi"
+   },
+   "foto": "ok:Adele 2016.jpg",
+   "video": {
+    "id": "YQHsXMglC9A",
+    "kanal": "Adele"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "skyfall",
+   "wiki_en": "Skyfall (song)",
+   "wiki_tr": "Skyfall (şarkı)",
+   "qid": "Q326790",
+   "sanatci": {
+    "ad_en": "Adele",
+    "qid": "Q23215",
+    "tur": "kisi"
+   },
+   "foto": "ok:Adele 2016.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "shape-of-you",
+   "wiki_en": "Shape of You",
+   "wiki_tr": "Shape of You",
+   "qid": "Q28132505",
+   "sanatci": {
+    "ad_en": "Ed Sheeran",
+    "qid": "Q47447",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ed Sheeran-6886 (cropped).jpg",
+   "video": {
+    "id": "JGwWNGJdvx8",
+    "kanal": "Ed Sheeran"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "perfect",
+   "wiki_en": "Perfect (Ed Sheeran song)",
+   "wiki_tr": "",
+   "qid": "Q29051557",
+   "sanatci": {
+    "ad_en": "Ed Sheeran",
+    "qid": "Q47447",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ed Sheeran-6886 (cropped).jpg",
+   "video": {
+    "id": "2Vv-BfVoq4g",
+    "kanal": "Ed Sheeran"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "thinking-out-loud",
+   "wiki_en": "Thinking Out Loud",
+   "wiki_tr": "Thinking Out Loud",
+   "qid": "Q17332468",
+   "sanatci": {
+    "ad_en": "Ed Sheeran",
+    "qid": "Q47447",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ed Sheeran-6886 (cropped).jpg",
+   "video": {
+    "id": "lp-EO5I60KA",
+    "kanal": "Ed Sheeran"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "happy",
+   "wiki_en": "Happy (Pharrell Williams song)",
+   "wiki_tr": "Happy (Pharrell Williams şarkısı)",
+   "qid": "Q15275920",
+   "sanatci": {
+    "ad_en": "Pharrell Williams",
+    "qid": "Q14313",
+    "tur": "kisi"
+   },
+   "foto": "ok:Pharrell Williams 2024 (54133384149).jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "sanatçı: aramayla",
+    "video y6Sxv-sUYtM (iamOTHER): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "uptown-funk",
+   "wiki_en": "Uptown Funk",
+   "wiki_tr": "Uptown Funk",
+   "qid": "Q18559542",
+   "sanatci": {
+    "ad_en": "Mark Ronson",
+    "qid": "Q425821",
+    "tur": "kisi"
+   },
+   "foto": "ok:Mark Ronson and Jennifer Su, 2011 (cropped).jpg",
+   "video": {
+    "id": "OPf0YbXqDm0",
+    "kanal": "MarkRonsonVEVO"
+   },
+   "videoAdaylari": 2,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "can-t-stop-the-feeling",
+   "wiki_en": "Can't Stop the Feeling!",
+   "wiki_tr": "Can't Stop the Feeling!",
+   "qid": "Q24032253",
+   "sanatci": {
+    "ad_en": "Justin Timberlake",
+    "qid": "Q43432",
+    "tur": "kisi"
+   },
+   "foto": "ret:fotoğraf değil",
+   "video": {
+    "id": "ru0K8uYEZWw",
+    "kanal": "justintimberlakeVEVO"
+   },
+   "videoAdaylari": 2,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "shake-it-off",
+   "wiki_en": "Shake It Off",
+   "wiki_tr": "Shake It Off (Taylor Swift şarkısı)",
+   "qid": "Q17544624",
+   "sanatci": {
+    "ad_en": "Taylor Swift",
+    "qid": "Q26876",
+    "tur": "kisi"
+   },
+   "foto": "ok:Taylor Swift at the 2023 MTV Video Music Awards (3).png",
+   "video": {
+    "id": "nfWlot6h_JM",
+    "kanal": "Taylor Swift"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "love-story",
+   "wiki_en": "Love Story (Taylor Swift song)",
+   "wiki_tr": "Love Story (Taylor Swift şarkısı)",
+   "qid": "Q1764379",
+   "sanatci": {
+    "ad_en": "Taylor Swift",
+    "qid": "Q26876",
+    "tur": "kisi"
+   },
+   "foto": "ok:Taylor Swift at the 2023 MTV Video Music Awards (3).png",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "girls-just-want-to-have-fun",
+   "wiki_en": "Girls Just Want to Have Fun",
+   "wiki_tr": "Girls Just Want to Have Fun",
+   "qid": "Q432461",
+   "sanatci": {
+    "ad_en": "Cyndi Lauper",
+    "qid": "Q1545",
+    "tur": "kisi"
+   },
+   "foto": "ok:CyndiLauper2022.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "time-after-time",
+   "wiki_en": "Time After Time (Cyndi Lauper song)",
+   "wiki_tr": "",
+   "qid": "Q1808348",
+   "sanatci": {
+    "ad_en": "Cyndi Lauper",
+    "qid": "Q1545",
+    "tur": "kisi"
+   },
+   "foto": "ok:CyndiLauper2022.jpg",
+   "video": {
+    "id": "VdQY7BusJNU",
+    "kanal": "CyndiLauperVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "wannabe",
+   "wiki_en": "Wannabe",
+   "wiki_tr": "",
+   "qid": "Q418833",
+   "sanatci": {
+    "ad_en": "Spice Girls",
+    "qid": "Q55641",
+    "tur": "kurum"
+   },
+   "foto": "ok:Spice Girls (6 janv) 56.jpg",
+   "video": {
+    "id": "gJLIiF15wjQ",
+    "kanal": "SpiceGirlsVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "vogue",
+   "wiki_en": "Vogue (song)",
+   "wiki_tr": "Vogue (Madonna şarkısı)",
+   "qid": "Q1128775",
+   "sanatci": {
+    "ad_en": "Madonna",
+    "qid": "Q1744",
+    "tur": "kisi"
+   },
+   "foto": "ok:MadonnaO2171023 (97 of 133) (53269593787) (cropped).jpg",
+   "video": {
+    "id": "GuJQSAiODqI",
+    "kanal": "Madonna"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "hung-up",
+   "wiki_en": "Hung Up",
+   "wiki_tr": "Hung Up",
+   "qid": "Q1407276",
+   "sanatci": {
+    "ad_en": "Madonna",
+    "qid": "Q1744",
+    "tur": "kisi"
+   },
+   "foto": "ok:MadonnaO2171023 (97 of 133) (53269593787) (cropped).jpg",
+   "video": {
+    "id": "EDwb9jOVRtU",
+    "kanal": "Madonna"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "la-isla-bonita",
+   "wiki_en": "La Isla Bonita",
+   "wiki_tr": "La Isla Bonita",
+   "qid": "Q939998",
+   "sanatci": {
+    "ad_en": "Madonna",
+    "qid": "Q1744",
+    "tur": "kisi"
+   },
+   "foto": "ok:MadonnaO2171023 (97 of 133) (53269593787) (cropped).jpg",
+   "video": {
+    "id": "zpzdgmqIHOQ",
+    "kanal": "Madonna"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "holiday",
+   "wiki_en": "Holiday (Madonna song)",
+   "wiki_tr": "Holiday (Madonna şarkısı)",
+   "qid": "Q1340989",
+   "sanatci": {
+    "ad_en": "Madonna",
+    "qid": "Q1744",
+    "tur": "kisi"
+   },
+   "foto": "ok:MadonnaO2171023 (97 of 133) (53269593787) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "tür?:Q3302947",
+    "video 5Rswx2Z7SDw (ChynnaDahl): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "baby-one-more-time",
+   "wiki_en": "...Baby One More Time",
+   "wiki_tr": "...Baby One More Time (şarkı)",
+   "qid": "Q155016",
+   "sanatci": {
+    "ad_en": "Britney Spears",
+    "qid": "Q11975",
+    "tur": "kisi"
+   },
+   "foto": "ok:Britney Spears-FFT-Toronto (cropped).jpg",
+   "video": {
+    "id": "C-u5WLJ9Yk4",
+    "kanal": "BritneySpearsVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "toxic",
+   "wiki_en": "Toxic (song)",
+   "wiki_tr": "Toxic",
+   "qid": "Q379751",
+   "sanatci": {
+    "ad_en": "Britney Spears",
+    "qid": "Q11975",
+    "tur": "kisi"
+   },
+   "foto": "ok:Britney Spears-FFT-Toronto (cropped).jpg",
+   "video": {
+    "id": "LOZuxwVk7TU",
+    "kanal": "BritneySpearsVEVO"
+   },
+   "videoAdaylari": 2,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "rocket-man",
+   "wiki_en": "Rocket Man (song)",
+   "wiki_tr": "Rocket Man (şarkı)",
+   "qid": "Q56070897",
+   "sanatci": {
+    "ad_en": "Elton John",
+    "qid": "Q2808",
+    "tur": "kisi"
+   },
+   "foto": "ok:Elton John 2023.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "your-song",
+   "wiki_en": "Your Song",
+   "wiki_tr": "Your Song",
+   "qid": "Q838829",
+   "sanatci": {
+    "ad_en": "Elton John",
+    "qid": "Q2808",
+    "tur": "kisi"
+   },
+   "foto": "ok:Elton John 2023.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "tiny-dancer",
+   "wiki_en": "Tiny Dancer",
+   "wiki_tr": "",
+   "qid": "Q2562766",
+   "sanatci": {
+    "ad_en": "Elton John",
+    "qid": "Q2808",
+    "tur": "kisi"
+   },
+   "foto": "ok:Elton John 2023.jpg",
+   "video": {
+    "id": "yYcyacLRPNs",
+    "kanal": "EltonJohnVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "crocodile-rock",
+   "wiki_en": "Crocodile Rock",
+   "wiki_tr": "",
+   "qid": "Q2321252",
+   "sanatci": {
+    "ad_en": "Elton John",
+    "qid": "Q2808",
+    "tur": "kisi"
+   },
+   "foto": "ok:Elton John 2023.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "take-me-home-country-roads",
+   "wiki_en": "Take Me Home, Country Roads",
+   "wiki_tr": "",
+   "qid": "Q705473",
+   "sanatci": {
+    "ad_en": "John Denver",
+    "qid": "Q105460",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "gangnam-style",
+   "wiki_en": "Gangnam Style",
+   "wiki_tr": "Gangnam Style",
+   "qid": "Q890",
+   "sanatci": {
+    "ad_en": "Psy",
+    "qid": "Q20150",
+    "tur": "kisi",
+    "ad_tr": "Park Jae-sang"
+   },
+   "foto": "ok:PSY(싸이) at 2015 Summer K-POP Festival.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "macarena",
+   "wiki_en": "Macarena",
+   "wiki_tr": "Macarena",
+   "qid": "Q1149738",
+   "sanatci": {
+    "ad_en": "Los del Río",
+    "qid": "Q170252",
+    "tur": "kurum"
+   },
+   "foto": "ok:Los del Río.jpg",
+   "video": {
+    "id": "zWaymcVmJ-A",
+    "kanal": "LosDelRioVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "mambo-no-5",
+   "wiki_en": "Mambo No. 5",
+   "wiki_tr": "",
+   "qid": "Q705575",
+   "sanatci": {
+    "ad_en": "Lou Bega",
+    "qid": "Q60268",
+    "tur": "kisi"
+   },
+   "foto": "ok:Lou Bega - 2018111210128 2018-04-21 30 Jahre Radio Regenbogen - Sven - 1D X MK II - 0516 - AK8I7268 (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "la-bamba",
+   "wiki_en": "La Bamba (song)",
+   "wiki_tr": "La Bamba",
+   "qid": "Q641677",
+   "sanatci": {
+    "ad_en": "Ritchie Valens",
+    "qid": "Q309725",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 2,
+   "notlar": [
+    "video hto-UMuYkwk (TheMusicBoxOfTalents): kanal resmî değil",
+    "video YicJPLT1dWU (Los Lobos): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "livin-la-vida-loca",
+   "wiki_en": "Livin' la Vida Loca",
+   "wiki_tr": "",
+   "qid": "Q2604345",
+   "sanatci": {
+    "ad_en": "Ricky Martin",
+    "qid": "Q128799",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ricky Martin-4262 (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "waka-waka",
+   "wiki_en": "Waka Waka (This Time for Africa)",
+   "wiki_tr": "Waka Waka (This Time for Africa)",
+   "qid": "Q155894",
+   "sanatci": {
+    "ad_en": "Shakira",
+    "qid": "Q34424",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "pRpeEdMmmQ0",
+    "kanal": "shakiraVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "hips-don-t-lie",
+   "wiki_en": "Hips Don't Lie",
+   "wiki_tr": "Hips Don't Lie",
+   "qid": "Q1780500",
+   "sanatci": {
+    "ad_en": "Shakira",
+    "qid": "Q34424",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "DUT5rEU6pqM",
+    "kanal": "shakiraVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "believe",
+   "wiki_en": "Believe (Cher song)",
+   "wiki_tr": "",
+   "qid": "Q2639231",
+   "sanatci": {
+    "ad_en": "Cher",
+    "qid": "Q12003",
+    "tur": "kisi"
+   },
+   "foto": "ok:Cher in 2019 cropped.jpg",
+   "video": {
+    "id": "nZXRV4MezEw",
+    "kanal": "Cher"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "venus",
+   "wiki_en": "Venus (Shocking Blue song)",
+   "wiki_tr": "",
+   "qid": "Q749752",
+   "sanatci": {
+    "ad_en": "Shocking Blue",
+    "qid": "Q588382",
+    "tur": "kurum"
+   },
+   "foto": "ok:Popgroep Shocking Blue gaf persconferentie in verband met succes van plaat Ve, Bestanddeelnr 923-1956.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "dancing-in-the-dark",
+   "wiki_en": "Dancing in the Dark (Bruce Springsteen song)",
+   "wiki_tr": "Dancing in the Dark",
+   "qid": "Q1159364",
+   "sanatci": {
+    "ad_en": "Bruce Springsteen",
+    "qid": "Q1225",
+    "tur": "kisi"
+   },
+   "foto": "ok:Bruce Springsteen 2025.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "sweet-caroline",
+   "wiki_en": "Sweet Caroline",
+   "wiki_tr": "",
+   "qid": "Q3115187",
+   "sanatci": {
+    "ad_en": "Neil Diamond",
+    "qid": "Q294531",
+    "tur": "kisi"
+   },
+   "foto": "ok:Neil Diamond 2.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video GmK5_lnQUbE (Neil Diamond - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "don-t-you-want-me",
+   "wiki_en": "Don't You Want Me",
+   "wiki_tr": "",
+   "qid": "Q1242392",
+   "sanatci": {
+    "ad_en": "The Human League",
+    "qid": "Q730158",
+    "tur": "kurum"
+   },
+   "foto": "ok:The Human League 2007.jpg",
+   "video": {
+    "id": "uPudE8nDog0",
+    "kanal": "TheHumanLeagueVEVO"
+   },
+   "videoAdaylari": 2,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "careless-whisper",
+   "wiki_en": "Careless Whisper",
+   "wiki_tr": "Careless Whisper",
+   "qid": "Q651472",
+   "sanatci": {
+    "ad_en": "George Michael",
+    "qid": "Q130311",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "faith",
+   "wiki_en": "Faith (George Michael song)",
+   "wiki_tr": "",
+   "qid": "Q1393546",
+   "sanatci": {
+    "ad_en": "George Michael",
+    "qid": "Q130311",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video lu3VTngm1F0: oEmbed 404"
+   ]
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "id": "fast-car",
+   "wiki_en": "Fast Car",
+   "wiki_tr": "",
+   "qid": "Q587614",
+   "sanatci": {
+    "ad_en": "Tracy Chapman",
+    "qid": "Q187814",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tracy Chapman 3.jpg",
+   "video": {
+    "id": "AIOAlaACuv4",
+    "kanal": "Tracy Chapman"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "gulpembe",
+   "wiki_en": "Gülpembe",
+   "wiki_tr": "Gülpembe",
+   "qid": "Q61073093",
+   "sanatci": {
+    "ad_en": "Barış Manço",
+    "qid": "Q442656",
+    "tur": "kisi"
+   },
+   "foto": "ok:Barış Manço cropped.JPG",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür?:",
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "daglar-daglar",
+   "wiki_en": "",
+   "wiki_tr": "Dağlar Dağlar",
+   "qid": "Q123203997",
+   "sanatci": {
+    "ad_en": "Barış Manço",
+    "qid": "Q442656",
+    "tur": "kisi"
+   },
+   "foto": "ok:Barış Manço cropped.JPG",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür?:",
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "donence",
+   "wiki_en": "",
+   "wiki_tr": "Dönence (şarkı)",
+   "qid": "Q31193280",
+   "sanatci": {
+    "ad_en": "Barış Manço",
+    "qid": "Q442656",
+    "tur": "kisi"
+   },
+   "foto": "ok:Barış Manço cropped.JPG",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "gamzedeyim-deva-bulmam",
+   "wiki_en": "",
+   "wiki_tr": "Gamzedeyim Deva Bulmam",
+   "qid": "Q19611308",
+   "sanatci": {
+    "ad_en": "Barış Manço",
+    "qid": "Q442656",
+    "tur": "kisi"
+   },
+   "foto": "ok:Barış Manço cropped.JPG",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "firuze",
+   "wiki_en": "",
+   "wiki_tr": "Firuze (şarkı)",
+   "qid": "Q20472661",
+   "sanatci": {
+    "ad_en": "Sezen Aksu",
+    "qid": "Q298139",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sezen Aksu (Minik Serçe) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "sen-aglama",
+   "wiki_en": "",
+   "wiki_tr": "Sen Ağlama (şarkı)",
+   "qid": "Q6035866",
+   "sanatci": {
+    "ad_en": "Sezen Aksu",
+    "qid": "Q298139",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sezen Aksu (Minik Serçe) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bile-bile",
+   "wiki_en": "",
+   "wiki_tr": "Bile Bile",
+   "qid": "Q20472391",
+   "sanatci": {
+    "ad_en": "Sezen Aksu",
+    "qid": "Q298139",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sezen Aksu (Minik Serçe) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "besik",
+   "wiki_en": "",
+   "wiki_tr": "Beşik (şarkı)",
+   "qid": "Q6067003",
+   "sanatci": {
+    "ad_en": "Sezen Aksu",
+    "qid": "Q298139",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sezen Aksu (Minik Serçe) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "sarisin",
+   "wiki_en": "Dinata",
+   "wiki_tr": "Sarışın (şarkı)",
+   "qid": "Q2918626",
+   "sanatci": {
+    "ad_en": "Sezen Aksu",
+    "qid": "Q298139",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sezen Aksu (Minik Serçe) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "yol-arkadasim",
+   "wiki_en": "",
+   "wiki_tr": "Yol Arkadaşım (şarkı)",
+   "qid": "Q6090440",
+   "sanatci": {
+    "ad_en": "Sezen Aksu",
+    "qid": "Q298139",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sezen Aksu (Minik Serçe) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "son-bakis",
+   "wiki_en": "",
+   "wiki_tr": "Son Bakış",
+   "qid": "Q19612536",
+   "sanatci": {
+    "ad_en": "Sezen Aksu",
+    "qid": "Q298139",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sezen Aksu (Minik Serçe) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bir-cocuk-sevdim",
+   "wiki_en": "",
+   "wiki_tr": "Bir Çocuk Sevdim (şarkı)",
+   "qid": "Q6094140",
+   "sanatci": {
+    "ad_en": "Sezen Aksu",
+    "qid": "Q298139",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sezen Aksu (Minik Serçe) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "ederlezi",
+   "wiki_en": "Ederlezi (song)",
+   "wiki_tr": "Ederlezi",
+   "qid": "Q785908",
+   "sanatci": {
+    "ad_en": "Sezen Aksu",
+    "qid": "Q298139",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sezen Aksu (Minik Serçe) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "simarik",
+   "wiki_en": "Şımarık",
+   "wiki_tr": "Şımarık",
+   "qid": "Q898108",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video WMCDx2edfU8 (Dj R'AN): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "kuzu-kuzu",
+   "wiki_en": "Tarkan discography",
+   "wiki_tr": "Kuzu Kuzu",
+   "qid": "Q718656",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür?:Q273057"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "op",
+   "wiki_en": "",
+   "wiki_tr": "Öp (şarkı)",
+   "qid": "Q6464139",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bu-gece",
+   "wiki_en": "Bu Gece",
+   "wiki_tr": "Bu Gece (Tarkan şarkısı)",
+   "qid": "Q722564",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "ay",
+   "wiki_en": "",
+   "wiki_tr": "Ay (şarkı)",
+   "qid": "Q12808632",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bounce",
+   "wiki_en": "Bounce (Tarkan song)",
+   "wiki_tr": "Bounce (şarkı)",
+   "qid": "Q848576",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "cuppa",
+   "wiki_en": "",
+   "wiki_tr": "Cuppa",
+   "qid": "Q61072049",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "gelipte-halimi-gordun-mu",
+   "wiki_en": "",
+   "wiki_tr": "Gelipte Halimi Gördün Mü?",
+   "qid": "Q19611320",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "kil-oldum",
+   "wiki_en": "",
+   "wiki_tr": "Kıl Oldum",
+   "qid": "Q19611688",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "kimdi",
+   "wiki_en": "",
+   "wiki_tr": "Kimdi?",
+   "qid": "Q19611691",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "salina-salina-sinsice",
+   "wiki_en": "Salına Salına Sinsice",
+   "wiki_tr": "Salına Salına Sinsice",
+   "qid": "Q7407010",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "start-the-fire",
+   "wiki_en": "Start the Fire (Tarkan song)",
+   "wiki_tr": "Start the Fire (şarkı)",
+   "qid": "Q942848",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "sikidim",
+   "wiki_en": "Şıkıdım",
+   "wiki_tr": "Şıkıdım",
+   "qid": "Q931616",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "vazgecemem",
+   "wiki_en": "",
+   "wiki_tr": "Vazgeçemem (şarkı)",
+   "qid": "Q19612954",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "verme",
+   "wiki_en": "",
+   "wiki_tr": "Verme",
+   "qid": "Q6030380",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "cok-ararsin-beni",
+   "wiki_en": "",
+   "wiki_tr": "Çok Ararsın Beni (şarkı)",
+   "qid": "Q19613385",
+   "sanatci": {
+    "ad_en": "Tarkan",
+    "qid": "Q485771",
+    "tur": "kisi"
+   },
+   "foto": "ok:Tarkan (9).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "yakar-gecerim",
+   "wiki_en": "",
+   "wiki_tr": "Yakar Geçerim",
+   "qid": "Q6098379",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bir-gunah-gibi",
+   "wiki_en": "",
+   "wiki_tr": "Bir Günah Gibi",
+   "qid": "Q84733565",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "dert-bende-derman-sende",
+   "wiki_en": "",
+   "wiki_tr": "Dert Bende Derman Sende",
+   "qid": "Q6096213",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "gozunaydin",
+   "wiki_en": "Armenaki",
+   "wiki_tr": "Gözünaydın",
+   "qid": "Q6010091",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "kimler-geldi-kimler-gecti",
+   "wiki_en": "",
+   "wiki_tr": "Kimler Geldi Kimler Geçti",
+   "qid": "Q6076856",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "saril-bana",
+   "wiki_en": "",
+   "wiki_tr": "Sarıl Bana",
+   "qid": "Q6076035",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "son-yolcu",
+   "wiki_en": "",
+   "wiki_tr": "Son Yolcu",
+   "qid": "Q85974972",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür?:",
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "uc-kalp",
+   "wiki_en": "Üç Kalp",
+   "wiki_tr": "Üç Kalp",
+   "qid": "Q8079513",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "yaz-yaz-yaz",
+   "wiki_en": "",
+   "wiki_tr": "Yaz Yaz Yaz",
+   "qid": "Q97320853",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür?:",
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "pet-r-oil",
+   "wiki_en": "Pet'r Oil",
+   "wiki_tr": "Pet'r Oil",
+   "qid": "Q4825807",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "uykusuz-her-gece",
+   "wiki_en": "",
+   "wiki_tr": "Uykusuz Her Gece",
+   "qid": "Q6062873",
+   "sanatci": {
+    "ad_en": "Ajda Pekkan",
+    "qid": "Q237378",
+    "tur": "kisi"
+   },
+   "foto": "ok:Ajda Pekkan 2013.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bir-derdim-var",
+   "wiki_en": "",
+   "wiki_tr": "Bir Derdim Var",
+   "qid": "Q20472701",
+   "sanatci": {
+    "ad_en": "Mor ve Ötesi",
+    "qid": "Q754092",
+    "tur": "kurum"
+   },
+   "foto": "ok:Mor ve Ötesi, Turkey, Eurovision 2008.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "cambaz",
+   "wiki_en": "Cambaz (song)",
+   "wiki_tr": "Cambaz (şarkı)",
+   "qid": "Q133684799",
+   "sanatci": {
+    "ad_en": "Mor ve Ötesi",
+    "qid": "Q754092",
+    "tur": "kurum"
+   },
+   "foto": "ok:Mor ve Ötesi, Turkey, Eurovision 2008.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "deli",
+   "wiki_en": "",
+   "wiki_tr": "Deli (şarkı)",
+   "qid": "Q277496",
+   "sanatci": {
+    "ad_en": "Mor ve Ötesi",
+    "qid": "Q754092",
+    "tur": "kurum"
+   },
+   "foto": "ok:Mor ve Ötesi, Turkey, Eurovision 2008.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "loveliest-mistake",
+   "wiki_en": "Loveliest Mistake",
+   "wiki_tr": "Loveliest Mistake",
+   "qid": "Q6063389",
+   "sanatci": {
+    "ad_en": "Mor ve Ötesi",
+    "qid": "Q754092",
+    "tur": "kurum"
+   },
+   "foto": "ok:Mor ve Ötesi, Turkey, Eurovision 2008.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "everyway-that-i-can",
+   "wiki_en": "Everyway That I Can",
+   "wiki_tr": "Everyway That I Can",
+   "qid": "Q993857",
+   "sanatci": {
+    "ad_en": "Sertab Erener",
+    "qid": "Q193534",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sertab Erener - 15. Radyo Boğaziçi Ödülleri (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bu-boyle",
+   "wiki_en": "",
+   "wiki_tr": "Bu Böyle",
+   "qid": "Q6095596",
+   "sanatci": {
+    "ad_en": "Sertab Erener",
+    "qid": "Q193534",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sertab Erener - 15. Radyo Boğaziçi Ödülleri (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bir-caresi-bulunur",
+   "wiki_en": "",
+   "wiki_tr": "Bir Çaresi Bulunur",
+   "qid": "Q6074088",
+   "sanatci": {
+    "ad_en": "Sertab Erener",
+    "qid": "Q193534",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sertab Erener - 15. Radyo Boğaziçi Ödülleri (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "sakin-ol",
+   "wiki_en": "",
+   "wiki_tr": "Sakin Ol! (şarkı)",
+   "qid": "Q25479490",
+   "sanatci": {
+    "ad_en": "Sertab Erener",
+    "qid": "Q193534",
+    "tur": "kisi"
+   },
+   "foto": "ok:Sertab Erener - 15. Radyo Boğaziçi Ödülleri (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "elbet-bir-gun-bulusacagiz",
+   "wiki_en": "",
+   "wiki_tr": "Elbet Bir Gün Buluşacağız",
+   "qid": "Q19737610",
+   "sanatci": {
+    "ad_en": "Zeki Müren",
+    "qid": "Q187272",
+    "tur": "kisi"
+   },
+   "foto": "ok:Zeki Müren cropped.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "senede-bir-gun",
+   "wiki_en": "",
+   "wiki_tr": "Senede Bir Gün (şarkı)",
+   "qid": "Q97212610",
+   "sanatci": {
+    "ad_en": "Zeki Müren",
+    "qid": "Q187272",
+    "tur": "kisi"
+   },
+   "foto": "ok:Zeki Müren cropped.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür?:",
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bir-sevgi-istiyorum",
+   "wiki_en": "",
+   "wiki_tr": "Bir Sevgi İstiyorum (şarkı)",
+   "qid": "Q6074747",
+   "sanatci": {
+    "ad_en": "Zeki Müren",
+    "qid": "Q187272",
+    "tur": "kisi"
+   },
+   "foto": "ok:Zeki Müren cropped.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "misirlou",
+   "wiki_en": "Misirlou",
+   "wiki_tr": "Misirlou",
+   "qid": "Q1497786",
+   "sanatci": {
+    "ad_en": "Zeki Müren",
+    "qid": "Q187272",
+    "tur": "kisi"
+   },
+   "foto": "ok:Zeki Müren cropped.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "sanatçı: aramayla",
+    "video JB_ghvfZ3ao (Trilogy Channel): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "bir-teselli-ver",
+   "wiki_en": "",
+   "wiki_tr": "Bir Teselli Ver (şarkı)",
+   "qid": "Q6099536",
+   "sanatci": {
+    "ad_en": "Orhan Gencebay",
+    "qid": "Q1382418",
+    "tur": "kisi"
+   },
+   "foto": "ok:Orhan Gencebay 2023.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "hor-gorme-garibi",
+   "wiki_en": "",
+   "wiki_tr": "Hor Görme Garibi",
+   "qid": "Q31190531",
+   "sanatci": {
+    "ad_en": "Orhan Gencebay",
+    "qid": "Q1382418",
+    "tur": "kisi"
+   },
+   "foto": "ok:Orhan Gencebay 2023.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "we-could-be-the-same",
+   "wiki_en": "We Could Be the Same",
+   "wiki_tr": "We Could Be the Same",
+   "qid": "Q500003",
+   "sanatci": {
+    "ad_en": "maNga",
+    "qid": "Q189410",
+    "tur": "kurum",
+    "ad_tr": "maNga (müzik grubu)"
+   },
+   "foto": "ok:MaNga Concert5.JPG",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "id": "gonul-dagi",
+   "wiki_en": "Gönül Dağı",
+   "wiki_tr": "Gönül Dağı",
+   "qid": "Q100930223",
+   "sanatci": {
+    "ad_en": "Neşet Ertaş",
+    "qid": "Q1653946",
+    "tur": "kisi"
+   },
+   "foto": "ok:Neşet Ertaş - panoramio.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür?:Q5398426",
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "take-five",
+   "wiki_en": "Take Five",
+   "wiki_tr": "",
+   "qid": "Q844299",
+   "sanatci": {
+    "ad_en": "The Dave Brubeck Quartet",
+    "qid": "Q264163",
+    "tur": "kurum"
+   },
+   "foto": "ok:Davebrubeckquartet1967a.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "blue-rondo-a-la-turk",
+   "wiki_en": "Blue Rondo à la Turk",
+   "wiki_tr": "Blue Rondo à la Turk",
+   "qid": "Q2742757",
+   "sanatci": {
+    "ad_en": "The Dave Brubeck Quartet",
+    "qid": "Q264163",
+    "tur": "kurum"
+   },
+   "foto": "ok:Davebrubeckquartet1967a.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "so-what",
+   "wiki_en": "So What (Miles Davis composition)",
+   "wiki_tr": "",
+   "qid": "Q919291",
+   "sanatci": {
+    "ad_en": "Miles Davis",
+    "qid": "Q93341",
+    "tur": "kisi"
+   },
+   "foto": "ok:Miles Davis by Palumbo cropped.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "blue-in-green",
+   "wiki_en": "Blue in Green",
+   "wiki_tr": "",
+   "qid": "Q510852",
+   "sanatci": {
+    "ad_en": "Miles Davis",
+    "qid": "Q93341",
+    "tur": "kisi"
+   },
+   "foto": "ok:Miles Davis by Palumbo cropped.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "summertime",
+   "wiki_en": "Summertime (George Gershwin song)",
+   "wiki_tr": "",
+   "qid": "Q844046",
+   "sanatci": {
+    "ad_en": "George Gershwin",
+    "qid": "Q123829",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "fly-me-to-the-moon",
+   "wiki_en": "Fly Me to the Moon",
+   "wiki_tr": "Fly Me to the Moon (şarkı)",
+   "qid": "Q1066479",
+   "sanatci": {
+    "ad_en": "Bart Howard",
+    "qid": "Q809196",
+    "tur": "kisi"
+   },
+   "foto": "P18 yok",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "the-girl-from-ipanema",
+   "wiki_en": "The Girl from Ipanema",
+   "wiki_tr": "The Girl from Ipanema",
+   "qid": "Q830576",
+   "sanatci": {
+    "ad_en": "Antônio Carlos Jobim",
+    "qid": "Q200131",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "round-midnight",
+   "wiki_en": "'Round Midnight (song)",
+   "wiki_tr": "",
+   "qid": "Q383357",
+   "sanatci": {
+    "ad_en": "Thelonious Monk",
+    "qid": "Q109612",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "yedek başlık: 'Round Midnight (song)",
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "georgia-on-my-mind",
+   "wiki_en": "Georgia on My Mind",
+   "wiki_tr": "",
+   "qid": "Q1420007",
+   "sanatci": {
+    "ad_en": "Hoagy Carmichael",
+    "qid": "Q460662",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "misty",
+   "wiki_en": "Misty (song)",
+   "wiki_tr": "",
+   "qid": "Q1939352",
+   "sanatci": {
+    "ad_en": "Erroll Garner",
+    "qid": "Q433912",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "take-the-a-train",
+   "wiki_en": "Take the \"A\" Train",
+   "wiki_tr": "",
+   "qid": "Q1692496",
+   "sanatci": {
+    "ad_en": "Duke Ellington",
+    "qid": "Q4030",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "giant-steps",
+   "wiki_en": "Giant Steps (composition)",
+   "wiki_tr": "",
+   "qid": "Q3105303",
+   "sanatci": {
+    "ad_en": "John Coltrane",
+    "qid": "Q7346",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür düzeltildi: Giant Steps (song)"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "moanin",
+   "wiki_en": "Moanin' (song)",
+   "wiki_tr": "",
+   "qid": "Q3317563",
+   "sanatci": {
+    "ad_en": "Art Blakey",
+    "qid": "Q311715",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür düzeltildi: Moanin' (song)"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "cantaloupe-island",
+   "wiki_en": "Cantaloupe Island",
+   "wiki_tr": "Cantaloupe Island",
+   "qid": "Q1033680",
+   "sanatci": {
+    "ad_en": "Herbie Hancock",
+    "qid": "Q105875",
+    "tur": "kisi"
+   },
+   "foto": "ok:Herbie Hancock.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "st-louis-blues",
+   "wiki_en": "Saint Louis Blues (song)",
+   "wiki_tr": "Saint Louis Blues (şarkı)",
+   "qid": "Q1086635",
+   "sanatci": {
+    "ad_en": "W. C. Handy",
+    "qid": "Q352967",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "on-the-sunny-side-of-the-street",
+   "wiki_en": "On the Sunny Side of the Street",
+   "wiki_tr": "",
+   "qid": "Q921669",
+   "sanatci": {
+    "ad_en": "Jimmy McHugh",
+    "qid": "Q1283031",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "cheek-to-cheek",
+   "wiki_en": "Cheek to Cheek",
+   "wiki_tr": "Cheek to Cheek (şarkı)",
+   "qid": "Q3351931",
+   "sanatci": {
+    "ad_en": "Irving Berlin",
+    "qid": "Q128746",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "feeling-good",
+   "wiki_en": "Feeling Good",
+   "wiki_tr": "",
+   "qid": "Q2721575",
+   "sanatci": {
+    "ad_en": "Anthony Newley",
+    "qid": "Q573709",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "dream-a-little-dream-of-me",
+   "wiki_en": "Dream a Little Dream of Me",
+   "wiki_tr": "Dream a Little Dream Of Me",
+   "qid": "Q652821",
+   "sanatci": {
+    "ad_en": "Fabian Andre",
+    "qid": "Q5427631",
+    "tur": "kisi"
+   },
+   "foto": "P18 yok",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "blue-moon",
+   "wiki_en": "Blue Moon (1934 song)",
+   "wiki_tr": "",
+   "qid": "Q804574",
+   "sanatci": {
+    "ad_en": "Richard Rodgers",
+    "qid": "Q269094",
+    "tur": "kisi"
+   },
+   "foto": "ok:Rodgers.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "fever",
+   "wiki_en": "Fever (Little Willie John song)",
+   "wiki_tr": "Fever (Little Willie John şarkısı)",
+   "qid": "Q919452",
+   "sanatci": {
+    "ad_en": "Little Willie John",
+    "qid": "Q1388443",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "maple-leaf-rag",
+   "wiki_en": "Maple Leaf Rag",
+   "wiki_tr": "",
+   "qid": "Q277463",
+   "sanatci": {
+    "ad_en": "Scott Joplin",
+    "qid": "Q191499",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "the-entertainer",
+   "wiki_en": "The Entertainer",
+   "wiki_tr": "",
+   "qid": "Q1890794",
+   "sanatci": {
+    "ad_en": "Scott Joplin",
+    "qid": "Q191499",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "birdland",
+   "wiki_en": "Birdland (Weather Report song)",
+   "wiki_tr": "",
+   "qid": "Q784489",
+   "sanatci": {
+    "ad_en": "Weather Report",
+    "qid": "Q1120697",
+    "tur": "kurum"
+   },
+   "foto": "ok:Weather Report 19810611 shinjuku fn23.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "waltz-for-debby",
+   "wiki_en": "Waltz for Debby (song)",
+   "wiki_tr": "",
+   "qid": "Q3565959",
+   "sanatci": {
+    "ad_en": "Bill Evans",
+    "qid": "Q208205",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "yedek başlık: Waltz for Debby (song)"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "sing-sing-sing",
+   "wiki_en": "Sing, Sing, Sing (with a Swing)",
+   "wiki_tr": "",
+   "qid": "Q1202536",
+   "sanatci": {
+    "ad_en": "Louis Prima and His New Orleans Gang",
+    "qid": "Q105397798",
+    "tur": "kurum"
+   },
+   "foto": "P18 yok",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video TOPSETBUgvQ (Tolis Delta): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "in-the-mood",
+   "wiki_en": "In the Mood",
+   "wiki_tr": "In the Mood",
+   "qid": "Q1413725",
+   "sanatci": {
+    "ad_en": "Glenn Miller",
+    "qid": "Q103651",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "mood-indigo",
+   "wiki_en": "Mood Indigo",
+   "wiki_tr": "",
+   "qid": "Q1537369",
+   "sanatci": {
+    "ad_en": "Duke Ellington Orchestra",
+    "qid": "Q1264385",
+    "tur": "kurum"
+   },
+   "foto": "ok:Duke Ellington Big Band.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "satin-doll",
+   "wiki_en": "Satin Doll",
+   "wiki_tr": "Satin Doll",
+   "qid": "Q2270445",
+   "sanatci": {
+    "ad_en": "Duke Ellington Orchestra",
+    "qid": "Q1264385",
+    "tur": "kurum"
+   },
+   "foto": "ok:Duke Ellington Big Band.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "it-don-t-mean-a-thing",
+   "wiki_en": "It Don't Mean a Thing (If It Ain't Got That Swing)",
+   "wiki_tr": "It Don't Mean a Thing (If It Ain't Got That Swing)",
+   "qid": "Q730605",
+   "sanatci": {
+    "ad_en": "Duke Ellington",
+    "qid": "Q4030",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "ain-t-misbehavin",
+   "wiki_en": "Ain't Misbehavin' (song)",
+   "wiki_tr": "",
+   "qid": "Q406268",
+   "sanatci": {
+    "ad_en": "Fats Waller",
+    "qid": "Q310476",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "yedek başlık: Ain't Misbehavin' (song)"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "a-night-in-tunisia",
+   "wiki_en": "A Night in Tunisia",
+   "wiki_tr": "",
+   "qid": "Q300503",
+   "sanatci": {
+    "ad_en": "Dizzy Gillespie",
+    "qid": "Q49575",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "stormy-monday",
+   "wiki_en": "Call It Stormy Monday (But Tuesday Is Just as Bad)",
+   "wiki_tr": "",
+   "qid": "Q3650798",
+   "sanatci": {
+    "ad_en": "T-Bone Walker",
+    "qid": "Q358538",
+    "tur": "kisi"
+   },
+   "foto": "ok:T-Bone Walker 1972.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "the-thrill-is-gone",
+   "wiki_en": "The Thrill Is Gone",
+   "wiki_tr": "",
+   "qid": "Q3523013",
+   "sanatci": {
+    "ad_en": "B.B. King",
+    "qid": "Q188969",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "route-66",
+   "wiki_en": "(Get Your Kicks on) Route 66",
+   "wiki_tr": "Route 66 (şarkı)",
+   "qid": "Q636933",
+   "sanatci": {
+    "ad_en": "Bobby Troup",
+    "qid": "Q655122",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "l-o-v-e",
+   "wiki_en": "L-O-V-E",
+   "wiki_tr": "",
+   "qid": "Q1535561",
+   "sanatci": {
+    "ad_en": "Nat King Cole",
+    "qid": "Q137042",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video gZYtes1RO_w (Nat King Cole - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "moon-river",
+   "wiki_en": "Moon River",
+   "wiki_tr": "Moon River",
+   "qid": "Q832948",
+   "sanatci": {
+    "ad_en": "Henry Mancini Orchestra",
+    "qid": "Q58879447",
+    "tur": "kurum"
+   },
+   "foto": "P18 yok",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "my-funny-valentine",
+   "wiki_en": "My Funny Valentine",
+   "wiki_tr": "My Funny Valentine",
+   "qid": "Q1956401",
+   "sanatci": {
+    "ad_en": "Richard Rodgers",
+    "qid": "Q269094",
+    "tur": "kisi"
+   },
+   "foto": "ok:Rodgers.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "rhapsody-in-blue",
+   "wiki_en": "Rhapsody in Blue",
+   "wiki_tr": "Rhapsody in Blue",
+   "qid": "Q722599",
+   "sanatci": {
+    "ad_en": "George Gershwin",
+    "qid": "Q123829",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "hit-the-road-jack",
+   "wiki_en": "Hit the Road Jack",
+   "wiki_tr": "Hit the Road Jack",
+   "qid": "Q1460009",
+   "sanatci": {
+    "ad_en": "Ray Charles",
+    "qid": "Q544387",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Caz ve Blues",
+   "id": "night-and-day",
+   "wiki_en": "Night and Day (song)",
+   "wiki_tr": "",
+   "qid": "Q1477068",
+   "sanatci": {
+    "ad_en": "Cole Porter",
+    "qid": "Q215120",
+    "tur": "kisi"
+   },
+   "foto": "ok:Coleporter.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "let-s-stay-together",
+   "wiki_en": "Let's Stay Together (Al Green song)",
+   "wiki_tr": "Let's Stay Together (şarkı)",
+   "qid": "Q1129496",
+   "sanatci": {
+    "ad_en": "Al Green",
+    "qid": "Q313260",
+    "tur": "kisi"
+   },
+   "foto": "ok:Al Green in Washington D.C.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "yedek başlık: Let's Stay Together (Al Green song)",
+    "video COiIC3A0ROM: oEmbed 404"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "superstition",
+   "wiki_en": "Superstition (song)",
+   "wiki_tr": "",
+   "qid": "Q727067",
+   "sanatci": {
+    "ad_en": "Stevie Wonder",
+    "qid": "Q714",
+    "tur": "kisi"
+   },
+   "foto": "ok:Stevie Wonder 1994.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video ftdZ363R9kQ (Stevie Wonder - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "sir-duke",
+   "wiki_en": "Sir Duke",
+   "wiki_tr": "",
+   "qid": "Q2165252",
+   "sanatci": {
+    "ad_en": "Stevie Wonder",
+    "qid": "Q714",
+    "tur": "kisi"
+   },
+   "foto": "ok:Stevie Wonder 1994.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "isn-t-she-lovely",
+   "wiki_en": "Isn't She Lovely",
+   "wiki_tr": "",
+   "qid": "Q2530274",
+   "sanatci": {
+    "ad_en": "Stevie Wonder",
+    "qid": "Q714",
+    "tur": "kisi"
+   },
+   "foto": "ok:Stevie Wonder 1994.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "i-just-called-to-say-i-love-you",
+   "wiki_en": "I Just Called to Say I Love You",
+   "wiki_tr": "I Just Called to Say I Love You",
+   "qid": "Q1655199",
+   "sanatci": {
+    "ad_en": "Stevie Wonder",
+    "qid": "Q714",
+    "tur": "kisi"
+   },
+   "foto": "ok:Stevie Wonder 1994.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video djHiBp5oRnY (Stevie Wonder - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "lean-on-me",
+   "wiki_en": "Lean on Me (song)",
+   "wiki_tr": "",
+   "qid": "Q1423445",
+   "sanatci": {
+    "ad_en": "Bill Withers",
+    "qid": "Q346565",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": {
+    "id": "gOZgo8gMIoM",
+    "kanal": "BillWithersVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "ain-t-no-sunshine",
+   "wiki_en": "Ain't No Sunshine",
+   "wiki_tr": "Ain't No Sunshine",
+   "qid": "Q406292",
+   "sanatci": {
+    "ad_en": "Bill Withers",
+    "qid": "Q346565",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "just-the-two-of-us",
+   "wiki_en": "Just the Two of Us (Grover Washington Jr. song)",
+   "wiki_tr": "",
+   "qid": "Q634821",
+   "sanatci": {
+    "ad_en": "Grover Washington Jr.",
+    "qid": "Q463678",
+    "tur": "kisi"
+   },
+   "foto": "ok:Grover Washington 1995.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "sittin-on-the-dock-of-the-bay",
+   "wiki_en": "(Sittin' On) The Dock of the Bay",
+   "wiki_tr": "(Sittin' On) The Dock of the Bay",
+   "qid": "Q2016260",
+   "sanatci": {
+    "ad_en": "Otis Redding",
+    "qid": "Q217839",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "rTVjnBo96Ug",
+    "kanal": "RHINO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "i-heard-it-through-the-grapevine",
+   "wiki_en": "I Heard It Through the Grapevine",
+   "wiki_tr": "",
+   "qid": "Q1655183",
+   "sanatci": {
+    "ad_en": "Marvin Gaye",
+    "qid": "Q189758",
+    "tur": "kisi"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": {
+    "id": "cXWHpbpNdHE",
+    "kanal": "MarvinGayeVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "my-girl",
+   "wiki_en": "My Girl (The Temptations song)",
+   "wiki_tr": "",
+   "qid": "Q1541182",
+   "sanatci": {
+    "ad_en": "The Temptations",
+    "qid": "Q846373",
+    "tur": "kurum"
+   },
+   "foto": "ok:The-Temptations (1964 publicity photo by Kriegsmann).jpg",
+   "video": {
+    "id": "y3KJ7d2qBoA",
+    "kanal": "TheTemptationsVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "ain-t-no-mountain-high-enough",
+   "wiki_en": "Ain't No Mountain High Enough",
+   "wiki_tr": "",
+   "qid": "Q2828126",
+   "sanatci": {
+    "ad_en": "Marvin Gaye",
+    "qid": "Q189758",
+    "tur": "kisi"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "papa-s-got-a-brand-new-bag",
+   "wiki_en": "Papa's Got a Brand New Bag",
+   "wiki_tr": "",
+   "qid": "Q2084142",
+   "sanatci": {
+    "ad_en": "James Brown",
+    "qid": "Q5950",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video QE5D2hJhacU (TheOldrecordclub): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "i-got-you",
+   "wiki_en": "I Got You (I Feel Good)",
+   "wiki_tr": "",
+   "qid": "Q428251",
+   "sanatci": {
+    "ad_en": "James Brown",
+    "qid": "Q5950",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "super-freak",
+   "wiki_en": "Super Freak",
+   "wiki_tr": "Super Freak",
+   "qid": "Q2454593",
+   "sanatci": {
+    "ad_en": "Rick James",
+    "qid": "Q248207",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": {
+    "id": "QYHxGBH6o4M",
+    "kanal": "RickJamesVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "easy",
+   "wiki_en": "Easy (Commodores song)",
+   "wiki_tr": "",
+   "qid": "Q5331081",
+   "sanatci": {
+    "ad_en": "Commodores",
+    "qid": "Q287206",
+    "tur": "kurum"
+   },
+   "foto": "ok:CommodoresPerformingUpClose.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "le-freak",
+   "wiki_en": "Le Freak",
+   "wiki_tr": "",
+   "qid": "Q1671090",
+   "sanatci": {
+    "ad_en": "Chic",
+    "qid": "Q516712",
+    "tur": "kurum"
+   },
+   "foto": "ok:Chicgf.JPG",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "good-times",
+   "wiki_en": "Good Times (Chic song)",
+   "wiki_tr": "Good Times (Chic şarkısı)",
+   "qid": "Q1011938",
+   "sanatci": {
+    "ad_en": "Chic",
+    "qid": "Q516712",
+    "tur": "kurum"
+   },
+   "foto": "ok:Chicgf.JPG",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video 51r5f5OdIY0 (Chic - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "september",
+   "wiki_en": "September (song)",
+   "wiki_tr": "",
+   "qid": "Q3075151",
+   "sanatci": {
+    "ad_en": "Earth, Wind & Fire",
+    "qid": "Q28974",
+    "tur": "kurum",
+    "ad_tr": "Earth"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "Gs069dndIYk",
+    "kanal": "EarthWindandFireVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": [
+    "tür?:Q55850593"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "boogie-wonderland",
+   "wiki_en": "Boogie Wonderland",
+   "wiki_tr": "",
+   "qid": "Q2910441",
+   "sanatci": {
+    "ad_en": "Earth, Wind & Fire",
+    "qid": "Q28974",
+    "tur": "kurum",
+    "ad_tr": "Earth"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "god7hAPv8f0",
+    "kanal": "EarthWindandFireVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "shining-star",
+   "wiki_en": "Shining Star (Earth, Wind & Fire song)",
+   "wiki_tr": "",
+   "qid": "Q2406780",
+   "sanatci": {
+    "ad_en": "Earth, Wind & Fire",
+    "qid": "Q28974",
+    "tur": "kurum",
+    "ad_tr": "Earth"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "Zu9a29UR2dU",
+    "kanal": "EarthWindandFireVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "play-that-funky-music",
+   "wiki_en": "Play That Funky Music",
+   "wiki_tr": "",
+   "qid": "Q7203086",
+   "sanatci": {
+    "ad_en": "Wild Cherry",
+    "qid": "Q1951576",
+    "tur": "kurum"
+   },
+   "foto": "P18 yok",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "got-to-give-it-up",
+   "wiki_en": "Got to Give It Up",
+   "wiki_tr": "",
+   "qid": "Q1027675",
+   "sanatci": {
+    "ad_en": "Marvin Gaye",
+    "qid": "Q189758",
+    "tur": "kisi"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "signed-sealed-delivered-i-m-yours",
+   "wiki_en": "Signed, Sealed, Delivered I'm Yours",
+   "wiki_tr": "",
+   "qid": "Q3960364",
+   "sanatci": {
+    "ad_en": "Stevie Wonder",
+    "qid": "Q714",
+    "tur": "kisi"
+   },
+   "foto": "ok:Stevie Wonder 1994.jpg",
+   "video": {
+    "id": "pUj9frKY46E",
+    "kanal": "StevieWonderVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "chain-of-fools",
+   "wiki_en": "Chain of Fools",
+   "wiki_tr": "",
+   "qid": "Q860724",
+   "sanatci": {
+    "ad_en": "Aretha Franklin",
+    "qid": "Q125121",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "think",
+   "wiki_en": "Think (Aretha Franklin song)",
+   "wiki_tr": "",
+   "qid": "Q2291357",
+   "sanatci": {
+    "ad_en": "Aretha Franklin",
+    "qid": "Q125121",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "aKHmos-tsU0",
+    "kanal": "ArethaFranklinVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "higher-ground",
+   "wiki_en": "Higher Ground (Stevie Wonder song)",
+   "wiki_tr": "",
+   "qid": "Q2290055",
+   "sanatci": {
+    "ad_en": "Stevie Wonder",
+    "qid": "Q714",
+    "tur": "kisi"
+   },
+   "foto": "ok:Stevie Wonder 1994.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "shout",
+   "wiki_en": "Shout (Isley Brothers song)",
+   "wiki_tr": "",
+   "qid": "Q3959743",
+   "sanatci": {
+    "ad_en": "The Isley Brothers",
+    "qid": "Q178134",
+    "tur": "kurum"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video YnOjpNHf54U (NRRArchives): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "twist-and-shout",
+   "wiki_en": "Twist and Shout",
+   "wiki_tr": "Twist and Shout",
+   "qid": "Q786778",
+   "sanatci": {
+    "ad_en": "The Isley Brothers",
+    "qid": "Q178134",
+    "tur": "kurum"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "soul-man",
+   "wiki_en": "Soul Man (song)",
+   "wiki_tr": "",
+   "qid": "Q860467",
+   "sanatci": {
+    "ad_en": "Sam & Dave",
+    "qid": "Q1545232",
+    "tur": "kurum"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "yedek başlık: Soul Man (song)"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "what-s-love-got-to-do-with-it",
+   "wiki_en": "What's Love Got to Do with It (song)",
+   "wiki_tr": "What's Love Got to Do with It (şarkı)",
+   "qid": "Q2300404",
+   "sanatci": {
+    "ad_en": "Tina Turner",
+    "qid": "Q131814",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "yedek başlık: What's Love Got to Do with It (song)"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "proud-mary",
+   "wiki_en": "Proud Mary",
+   "wiki_tr": "",
+   "qid": "Q578320",
+   "sanatci": {
+    "ad_en": "Ike & Tina Turner",
+    "qid": "Q1165506",
+    "tur": "kurum"
+   },
+   "foto": "ok:Ike & Tina Turner 231172 Dia32.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "the-way-you-make-me-feel",
+   "wiki_en": "The Way You Make Me Feel",
+   "wiki_tr": "The Way You Make Me Feel",
+   "qid": "Q14651",
+   "sanatci": {
+    "ad_en": "Michael Jackson",
+    "qid": "Q2831",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "rock-steady",
+   "wiki_en": "Rock Steady (Aretha Franklin song)",
+   "wiki_tr": "",
+   "qid": "Q1964705",
+   "sanatci": {
+    "ad_en": "Aretha Franklin",
+    "qid": "Q125121",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "midnight-train-to-georgia",
+   "wiki_en": "Midnight Train to Georgia",
+   "wiki_tr": "",
+   "qid": "Q6842824",
+   "sanatci": {
+    "ad_en": "Gladys Knight & the Pips",
+    "qid": "Q1529105",
+    "tur": "kurum"
+   },
+   "foto": "ok:DN-SC-82-07155.jpg",
+   "video": {
+    "id": "A0F9lh8TiSM",
+    "kanal": "GladysKnightTPVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "ben",
+   "wiki_en": "Ben (song)",
+   "wiki_tr": "Ben (şarkı)",
+   "qid": "Q49522",
+   "sanatci": {
+    "ad_en": "Michael Jackson",
+    "qid": "Q2831",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video SmCk1YjmLaM (Michael Jackson - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "love-train",
+   "wiki_en": "Love Train",
+   "wiki_tr": "",
+   "qid": "Q6691443",
+   "sanatci": {
+    "ad_en": "The O'Jays",
+    "qid": "Q1749011",
+    "tur": "kurum"
+   },
+   "foto": "ok:The O'Jays-photo-by-raymond-boyd.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video CycuOJZbRvQ (The O'Jays - Topic): topic kanalı (otomatik)"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "rhythm-is-a-dancer",
+   "wiki_en": "Rhythm Is a Dancer",
+   "wiki_tr": "",
+   "qid": "Q475057",
+   "sanatci": {
+    "ad_en": "Snap!",
+    "qid": "Q705689",
+    "tur": "kurum"
+   },
+   "foto": "ok:Snap! 2017.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video KkhGkRahU6g: oEmbed 403"
+   ]
+  },
+  {
+   "seri": "Soul ve Funk",
+   "id": "ain-t-nobody",
+   "wiki_en": "Ain't Nobody",
+   "wiki_tr": "",
+   "qid": "Q108220143",
+   "sanatci": {
+    "ad_en": "Chaka Khan",
+    "qid": "Q229498",
+    "tur": "kisi"
+   },
+   "foto": "ok:Chaka Khan in Chris March 01 (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "blue-monday",
+   "wiki_en": "Blue Monday (New Order song)",
+   "wiki_tr": "",
+   "qid": "Q885777",
+   "sanatci": {
+    "ad_en": "New Order",
+    "qid": "Q214990",
+    "tur": "kurum"
+   },
+   "foto": "ok:New Order, Chile 2019 (39751785423).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "don-t-you",
+   "wiki_en": "Don't You (Forget About Me)",
+   "wiki_tr": "",
+   "qid": "Q1242376",
+   "sanatci": {
+    "ad_en": "Simple Minds",
+    "qid": "Q748836",
+    "tur": "kurum"
+   },
+   "foto": "ok:-NIMES -170618 Nimes SM2018 mk2 MG 9308-Edit.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "just-can-t-get-enough",
+   "wiki_en": "Just Can't Get Enough (Depeche Mode song)",
+   "wiki_tr": "Just Can't Get Enough (şarkı)",
+   "qid": "Q1027619",
+   "sanatci": {
+    "ad_en": "Depeche Mode",
+    "qid": "Q482964",
+    "tur": "kurum"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "enjoy-the-silence",
+   "wiki_en": "Enjoy the Silence",
+   "wiki_tr": "Enjoy the Silence",
+   "qid": "Q279097",
+   "sanatci": {
+    "ad_en": "Depeche Mode",
+    "qid": "Q482964",
+    "tur": "kurum"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "aGSKrC7dGcY",
+    "kanal": "DepecheModeVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "tainted-love",
+   "wiki_en": "Tainted Love",
+   "wiki_tr": "",
+   "qid": "Q708273",
+   "sanatci": {
+    "ad_en": "Soft Cell",
+    "qid": "Q1329303",
+    "tur": "kurum"
+   },
+   "foto": "ok:Soft Cell (1983 Sire publicity photo) 02.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "sweet-dreams",
+   "wiki_en": "Sweet Dreams (Are Made of This)",
+   "wiki_tr": "",
+   "qid": "Q1587664",
+   "sanatci": {
+    "ad_en": "Eurythmics",
+    "qid": "Q207706",
+    "tur": "kurum"
+   },
+   "foto": "ok:Eurythmics 1985.jpg",
+   "video": {
+    "id": "qeMFqkcPYcg",
+    "kanal": "EurythmicsVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "take-on-me",
+   "wiki_en": "Take On Me",
+   "wiki_tr": "",
+   "qid": "Q145677",
+   "sanatci": {
+    "ad_en": "a-ha",
+    "qid": "Q156305",
+    "tur": "kurum"
+   },
+   "foto": "ok:A-haVistalegre19.JPG",
+   "video": {
+    "id": "djV11Xbc914",
+    "kanal": "a-ha"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "girls-on-film",
+   "wiki_en": "Girls on Film",
+   "wiki_tr": "",
+   "qid": "Q956662",
+   "sanatci": {
+    "ad_en": "Duran Duran",
+    "qid": "Q58381",
+    "tur": "kurum"
+   },
+   "foto": "ok:Duran Duran 1983.jpg",
+   "video": {
+    "id": "KCjMZMxNr-0",
+    "kanal": "DuranDuranVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "rio",
+   "wiki_en": "Rio (song)",
+   "wiki_tr": "",
+   "qid": "Q2067478",
+   "sanatci": {
+    "ad_en": "Duran Duran",
+    "qid": "Q58381",
+    "tur": "kurum"
+   },
+   "foto": "ok:Duran Duran 1983.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video e3W6yf6c-FA (emimusic): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "hungry-like-the-wolf",
+   "wiki_en": "Hungry Like the Wolf",
+   "wiki_tr": "",
+   "qid": "Q2467189",
+   "sanatci": {
+    "ad_en": "Duran Duran",
+    "qid": "Q58381",
+    "tur": "kurum"
+   },
+   "foto": "ok:Duran Duran 1983.jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video oOg5VxrRTi0 (emimusic): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "tubular-bells",
+   "wiki_en": "Mike Oldfield's Single",
+   "wiki_tr": "",
+   "qid": "Q6848261",
+   "sanatci": {
+    "ad_en": "Mike Oldfield",
+    "qid": "Q3008",
+    "tur": "kisi"
+   },
+   "foto": "ok:Mike Oldfield NOTP 2006.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür düzeltildi: Tubular Bells (song)"
+   ]
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "trans-europe-express",
+   "wiki_en": "Trans-Europe Express (song)",
+   "wiki_tr": "",
+   "qid": "Q3997472",
+   "sanatci": {
+    "ad_en": "Kraftwerk",
+    "qid": "Q44892",
+    "tur": "kurum"
+   },
+   "foto": "ok:Kraftwerk In Chicago-01.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "autobahn",
+   "wiki_en": "Autobahn (song)",
+   "wiki_tr": "",
+   "qid": "Q1076440",
+   "sanatci": {
+    "ad_en": "Kraftwerk",
+    "qid": "Q44892",
+    "tur": "kurum"
+   },
+   "foto": "ok:Kraftwerk In Chicago-01.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "computer-love",
+   "wiki_en": "Computer Love (Kraftwerk song)",
+   "wiki_tr": "",
+   "qid": "Q3649255",
+   "sanatci": {
+    "ad_en": "Kraftwerk",
+    "qid": "Q44892",
+    "tur": "kurum"
+   },
+   "foto": "ok:Kraftwerk In Chicago-01.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "around-the-world",
+   "wiki_en": "Around the World (Daft Punk song)",
+   "wiki_tr": "",
+   "qid": "Q2457967",
+   "sanatci": {
+    "ad_en": "Daft Punk",
+    "qid": "Q185828",
+    "tur": "kurum"
+   },
+   "foto": "ok:Daft Punk in 2013.jpg",
+   "video": {
+    "id": "dwDns8x3Jb4",
+    "kanal": "Daft Punk"
+   },
+   "videoAdaylari": 2,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "one-more-time",
+   "wiki_en": "One More Time (Daft Punk song)",
+   "wiki_tr": "",
+   "qid": "Q2617236",
+   "sanatci": {
+    "ad_en": "Daft Punk",
+    "qid": "Q185828",
+    "tur": "kurum"
+   },
+   "foto": "ok:Daft Punk in 2013.jpg",
+   "video": {
+    "id": "FGBhQbmPwH8",
+    "kanal": "Daft Punk"
+   },
+   "videoAdaylari": 3,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "get-lucky",
+   "wiki_en": "Get Lucky (Daft Punk song)",
+   "wiki_tr": "Get Lucky",
+   "qid": "Q11510350",
+   "sanatci": {
+    "ad_en": "Daft Punk",
+    "qid": "Q185828",
+    "tur": "kurum"
+   },
+   "foto": "ok:Daft Punk in 2013.jpg",
+   "video": {
+    "id": "5NV6Rdv1a3I",
+    "kanal": "DaftPunkVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "sandstorm",
+   "wiki_en": "Sandstorm (instrumental)",
+   "wiki_tr": "",
+   "qid": "Q1763539",
+   "sanatci": {
+    "ad_en": "Darude",
+    "qid": "Q360591",
+    "tur": "kisi"
+   },
+   "foto": "ok:Darude photo in 2015.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "i-feel-love",
+   "wiki_en": "I Feel Love",
+   "wiki_tr": "",
+   "qid": "Q1655174",
+   "sanatci": {
+    "ad_en": "Donna Summer",
+    "qid": "Q908933",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "heart-of-glass",
+   "wiki_en": "Heart of Glass (song)",
+   "wiki_tr": "",
+   "qid": "Q635756",
+   "sanatci": {
+    "ad_en": "Blondie",
+    "qid": "Q202741",
+    "tur": "kurum"
+   },
+   "foto": "ok:Blondie1977.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "yedek başlık: Heart of Glass (song)"
+   ]
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "vienna",
+   "wiki_en": "Vienna (Ultravox song)",
+   "wiki_tr": "",
+   "qid": "Q9304410",
+   "sanatci": {
+    "ad_en": "Ultravox",
+    "qid": "Q316485",
+    "tur": "kurum"
+   },
+   "foto": "ok:Ultravox Duisburg 2009.jpg",
+   "video": {
+    "id": "xJeWySiuq1I",
+    "kanal": "Ultravox"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "fade-to-grey",
+   "wiki_en": "Fade to Grey (Visage song)",
+   "wiki_tr": "",
+   "qid": "Q1132404",
+   "sanatci": {
+    "ad_en": "Visage",
+    "qid": "Q1569811",
+    "tur": "kurum"
+   },
+   "foto": "ok:Steve Strange, lead singer of English New Wave group \"Visage\".jpg",
+   "video": {
+    "id": "UMPC8QJF6sI",
+    "kanal": "VisageVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": [
+    "yedek başlık: Fade to Grey (Visage song)",
+    "tür?:Q7302866"
+   ]
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "only-you",
+   "wiki_en": "Only You (Yazoo song)",
+   "wiki_tr": "",
+   "qid": "Q2436301",
+   "sanatci": {
+    "ad_en": "Yazoo",
+    "qid": "Q1410055",
+    "tur": "kurum"
+   },
+   "foto": "ok:Yazoo (band) 2008.06.21 005.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "west-end-girls",
+   "wiki_en": "West End Girls",
+   "wiki_tr": "West End Girls",
+   "qid": "Q180418",
+   "sanatci": {
+    "ad_en": "Pet Shop Boys",
+    "qid": "Q485625",
+    "tur": "kurum"
+   },
+   "foto": "ok:Pet Shop Boys live i Tivoli.JPG",
+   "video": {
+    "id": "p3j2NYZ8FKs",
+    "kanal": "PetShopBoys Parlophone"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "always-on-my-mind",
+   "wiki_en": "Always on My Mind",
+   "wiki_tr": "Always on My Mind",
+   "qid": "Q449736",
+   "sanatci": {
+    "ad_en": "Pet Shop Boys",
+    "qid": "Q485625",
+    "tur": "kurum"
+   },
+   "foto": "ok:Pet Shop Boys live i Tivoli.JPG",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "smalltown-boy",
+   "wiki_en": "Smalltown Boy",
+   "wiki_tr": "",
+   "qid": "Q2294959",
+   "sanatci": {
+    "ad_en": "Bronski Beat",
+    "qid": "Q927927",
+    "tur": "kurum"
+   },
+   "foto": "ok:Bronski Beat (1985 MCA publicity photo).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "popcorn",
+   "wiki_en": "Popcorn (instrumental)",
+   "wiki_tr": "",
+   "qid": "Q924220",
+   "sanatci": {
+    "ad_en": "Gershon Kingsley",
+    "qid": "Q61977",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "everybody-wants-to-rule-the-world",
+   "wiki_en": "Everybody Wants to Rule the World",
+   "wiki_tr": "",
+   "qid": "Q1097500",
+   "sanatci": {
+    "ad_en": "Tears for Fears",
+    "qid": "Q269091",
+    "tur": "kurum"
+   },
+   "foto": "ok:Tears for Fears 2008.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "pump-up-the-jam",
+   "wiki_en": "Pump Up the Jam",
+   "wiki_tr": "",
+   "qid": "Q1418324",
+   "sanatci": {
+    "ad_en": "Technotronic",
+    "qid": "Q1344793",
+    "tur": "kurum"
+   },
+   "foto": "ok:Jo Bogaert, ook bekend als Thomas De Quincey.jpg",
+   "video": {
+    "id": "9EcjWd-O4jI",
+    "kanal": "TechnotronicVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "insomnia",
+   "wiki_en": "Insomnia (Faithless song)",
+   "wiki_tr": "",
+   "qid": "Q2097722",
+   "sanatci": {
+    "ad_en": "Faithless",
+    "qid": "Q542071",
+    "tur": "kurum"
+   },
+   "foto": "ret:dosya yok/okunamadı",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "dancing-on-my-own",
+   "wiki_en": "Dancing on My Own",
+   "wiki_tr": "",
+   "qid": "Q3488185",
+   "sanatci": {
+    "ad_en": "Robyn",
+    "qid": "Q229445",
+    "tur": "kisi"
+   },
+   "foto": "ok:Robyn face.jpg",
+   "video": {
+    "id": "CcNo07Xp8aQ",
+    "kanal": "RobynVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "kids",
+   "wiki_en": "Kids (MGMT song)",
+   "wiki_tr": "",
+   "qid": "Q2327088",
+   "sanatci": {
+    "ad_en": "MGMT",
+    "qid": "Q391969",
+    "tur": "kurum"
+   },
+   "foto": "ok:MGMT - Heaven, 18th March 2010.jpg",
+   "video": {
+    "id": "fe4EK4HSPkI",
+    "kanal": "MGMTVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "id": "electric-feel",
+   "wiki_en": "Electric Feel",
+   "wiki_tr": "Electric Feel",
+   "qid": "Q3721257",
+   "sanatci": {
+    "ad_en": "MGMT",
+    "qid": "Q391969",
+    "tur": "kurum"
+   },
+   "foto": "ok:MGMT - Heaven, 18th March 2010.jpg",
+   "video": {
+    "id": "MmZexg8sxyk",
+    "kanal": "MGMTVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "over-the-rainbow",
+   "wiki_en": "Over the Rainbow",
+   "wiki_tr": "Over the Rainbow",
+   "qid": "Q161402",
+   "sanatci": {
+    "ad_en": "Judy Garland",
+    "qid": "Q11637",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "singin-in-the-rain",
+   "wiki_en": "Singin' in the Rain (song)",
+   "wiki_tr": "",
+   "qid": "Q1187360",
+   "sanatci": {
+    "ad_en": "Gene Kelly",
+    "qid": "Q73089",
+    "tur": "kisi"
+   },
+   "foto": "ok:Gene kelly.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "raindrops-keep-fallin-on-my-head",
+   "wiki_en": "Raindrops Keep Fallin' on My Head",
+   "wiki_tr": "",
+   "qid": "Q2287284",
+   "sanatci": {
+    "ad_en": "B. J. Thomas",
+    "qid": "Q706518",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "let-it-go",
+   "wiki_en": "Let It Go",
+   "wiki_tr": "Let It Go",
+   "qid": "Q15282326",
+   "sanatci": {
+    "ad_en": "Idina Menzel",
+    "qid": "Q157400",
+    "tur": "kisi"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "a-whole-new-world",
+   "wiki_en": "A Whole New World",
+   "wiki_tr": "",
+   "qid": "Q1326000",
+   "sanatci": null,
+   "foto": "sanatçı yok",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı bulunamadı"
+   ]
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "can-you-feel-the-love-tonight",
+   "wiki_en": "Can You Feel the Love Tonight",
+   "wiki_tr": "",
+   "qid": "Q1031911",
+   "sanatci": {
+    "ad_en": "Elton John",
+    "qid": "Q2808",
+    "tur": "kisi"
+   },
+   "foto": "ok:Elton John 2023.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "hakuna-matata",
+   "wiki_en": "Hakuna Matata (song)",
+   "wiki_tr": "",
+   "qid": "Q1646614",
+   "sanatci": {
+    "ad_en": "Jason Weaver",
+    "qid": "Q3163012",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "circle-of-life",
+   "wiki_en": "Circle of Life",
+   "wiki_tr": "",
+   "qid": "Q109026",
+   "sanatci": {
+    "ad_en": "Carmen Twillie",
+    "qid": "Q109193",
+    "tur": "kisi"
+   },
+   "foto": "P18 yok",
+   "video": {
+    "id": "GibiNy4d4gc",
+    "kanal": "DisneyMusicVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "you-ve-got-a-friend-in-me",
+   "wiki_en": "You've Got a Friend in Me",
+   "wiki_tr": "",
+   "qid": "Q3302365",
+   "sanatci": {
+    "ad_en": "Randy Newman",
+    "qid": "Q318475",
+    "tur": "kisi"
+   },
+   "foto": "ok:Randy Newman HWOF Aug 2012 (levels adjusted).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "rainbow-connection",
+   "wiki_en": "Rainbow Connection",
+   "wiki_tr": "",
+   "qid": "Q3417774",
+   "sanatci": {
+    "ad_en": "Jim Henson",
+    "qid": "Q191037",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "flashdance-what-a-feeling",
+   "wiki_en": "Flashdance... What a Feeling",
+   "wiki_tr": "",
+   "qid": "Q1415045",
+   "sanatci": {
+    "ad_en": "Irene Cara",
+    "qid": "Q234169",
+    "tur": "kisi"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "take-my-breath-away",
+   "wiki_en": "Take My Breath Away",
+   "wiki_tr": "Take My Breath Away",
+   "qid": "Q2298481",
+   "sanatci": {
+    "ad_en": "Berlin",
+    "qid": "Q821198",
+    "tur": "kurum"
+   },
+   "foto": "ok:Terri Nunn at OpenWorld crop.jpg",
+   "video": {
+    "id": "Bx51eegLTY8",
+    "kanal": "BerlinVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "i-ve-had-the-time-of-my-life",
+   "wiki_en": "(I've Had) The Time of My Life",
+   "wiki_tr": "",
+   "qid": "Q24506",
+   "sanatci": {
+    "ad_en": "Bill Medley",
+    "qid": "Q862315",
+    "tur": "kisi"
+   },
+   "foto": "ok:Bill Medley in 2012.JPG",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "footloose",
+   "wiki_en": "Footloose (song)",
+   "wiki_tr": "",
+   "qid": "Q653189",
+   "sanatci": {
+    "ad_en": "Kenny Loggins",
+    "qid": "Q435965",
+    "tur": "kisi"
+   },
+   "foto": "ok:Loggins FP5 (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "chariots-of-fire",
+   "wiki_en": "Chariots of Fire (instrumental)",
+   "wiki_tr": "",
+   "qid": "Q2270248",
+   "sanatci": {
+    "ad_en": "Vangelis",
+    "qid": "Q153172",
+    "tur": "kisi"
+   },
+   "foto": "ok:Vangelis, 26 July 2012.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "mission-impossible-theme",
+   "wiki_en": "Theme from Mission: Impossible",
+   "wiki_tr": "",
+   "qid": "Q17098668",
+   "sanatci": {
+    "ad_en": "Lalo Schifrin",
+    "qid": "Q247293",
+    "tur": "kisi"
+   },
+   "foto": "ok:Lalo schifrin (cropped) (2).jpg",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video jLDkncpG4V0 (U2 Argentina): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "james-bond-theme",
+   "wiki_en": "James Bond Theme",
+   "wiki_tr": "",
+   "qid": "Q746181",
+   "sanatci": {
+    "ad_en": "Monty Norman",
+    "qid": "Q954120",
+    "tur": "kisi"
+   },
+   "foto": "P18 yok",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "do-re-mi",
+   "wiki_en": "Do-Re-Mi",
+   "wiki_tr": "",
+   "qid": "Q1189887",
+   "sanatci": {
+    "ad_en": "Julie Andrews",
+    "qid": "Q161819",
+    "tur": "kisi"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "sanatçı: aramayla",
+    "video WkBepgH00GM (music04777): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "my-favorite-things",
+   "wiki_en": "My Favorite Things (song)",
+   "wiki_tr": "My Favorite Things (şarkı)",
+   "qid": "Q546331",
+   "sanatci": {
+    "ad_en": "Julie Andrews",
+    "qid": "Q161819",
+    "tur": "kisi"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "chim-chim-cher-ee",
+   "wiki_en": "Chim Chim Cher-ee",
+   "wiki_tr": "",
+   "qid": "Q1820189",
+   "sanatci": {
+    "ad_en": "Dick Van Dyke",
+    "qid": "Q310295",
+    "tur": "kisi"
+   },
+   "foto": "ok:Dick Van Dyke May 2024.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "under-the-sea",
+   "wiki_en": "Under the Sea",
+   "wiki_tr": "Under the Sea",
+   "qid": "Q3119769",
+   "sanatci": {
+    "ad_en": "Samuel E. Wright",
+    "qid": "Q926362",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "part-of-your-world",
+   "wiki_en": "Part of Your World",
+   "wiki_tr": "",
+   "qid": "Q3366906",
+   "sanatci": {
+    "ad_en": "Jodi Benson",
+    "qid": "Q1138602",
+    "tur": "kisi"
+   },
+   "foto": "ok:Jodi Benson GalaxyCon Nashville 052026-3.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "beauty-and-the-beast",
+   "wiki_en": "Beauty and the Beast (Disney song)",
+   "wiki_tr": "",
+   "qid": "Q2454384",
+   "sanatci": {
+    "ad_en": "Angela Lansbury",
+    "qid": "Q206856",
+    "tur": "kisi"
+   },
+   "foto": "ret:arşiv (<2005)",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "mrs-robinson",
+   "wiki_en": "Mrs. Robinson",
+   "wiki_tr": "",
+   "qid": "Q1281320",
+   "sanatci": {
+    "ad_en": "Simon & Garfunkel",
+    "qid": "Q484918",
+    "tur": "kurum",
+    "ad_tr": "Simon and Garfunkel"
+   },
+   "foto": "ok:Simon and Garfunkel 1968.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "the-sound-of-silence",
+   "wiki_en": "The Sound of Silence",
+   "wiki_tr": "",
+   "qid": "Q922139",
+   "sanatci": {
+    "ad_en": "Simon & Garfunkel",
+    "qid": "Q484918",
+    "tur": "kurum",
+    "ad_tr": "Simon and Garfunkel"
+   },
+   "foto": "ok:Simon and Garfunkel 1968.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "hedwig-s-theme",
+   "wiki_en": "Hedwig's Theme",
+   "wiki_tr": "",
+   "qid": "Q3129339",
+   "sanatci": {
+    "ad_en": "John Williams",
+    "qid": "Q131285",
+    "tur": "kisi"
+   },
+   "foto": "ok:John Williams 2024.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "the-pink-panther-theme",
+   "wiki_en": "The Pink Panther Theme",
+   "wiki_tr": "The Pink Panther Theme",
+   "qid": "Q3510916",
+   "sanatci": {
+    "ad_en": "Henry Mancini",
+    "qid": "Q185928",
+    "tur": "kisi"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": {
+    "id": "wDoDYEFIMas",
+    "kanal": "HenryManciniVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "star-trek-theme",
+   "wiki_en": "Theme from Star Trek",
+   "wiki_tr": "",
+   "qid": "Q11590797",
+   "sanatci": {
+    "ad_en": "Alexander Courage",
+    "qid": "Q1394107",
+    "tur": "kisi"
+   },
+   "foto": "P18 yok",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "cantina-band",
+   "wiki_en": "Mos Eisley",
+   "wiki_tr": "",
+   "qid": "Q946074",
+   "sanatci": {
+    "ad_en": "John Williams",
+    "qid": "Q131285",
+    "tur": "kisi"
+   },
+   "foto": "ok:John Williams 2024.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": [
+    "tür?:Q1964689,Q108059698",
+    "sanatçı: aramayla"
+   ]
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "gonna-fly-now",
+   "wiki_en": "Gonna Fly Now",
+   "wiki_tr": "Gonna Fly Now",
+   "qid": "Q5582004",
+   "sanatci": {
+    "ad_en": "Bill Conti",
+    "qid": "Q367084",
+    "tur": "kisi"
+   },
+   "foto": "ok:Bill Conti - For Your Eyes Only.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "ghostbusters",
+   "wiki_en": "Ghostbusters (song)",
+   "wiki_tr": "",
+   "qid": "Q1392942",
+   "sanatci": {
+    "ad_en": "Ray Parker Jr.",
+    "qid": "Q381022",
+    "tur": "kisi"
+   },
+   "foto": "ok:RayParkerJrHWOFMar2013.jpg",
+   "video": {
+    "id": "Fe93CLbHjxQ",
+    "kanal": "RayParkerJuniorVEVO"
+   },
+   "videoAdaylari": 1,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "stayin-alive",
+   "wiki_en": "Stayin' Alive",
+   "wiki_tr": "Stayin' Alive",
+   "qid": "Q1352181",
+   "sanatci": {
+    "ad_en": "Bee Gees",
+    "qid": "Q133405",
+    "tur": "kurum"
+   },
+   "foto": "ret:yasaklı sözcük",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "glory-of-love",
+   "wiki_en": "Glory of Love (Peter Cetera song)",
+   "wiki_tr": "",
+   "qid": "Q1532156",
+   "sanatci": {
+    "ad_en": "Peter Cetera",
+    "qid": "Q468815",
+    "tur": "kisi"
+   },
+   "foto": "ok:2004 12LosAngelesPeterCetera.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "evergreen",
+   "wiki_en": "Evergreen (Love Theme from A Star Is Born)",
+   "wiki_tr": "",
+   "qid": "Q5417167",
+   "sanatci": {
+    "ad_en": "Barbra Streisand",
+    "qid": "Q4636",
+    "tur": "kisi"
+   },
+   "foto": "ok:Barbra Streisand with Francis Collins and Anthony Fauci (27806589237) (cropped).jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "i-don-t-want-to-miss-a-thing",
+   "wiki_en": "I Don't Want to Miss a Thing",
+   "wiki_tr": "",
+   "qid": "Q707034",
+   "sanatci": {
+    "ad_en": "Aerosmith",
+    "qid": "Q126826",
+    "tur": "kurum"
+   },
+   "foto": "ok:Aerosmith B.jpg",
+   "video": {
+    "id": "JkK8g6FMEXE",
+    "kanal": "AerosmithVEVO"
+   },
+   "videoAdaylari": 2,
+   "notlar": [
+    "video Vo_0UXRY_rY (lisachii): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "everything-i-do",
+   "wiki_en": "(Everything I Do) I Do It for You",
+   "wiki_tr": "(Everything I Do) I Do It for You",
+   "qid": "Q158549",
+   "sanatci": {
+    "ad_en": "Bryan Adams",
+    "qid": "Q482907",
+    "tur": "kisi"
+   },
+   "foto": "ok:BryAdamsMargate130624 (39 of 43) (53789411882) Cropped.jpg",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "unchained-melody",
+   "wiki_en": "Unchained Melody",
+   "wiki_tr": "Unchained Melody",
+   "qid": "Q949416",
+   "sanatci": {
+    "ad_en": "The Righteous Brothers",
+    "qid": "Q610228",
+    "tur": "kurum"
+   },
+   "foto": "ret:lisans:No restrictions",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Film Müzikleri",
+   "id": "fame",
+   "wiki_en": "Fame (Irene Cara song)",
+   "wiki_tr": "",
+   "qid": "Q550510",
+   "sanatci": {
+    "ad_en": "Irene Cara",
+    "qid": "Q234169",
+    "tur": "kisi"
+   },
+   "foto": "ret:albüm kapağı/non-free",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "symphony-no-5-beethoven",
+   "wiki_en": "Symphony No. 5 (Beethoven)",
+   "wiki_tr": "5. Senfoni (Beethoven)",
+   "qid": "Q188709",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "fur-elise-beethoven",
+   "wiki_en": "Für Elise",
+   "wiki_tr": "Für Elise",
+   "qid": "Q11980",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "moonlight-sonata-beethoven",
+   "wiki_en": "Piano Sonata No. 14 (Beethoven)",
+   "wiki_tr": "14. Piyano Sonatı (Beethoven)",
+   "qid": "Q12008",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 1,
+   "notlar": [
+    "video w1uQ8sLZIy0 (bigbenjamin37): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "pastoral-symphony-beethoven",
+   "wiki_en": "Symphony No. 6 (Beethoven)",
+   "wiki_tr": "",
+   "qid": "Q246433",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "eine-kleine-nachtmusik-mozart",
+   "wiki_en": "Eine kleine Nachtmusik",
+   "wiki_tr": "Eine kleine Nachtmusik",
+   "qid": "Q12025",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "symphony-no-40-mozart",
+   "wiki_en": "Symphony No. 40 (Mozart)",
+   "wiki_tr": "",
+   "qid": "Q231390",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "rondo-alla-turca-mozart",
+   "wiki_en": "Piano Sonata No. 11 (Mozart)",
+   "wiki_tr": "Türk Marşı",
+   "qid": "Q908534",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "sihirli-flut-mozart",
+   "wiki_en": "The Magic Flute",
+   "wiki_tr": "Sihirli Flüt",
+   "qid": "Q5064",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "clarinet-concerto-mozart",
+   "wiki_en": "Clarinet Concerto (Mozart)",
+   "wiki_tr": "",
+   "qid": "Q1056501",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "piano-concerto-no-21-mozart",
+   "wiki_en": "Piano Concerto No. 21 (Mozart)",
+   "wiki_tr": "",
+   "qid": "Q213192",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "dort-mevsim-vivaldi",
+   "wiki_en": "The Four Seasons (Vivaldi)",
+   "wiki_tr": "Dört Mevsim (Vivaldi)",
+   "qid": "Q12016",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "brandenburg-concertos-bach",
+   "wiki_en": "Brandenburg Concertos",
+   "wiki_tr": "Brandenburg Konçertoları",
+   "qid": "Q208224",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "air-on-the-g-string-bach",
+   "wiki_en": "Orchestral suites (Bach)",
+   "wiki_tr": "",
+   "qid": "Q1190278",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "toccata-and-fugue-bach",
+   "wiki_en": "Toccata and Fugue in D minor, BWV 565",
+   "wiki_tr": "",
+   "qid": "Q392734",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "goldberg-variations-bach",
+   "wiki_en": "Goldberg Variations",
+   "wiki_tr": "Goldberg Varyasyonları",
+   "qid": "Q213728",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "cello-suites-bach",
+   "wiki_en": "Cello Suites (Bach)",
+   "wiki_tr": "Viyolonsel Süitleri, BWV 1007-1012 (Bach)",
+   "qid": "Q756843",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "canon-in-d-pachelbel",
+   "wiki_en": "Pachelbel's Canon",
+   "wiki_tr": "",
+   "qid": "Q689519",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "water-music-handel",
+   "wiki_en": "Water Music",
+   "wiki_tr": "Su Müziği",
+   "qid": "Q278596",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "music-for-the-royal-fireworks-handel",
+   "wiki_en": "Music for the Royal Fireworks",
+   "wiki_tr": "Kraliyet Havai Fişek Şenliği için Müzik",
+   "qid": "Q1147529",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "kugu-golu-tchaikovsky",
+   "wiki_en": "Swan Lake",
+   "wiki_tr": "Kuğu Gölü",
+   "qid": "Q199786",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 2,
+   "notlar": [
+    "video pa67onmu-SQ (Советское телевидение. ГОСТЕЛЕ): kanal resmî değil",
+    "video OOHzp-mo9l4 (St Petersburg Ballet Theatre): kanal resmî değil"
+   ]
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "findikkiran-tchaikovsky",
+   "wiki_en": "The Nutcracker",
+   "wiki_tr": "Fındıkkıran (bale)",
+   "qid": "Q193705",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "piano-concerto-no-1-tchaikovsky",
+   "wiki_en": "Piano Concerto No. 1 (Tchaikovsky)",
+   "wiki_tr": "",
+   "qid": "Q162935",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "new-world-symphony-dvorak",
+   "wiki_en": "Symphony No. 9 (Dvořák)",
+   "wiki_tr": "",
+   "qid": "Q11985",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "slavonic-dances-dvorak",
+   "wiki_en": "Slavonic Dances",
+   "wiki_tr": "",
+   "qid": "Q1468901",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "peer-gynt-grieg",
+   "wiki_en": "Peer Gynt (Grieg)",
+   "wiki_tr": "Peer Gynt (Grieg)",
+   "qid": "Q14912776",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "in-the-hall-of-the-mountain-king-grieg",
+   "wiki_en": "In the Hall of the Mountain King",
+   "wiki_tr": "",
+   "qid": "Q956115",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "clair-de-lune-debussy",
+   "wiki_en": "Suite bergamasque",
+   "wiki_tr": "",
+   "qid": "Q1367599",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "prelude-a-l-apres-midi-d-un-faune-debussy",
+   "wiki_en": "Prélude à l'après-midi d'un faune",
+   "wiki_tr": "",
+   "qid": "Q1471875",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "bolero-ravel",
+   "wiki_en": "Boléro",
+   "wiki_tr": "",
+   "qid": "Q327331",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "gymnopedies-satie",
+   "wiki_en": "Gymnopédies",
+   "wiki_tr": "",
+   "qid": "Q1190965",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "flight-of-the-bumblebee-rimsky-korsakov",
+   "wiki_en": "Flight of the Bumblebee",
+   "wiki_tr": "",
+   "qid": "Q1342275",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "scheherazade-rimsky-korsakov",
+   "wiki_en": "Scheherazade (Rimsky-Korsakov)",
+   "wiki_tr": "Şehrazad (Nikolay Rimski-Korsakov)",
+   "qid": "Q171405",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "mavi-tuna-strauss",
+   "wiki_en": "The Blue Danube",
+   "wiki_tr": "Güzel Mavi Tuna",
+   "qid": "Q482621",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "tales-from-the-vienna-woods-strauss",
+   "wiki_en": "Tales from the Vienna Woods",
+   "wiki_tr": "",
+   "qid": "Q1483969",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "the-planets-holst",
+   "wiki_en": "The Planets",
+   "wiki_tr": "",
+   "qid": "Q303508",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "pictures-at-an-exhibition-mussorgsky",
+   "wiki_en": "Pictures at an Exhibition",
+   "wiki_tr": "",
+   "qid": "Q724981",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "hungarian-dances-brahms",
+   "wiki_en": "Hungarian Dances (Brahms)",
+   "wiki_tr": "Macar Dansları (Brahms)",
+   "qid": "Q1065126",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "brahms-lullaby",
+   "wiki_en": "Wiegenlied (Brahms)",
+   "wiki_tr": "Ninni (Brahms)",
+   "qid": "Q1557135",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "nocturne-op-9-no-2-chopin",
+   "wiki_en": "Nocturnes, Op. 9 (Chopin)",
+   "wiki_tr": "",
+   "qid": "Q1140459",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "minute-waltz-chopin",
+   "wiki_en": "Minute Waltz",
+   "wiki_tr": "",
+   "qid": "Q1527943",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "fantaisie-impromptu-chopin",
+   "wiki_en": "Fantaisie-Impromptu",
+   "wiki_tr": "",
+   "qid": "Q147619",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "hungarian-rhapsody-no-2-liszt",
+   "wiki_en": "Hungarian Rhapsody No. 2",
+   "wiki_tr": "",
+   "qid": "Q3040118",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "liebestraume-liszt",
+   "wiki_en": "Liebesträume",
+   "wiki_tr": "",
+   "qid": "Q1065305",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "piano-concerto-no-2-rachmaninoff",
+   "wiki_en": "Piano Concerto No. 2 (Rachmaninoff)",
+   "wiki_tr": "Piyano Konçertosu No. 2 (Rahmaninov)",
+   "qid": "Q210224",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "an-american-in-paris-gershwin",
+   "wiki_en": "An American in Paris",
+   "wiki_tr": "",
+   "qid": "Q853997",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "william-tell-overture-rossini",
+   "wiki_en": "William Tell Overture",
+   "wiki_tr": "",
+   "qid": "Q6046246",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "ode-to-joy-beethoven",
+   "wiki_en": "Ode to Joy",
+   "wiki_tr": "Neşeye Övgü",
+   "qid": "Q41545",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "morning-mood-grieg",
+   "wiki_en": "Morning Mood",
+   "wiki_tr": "",
+   "qid": "Q2412053",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "the-sleeping-beauty-tchaikovsky",
+   "wiki_en": "The Sleeping Beauty (ballet)",
+   "wiki_tr": "",
+   "qid": "Q838051",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "violin-concerto-mendelssohn",
+   "wiki_en": "Violin Concerto (Mendelssohn)",
+   "wiki_tr": "",
+   "qid": "Q1054060",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "a-midsummer-night-s-dream-mendelssohn",
+   "wiki_en": "A Midsummer Night's Dream (Mendelssohn)",
+   "wiki_tr": "",
+   "qid": "Q1305214",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "the-barber-of-seville-rossini",
+   "wiki_en": "The Barber of Seville",
+   "wiki_tr": "Sevil Berberi",
+   "qid": "Q208659",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "la-campanella-liszt",
+   "wiki_en": "La campanella",
+   "wiki_tr": "La campanella",
+   "qid": "Q1144746",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "id": "caprice-no-24-paganini",
+   "wiki_en": "Caprice No. 24 (Paganini)",
+   "wiki_tr": "",
+   "qid": "Q3506288",
+   "sanatci": null,
+   "foto": "-",
+   "video": null,
+   "videoAdaylari": 0,
+   "notlar": []
+  }
+ ],
+ "elenen": [
+  {
+   "seri": "Rock Klasikleri",
+   "madde": "Don't Cry (Guns N' Roses song)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "madde": "Somebody to Love (Queen song)",
+   "neden": "tema-hassas:7"
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "madde": "Come Together",
+   "neden": "tema-hassas:3"
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "madde": "Every Breath You Take",
+   "neden": "başlık yasak (konu:C3)"
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "madde": "Mr. Brightside",
+   "neden": "başlık yasak (şiddet)"
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "madde": "Carry On Wayward Son",
+   "neden": "tema-hassas:3"
+  },
+  {
+   "seri": "Rock Klasikleri",
+   "madde": "Roundabout (song)",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "madde": "Mamma Mia (song)",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "madde": "True Colors (song)",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "madde": "I'm Still Standing",
+   "neden": "tema-hassas:3"
+  },
+  {
+   "seri": "Pop Efsaneleri",
+   "madde": "Heal the World",
+   "neden": "başlık yasak (sağlık)"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Kol Düğmeleri",
+   "neden": "kaynak-yetersiz:487"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Geçti Dost Kervanı",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Binboğa'nın Kızı",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Sen de Başını Alıp Gitme",
+   "neden": "kaynak-yetersiz:510"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Alageyik Destanı",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Kendim Ettim Kendim Buldum",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Gülümse (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Hadi Bakalım (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Git (Sezen Aksu şarkısı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Gidiyorum",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Ah Mazi",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Belalım",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Beni Unutma (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Bırak Beni",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "El Gibi",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Geçer",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Haydi Gel Benimle Ol",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Kavaklar (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Oh Oh (şarkı)",
+   "neden": "tür uygun değil (albüm vb.):Q482994"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Seni Kimler Aldı?",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Unuttun mu Beni?",
+   "neden": "kaynak-yetersiz:385"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Vazgeçtim (Sezen Aksu şarkısı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Tükeneceğiz",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Şinanay",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Ünzile",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Arkadaş Şarkısını Duyunca",
+   "neden": "kaynak-yetersiz:146"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Seni İstiyorum",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Gelsin Hayat Bildiği Gibi",
+   "neden": "kaynak-yetersiz:372"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Ne Kavgam Bitti Ne Sevdam",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Değer mi?",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Oldu mu?",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Yalnızca Sitem",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Beni Kategorize Etme",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Paşa Gönül Şarkıları",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "İhanetten Geri Kalan",
+   "neden": "kaynak-yetersiz:396"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Hepsi Senin mi?",
+   "neden": "kaynak-yetersiz:251"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Dudu (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Hüp",
+   "neden": "tür uygun değil (albüm vb.):Q482994"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Bekle (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Dön Bebeğim (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Gülümse Kaderine (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Kış Güneşi (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Kır Zincirlerini (şarkı)",
+   "neden": "kaynak-yetersiz:279"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Selam Ver",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Sen Rahat Uyu",
+   "neden": "kaynak-yetersiz:183"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Sorma Kalbim",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Söz Verdim",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Unutmamalı (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Uyan",
+   "neden": "tür uygun değil (albüm vb.):Q482994,Q105543609"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "İkimizin Yerine (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Geççek",
+   "neden": "tema-hassas:3"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Gün Doğmuyor",
+   "neden": "kaynak-yetersiz:166"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Hayat Katarı",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Şaşkın (şarkı)",
+   "neden": "kaynak-yetersiz:560"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Tek Başına (Erkin Koray şarkısı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Düşman mısın Aşık mı?",
+   "neden": "kaynak-yetersiz:263"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Resim (şarkı)",
+   "neden": "kaynak-yetersiz:512"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Sana Neler Edeceğim",
+   "neden": "kaynak-yetersiz:346"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Yakarım Canını",
+   "neden": "kaynak-yetersiz:284"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Abidik Gubidik Twist",
+   "neden": "tema-hassas:3"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Bambaşka Biri",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Sana Ne Kime Ne",
+   "neden": "kaynak-yetersiz:581"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Kördüğüm (Mor ve Ötesi şarkısı)",
+   "neden": "kaynak-yetersiz:101"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Sevda Çiçeği (Mor ve Ötesi)",
+   "neden": "kaynak-yetersiz:387"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "İki Aşk",
+   "neden": "kaynak-yetersiz:258"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Tek Başına Dans",
+   "neden": "kaynak-yetersiz:300"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Açık Adres",
+   "neden": "kaynak-yetersiz:492"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Hayat Beklemez",
+   "neden": "kaynak-yetersiz:326"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "İstanbul (Sertab Erener şarkısı)",
+   "neden": "kaynak-yetersiz:117"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Rengârenk (şarkı)",
+   "neden": "kaynak-yetersiz:400"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Satılık Kalpler Şehri",
+   "neden": "kaynak-yetersiz:199"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Zor Kadın",
+   "neden": "kaynak-yetersiz:296"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Leave (Sertab Erener şarkısı)",
+   "neden": "kaynak-yetersiz:70"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Here I Am (Sertab Erener şarkısı)",
+   "neden": "kaynak-yetersiz:142"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Yolun Başı",
+   "neden": "kaynak-yetersiz:171"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Zaferlerim",
+   "neden": "kaynak-yetersiz:144"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Gözlerinin İçine Başka Hayal Girmesin",
+   "neden": "kaynak-yetersiz:376"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Hiçbir Şeyde Gözüm Yok",
+   "neden": "kaynak-yetersiz:466"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Şimdi Uzaklardasın",
+   "neden": "kaynak-yetersiz:363"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Beklenen Şarkı (şarkı)",
+   "neden": "kaynak-yetersiz:455"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Batsın Bu Dünya (şarkı)",
+   "neden": "tema-hassas:3"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Kendi Yolundan Şaşma",
+   "neden": "tür uygun değil (albüm vb.):Q482994"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Ele Güne Karşı",
+   "neden": "kaynak-yetersiz:362"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Peki Peki Anladık",
+   "neden": "tür uygun değil (albüm vb.):Q482994"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Ali Desidero",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Sarı Sarı",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Mavi Mavi",
+   "neden": "tür uygun değil (albüm vb.):Q482994"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Uzun İnce Bir Yoldayım",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Yaz Dostum",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Yeniden",
+   "neden": "kaynak-yetersiz:317"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Papatya (Teoman şarkısı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Her Şeyi Yak",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Bu Akşam (Duman şarkısı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Türkçe Kült Şarkılar",
+   "madde": "Araba (şarkı)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Caz ve Blues",
+   "madde": "Autumn Leaves (song)",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Caz ve Blues",
+   "madde": "What a Wonderful World",
+   "neden": "tema-hassas:4"
+  },
+  {
+   "seri": "Caz ve Blues",
+   "madde": "Watermelon Man (instrumental)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Caz ve Blues",
+   "madde": "Caravan (Duke Ellington song)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Caz ve Blues",
+   "madde": "Body and Soul (song)",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Caz ve Blues",
+   "madde": "Unforgettable (song)",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Caz ve Blues",
+   "madde": "All of Me (1931 song)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Soul ve Funk",
+   "madde": "Respect (Aretha Franklin song)",
+   "neden": "tema-hassas:4"
+  },
+  {
+   "seri": "Soul ve Funk",
+   "madde": "Stand by Me (Ben E. King song)",
+   "neden": "tema-hassas:4"
+  },
+  {
+   "seri": "Soul ve Funk",
+   "madde": "Brick House (song)",
+   "neden": "kaynak-yetersiz:573"
+  },
+  {
+   "seri": "Soul ve Funk",
+   "madde": "September",
+   "neden": "tema-hassas:4"
+  },
+  {
+   "seri": "Soul ve Funk",
+   "madde": "Dancing in the Street",
+   "neden": "tema-hassas:4"
+  },
+  {
+   "seri": "Soul ve Funk",
+   "madde": "Let's Get It On (song)",
+   "neden": "tema-hassas:5"
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "madde": "Oxygène",
+   "neden": "tür uygun değil (albüm vb.):Q482994"
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "madde": "The Model (Kraftwerk song)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "madde": "Harder, Better, Faster, Stronger",
+   "neden": "tema-hassas:3"
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "madde": "Video Killed the Radio Star",
+   "neden": "başlık yasak (şiddet)"
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "madde": "Don't Go (Yazoo song)",
+   "neden": "tema-hassas:4"
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "madde": "Axel F",
+   "neden": "tema-hassas:5"
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "madde": "Cars (Gary Numan song)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "madde": "Close to Me (The Cure song)",
+   "neden": "başlık yasak (sağlık)"
+  },
+  {
+   "seri": "Elektronik ve Yeni Dalga",
+   "madde": "Just Like Heaven (The Cure song)",
+   "neden": "başlık yasak (sağlık)"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "Goldfinger (song)",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "Supercalifragilisticexpialidocious (song)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "Be Our Guest (song)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "Star Wars (Main Title)",
+   "neden": "başlık yasak (tarih-yasak)"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "Raiders March",
+   "neden": "tür uygun değil (albüm vb.):Q482994"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "Jurassic Park Theme",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "Imperial March",
+   "neden": "kaynak-hassas"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "He's a Pirate",
+   "neden": "tür uygun değil (albüm vb.):Q482994"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "Kokomo (Beach Boys song)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Film Müzikleri",
+   "madde": "Somewhere Out There",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "madde": "Symphony No. 9 (Beethoven)",
+   "neden": "tema-hassas:3"
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "madde": "Vltava (musical composition)",
+   "neden": "madde yok"
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "madde": "The Carnival of the Animals",
+   "neden": "başlık yasak (tarih-yasak)"
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "madde": "The Swan (Saint-Saëns)",
+   "neden": "başlık yasak (tarih-yasak)"
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "madde": "Habanera",
+   "neden": "anlam ayrımı"
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "madde": "Dance of the Sugar Plum Fairy",
+   "neden": "yinelenen öğe"
+  },
+  {
+   "seri": "Klasik Müzikten Ünlü Eserler",
+   "madde": "Peer Gynt Suite No. 1",
+   "neden": "yinelenen öğe"
+  }
+ ]
+}

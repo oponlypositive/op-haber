@@ -20,7 +20,7 @@ const ADAY = (n = 1, ek = {}) => ({ baslik: BASLIK, ozet: KAYNAK_TR.split("\n")[
 
 // ================================================================ yerel kapı + tanıma
 test("kategori kümesi: mutfak, oyun, sanat, resim + (2026-10-16) doga, tarih, astroloji; öbürleri serbest", () => {
-  assert.deepEqual([...GORSEL_ZORUNLU_KATEGORILER].sort(), ["astroloji", "doga", "mutfak", "oyun", "resim", "sanat", "tarih"]);
+  assert.deepEqual([...GORSEL_ZORUNLU_KATEGORILER].sort(), ["astroloji", "doga", "mutfak", "muzik", "oyun", "resim", "sanat", "tarih"]);
   for (const k of ["mutfak", "oyun", "sanat", "resim", "doga", "tarih", "astroloji"]) assert.equal(gorselZorunluMu(k), true, k);
   for (const k of ["iyilik", "spor", "bilim", "felsefe", "hayvanlar", "gokbilim", "huzur", "mahalle", "", undefined]) assert.equal(gorselZorunluMu(k), false, String(k));
   assert.equal(gorselVarMi(null), false); assert.equal(gorselVarMi({ gorsel: {}, b64: "" }), false); assert.equal(gorselVarMi({ gorsel: { sahibi: "x" }, b64: "AAAA", tur: "image/jpeg" }), true);

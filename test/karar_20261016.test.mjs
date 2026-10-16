@@ -101,7 +101,7 @@ test("teknoloji: op_teknoloji bot alanı tablodan çıktı; etiketlenirse hesap-
 
 // ================================================================ 2) GÖRSEL ZORUNLU kategoriler genişledi
 test("görsel zorunlu: doga, tarih, astroloji eklendi; haber (doga) görselsiz YAYINLANMAZ, bekliyor_gorsel", async () => {
-  assert.deepEqual([...GORSEL_ZORUNLU_KATEGORILER].sort(), ["astroloji", "doga", "mutfak", "oyun", "resim", "sanat", "tarih"]);
+  assert.deepEqual([...GORSEL_ZORUNLU_KATEGORILER].sort(), ["astroloji", "doga", "mutfak", "muzik", "oyun", "resim", "sanat", "tarih"]);
   const model = sayacliModel(yanit("doga")), bulut = sahteBulut();
   const o = await tur(bulut, model, [aday(3)]);                         // gorselsizYayin varsayılan açık olsa bile zorunlu kategori bekler
   assert.equal(bulut.k.yayinlar.length, 0); assert.equal(o.gorselsiz, 0);
