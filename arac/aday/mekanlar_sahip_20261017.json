@@ -1,0 +1,992 @@
+[
+ {
+  "no": 1,
+  "sehir": "İstanbul",
+  "ad": "Atatürk Kültür Merkezi (AKM)",
+  "kategori": "Opera / tiyatro / konser / sergi",
+  "web": "https://akmistanbul.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 2,
+  "sehir": "İstanbul",
+  "ad": "Zorlu PSM",
+  "kategori": "Performans sanatları / konser / tiyatro",
+  "web": "https://www.zorlupsm.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 3,
+  "sehir": "İstanbul",
+  "ad": "Bostancı Gösteri Merkezi",
+  "kategori": "Gösteri / konser",
+  "web": "https://www.bostancigosteri.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 4,
+  "sehir": "İstanbul",
+  "ad": "Cemal Reşit Rey Konser Salonu",
+  "kategori": "Klasik müzik / konser",
+  "web": "https://crr.ibb.istanbul/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 5,
+  "sehir": "İstanbul",
+  "ad": "İş Sanat",
+  "kategori": "Konser / sahne sanatları",
+  "web": "https://issanat.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 6,
+  "sehir": "İstanbul",
+  "ad": "Volkswagen Arena",
+  "kategori": "Büyük konser / etkinlik",
+  "web": "https://www.volkswagenarena.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 7,
+  "sehir": "İstanbul",
+  "ad": "Maximum Uniq",
+  "kategori": "Gösteri / konser / tiyatro",
+  "web": "https://maximumuniq.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 8,
+  "sehir": "İstanbul",
+  "ad": "Harbiye Cemil Topuzlu Açıkhava Tiyatrosu",
+  "kategori": "Açıkhava konser / gösteri",
+  "web": "https://kultursanat.istanbul/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 9,
+  "sehir": "İstanbul",
+  "ad": "Kuruçeşme Açıkhava",
+  "kategori": "Açıkhava konser",
+  "web": "https://www.pollproduction.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 10,
+  "sehir": "İstanbul",
+  "ad": "Sabancı Gösteri Merkezi",
+  "kategori": "Gösteri / konser",
+  "web": "https://sgm.sabanciuniv.edu/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 11,
+  "sehir": "İstanbul",
+  "ad": "IF Performance Hall",
+  "kategori": "Canlı müzik / alternatif sahne",
+  "web": "https://www.ifperformance.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 12,
+  "sehir": "İstanbul",
+  "ad": "Dorock XL",
+  "kategori": "Canlı müzik / rock",
+  "web": "https://www.dorockxl.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 13,
+  "sehir": "İstanbul",
+  "ad": "Babylon",
+  "kategori": "Canlı müzik / konser",
+  "web": "https://babylon.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 14,
+  "sehir": "İstanbul",
+  "ad": "Blind İstanbul",
+  "kategori": "Canlı müzik / performans",
+  "web": "https://blindistanbul.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 15,
+  "sehir": "İstanbul",
+  "ad": "Salon İKSV",
+  "kategori": "Konser / bağımsız müzik",
+  "web": "https://saloniksv.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 16,
+  "sehir": "İstanbul",
+  "ad": "Klein",
+  "kategori": "Elektronik müzik / etkinlik",
+  "web": "https://klein-entertainment.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 17,
+  "sehir": "Türkiye (çok şubeli)",
+  "ad": "Jolly Joker",
+  "kategori": "Canlı müzik / konser",
+  "web": "https://www.jollyjoker.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 18,
+  "sehir": "İstanbul",
+  "ad": "Kadıköy Sahne",
+  "kategori": "Canlı müzik / performans",
+  "web": "https://www.kadikoysahne.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 19,
+  "sehir": "İstanbul",
+  "ad": "Bova",
+  "kategori": "Caz / canlı müzik",
+  "web": "https://bova.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 20,
+  "sehir": "İstanbul",
+  "ad": "Nardis Jazz Club",
+  "kategori": "Caz / canlı müzik",
+  "web": "https://nardisjazz.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 21,
+  "sehir": "İstanbul",
+  "ad": "Babajim",
+  "kategori": "Müzik / stüdyo / etkinlik",
+  "web": "https://www.babajim.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 22,
+  "sehir": "İstanbul",
+  "ad": "DasDas",
+  "kategori": "Tiyatro / konser / performans",
+  "web": "https://dasdas.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 23,
+  "sehir": "İstanbul",
+  "ad": "Moda Sahnesi",
+  "kategori": "Tiyatro / bağımsız sahne",
+  "web": "https://www.modasahnesi.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 24,
+  "sehir": "İstanbul",
+  "ad": "Oyun Atölyesi",
+  "kategori": "Tiyatro",
+  "web": "https://www.oyunatolyesi.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 25,
+  "sehir": "İstanbul",
+  "ad": "Kumbaracı50",
+  "kategori": "Bağımsız tiyatro",
+  "web": "https://www.kumbaraci50.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 26,
+  "sehir": "İstanbul",
+  "ad": "Garaj İstanbul",
+  "kategori": "Performans / tiyatro",
+  "web": "https://www.garajistanbul.org/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 27,
+  "sehir": "İstanbul",
+  "ad": "Baba Sahne",
+  "kategori": "Tiyatro",
+  "web": "https://www.babasahne.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 28,
+  "sehir": "İstanbul",
+  "ad": "Craft Tiyatro",
+  "kategori": "Tiyatro",
+  "web": "https://www.crafttiyatro.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 29,
+  "sehir": "İstanbul",
+  "ad": "İBB Şehir Tiyatroları",
+  "kategori": "Tiyatro kurumu / sahneler",
+  "web": "https://sehirtiyatrolari.ibb.istanbul/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 30,
+  "sehir": "Türkiye (çok şehirli)",
+  "ad": "Devlet Tiyatroları",
+  "kategori": "Tiyatro kurumu / sahneler",
+  "web": "https://www.devtiyatro.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 31,
+  "sehir": "Türkiye (çok şehirli)",
+  "ad": "Devlet Opera ve Balesi",
+  "kategori": "Opera / bale / sahneler",
+  "web": "https://www.operabale.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 32,
+  "sehir": "İstanbul",
+  "ad": "Haldun Taner Sahnesi",
+  "kategori": "Tiyatro",
+  "web": "https://sehirtiyatrolari.ibb.istanbul/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 33,
+  "sehir": "İstanbul",
+  "ad": "Alan Kadıköy",
+  "kategori": "Gösteri / kültür-sanat",
+  "web": "https://www.kadikoy.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 34,
+  "sehir": "İstanbul",
+  "ad": "Müze Gazhane",
+  "kategori": "Kültür / sergi / performans",
+  "web": "https://muzegazhane.istanbul/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 35,
+  "sehir": "İstanbul",
+  "ad": "Arter",
+  "kategori": "Çağdaş sanat / sergi",
+  "web": "https://www.arter.org.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 36,
+  "sehir": "İstanbul",
+  "ad": "İstanbul Modern",
+  "kategori": "Modern ve çağdaş sanat / sergi",
+  "web": "https://www.istanbulmodern.org/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 37,
+  "sehir": "İstanbul",
+  "ad": "SALT Galata",
+  "kategori": "Sergi / araştırma / kültür",
+  "web": "https://saltonline.org/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 38,
+  "sehir": "İstanbul",
+  "ad": "Pera Müzesi",
+  "kategori": "Müze / sergi",
+  "web": "https://www.peramuzesi.org.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 39,
+  "sehir": "İstanbul",
+  "ad": "Borusan Contemporary",
+  "kategori": "Çağdaş sanat / sergi",
+  "web": "https://www.borusancontemporary.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 40,
+  "sehir": "İstanbul",
+  "ad": "Sakıp Sabancı Müzesi",
+  "kategori": "Müze / sergi",
+  "web": "https://sakipsabancimuzesi.org/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 41,
+  "sehir": "İstanbul",
+  "ad": "Yapı Kredi Kültür Sanat",
+  "kategori": "Sergi / söyleşi / kültür",
+  "web": "https://yapikredikultursanat.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 42,
+  "sehir": "İstanbul",
+  "ad": "İstanbul Kültür Sanat Vakfı (İKSV)",
+  "kategori": "Festival / kültür-sanat",
+  "web": "https://iksv.org/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 43,
+  "sehir": "İstanbul",
+  "ad": "İstanbul Sanat – Haliç Tersanesi",
+  "kategori": "Sergi / kültür-sanat",
+  "web": "https://istanbulsanat.istanbul/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 44,
+  "sehir": "İstanbul",
+  "ad": "Kibele Sanat Galerisi",
+  "kategori": "Sanat galerisi / sergi",
+  "web": "https://issanat.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 45,
+  "sehir": "İstanbul",
+  "ad": "Mine Sanat Galerisi",
+  "kategori": "Sanat galerisi / sergi",
+  "web": "https://www.minesanat.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 46,
+  "sehir": "İstanbul",
+  "ad": "İstanbul Resim ve Heykel Müzesi",
+  "kategori": "Müze / sergi",
+  "web": "https://resimheykel.ktb.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 47,
+  "sehir": "İstanbul",
+  "ad": "Elgiz Müzesi",
+  "kategori": "Çağdaş sanat / sergi",
+  "web": "https://www.elgizmuseum.org/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 48,
+  "sehir": "İstanbul",
+  "ad": "Depo İstanbul",
+  "kategori": "Çağdaş sanat / sergi",
+  "web": "https://www.depoistanbul.net/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 49,
+  "sehir": "İstanbul",
+  "ad": "Mixer",
+  "kategori": "Çağdaş sanat galerisi",
+  "web": "https://www.mixerarts.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 50,
+  "sehir": "İstanbul",
+  "ad": "Dirimart",
+  "kategori": "Çağdaş sanat galerisi",
+  "web": "https://www.dirimart.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 51,
+  "sehir": "İstanbul",
+  "ad": "Anna Laudel",
+  "kategori": "Sanat galerisi / sergi",
+  "web": "https://annalaudel.gallery/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 52,
+  "sehir": "İstanbul",
+  "ad": "Gallery Nev İstanbul",
+  "kategori": "Sanat galerisi / sergi",
+  "web": "https://www.gallerynevistanbul.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 53,
+  "sehir": "İstanbul",
+  "ad": "Artİstanbul Feshane",
+  "kategori": "Sergi / kültür-sanat",
+  "web": "https://kultursanat.istanbul/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 54,
+  "sehir": "İstanbul",
+  "ad": "Bağlarbaşı Kültür Merkezi",
+  "kategori": "Kültür merkezi / sahne",
+  "web": "https://www.uskudar.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 55,
+  "sehir": "İstanbul",
+  "ad": "Barış Manço Kültür Merkezi",
+  "kategori": "Kültür merkezi / sahne",
+  "web": "https://www.kadikoy.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 56,
+  "sehir": "İstanbul",
+  "ad": "Yeldeğirmeni Sanat",
+  "kategori": "Konser / kültür-sanat",
+  "web": "https://yeldegirmenisanat.kadikoy.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 57,
+  "sehir": "İstanbul",
+  "ad": "Caddebostan Kültür Merkezi",
+  "kategori": "Kültür merkezi / tiyatro / gösteri",
+  "web": "https://www.ckm.kadikoy.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 58,
+  "sehir": "İstanbul",
+  "ad": "Akatlar Kültür Merkezi",
+  "kategori": "Kültür merkezi / sahne",
+  "web": "https://www.besiktas.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 59,
+  "sehir": "İstanbul",
+  "ad": "Trump Sahne",
+  "kategori": "Tiyatro / gösteri",
+  "web": "https://www.trumpalisverismerkezi.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 60,
+  "sehir": "İstanbul",
+  "ad": "Profilo Kültür Merkezi",
+  "kategori": "Kültür / gösteri",
+  "web": "https://www.profiloavm.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 61,
+  "sehir": "İstanbul",
+  "ad": "Maltepe Türkan Saylan Kültür Merkezi",
+  "kategori": "Kültür merkezi / sahne",
+  "web": "https://www.maltepe.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 62,
+  "sehir": "İstanbul",
+  "ad": "Kartal Bülent Ecevit Kültür Merkezi",
+  "kategori": "Kültür merkezi / sahne",
+  "web": "https://www.kartal.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 63,
+  "sehir": "İstanbul",
+  "ad": "Cem Karaca Kültür Merkezi",
+  "kategori": "Kültür merkezi / sahne",
+  "web": "https://www.bakirkoy.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 64,
+  "sehir": "İstanbul",
+  "ad": "Yunus Emre Kültür Merkezi",
+  "kategori": "Kültür merkezi / sahne",
+  "web": "https://www.bakirkoy.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 65,
+  "sehir": "İstanbul",
+  "ad": "Şişli Cemil Candaş Kent Kültür Merkezi",
+  "kategori": "Kültür merkezi / sahne",
+  "web": "https://www.sisli.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 66,
+  "sehir": "İstanbul",
+  "ad": "Üsküdar Nevmekân Sahil",
+  "kategori": "Kültür / sergi / etkinlik",
+  "web": "https://www.uskudar.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 67,
+  "sehir": "İstanbul",
+  "ad": "Kâğıthane Sadabad Sahnesi",
+  "kategori": "Tiyatro / sahne",
+  "web": "https://sehirtiyatrolari.ibb.istanbul/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 68,
+  "sehir": "İstanbul",
+  "ad": "Üsküdar Kerem Yılmazer Sahnesi",
+  "kategori": "Tiyatro / sahne",
+  "web": "https://sehirtiyatrolari.ibb.istanbul/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 69,
+  "sehir": "İstanbul",
+  "ad": "KüçükÇiftlik Park",
+  "kategori": "Açıkhava konser / etkinlik",
+  "web": "https://www.kucukciftlikpark.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 70,
+  "sehir": "Türkiye (çok şehirli)",
+  "ad": "Türkiye Kültür Yolu Festivalleri",
+  "kategori": "Festival / kültür-sanat",
+  "web": "https://kulturyolufestivalleri.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 71,
+  "sehir": "Ankara",
+  "ad": "CSO Ada Ankara",
+  "kategori": "Konser / klasik müzik / kültür",
+  "web": "https://csoadaankara.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 72,
+  "sehir": "Ankara",
+  "ad": "CerModern",
+  "kategori": "Çağdaş sanat / sergi / etkinlik",
+  "web": "https://www.cermodern.org/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 73,
+  "sehir": "Ankara",
+  "ad": "MEB Şura Salonu",
+  "kategori": "Konser / gösteri",
+  "web": "https://www.meb.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 74,
+  "sehir": "Ankara",
+  "ad": "ATO Congresium",
+  "kategori": "Kongre / konser / etkinlik",
+  "web": "https://www.congresium.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 75,
+  "sehir": "Ankara",
+  "ad": "Bilkent Odeon",
+  "kategori": "Açıkhava konser / etkinlik",
+  "web": "https://www.bilkent.edu.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 76,
+  "sehir": "Ankara",
+  "ad": "Ankara Devlet Opera ve Balesi",
+  "kategori": "Opera / bale",
+  "web": "https://www.operabale.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 77,
+  "sehir": "Ankara",
+  "ad": "Ankara Devlet Tiyatrosu",
+  "kategori": "Tiyatro",
+  "web": "https://www.devtiyatro.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 78,
+  "sehir": "Ankara",
+  "ad": "Nazım Hikmet Kültür Merkezi Ankara",
+  "kategori": "Kültür / sahne",
+  "web": "https://www.nazimhikmetkulturmerkezi.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 79,
+  "sehir": "Ankara",
+  "ad": "Jolly Joker Ankara",
+  "kategori": "Canlı müzik / konser",
+  "web": "https://www.jollyjoker.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 80,
+  "sehir": "Ankara",
+  "ad": "IF Performance Hall Ankara",
+  "kategori": "Canlı müzik / alternatif sahne",
+  "web": "https://www.ifperformance.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 81,
+  "sehir": "İzmir",
+  "ad": "Ahmed Adnan Saygun Sanat Merkezi",
+  "kategori": "Konser / sanat merkezi",
+  "web": "https://www.aassm.org.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 82,
+  "sehir": "İzmir",
+  "ad": "İzmir Kültür Sanat Fabrikası",
+  "kategori": "Sergi / kültür-sanat",
+  "web": "https://kulturportali.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 83,
+  "sehir": "İzmir",
+  "ad": "İzmir Devlet Opera ve Balesi",
+  "kategori": "Opera / bale",
+  "web": "https://www.operabale.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 84,
+  "sehir": "İzmir",
+  "ad": "İzmir Devlet Tiyatrosu",
+  "kategori": "Tiyatro",
+  "web": "https://www.devtiyatro.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 85,
+  "sehir": "İzmir",
+  "ad": "İzmir Arena",
+  "kategori": "Konser / etkinlik",
+  "web": "https://www.izmirarena.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 86,
+  "sehir": "İzmir",
+  "ad": "Bostanlı Suat Taşer Tiyatrosu",
+  "kategori": "Tiyatro / gösteri",
+  "web": "https://www.karsiyaka.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 87,
+  "sehir": "İzmir",
+  "ad": "İzmir Sanat",
+  "kategori": "Kültür / sanat etkinlikleri",
+  "web": "https://www.izmir.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 88,
+  "sehir": "İzmir",
+  "ad": "Hangout PSM",
+  "kategori": "Konser / performans",
+  "web": "https://www.hangout.com.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 89,
+  "sehir": "İzmir",
+  "ad": "Kültürpark Açıkhava Tiyatrosu",
+  "kategori": "Açıkhava tiyatro / konser",
+  "web": "https://www.izmir.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 90,
+  "sehir": "Antalya",
+  "ad": "Antalya Atatürk Kültür Merkezi",
+  "kategori": "Kültür / sahne",
+  "web": "https://www.antalya.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 91,
+  "sehir": "Antalya",
+  "ad": "Antalya Açıkhava",
+  "kategori": "Açıkhava konser / gösteri",
+  "web": "https://www.pollproduction.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 92,
+  "sehir": "Bursa",
+  "ad": "Merinos Atatürk Kongre ve Kültür Merkezi",
+  "kategori": "Kongre / kültür / sahne",
+  "web": "https://www.merinosakkm.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 93,
+  "sehir": "Bursa",
+  "ad": "Bursa Tayyare Kültür Merkezi",
+  "kategori": "Kültür / tiyatro / gösteri",
+  "web": "https://www.bursa.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 94,
+  "sehir": "Eskişehir",
+  "ad": "Eskişehir Atatürk Kültür Sanat ve Kongre Merkezi",
+  "kategori": "Kültür / sahne",
+  "web": "https://www.eskisehir.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 95,
+  "sehir": "Adana",
+  "ad": "Çukurova Üniversitesi Açıkhava Tiyatrosu",
+  "kategori": "Açıkhava tiyatro / etkinlik",
+  "web": "https://www.cu.edu.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 96,
+  "sehir": "Adana",
+  "ad": "Adana Büyükşehir Belediyesi Tiyatro Salonu",
+  "kategori": "Tiyatro / sahne",
+  "web": "https://www.adana.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 97,
+  "sehir": "Mersin",
+  "ad": "Mersin Yenişehir Atatürk Kültür Merkezi",
+  "kategori": "Kültür / sahne",
+  "web": "https://www.mersin.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 98,
+  "sehir": "Mersin",
+  "ad": "Mersin Devlet Opera ve Balesi",
+  "kategori": "Opera / bale",
+  "web": "https://www.operabale.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 99,
+  "sehir": "Gaziantep",
+  "ad": "Şahinbey Kongre ve Sanat Merkezi",
+  "kategori": "Kongre / kültür / sahne",
+  "web": "https://www.sahinbey.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 100,
+  "sehir": "Konya",
+  "ad": "Selçuklu Kongre Merkezi",
+  "kategori": "Kongre / konser / gösteri",
+  "web": "https://www.selcuklukongremerkezi.com/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 101,
+  "sehir": "Kayseri",
+  "ad": "Kadir Has Kültür ve Sanat Merkezi",
+  "kategori": "Kültür / sahne",
+  "web": "https://www.kayseri.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 102,
+  "sehir": "Trabzon",
+  "ad": "Karadeniz Teknik Üniversitesi Atatürk Kültür Merkezi",
+  "kategori": "Kültür / sahne",
+  "web": "https://www.ktu.edu.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 103,
+  "sehir": "Samsun",
+  "ad": "Samsun Atatürk Kültür Merkezi",
+  "kategori": "Kültür / sahne",
+  "web": "https://www.samsun.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 104,
+  "sehir": "Denizli",
+  "ad": "Denizli Büyükşehir Belediyesi Kongre ve Kültür Merkezi",
+  "kategori": "Kongre / kültür / sahne",
+  "web": "https://www.denizli.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 105,
+  "sehir": "Diyarbakır",
+  "ad": "Sezai Karakoç Kültür ve Kongre Merkezi",
+  "kategori": "Kültür / kongre / sahne",
+  "web": "https://www.diyarbakir.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 106,
+  "sehir": "Erzurum",
+  "ad": "Erzurum Necip Fazıl Kısakürek Kültür Merkezi",
+  "kategori": "Kültür / sahne",
+  "web": "https://www.erzurum.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 107,
+  "sehir": "Sakarya",
+  "ad": "Serdivan Kültür ve Kongre Merkezi",
+  "kategori": "Kültür / kongre / sahne",
+  "web": "https://www.serdivan.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 108,
+  "sehir": "Kocaeli",
+  "ad": "Kocaeli Kongre Merkezi",
+  "kategori": "Kongre / konser / etkinlik",
+  "web": "https://www.kocaeli.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 109,
+  "sehir": "Muğla",
+  "ad": "Bodrum Antik Tiyatro",
+  "kategori": "Tarihi açıkhava sahnesi",
+  "web": "https://muze.gov.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ },
+ {
+  "no": 110,
+  "sehir": "Muğla",
+  "ad": "Marmaris Amfi Tiyatro",
+  "kategori": "Açıkhava konser / gösteri",
+  "web": "https://www.marmaris.bel.tr/",
+  "instagram": "",
+  "not": "Bağlantı ve güncel faaliyet ayrıca kontrol edilmeli"
+ }
+]

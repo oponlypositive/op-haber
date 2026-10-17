@@ -2,7 +2,7 @@
 // OP haber hattı: kaynakları tara -> görülenleri ele -> ön eleme -> ÖZEL İŞLER (alıntı/gökbilim, ayrı bütçe) -> doğrulama -> model ile yaz -> görsel -> haber-yukle.
 // Çalıştırma: `node hat.mjs` (gerçek; ortam değişkenleri gerekir)  |  `node hat.mjs --kuru` (model ve yayın yok, salt okuma).
 // Günlüğe başlık ya da gizli değer yazılmaz (depo herkese açık; Actions günlükleri de görünür). --kuru yerelde örnek başlık gösterir.
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { ayarOku } from "./lib/ayar.mjs";
@@ -25,6 +25,7 @@ import { onSinifAsamasi, onSinifOzetMetni } from "./lib/on_sinif.mjs";
 import { sonOkuma, sonOkumaOzetMetni } from "./lib/son_okuma.mjs";
 import { ETKINLIK_DEFTER_ANAHTARI, etkinlikAyniMi, etkinlikDefterKaydi, etkinlikDefteriTemizle, etkinlikSuresiDoldu } from "./lib/etkinlik.mjs";
 import { etkinlikKonumlari, konumOzetMetni } from "./lib/etkinlik_konum.mjs";
+import { mekanEtkinlikTuru, mekanOzetMetni } from "./lib/mekan_etkinlik.mjs";
 import { durumOkuGuvenli, durumYazGuvenli } from "./lib/mufredat.mjs";
 import { gorselZorunluMu, sunucuRedTuru } from "./lib/gorsel_zorunlu.mjs";
 
@@ -77,7 +78,7 @@ function modelSarmala(model, { ayar, bekleFn, simdi, sayac }) {
 }
 
 /** Bir tur. Bağımlılıklar parametreyle gelir (testte taklit edilir). -> özet nesnesi */
-export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama, bot = null }) {
+export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fetchFn = fetch, bekleFn = dur, simdi = () => Date.now(), log = console.log, tarama, bot = null, mekanlar = null }) {
   const baslangic = simdi();
   const ozet = { aday: 0, yeniAday: 0, ayniOlay: 0, etkinlik: 0, etkinlikRet: {}, hayvanAday: 0, yerli: { aday: 0, onEleme: 0, yayin: 0 }, gnews: { aday: 0, cozulen: 0, cozHata: 0, atlanan: 0 }, onElemeGecen: 0, elenen: 0, bekleyenKaynak: 0, kategoriKapali: 0, bekleyenGorsel: 0, yayinlanan: 0, haberYayin: 0, bekleyenYayin: 0, eskiSay: 0, gorselsiz: 0, skorKart: 0, skorKartTur: { tek: 0, liste: 0, puan: 0 }, ozneGorsel: 0, vlRet: {}, gorselKaynak: {}, gorselTur: {}, gorselSureMs: 0, gorselSureAsim: 0, vlCagri: 0, modelCagri: 0, kota: 0, sureSn: 0,
     red: { uygunDegil: 0, rakam: 0, dil: 0, filtre: 0, diger: 0 }, redKodlari: {}, durus: "tamam", ornekBaslik: [], ozel: null, bot: null, alanYayin: {}, gorselZorunlu: { bekletilen: 0, atlanan: 0 }, gorselAtlananDersler: [], kategoriUyari: [],
@@ -428,6 +429,11 @@ export async function turCalistir({ ayar, kaynaklar, bulut, model: hamModel, fet
     } catch (e) { log(`yayın atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 80)}`); }
   }
   if (etkinlikDefteri?.yeni.length) await durumYazGuvenli(bulut, ETKINLIK_DEFTER_ANAHTARI, { k: [...etkinlikDefteri.liste, ...etkinlikDefteri.yeni].slice(-300), z: new Date(simdi()).toISOString() });
+  // MEKÂN ETKİNLİKLERİ (sahip 2026-10-17): mekânların kendi sitelerinden olgusal etkinlik; günde mekân başına 1 tarama, tur başına <=15 mekân. Hata turu aksatmaz.
+  if (ayar.mekanEtkinlik !== false && !ayar.kuru && Array.isArray(mekanlar) && mekanlar.length) {
+    try { ozet.mekanEtkinlik = await mekanEtkinlikTuru({ mekanlar, bulut, fetchFn, bekleFn, simdi, tavan: ayar.mekanTurUst ?? 15, sureSn: ayar.mekanSureSn ?? 240, istekUst: ayar.mekanIstekUst ?? 100, log }); }
+    catch (e) { log(`mekân etkinlik taraması atlandı (beklenmeyen hata): ${String(e.message || e).slice(0, 60)}`); }
+  }
   await bitir();
   ozet.vlCagri = sayac.vl;
   ozet.sureSn = Math.round((simdi() - baslangic) / 1000);
@@ -444,7 +450,7 @@ export function ozetSatiri(o) {
   const digerKirilim = Object.entries(o.redKodlari || {}).filter(([k]) => !["uygun-degil", "rakam", "dil", "filtre"].includes(k)).map(([k, v]) => `${k}:${v}`).join(",");
   const kirilim = (m) => Object.entries(m || {}).map(([k, v]) => `${k}:${v}`).join(",");
   const ek = (o.yerli ? ` yerli=${o.yerli.yayin}/${o.haberYayin ?? 0}(aday=${o.yerli.aday},onEleme=${o.yerli.onEleme})` : "") +
-    (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.kategoriKapali !== undefined ? ` kategoriKapali=${o.kategoriKapali}` : "") + (o.etkinlik !== undefined ? ` etkinlik=${o.etkinlik}` : "") + (Object.keys(o.etkinlikRet || {}).length ? ` etkinlikRet=${kirilim(o.etkinlikRet)}` : "") + (o.etkinlikKonum ? ` etkinlikKonum=${konumOzetMetni(o.etkinlikKonum)}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
+    (o.ayniOlay !== undefined ? ` ayniOlay=${o.ayniOlay}` : "") + (o.kategoriKapali !== undefined ? ` kategoriKapali=${o.kategoriKapali}` : "") + (o.etkinlik !== undefined ? ` etkinlik=${o.etkinlik}` : "") + (Object.keys(o.etkinlikRet || {}).length ? ` etkinlikRet=${kirilim(o.etkinlikRet)}` : "") + (o.etkinlikKonum ? ` etkinlikKonum=${konumOzetMetni(o.etkinlikKonum)}` : "") + (o.mekanEtkinlik && o.mekanEtkinlik.taranan ? ` mekanEtkinlik=${mekanOzetMetni(o.mekanEtkinlik)}` : "") + (o.hayvanAday ? ` hayvanAday=${o.hayvanAday}` : "") +
     (o.gnews && (o.gnews.aday || o.gnews.cozulen || o.gnews.cozHata) ? ` gnews=aday:${o.gnews.aday},cozulen:${o.gnews.cozulen},cozHata:${o.gnews.cozHata},atlanan:${o.gnews.atlanan}` : "") +
     (o.skorKart ? ` skorKart=tek:${o.skorKartTur?.tek ?? o.skorKart},liste:${o.skorKartTur?.liste ?? 0},puan:${o.skorKartTur?.puan ?? 0}` : "") + (o.ozel ? ` ozel=${ozelOzetMetni(o.ozel)}` : "") + (o.ozel?.mufredatOzet ? ` mufredat=${o.ozel.mufredatOzet}` : "") + (o.ozel?.planOzet ? ` plan=${o.ozel.planOzet}` : "") + botOzetMetni(o.bot) +
     (Object.keys(o.alanYayin || {}).length ? ` alanYayin=${Object.entries(o.alanYayin).map(([k, v]) => `${k}:${v}`).join(",")}` : "") +
@@ -474,7 +480,11 @@ async function main() {
   try {
     const taramaArg = process.argv.slice(2).find((x) => x.startsWith("--tarama="));            // yalnız --kuru ile: önceden kaydedilmiş tarama (çevrimdışı deneme; ağ isteği yok)
     const tarama = ayar.kuru && taramaArg ? JSON.parse(readFileSync(taramaArg.slice(9), "utf8")) : undefined;
-    const o = await turCalistir({ ayar, kaynaklar, bulut, model, tarama, bot });
+    const mekanDosya = join(burasi, "arac", "mekanlar.json");
+    const kaynakDosya = join(burasi, "arac", "etkinlik_kaynaklari.json");      // resmî kurum/kamu kaynakları (lisansı okunmuş, aktif:true olanlar)
+    const oku = (d, alan) => (existsSync(d) ? JSON.parse(readFileSync(d, "utf8"))[alan] || [] : []);
+    const mekanlar = !ayar.kuru ? [...oku(mekanDosya, "mekanlar"), ...oku(kaynakDosya, "kaynaklar")] : null;      // keşif çıktısı (arac/mekan_kesif.mjs); yoksa mekân taraması yok
+    const o = await turCalistir({ ayar, kaynaklar, bulut, model, tarama, bot, mekanlar });
     console.log(ozetSatiri(o));
     if (ayar.kuru) { console.log("[kuru] model ve yayın TAKLİT: hiçbir çağrı yapılmadı. Örnek başlıklar:"); o.ornekBaslik.forEach((b) => console.log("  - " + b));
       const oz = o.ozel;

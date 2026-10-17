@@ -1,0 +1,1844 @@
+{
+ "surum": 1,
+ "olusturma": "2026-10-17T12:27:04.777Z",
+ "mekanlar": [
+  {
+   "id": "ataturk-kultur-merkezi-akm",
+   "no": 1,
+   "ad": "Atatürk Kültür Merkezi (AKM)",
+   "il": "İstanbul",
+   "web": "https://akmistanbul.gov.tr/",
+   "kategori": "Opera / tiyatro / konser / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:08:08.649Z"
+  },
+  {
+   "id": "zorlu-psm",
+   "no": 2,
+   "ad": "Zorlu PSM",
+   "il": "İstanbul",
+   "web": "https://www.zorlupsm.com/",
+   "kategori": "Performans sanatları / konser / tiyatro",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:08:28.356Z",
+   "koordinat": {
+    "enlem": 41.06764,
+    "boylam": 29.01664
+   }
+  },
+  {
+   "id": "bostanci-gosteri-merkezi",
+   "no": 3,
+   "ad": "Bostancı Gösteri Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.bostancigosteri.com.tr/",
+   "kategori": "Gösteri / konser",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:38:15.359Z",
+   "koordinat": {
+    "enlem": 40.95677,
+    "boylam": 29.10231
+   }
+  },
+  {
+   "id": "cemal-resit-rey-konser-salonu",
+   "no": 4,
+   "ad": "Cemal Reşit Rey Konser Salonu",
+   "il": "İstanbul",
+   "web": "https://crr.ibb.istanbul/",
+   "kategori": "Klasik müzik / konser",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:38:19.358Z",
+   "koordinat": {
+    "enlem": 41.04806,
+    "boylam": 28.99
+   }
+  },
+  {
+   "id": "is-sanat",
+   "no": 5,
+   "ad": "İş Sanat",
+   "il": "İstanbul",
+   "web": "https://issanat.com.tr/",
+   "kategori": "Konser / sahne sanatları",
+   "etkinlik_sayfasi": "https://issanat.com.tr/",
+   "sayfalar": [
+    "https://issanat.com.tr/"
+   ],
+   "yontem": "jsonld",
+   "ham_olay": 8,
+   "kesif_zaman": "2026-10-17T11:38:26.758Z",
+   "koordinat": {
+    "enlem": 41.08201,
+    "boylam": 29.01204
+   },
+   "ilk_tarama": {
+    "ham": 8,
+    "gecerli": 5,
+    "sayfa": 1
+   }
+  },
+  {
+   "id": "volkswagen-arena",
+   "no": 6,
+   "ad": "Volkswagen Arena",
+   "il": "İstanbul",
+   "web": "https://www.volkswagenarena.com.tr/",
+   "kategori": "Büyük konser / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:38:37.783Z",
+   "koordinat": {
+    "enlem": 41.10873,
+    "boylam": 29.00768
+   }
+  },
+  {
+   "id": "maximum-uniq",
+   "no": 7,
+   "ad": "Maximum Uniq",
+   "il": "İstanbul",
+   "web": "https://maximumuniq.com.tr/",
+   "kategori": "Gösteri / konser / tiyatro",
+   "etkinlik_sayfasi": "https://maximumuniq.com.tr/etkinlik/aydinlikevler-uniq-hall",
+   "sayfalar": [
+    "https://maximumuniq.com.tr/etkinlik/aydinlikevler-uniq-hall"
+   ],
+   "yontem": "jsonld",
+   "ham_olay": 1,
+   "kesif_zaman": "2026-10-17T11:38:43.368Z",
+   "ilk_tarama": {
+    "ham": 1,
+    "gecerli": 0,
+    "sayfa": 1
+   }
+  },
+  {
+   "id": "harbiye-cemil-topuzlu-acikhava-tiyatrosu",
+   "no": 8,
+   "ad": "Harbiye Cemil Topuzlu Açıkhava Tiyatrosu",
+   "il": "İstanbul",
+   "web": "https://kultursanat.istanbul/",
+   "kategori": "Açıkhava konser / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:08:38.643Z",
+   "koordinat": {
+    "enlem": 41.04583,
+    "boylam": 28.99028
+   }
+  },
+  {
+   "id": "kurucesme-acikhava",
+   "no": 9,
+   "ad": "Kuruçeşme Açıkhava",
+   "il": "İstanbul",
+   "web": "https://www.pollproduction.com/",
+   "kategori": "Açıkhava konser",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:08:52.625Z"
+  },
+  {
+   "id": "sabanci-gosteri-merkezi",
+   "no": 10,
+   "ad": "Sabancı Gösteri Merkezi",
+   "il": "İstanbul",
+   "web": "https://sgm.sabanciuniv.edu/",
+   "kategori": "Gösteri / konser",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:09:02.589Z",
+   "koordinat": {
+    "enlem": 40.8925,
+    "boylam": 29.375
+   }
+  },
+  {
+   "id": "if-performance-hall",
+   "no": 11,
+   "ad": "IF Performance Hall",
+   "il": "İstanbul",
+   "web": "https://www.ifperformance.com/",
+   "kategori": "Canlı müzik / alternatif sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:09:22.448Z",
+   "koordinat": {
+    "enlem": 41.04438,
+    "boylam": 29.0066
+   }
+  },
+  {
+   "id": "dorock-xl",
+   "no": 12,
+   "ad": "Dorock XL",
+   "il": "İstanbul",
+   "web": "https://www.dorockxl.com/",
+   "kategori": "Canlı müzik / rock",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:09:28.412Z",
+   "koordinat": {
+    "enlem": 40.98956,
+    "boylam": 29.02253
+   }
+  },
+  {
+   "id": "babylon",
+   "no": 13,
+   "ad": "Babylon",
+   "il": "İstanbul",
+   "web": "https://babylon.com.tr/",
+   "kategori": "Canlı müzik / konser",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:09:38.478Z"
+  },
+  {
+   "id": "blind-istanbul",
+   "no": 14,
+   "ad": "Blind İstanbul",
+   "il": "İstanbul",
+   "web": "https://blindistanbul.com/",
+   "kategori": "Canlı müzik / performans",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:39:31.449Z"
+  },
+  {
+   "id": "salon-iksv",
+   "no": 15,
+   "ad": "Salon İKSV",
+   "il": "İstanbul",
+   "web": "https://saloniksv.com/",
+   "kategori": "Konser / bağımsız müzik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:baska-site",
+   "kesif_zaman": "2026-10-17T11:39:36.318Z",
+   "koordinat": {
+    "enlem": 41.02839,
+    "boylam": 28.97194
+   }
+  },
+  {
+   "id": "klein",
+   "no": 16,
+   "ad": "Klein",
+   "il": "İstanbul",
+   "web": "https://klein-entertainment.com/",
+   "kategori": "Elektronik müzik / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:09:48.637Z",
+   "koordinat": {
+    "enlem": 41.04567,
+    "boylam": 28.98604
+   }
+  },
+  {
+   "id": "jolly-joker",
+   "no": 17,
+   "ad": "Jolly Joker",
+   "il": "",
+   "sehir_notu": "Türkiye (çok şubeli)",
+   "web": "https://www.jollyjoker.com.tr/",
+   "kategori": "Canlı müzik / konser",
+   "etkinlik_sayfasi": "https://vadistanbul.jollyjoker.com.tr/etkinlik/UD28Z/ayta-sozeri/2026-10-17",
+   "sayfalar": [
+    "https://vadistanbul.jollyjoker.com.tr/etkinlik/UD28Z/ayta-sozeri/2026-10-17"
+   ],
+   "yontem": "jsonld",
+   "ham_olay": 1,
+   "kesif_zaman": "2026-10-17T11:56:57.533Z",
+   "ilk_tarama": {
+    "ham": 1,
+    "gecerli": 0,
+    "sayfa": 1
+   }
+  },
+  {
+   "id": "kadikoy-sahne",
+   "no": 18,
+   "ad": "Kadıköy Sahne",
+   "il": "İstanbul",
+   "web": "https://www.kadikoysahne.com/",
+   "kategori": "Canlı müzik / performans",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:baska-site",
+   "kesif_zaman": "2026-10-17T11:39:56.124Z",
+   "koordinat": {
+    "enlem": 40.99034,
+    "boylam": 29.0278
+   }
+  },
+  {
+   "id": "bova",
+   "no": 19,
+   "ad": "Bova",
+   "il": "İstanbul",
+   "web": "https://bova.com.tr/",
+   "kategori": "Caz / canlı müzik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:39:59.556Z",
+   "koordinat": {
+    "enlem": 41.03613,
+    "boylam": 28.98155
+   }
+  },
+  {
+   "id": "nardis-jazz-club",
+   "no": 20,
+   "ad": "Nardis Jazz Club",
+   "il": "İstanbul",
+   "web": "https://nardisjazz.com/",
+   "kategori": "Caz / canlı müzik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:10:10.982Z",
+   "koordinat": {
+    "enlem": 41.02533,
+    "boylam": 28.97392
+   }
+  },
+  {
+   "id": "babajim",
+   "no": 21,
+   "ad": "Babajim",
+   "il": "İstanbul",
+   "web": "https://www.babajim.com/",
+   "kategori": "Müzik / stüdyo / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:40:13.471Z"
+  },
+  {
+   "id": "dasdas",
+   "no": 22,
+   "ad": "DasDas",
+   "il": "İstanbul",
+   "web": "https://dasdas.com.tr/",
+   "kategori": "Tiyatro / konser / performans",
+   "etkinlik_sayfasi": "https://www.dasdas.com.tr/",
+   "sayfalar": [
+    "https://www.dasdas.com.tr/",
+    "https://www.dasdas.com.tr/program?city=atasehir",
+    "https://www.dasdas.com.tr/program?city=istinyepark"
+   ],
+   "yontem": "jsonld",
+   "ham_olay": 2,
+   "kesif_zaman": "2026-10-17T12:10:24.584Z",
+   "koordinat": {
+    "enlem": 40.99403,
+    "boylam": 29.12511
+   },
+   "detay": true,
+   "site_haritalari": [],
+   "detay_ornek": [
+    "https://www.dasdas.com.tr/event/sersem-kocanin-kurnaz-karisi",
+    "https://www.dasdas.com.tr/event/joseph-k"
+   ],
+   "ilk_tarama": {
+    "ham": 4,
+    "gecerli": 3,
+    "sayfa": 7
+   }
+  },
+  {
+   "id": "moda-sahnesi",
+   "no": 23,
+   "ad": "Moda Sahnesi",
+   "il": "İstanbul",
+   "web": "https://www.modasahnesi.com/",
+   "kategori": "Tiyatro / bağımsız sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:10:37.976Z",
+   "koordinat": {
+    "enlem": 40.987,
+    "boylam": 29.02864
+   }
+  },
+  {
+   "id": "oyun-atolyesi",
+   "no": 24,
+   "ad": "Oyun Atölyesi",
+   "il": "İstanbul",
+   "web": "https://www.oyunatolyesi.com/",
+   "kategori": "Tiyatro",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:10:43.069Z",
+   "koordinat": {
+    "enlem": 40.9863,
+    "boylam": 29.02589
+   }
+  },
+  {
+   "id": "kumbaraci50",
+   "no": 25,
+   "ad": "Kumbaracı50",
+   "il": "İstanbul",
+   "web": "https://www.kumbaraci50.com/",
+   "kategori": "Bağımsız tiyatro",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:11:05.344Z"
+  },
+  {
+   "id": "garaj-istanbul",
+   "no": 26,
+   "ad": "Garaj İstanbul",
+   "il": "İstanbul",
+   "web": "https://www.garajistanbul.org/",
+   "kategori": "Performans / tiyatro",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:41:00.384Z"
+  },
+  {
+   "id": "baba-sahne",
+   "no": 27,
+   "ad": "Baba Sahne",
+   "il": "İstanbul",
+   "web": "https://www.babasahne.com/",
+   "kategori": "Tiyatro",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:11:23.506Z",
+   "koordinat": {
+    "enlem": 40.9875,
+    "boylam": 29.02794
+   }
+  },
+  {
+   "id": "craft-tiyatro",
+   "no": 28,
+   "ad": "Craft Tiyatro",
+   "il": "İstanbul",
+   "web": "https://www.crafttiyatro.com/",
+   "kategori": "Tiyatro",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:The operation was aborted due ",
+   "kesif_zaman": "2026-10-17T11:41:32.387Z"
+  },
+  {
+   "id": "ibb-sehir-tiyatrolari",
+   "no": 29,
+   "ad": "İBB Şehir Tiyatroları",
+   "il": "İstanbul",
+   "web": "https://sehirtiyatrolari.ibb.istanbul/",
+   "kategori": "Tiyatro kurumu / sahneler",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:11:43.209Z"
+  },
+  {
+   "id": "devlet-tiyatrolari",
+   "no": 30,
+   "ad": "Devlet Tiyatroları",
+   "il": "",
+   "sehir_notu": "Türkiye (çok şehirli)",
+   "web": "https://www.devtiyatro.gov.tr/",
+   "kategori": "Tiyatro kurumu / sahneler",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:11:53.434Z"
+  },
+  {
+   "id": "devlet-opera-ve-balesi",
+   "no": 31,
+   "ad": "Devlet Opera ve Balesi",
+   "il": "",
+   "sehir_notu": "Türkiye (çok şehirli)",
+   "web": "https://www.operabale.gov.tr/",
+   "kategori": "Opera / bale / sahneler",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:11:59.208Z"
+  },
+  {
+   "id": "haldun-taner-sahnesi",
+   "no": 32,
+   "ad": "Haldun Taner Sahnesi",
+   "il": "İstanbul",
+   "web": "https://sehirtiyatrolari.ibb.istanbul/",
+   "kategori": "Tiyatro",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:12:17.207Z",
+   "koordinat": {
+    "enlem": 40.9918,
+    "boylam": 29.0232
+   }
+  },
+  {
+   "id": "alan-kadikoy",
+   "no": 33,
+   "ad": "Alan Kadıköy",
+   "il": "İstanbul",
+   "web": "https://www.kadikoy.bel.tr/",
+   "kategori": "Gösteri / kültür-sanat",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:12:28.999Z",
+   "koordinat": {
+    "enlem": 41.00513,
+    "boylam": 29.03704
+   }
+  },
+  {
+   "id": "muze-gazhane",
+   "no": 34,
+   "ad": "Müze Gazhane",
+   "il": "İstanbul",
+   "web": "https://muzegazhane.istanbul/",
+   "kategori": "Kültür / sergi / performans",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:12:50.462Z",
+   "koordinat": {
+    "enlem": 40.9975,
+    "boylam": 29.04333
+   }
+  },
+  {
+   "id": "arter",
+   "no": 35,
+   "ad": "Arter",
+   "il": "İstanbul",
+   "web": "https://www.arter.org.tr/",
+   "kategori": "Çağdaş sanat / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:13:04.892Z",
+   "koordinat": {
+    "enlem": 41.0409,
+    "boylam": 28.9787
+   }
+  },
+  {
+   "id": "istanbul-modern",
+   "no": 36,
+   "ad": "İstanbul Modern",
+   "il": "İstanbul",
+   "web": "https://www.istanbulmodern.org/",
+   "kategori": "Modern ve çağdaş sanat / sergi",
+   "etkinlik_sayfasi": "https://www.istanbulmodern.org/",
+   "sayfalar": [
+    "https://www.istanbulmodern.org/",
+    "https://www.istanbulmodern.org/sergi",
+    "https://www.istanbulmodern.org/programlar"
+   ],
+   "yontem": "jsonld",
+   "ham_olay": 2,
+   "kesif_zaman": "2026-10-17T12:13:16.888Z",
+   "koordinat": {
+    "enlem": 41.026,
+    "boylam": 28.98294
+   },
+   "detay": true,
+   "site_haritalari": [],
+   "detay_ornek": [
+    "https://www.istanbulmodern.org/sergi/ayni-mavinin-altinda",
+    "https://www.istanbulmodern.org/sergi/panorama-hayaller-ve-yerler"
+   ],
+   "ilk_tarama": {
+    "ham": 4,
+    "gecerli": 2,
+    "sayfa": 7
+   }
+  },
+  {
+   "id": "salt-galata",
+   "no": 37,
+   "ad": "SALT Galata",
+   "il": "İstanbul",
+   "web": "https://saltonline.org/",
+   "kategori": "Sergi / araştırma / kültür",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:13:30.528Z",
+   "koordinat": {
+    "enlem": 41.02391,
+    "boylam": 28.97316
+   }
+  },
+  {
+   "id": "pera-muzesi",
+   "no": 38,
+   "ad": "Pera Müzesi",
+   "il": "İstanbul",
+   "web": "https://www.peramuzesi.org.tr/",
+   "kategori": "Müze / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:13:48.858Z",
+   "koordinat": {
+    "enlem": 41.03181,
+    "boylam": 28.97519
+   }
+  },
+  {
+   "id": "borusan-contemporary",
+   "no": 39,
+   "ad": "Borusan Contemporary",
+   "il": "İstanbul",
+   "web": "https://www.borusancontemporary.com/",
+   "kategori": "Çağdaş sanat / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:13:58.605Z",
+   "koordinat": {
+    "enlem": 41.08904,
+    "boylam": 29.05663
+   }
+  },
+  {
+   "id": "sakip-sabanci-muzesi",
+   "no": 40,
+   "ad": "Sakıp Sabancı Müzesi",
+   "il": "İstanbul",
+   "web": "https://sakipsabancimuzesi.org/",
+   "kategori": "Müze / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:14:20.764Z",
+   "koordinat": {
+    "enlem": 41.09912,
+    "boylam": 29.0537
+   }
+  },
+  {
+   "id": "yapi-kredi-kultur-sanat",
+   "no": 41,
+   "ad": "Yapı Kredi Kültür Sanat",
+   "il": "İstanbul",
+   "web": "https://yapikredikultursanat.com/",
+   "kategori": "Sergi / söyleşi / kültür",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:43:06.360Z"
+  },
+  {
+   "id": "istanbul-kultur-sanat-vakfi-iksv",
+   "no": 42,
+   "ad": "İstanbul Kültür Sanat Vakfı (İKSV)",
+   "il": "İstanbul",
+   "web": "https://iksv.org/",
+   "kategori": "Festival / kültür-sanat",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:14:39.044Z"
+  },
+  {
+   "id": "istanbul-sanat-halic-tersanesi",
+   "no": 43,
+   "ad": "İstanbul Sanat – Haliç Tersanesi",
+   "il": "İstanbul",
+   "web": "https://istanbulsanat.istanbul/",
+   "kategori": "Sergi / kültür-sanat",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:43:19.775Z"
+  },
+  {
+   "id": "kibele-sanat-galerisi",
+   "no": 44,
+   "ad": "Kibele Sanat Galerisi",
+   "il": "İstanbul",
+   "web": "https://issanat.com.tr/",
+   "kategori": "Sanat galerisi / sergi",
+   "etkinlik_sayfasi": "https://issanat.com.tr/",
+   "sayfalar": [
+    "https://issanat.com.tr/"
+   ],
+   "yontem": "jsonld",
+   "ham_olay": 8,
+   "kesif_zaman": "2026-10-17T11:43:25.142Z",
+   "ilk_tarama": {
+    "ham": 8,
+    "gecerli": 5,
+    "sayfa": 1
+   }
+  },
+  {
+   "id": "mine-sanat-galerisi",
+   "no": 45,
+   "ad": "Mine Sanat Galerisi",
+   "il": "İstanbul",
+   "web": "https://www.minesanat.com/",
+   "kategori": "Sanat galerisi / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:15:00.984Z"
+  },
+  {
+   "id": "istanbul-resim-ve-heykel-muzesi",
+   "no": 46,
+   "ad": "İstanbul Resim ve Heykel Müzesi",
+   "il": "İstanbul",
+   "web": "https://resimheykel.ktb.gov.tr/",
+   "kategori": "Müze / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:43:37.602Z",
+   "koordinat": {
+    "enlem": 41.02785,
+    "boylam": 28.9843
+   }
+  },
+  {
+   "id": "elgiz-muzesi",
+   "no": 47,
+   "ad": "Elgiz Müzesi",
+   "il": "İstanbul",
+   "web": "https://www.elgizmuseum.org/",
+   "kategori": "Çağdaş sanat / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:15:23.181Z",
+   "koordinat": {
+    "enlem": 41.10983,
+    "boylam": 29.02044
+   }
+  },
+  {
+   "id": "depo-istanbul",
+   "no": 48,
+   "ad": "Depo İstanbul",
+   "il": "İstanbul",
+   "web": "https://www.depoistanbul.net/",
+   "kategori": "Çağdaş sanat / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:15:34.816Z"
+  },
+  {
+   "id": "mixer",
+   "no": 49,
+   "ad": "Mixer",
+   "il": "İstanbul",
+   "web": "https://www.mixerarts.com/",
+   "kategori": "Çağdaş sanat galerisi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:15:44.201Z",
+   "koordinat": {
+    "enlem": 41.02858,
+    "boylam": 28.9797
+   }
+  },
+  {
+   "id": "dirimart",
+   "no": 50,
+   "ad": "Dirimart",
+   "il": "İstanbul",
+   "web": "https://www.dirimart.com/",
+   "kategori": "Çağdaş sanat galerisi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:16:09.105Z"
+  },
+  {
+   "id": "anna-laudel",
+   "no": 51,
+   "ad": "Anna Laudel",
+   "il": "İstanbul",
+   "web": "https://annalaudel.gallery/",
+   "kategori": "Sanat galerisi / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "robots-gecikme",
+   "kesif_zaman": "2026-10-17T11:44:15.580Z"
+  },
+  {
+   "id": "gallery-nev-istanbul",
+   "no": 52,
+   "ad": "Gallery Nev İstanbul",
+   "il": "İstanbul",
+   "web": "https://www.gallerynevistanbul.com/",
+   "kategori": "Sanat galerisi / sergi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:44:18.308Z"
+  },
+  {
+   "id": "artistanbul-feshane",
+   "no": 53,
+   "ad": "Artİstanbul Feshane",
+   "il": "İstanbul",
+   "web": "https://kultursanat.istanbul/",
+   "kategori": "Sergi / kültür-sanat",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:16:17.219Z",
+   "koordinat": {
+    "enlem": 41.04405,
+    "boylam": 28.93754
+   }
+  },
+  {
+   "id": "baglarbasi-kultur-merkezi",
+   "no": 54,
+   "ad": "Bağlarbaşı Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.uskudar.bel.tr/",
+   "kategori": "Kültür merkezi / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:16:35.032Z",
+   "koordinat": {
+    "enlem": 41.02437,
+    "boylam": 29.03357
+   }
+  },
+  {
+   "id": "baris-manco-kultur-merkezi",
+   "no": 55,
+   "ad": "Barış Manço Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.kadikoy.bel.tr/",
+   "kategori": "Kültür merkezi / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:16:45.047Z"
+  },
+  {
+   "id": "yeldegirmeni-sanat",
+   "no": 56,
+   "ad": "Yeldeğirmeni Sanat",
+   "il": "İstanbul",
+   "web": "https://yeldegirmenisanat.kadikoy.bel.tr/",
+   "kategori": "Konser / kültür-sanat",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:17:04.991Z",
+   "koordinat": {
+    "enlem": 40.99641,
+    "boylam": 29.02784
+   }
+  },
+  {
+   "id": "caddebostan-kultur-merkezi",
+   "no": 57,
+   "ad": "Caddebostan Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.ckm.kadikoy.bel.tr/",
+   "kategori": "Kültür merkezi / tiyatro / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:44:49.040Z",
+   "koordinat": {
+    "enlem": 40.96748,
+    "boylam": 29.0647
+   }
+  },
+  {
+   "id": "akatlar-kultur-merkezi",
+   "no": 58,
+   "ad": "Akatlar Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.besiktas.bel.tr/",
+   "kategori": "Kültür merkezi / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:17:16.844Z",
+   "koordinat": {
+    "enlem": 41.08042,
+    "boylam": 29.02776
+   }
+  },
+  {
+   "id": "trump-sahne",
+   "no": 59,
+   "ad": "Trump Sahne",
+   "il": "İstanbul",
+   "web": "https://www.trumpalisverismerkezi.com/",
+   "kategori": "Tiyatro / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:17:26.399Z"
+  },
+  {
+   "id": "profilo-kultur-merkezi",
+   "no": 60,
+   "ad": "Profilo Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.profiloavm.com.tr/",
+   "kategori": "Kültür / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:45:05.046Z"
+  },
+  {
+   "id": "maltepe-turkan-saylan-kultur-merkezi",
+   "no": 61,
+   "ad": "Maltepe Türkan Saylan Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.maltepe.bel.tr/",
+   "kategori": "Kültür merkezi / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:17:46.663Z"
+  },
+  {
+   "id": "kartal-bulent-ecevit-kultur-merkezi",
+   "no": 62,
+   "ad": "Kartal Bülent Ecevit Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.kartal.bel.tr/",
+   "kategori": "Kültür merkezi / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:45:17.060Z"
+  },
+  {
+   "id": "cem-karaca-kultur-merkezi",
+   "no": 63,
+   "ad": "Cem Karaca Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.bakirkoy.bel.tr/",
+   "kategori": "Kültür merkezi / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:18:05.433Z"
+  },
+  {
+   "id": "yunus-emre-kultur-merkezi",
+   "no": 64,
+   "ad": "Yunus Emre Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.bakirkoy.bel.tr/",
+   "kategori": "Kültür merkezi / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:18:23.496Z",
+   "koordinat": {
+    "enlem": 40.98884,
+    "boylam": 28.84863
+   }
+  },
+  {
+   "id": "sisli-cemil-candas-kent-kultur-merkezi",
+   "no": 65,
+   "ad": "Şişli Cemil Candaş Kent Kültür Merkezi",
+   "il": "İstanbul",
+   "web": "https://www.sisli.bel.tr/",
+   "kategori": "Kültür merkezi / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:18:32.878Z"
+  },
+  {
+   "id": "uskudar-nevmekan-sahil",
+   "no": 66,
+   "ad": "Üsküdar Nevmekân Sahil",
+   "il": "İstanbul",
+   "web": "https://www.uskudar.bel.tr/",
+   "kategori": "Kültür / sergi / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:18:48.919Z"
+  },
+  {
+   "id": "kagithane-sadabad-sahnesi",
+   "no": 67,
+   "ad": "Kâğıthane Sadabad Sahnesi",
+   "il": "İstanbul",
+   "web": "https://sehirtiyatrolari.ibb.istanbul/",
+   "kategori": "Tiyatro / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:19:06.887Z",
+   "koordinat": {
+    "enlem": 41.07986,
+    "boylam": 28.97169
+   }
+  },
+  {
+   "id": "uskudar-kerem-yilmazer-sahnesi",
+   "no": 68,
+   "ad": "Üsküdar Kerem Yılmazer Sahnesi",
+   "il": "İstanbul",
+   "web": "https://sehirtiyatrolari.ibb.istanbul/",
+   "kategori": "Tiyatro / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:19:24.898Z"
+  },
+  {
+   "id": "kucukciftlik-park",
+   "no": 69,
+   "ad": "KüçükÇiftlik Park",
+   "il": "İstanbul",
+   "web": "https://www.kucukciftlikpark.com/",
+   "kategori": "Açıkhava konser / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:19:47.212Z",
+   "koordinat": {
+    "enlem": 41.04294,
+    "boylam": 28.993
+   }
+  },
+  {
+   "id": "turkiye-kultur-yolu-festivalleri",
+   "no": 70,
+   "ad": "Türkiye Kültür Yolu Festivalleri",
+   "il": "",
+   "sehir_notu": "Türkiye (çok şehirli)",
+   "web": "https://kulturyolufestivalleri.com/",
+   "kategori": "Festival / kültür-sanat",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:baska-site",
+   "kesif_zaman": "2026-10-17T11:46:09.931Z"
+  },
+  {
+   "id": "cso-ada-ankara",
+   "no": 71,
+   "ad": "CSO Ada Ankara",
+   "il": "Ankara",
+   "web": "https://csoadaankara.gov.tr/",
+   "kategori": "Konser / klasik müzik / kültür",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:46:13.129Z",
+   "koordinat": {
+    "enlem": 39.933,
+    "boylam": 32.85069
+   }
+  },
+  {
+   "id": "cermodern",
+   "no": 72,
+   "ad": "CerModern",
+   "il": "Ankara",
+   "web": "https://www.cermodern.org/",
+   "kategori": "Çağdaş sanat / sergi / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:19:57.035Z",
+   "koordinat": {
+    "enlem": 39.93164,
+    "boylam": 32.85004
+   }
+  },
+  {
+   "id": "meb-sura-salonu",
+   "no": 73,
+   "ad": "MEB Şura Salonu",
+   "il": "Ankara",
+   "web": "https://www.meb.gov.tr/",
+   "kategori": "Konser / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:20:06.928Z",
+   "koordinat": {
+    "enlem": 39.93611,
+    "boylam": 32.82511
+   }
+  },
+  {
+   "id": "ato-congresium",
+   "no": 74,
+   "ad": "ATO Congresium",
+   "il": "Ankara",
+   "web": "https://www.congresium.com/",
+   "kategori": "Kongre / konser / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:20:12.897Z",
+   "koordinat": {
+    "enlem": 39.91139,
+    "boylam": 32.80306
+   }
+  },
+  {
+   "id": "bilkent-odeon",
+   "no": 75,
+   "ad": "Bilkent Odeon",
+   "il": "Ankara",
+   "web": "https://www.bilkent.edu.tr/",
+   "kategori": "Açıkhava konser / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:20:31.736Z",
+   "koordinat": {
+    "enlem": 39.87553,
+    "boylam": 32.75287
+   }
+  },
+  {
+   "id": "ankara-devlet-opera-ve-balesi",
+   "no": 76,
+   "ad": "Ankara Devlet Opera ve Balesi",
+   "il": "Ankara",
+   "web": "https://www.operabale.gov.tr/",
+   "kategori": "Opera / bale",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:20:34.908Z",
+   "koordinat": {
+    "enlem": 39.93549,
+    "boylam": 32.85321
+   }
+  },
+  {
+   "id": "ankara-devlet-tiyatrosu",
+   "no": 77,
+   "ad": "Ankara Devlet Tiyatrosu",
+   "il": "Ankara",
+   "web": "https://www.devtiyatro.gov.tr/",
+   "kategori": "Tiyatro",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:20:40.987Z",
+   "koordinat": {
+    "enlem": 39.93846,
+    "boylam": 32.85325
+   }
+  },
+  {
+   "id": "nazim-hikmet-kultur-merkezi-ankara",
+   "no": 78,
+   "ad": "Nazım Hikmet Kültür Merkezi Ankara",
+   "il": "Ankara",
+   "web": "https://www.nazimhikmetkulturmerkezi.com/",
+   "kategori": "Kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:The operation was aborted due ",
+   "kesif_zaman": "2026-10-17T11:47:03.070Z"
+  },
+  {
+   "id": "jolly-joker-ankara",
+   "no": 79,
+   "ad": "Jolly Joker Ankara",
+   "il": "Ankara",
+   "web": "https://www.jollyjoker.com.tr/",
+   "kategori": "Canlı müzik / konser",
+   "etkinlik_sayfasi": "https://vadistanbul.jollyjoker.com.tr/etkinlik/UD28Z/ayta-sozeri/2026-10-17",
+   "sayfalar": [
+    "https://vadistanbul.jollyjoker.com.tr/etkinlik/UD28Z/ayta-sozeri/2026-10-17"
+   ],
+   "yontem": "jsonld",
+   "ham_olay": 1,
+   "kesif_zaman": "2026-10-17T11:57:06.663Z",
+   "koordinat": {
+    "enlem": 39.91464,
+    "boylam": 32.85826
+   },
+   "ilk_tarama": {
+    "ham": 1,
+    "gecerli": 0,
+    "sayfa": 1
+   }
+  },
+  {
+   "id": "if-performance-hall-ankara",
+   "no": 80,
+   "ad": "IF Performance Hall Ankara",
+   "il": "Ankara",
+   "web": "https://www.ifperformance.com/",
+   "kategori": "Canlı müzik / alternatif sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:20:58.974Z"
+  },
+  {
+   "id": "ahmed-adnan-saygun-sanat-merkezi",
+   "no": 81,
+   "ad": "Ahmed Adnan Saygun Sanat Merkezi",
+   "il": "İzmir",
+   "web": "https://www.aassm.org.tr/",
+   "kategori": "Konser / sanat merkezi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:21:18.950Z",
+   "koordinat": {
+    "enlem": 38.39694,
+    "boylam": 27.07833
+   }
+  },
+  {
+   "id": "izmir-kultur-sanat-fabrikasi",
+   "no": 82,
+   "ad": "İzmir Kültür Sanat Fabrikası",
+   "il": "İzmir",
+   "web": "https://kulturportali.gov.tr/",
+   "kategori": "Sergi / kültür-sanat",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T11:47:23.120Z",
+   "koordinat": {
+    "enlem": 38.43625,
+    "boylam": 27.14819
+   },
+   "aktif": false,
+   "neden": "robots.txt yapay zekâ/içerik kazıma botlarını yasaklıyor; kullanılmaz"
+  },
+  {
+   "id": "izmir-devlet-opera-ve-balesi",
+   "no": 83,
+   "ad": "İzmir Devlet Opera ve Balesi",
+   "il": "İzmir",
+   "web": "https://www.operabale.gov.tr/",
+   "kategori": "Opera / bale",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:21:22.915Z"
+  },
+  {
+   "id": "izmir-devlet-tiyatrosu",
+   "no": 84,
+   "ad": "İzmir Devlet Tiyatrosu",
+   "il": "İzmir",
+   "web": "https://www.devtiyatro.gov.tr/",
+   "kategori": "Tiyatro",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:21:28.916Z"
+  },
+  {
+   "id": "izmir-arena",
+   "no": 85,
+   "ad": "İzmir Arena",
+   "il": "İzmir",
+   "web": "https://www.izmirarena.com/",
+   "kategori": "Konser / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:21:47.074Z",
+   "koordinat": {
+    "enlem": 38.46498,
+    "boylam": 27.14485
+   }
+  },
+  {
+   "id": "bostanli-suat-taser-tiyatrosu",
+   "no": 86,
+   "ad": "Bostanlı Suat Taşer Tiyatrosu",
+   "il": "İzmir",
+   "web": "https://www.karsiyaka.bel.tr/",
+   "kategori": "Tiyatro / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:21:56.940Z"
+  },
+  {
+   "id": "izmir-sanat",
+   "no": 87,
+   "ad": "İzmir Sanat",
+   "il": "İzmir",
+   "web": "https://www.izmir.bel.tr/",
+   "kategori": "Kültür / sanat etkinlikleri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:22:06.929Z",
+   "koordinat": {
+    "enlem": 38.43003,
+    "boylam": 27.1467
+   }
+  },
+  {
+   "id": "hangout-psm",
+   "no": 88,
+   "ad": "Hangout PSM",
+   "il": "İzmir",
+   "web": "https://www.hangout.com.tr/",
+   "kategori": "Konser / performans",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:48:00.176Z"
+  },
+  {
+   "id": "kulturpark-acikhava-tiyatrosu",
+   "no": 89,
+   "ad": "Kültürpark Açıkhava Tiyatrosu",
+   "il": "İzmir",
+   "web": "https://www.izmir.bel.tr/",
+   "kategori": "Açıkhava tiyatro / konser",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:22:14.929Z",
+   "koordinat": {
+    "enlem": 38.42861,
+    "boylam": 27.14806
+   }
+  },
+  {
+   "id": "antalya-ataturk-kultur-merkezi",
+   "no": 90,
+   "ad": "Antalya Atatürk Kültür Merkezi",
+   "il": "Antalya",
+   "web": "https://www.antalya.bel.tr/",
+   "kategori": "Kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:22:25.005Z",
+   "koordinat": {
+    "enlem": 36.8859,
+    "boylam": 30.66846
+   }
+  },
+  {
+   "id": "antalya-acikhava",
+   "no": 91,
+   "ad": "Antalya Açıkhava",
+   "il": "Antalya",
+   "web": "https://www.pollproduction.com/",
+   "kategori": "Açıkhava konser / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:22:34.951Z"
+  },
+  {
+   "id": "merinos-ataturk-kongre-ve-kultur-merkezi",
+   "no": 92,
+   "ad": "Merinos Atatürk Kongre ve Kültür Merkezi",
+   "il": "Bursa",
+   "web": "https://www.merinosakkm.com/",
+   "kategori": "Kongre / kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:22:43.381Z"
+  },
+  {
+   "id": "bursa-tayyare-kultur-merkezi",
+   "no": 93,
+   "ad": "Bursa Tayyare Kültür Merkezi",
+   "il": "Bursa",
+   "web": "https://www.bursa.bel.tr/",
+   "kategori": "Kültür / tiyatro / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:23:03.066Z"
+  },
+  {
+   "id": "eskisehir-ataturk-kultur-sanat-ve-kongre-merkezi",
+   "no": 94,
+   "ad": "Eskişehir Atatürk Kültür Sanat ve Kongre Merkezi",
+   "il": "Eskişehir",
+   "web": "https://www.eskisehir.bel.tr/",
+   "kategori": "Kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:23:12.946Z"
+  },
+  {
+   "id": "cukurova-universitesi-acikhava-tiyatrosu",
+   "no": 95,
+   "ad": "Çukurova Üniversitesi Açıkhava Tiyatrosu",
+   "il": "Adana",
+   "web": "https://www.cu.edu.tr/",
+   "kategori": "Açıkhava tiyatro / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:23:22.961Z"
+  },
+  {
+   "id": "adana-buyuksehir-belediyesi-tiyatro-salonu",
+   "no": 96,
+   "ad": "Adana Büyükşehir Belediyesi Tiyatro Salonu",
+   "il": "Adana",
+   "web": "https://www.adana.bel.tr/",
+   "kategori": "Tiyatro / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:23:33.795Z",
+   "koordinat": {
+    "enlem": 36.99306,
+    "boylam": 35.32583
+   }
+  },
+  {
+   "id": "mersin-yenisehir-ataturk-kultur-merkezi",
+   "no": 97,
+   "ad": "Mersin Yenişehir Atatürk Kültür Merkezi",
+   "il": "Mersin",
+   "web": "https://www.mersin.bel.tr/",
+   "kategori": "Kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:23:43.795Z"
+  },
+  {
+   "id": "mersin-devlet-opera-ve-balesi",
+   "no": 98,
+   "ad": "Mersin Devlet Opera ve Balesi",
+   "il": "Mersin",
+   "web": "https://www.operabale.gov.tr/",
+   "kategori": "Opera / bale",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:23:47.664Z"
+  },
+  {
+   "id": "sahinbey-kongre-ve-sanat-merkezi",
+   "no": 99,
+   "ad": "Şahinbey Kongre ve Sanat Merkezi",
+   "il": "Gaziantep",
+   "web": "https://www.sahinbey.bel.tr/",
+   "kategori": "Kongre / kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:23:53.670Z",
+   "koordinat": {
+    "enlem": 37.01482,
+    "boylam": 37.35899
+   }
+  },
+  {
+   "id": "selcuklu-kongre-merkezi",
+   "no": 100,
+   "ad": "Selçuklu Kongre Merkezi",
+   "il": "Konya",
+   "web": "https://www.selcuklukongremerkezi.com/",
+   "kategori": "Kongre / konser / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "hata:fetch failed",
+   "kesif_zaman": "2026-10-17T11:49:16.335Z",
+   "koordinat": {
+    "enlem": 37.93658,
+    "boylam": 32.51231
+   }
+  },
+  {
+   "id": "kadir-has-kultur-ve-sanat-merkezi",
+   "no": 101,
+   "ad": "Kadir Has Kültür ve Sanat Merkezi",
+   "il": "Kayseri",
+   "web": "https://www.kayseri.bel.tr/",
+   "kategori": "Kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:24:13.671Z"
+  },
+  {
+   "id": "karadeniz-teknik-universitesi-ataturk-kultur-mer",
+   "no": 102,
+   "ad": "Karadeniz Teknik Üniversitesi Atatürk Kültür Merkezi",
+   "il": "Trabzon",
+   "web": "https://www.ktu.edu.tr/",
+   "kategori": "Kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:24:33.763Z"
+  },
+  {
+   "id": "samsun-ataturk-kultur-merkezi",
+   "no": 103,
+   "ad": "Samsun Atatürk Kültür Merkezi",
+   "il": "Samsun",
+   "web": "https://www.samsun.bel.tr/",
+   "kategori": "Kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "detay-olay-yok",
+   "kesif_zaman": "2026-10-17T12:24:55.768Z"
+  },
+  {
+   "id": "denizli-buyuksehir-belediyesi-kongre-ve-kultur-m",
+   "no": 104,
+   "ad": "Denizli Büyükşehir Belediyesi Kongre ve Kültür Merkezi",
+   "il": "Denizli",
+   "web": "https://www.denizli.bel.tr/",
+   "kategori": "Kongre / kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:25:05.679Z"
+  },
+  {
+   "id": "sezai-karakoc-kultur-ve-kongre-merkezi",
+   "no": 105,
+   "ad": "Sezai Karakoç Kültür ve Kongre Merkezi",
+   "il": "Diyarbakır",
+   "web": "https://www.diyarbakir.bel.tr/",
+   "kategori": "Kültür / kongre / sahne",
+   "etkinlik_sayfasi": "https://www.diyarbakir.bel.tr/",
+   "sayfalar": [
+    "https://www.diyarbakir.bel.tr/",
+    "https://www.diyarbakir.bel.tr/etkinlikler",
+    "https://www.diyarbakir.bel.tr/duyurular/basina-ve-kamuoyuna"
+   ],
+   "yontem": "jsonld",
+   "ham_olay": 2,
+   "kesif_zaman": "2026-10-17T12:25:17.831Z",
+   "detay": true,
+   "site_haritalari": [],
+   "detay_ornek": [
+    "https://www.diyarbakir.bel.tr/etkinlikler/dort-anne",
+    "https://www.diyarbakir.bel.tr/etkinlikler/hayat-ve-ask"
+   ],
+   "ilk_tarama": {
+    "ham": 4,
+    "gecerli": 4,
+    "sayfa": 7
+   }
+  },
+  {
+   "id": "erzurum-necip-fazil-kisakurek-kultur-merkezi",
+   "no": 106,
+   "ad": "Erzurum Necip Fazıl Kısakürek Kültür Merkezi",
+   "il": "Erzurum",
+   "web": "https://www.erzurum.bel.tr/",
+   "kategori": "Kültür / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:25:27.679Z"
+  },
+  {
+   "id": "serdivan-kultur-ve-kongre-merkezi",
+   "no": 107,
+   "ad": "Serdivan Kültür ve Kongre Merkezi",
+   "il": "Sakarya",
+   "web": "https://www.serdivan.bel.tr/",
+   "kategori": "Kültür / kongre / sahne",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:25:39.720Z"
+  },
+  {
+   "id": "kocaeli-kongre-merkezi",
+   "no": 108,
+   "ad": "Kocaeli Kongre Merkezi",
+   "il": "Kocaeli",
+   "web": "https://www.kocaeli.bel.tr/",
+   "kategori": "Kongre / konser / etkinlik",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:25:51.885Z"
+  },
+  {
+   "id": "bodrum-antik-tiyatro",
+   "no": 109,
+   "ad": "Bodrum Antik Tiyatro",
+   "il": "Muğla",
+   "web": "https://muze.gov.tr/",
+   "kategori": "Tarihi açıkhava sahnesi",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:25:57.803Z"
+  },
+  {
+   "id": "marmaris-amfi-tiyatro",
+   "no": 110,
+   "ad": "Marmaris Amfi Tiyatro",
+   "il": "Muğla",
+   "web": "https://www.marmaris.bel.tr/",
+   "kategori": "Açıkhava konser / gösteri",
+   "etkinlik_sayfasi": "",
+   "sayfalar": [],
+   "yontem": "yok",
+   "ham_olay": 0,
+   "yok_nedeni": "olay-yok",
+   "kesif_zaman": "2026-10-17T12:26:04.069Z"
+  }
+ ]
+}
