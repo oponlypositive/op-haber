@@ -1,4 +1,5 @@
 // Türkiye ağırlığı + Google News arama keşfi + saat dilimi (2026-10-13). Ağsız (sahte fetch + sahte model).
+import { baslikCesitle } from "./_yanit_cesit.mjs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -130,7 +131,7 @@ const TR = "Lakeside'daki komşular, üç hafta sonu boyunca nehir kıyısına 5
   "Genç ağaçlar kısa süre sonra, birçok ailenin her gün kullandığı yürüyüş yoluna gölge verecek. Parkta ayrıca herkese açık küçük bir alet kütüphanesi bulunuyor. " +
   "Bu, insanlar işi ve zamanı paylaştığında bir topluluğun birlikte neler başarabileceğinin sade bir örneği.";
 const OZET_KAYNAK = "Volunteers in Lakeside planted 5,000 trees along the river over three weekends. " + "Neighbors and local schools shared the work and a small tool library now serves the park. ".repeat(3);
-const yanit = () => JSON.stringify({ uygun: true, kategori: "iyilik", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } });
+const yanit = () => baslikCesitle(JSON.stringify({ uygun: true, kategori: "iyilik", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } }));
 const ayarKur = (ek = {}) => ({ ...ayarOku({}, []), geminiAnahtar: "k", geminiBeklemeMs: 0, sonOkuma: false, ozelAcik: false, gorselsizUst: 10, ...ek });
 function bulutKur(onceki = new Map()) {
   const k = { yayinlar: [], isaretler: [] };

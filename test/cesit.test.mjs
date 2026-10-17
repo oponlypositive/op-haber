@@ -1,4 +1,5 @@
 // Kaynak çeşitliliği (kurum/söyleşi/kişisel gelişim), Türkçe kalite (denetim + son okuma), alt konu etiketi, zamansız sınırı. Ağ yok; model taklit.
+import { baslikCesitle } from "./_yanit_cesit.mjs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -204,7 +205,7 @@ function taklit({ sonOkumaYaniti, sinif } = {}) {
   return { k, yaz: async (sistem, girdi) => {
     if (sistem === ON_SINIF_ISTEM) { k.sinif++; k.sinifGirdi = girdi; return { metin: JSON.stringify(girdi.split("\n").map((s) => ({ i: Number(s.split("|")[0]), uygun: true, puan: 8, alan: "doga", k: "yaban-hayati", neden: "ok", ...(sinif?.(s) || {}) }))), engellendi: "" }; }
     if (sistem === SON_OKUMA_ISTEM) { k.son++; if (sonOkumaYaniti) return sonOkumaYaniti(girdi); const n = (girdi.match(/### /g) || []).length; return { metin: JSON.stringify(Array.from({ length: n }, (_, i) => ({ i: i + 1, baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR.replace("komşular, üç", "komşular üç") }))), engellendi: "" }; }
-    k.yazim++; return { metin: YAZIM, engellendi: "" };
+    k.yazim++; return { metin: baslikCesitle(YAZIM), engellendi: "" };
   } };
 }
 const tur = (model, adaylar, ayarEk = {}, bulut = sahteBulut()) => turCalistir({ ayar: ayar(ayarEk), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama: { adaylar, hatalar: [] } }).then((o) => ({ o, bulut }));

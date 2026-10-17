@@ -1,4 +1,5 @@
 // 2026-10-13 canlı deneme sonrası: özne görseli, görselsiz yayın, bekleyenlerin görselsiz çıkışı, özel işlerin ayrı bütçesi/özeti, ret kodları, ön sıralama. Ağsız.
+import { baslikCesitle } from "./_yanit_cesit.mjs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { ayarOku } from "../lib/ayar.mjs";
@@ -20,7 +21,7 @@ const TR = "Lakeside'daki komşular, üç hafta sonu boyunca nehir kıyısına 5
   "Genç ağaçlar kısa süre sonra, birçok ailenin her gün kullandığı yürüyüş yoluna gölge verecek. Parkta ayrıca herkese açık küçük bir alet kütüphanesi bulunuyor. " +
   "Bu, insanlar işi ve zamanı paylaştığında bir topluluğun birlikte neler başarabileceğinin sade bir örneği.";
 const OZET_KAYNAK = "Volunteers in Lakeside planted 5,000 trees along the river over three weekends. " + "Neighbors and local schools shared the work and a small tool library now serves the park. ".repeat(3);
-const yanit = (ek = {}) => JSON.stringify({ uygun: true, kategori: "iyilik", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR }, ...ek });
+const yanit = (ek = {}) => baslikCesitle(JSON.stringify({ uygun: true, kategori: "iyilik", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR }, ...ek }));
 const ayar = (ek = {}) => ({ ...ayarOku({}, []), geminiAnahtar: "k", geminiBeklemeMs: 0, sonOkuma: false, ozelAcik: false, ...ek });
 const KONULAR = ["Volunteers plant thousands of trees beside Lakeside river", "Students build solar lantern library for village school", "Rescued hedgehog colony returns healthy to meadow", "Retired teachers teach coding to neighborhood children", "Young swimmer breaks regional record with homemade goggles", "Bakery shares free bread with night shift nurses", "Scientists grow coral nursery along restored reef", "Choir of grandparents records album for local hospital", "Cyclists collect thousands of books for rural libraries", "Garden club turns empty lot into butterfly meadow"];
 const aday = (n, ek = {}) => ({ baslik: `${KONULAR[n % KONULAR.length]} (${n})`, ozet: OZET_KAYNAK, link: `https://www.goodnewsnetwork.org/h/${n}`, kaynak: "goodnewsnetwork.org", dil: "en", zaman: "2026-10-13T08:00:00Z", kaynakGuvenilir: true, ...ek });
@@ -64,8 +65,15 @@ test("ozneSec: lisans, ad eşleşmesi, boyut, yasak kelime, arşiv elemesi; baş
 test("özne görsel kontrolü kabul tablosu: ozne_eslesiyor true + diğer altısı false; insan/yer alanları engel değil", () => {
   const tamam = { ...VL_OZNE_BEKLENEN, kisa_gerekce: "portre" };
   assert.equal(vlDegerlendir(JSON.stringify(tamam), { ozne: true }).ok, true);
-  // nötr yoldaki alanlar özne yolunda aranmaz / engel olmaz
-  assert.equal(vlDegerlendir(JSON.stringify({ ...tamam, taninabilir_yuz_baskin: true, kisi_grubu_poz: true, insan_ayirt_edilebilir: true, yer_ya_da_kurum_uyumsuz: true }), { ozne: true }).ok, true);
+  // nötr yoldaki alanlar (grup poz, ayırt edilebilir insan, yer) özne yolunda engel olmaz
+  assert.equal(vlDegerlendir(JSON.stringify({ ...tamam, kisi_grubu_poz: true, insan_ayirt_edilebilir: true, yer_ya_da_kurum_uyumsuz: true }), { ozne: true }).ok, true);
+  // ÖZEL KİŞİ YASAĞI (2026-10-17): kişi dışı özne yolunda baskın insan yüzü RET; kişi öznesinde baskın yüz yalnız "bu yüz haberdeki kişi" true ise kabul, belirsiz/eksik RET
+  assert.equal(vlDegerlendir(JSON.stringify({ ...tamam, taninabilir_yuz_baskin: true }), { ozne: true }).kod, "yuz");
+  assert.equal(vlDegerlendir(JSON.stringify({ ...tamam, taninabilir_yuz_baskin: true }), { ozne: true, kisi: true }).kod, "yuz-kisi");
+  assert.equal(vlDegerlendir(JSON.stringify({ ...tamam, taninabilir_yuz_baskin: true, yuz_haberdeki_kisi: false }), { ozne: true, kisi: true }).ok, false);
+  assert.equal(vlDegerlendir(JSON.stringify({ ...tamam, taninabilir_yuz_baskin: true, yuz_haberdeki_kisi: true }), { ozne: true, kisi: true }).ok, true);
+  assert.equal(vlDegerlendir(JSON.stringify({ ...tamam, taninabilir_yuz_baskin: false }), { ozne: true, kisi: true }).ok, true);
+  assert.equal(vlDegerlendir(JSON.stringify(tamam), { ozne: true, kisi: true }).kod, "eksik-alan");      // kişi öznesinde yüz alanı yoksa belirsiz = ret
   for (const k of Object.keys(VL_OZNE_BEKLENEN)) {
     const ters = { ...tamam, [k]: !VL_OZNE_BEKLENEN[k] };
     assert.equal(vlDegerlendir(JSON.stringify(ters), { ozne: true }).ok, false, k);
@@ -98,7 +106,7 @@ const fImg = async () => ({ ok: true, status: 200, headers: new Headers(), array
 test("gorselBul: özne adayı model onaylarsa özne görseli (ozne:true), nötr aramaya hiç gidilmez", async () => {
   const sorgular = [], vlSorulari = [];
   const araFn = async (q, tur) => { sorgular.push([q, tur]); return tur === "ozne" ? [cand({ baslik: "Simone Biles 2019.jpg", metin: "Simone Biles 2019.jpg", url: "https://u/biles" })] : []; };
-  const model = { yaz: async (s, g, o) => { vlSorulari.push(g); return vlYanit({ ...VL_OZNE_BEKLENEN, kisa_gerekce: "ok" }); } };
+  const model = { yaz: async (s, g, o) => { vlSorulari.push(g); return vlYanit({ ...VL_OZNE_BEKLENEN, taninabilir_yuz_baskin: false, kisa_gerekce: "ok" }); } };
   const r = await gorselBul(haberOzne, { model, araFn, fetchFn: fImg, bekleFn: async () => {} });
   assert.equal(r.sonuc.ozne, true);
   assert.equal(r.sonuc.gorsel.lisans, "CC BY-SA 4.0");

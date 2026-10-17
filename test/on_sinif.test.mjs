@@ -1,4 +1,5 @@
 // Toplu ön sınıflandırma: istem/ayrıştırma, yeniden deneme + yedek yol, sıralama, hat entegrasyonu, çağrı bütçesi ve özet satırı. Ağ yok; model taklit.
+import { baslikCesitle } from "./_yanit_cesit.mjs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { ayarOku } from "../lib/ayar.mjs";
@@ -125,7 +126,7 @@ function taklitModel(karar) {
       return yanit(girdi.split("\n").map((s) => { const [i, , , , , baslik] = s.split("|"); const d = karar(baslik); return { i: Number(i), uygun: d.uygun, puan: d.puan ?? 0, alan: "doga", neden: d.neden || "ok" }; }));
     }
     k.yazim++; k.yazilan.push(girdi.match(/BAŞLIK: (.*)/)[1]);
-    return { metin: YAZIM_YANITI, engellendi: "" };
+    return { metin: baslikCesitle(YAZIM_YANITI), engellendi: "" };
   } };
 }
 const tur = (model, adaylarListesi, ayarEk = {}, bulut = sahteBulut()) => turCalistir({ ayar: ayar(ayarEk), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama: { adaylar: adaylarListesi, hatalar: [] } }).then((o) => ({ o, bulut }));
@@ -149,7 +150,7 @@ test("hat: ön sınıf eleneni YAZMA çağrısı harcamaz, elendi:on-sinif:<nede
 
 test("hat: sınıflandırma çağrısı bozuksa 2 çağrı harcanır, sınıflandırmasız eski yolla yazım sürer (tur kırılmaz)", async () => {
   let sinif = 0, yazim = 0;
-  const model = { yaz: async (sistem) => { if (sistem === ON_SINIF_ISTEM) { sinif++; return { metin: "bozuk", engellendi: "" }; } yazim++; return { metin: YAZIM_YANITI, engellendi: "" }; } };
+  const model = { yaz: async (sistem) => { if (sistem === ON_SINIF_ISTEM) { sinif++; return { metin: "bozuk", engellendi: "" }; } yazim++; return { metin: baslikCesitle(YAZIM_YANITI), engellendi: "" }; } };
   const { o } = await tur(model, KONULAR.slice(0, 5).map((_, i) => mk(i)));
   assert.equal(sinif, 2); assert.equal(yazim, 5);
   assert.equal(o.onSinif.durum, "yedek");
@@ -164,7 +165,7 @@ test("hat: ON_SINIF_ADET=0 kapalı (çağrı yok); adet sınırı: yalnız ilk N
   assert.equal(kapali.k.sinif, 0); assert.equal(kapali.k.yazim, 5); assert.equal(r0.o.onSinif.durum, "kapali");
   assert.doesNotMatch(ozetSatiri(r0.o), /onSinif=/);
   const gorulen = [];
-  const m = { yaz: async (sistem, girdi) => { if (sistem === ON_SINIF_ISTEM) { gorulen.push(girdi.split("\n").length); return yanit(girdi.split("\n").map((s) => ({ i: Number(s.split("|")[0]), uygun: true, puan: 7, alan: "doga", neden: "ok" }))); } return { metin: YAZIM_YANITI, engellendi: "" }; } };
+  const m = { yaz: async (sistem, girdi) => { if (sistem === ON_SINIF_ISTEM) { gorulen.push(girdi.split("\n").length); return yanit(girdi.split("\n").map((s) => ({ i: Number(s.split("|")[0]), uygun: true, puan: 7, alan: "doga", neden: "ok" }))); } return { metin: baslikCesitle(YAZIM_YANITI), engellendi: "" }; } };
   const r1 = await tur(m, KONULAR.slice(0, 6).map((_, i) => mk(i)), { onSinifAdet: 4 });
   assert.deepEqual(gorulen, [4]);
   assert.equal(r1.o.onSinif.sorulan, 4);
@@ -176,7 +177,7 @@ test("hat: saklı yüklü bekleyen sınıflandırmaya girmez ve modelsiz yayınl
   const hash0 = (await import("../lib/rss.mjs")).baglantiOzeti("https://www.goodnewsnetwork.org/h/0");
   const onceki = new Map([[hash0, { ozet: hash0, durum: "bekliyor_gorsel", deneme: 1, yuk }]]);
   const sorulan = [];
-  const model = { yaz: async (sistem, girdi) => { if (sistem === ON_SINIF_ISTEM) { sorulan.push(girdi); return yanit(girdi.split("\n").map((s) => ({ i: Number(s.split("|")[0]), uygun: true, puan: 7, alan: "doga", neden: "ok" }))); } return { metin: YAZIM_YANITI, engellendi: "" }; } };
+  const model = { yaz: async (sistem, girdi) => { if (sistem === ON_SINIF_ISTEM) { sorulan.push(girdi); return yanit(girdi.split("\n").map((s) => ({ i: Number(s.split("|")[0]), uygun: true, puan: 7, alan: "doga", neden: "ok" }))); } return { metin: baslikCesitle(YAZIM_YANITI), engellendi: "" }; } };
   const { o, bulut } = await tur(model, KONULAR.slice(0, 4).map((_, i) => mk(i)), {}, sahteBulut(onceki));
   assert.equal(sorulan.length, 1);
   assert.equal(sorulan[0].split("\n").length, 3);                                // 4 aday - 1 saklı yük
@@ -196,7 +197,7 @@ test("hat: MODEL_CAGRI_UST sınıflandırma çağrısını da içerir", async ()
 
 test("hat: sınıflandırmada 429 = tur zarifçe biter (durus=kota), yazım çağrısı yapılmaz", async () => {
   let yazim = 0;
-  const model = { yaz: async (sistem) => { if (sistem === ON_SINIF_ISTEM) throw new KotaDoldu("429"); yazim++; return { metin: YAZIM_YANITI, engellendi: "" }; } };
+  const model = { yaz: async (sistem) => { if (sistem === ON_SINIF_ISTEM) throw new KotaDoldu("429"); yazim++; return { metin: baslikCesitle(YAZIM_YANITI), engellendi: "" }; } };
   const { o } = await tur(model, KONULAR.slice(0, 5).map((_, i) => mk(i)));
   assert.equal(o.durus, "kota"); assert.equal(yazim, 0); assert.equal(o.modelCagri, 1);
 });

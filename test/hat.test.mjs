@@ -15,6 +15,10 @@ const TR = "Lakeside'daki komşular, üç hafta sonu boyunca nehir kıyısına 5
   "Bu, insanlar işi ve zamanı paylaştığında bir topluluğun birlikte neler başarabileceğinin sade bir örneği.";
 const OZET_KAYNAK = "Volunteers in Lakeside planted 5,000 trees along the river over three weekends. " + "Neighbors and local schools shared the work and a small tool library now serves the park. ".repeat(3);
 const MODEL_YANITI = JSON.stringify({ uygun: true, kategori: "iyilik", yer: "Lakeside, Dünya", en: { baslik: "Neighbors plant 5000 trees by the river", ozet: EN }, tr: { baslik: "Komşular nehir kıyısına 5000 ağaç dikti", ozet: TR } });
+// Aynı başlıklı haber 48 saat içinde ikinci kez yayınlanmaz (ayni_olay baslik-ayni): sahte model her çağrıda FARKLI başlıklı (gerçek hayattaki gibi) yanıt verir.
+const EN_BAS = ["Neighbors", "Volunteers", "Families", "Students", "Children", "Villagers", "Teachers", "Cyclists", "Walkers"], TR_BAS = ["Komşular", "Gönüllüler", "Aileler", "Öğrenciler", "Çocuklar", "Köylüler", "Öğretmenler", "Bisikletçiler", "Yürüyüşçüler"];
+let yanitSay = 0;
+const yanitNo = () => { const d = JSON.parse(MODEL_YANITI), k = yanitSay++ % EN_BAS.length; d.en.baslik = d.en.baslik.replace("Neighbors", EN_BAS[k]); d.tr.baslik = d.tr.baslik.replace("Komşular", TR_BAS[k]); return JSON.stringify(d); };
 const KONULAR = ["Volunteers plant thousands of trees beside Lakeside river", "Students build solar lantern library for village school", "Rescued hedgehog colony returns healthy to meadow", "Retired teachers teach coding to neighborhood children", "Young swimmer breaks regional record with homemade goggles", "Bakery shares free bread with night shift nurses", "Scientists grow coral nursery along restored reef", "Choir of grandparents records album for local hospital", "Cyclists collect thousands of books for rural libraries", "Garden club turns empty lot into butterfly meadow", "Robotics club wins national award with recycling robot", "Fishermen rescue stranded dolphin calf near harbor", "Painters decorate children ward corridors", "Teen inventor designs low cost water filter"];
 const ayar = (ek = {}) => ({ ...ayarOku({}, []), geminiAnahtar: "k", geminiBeklemeMs: 0, sonOkuma: false, ...ek });
 const aday = (n, ek = {}) => ({ baslik: KONULAR[n % KONULAR.length] + ` (${n})`, ozet: OZET_KAYNAK, link: `https://www.goodnewsnetwork.org/h/${n}`, kaynak: "goodnewsnetwork.org", dil: "en", zaman: "2026-10-13T08:00:00Z", ...ek });
@@ -66,7 +70,7 @@ test("bulut istemcisi: anahtar başlıkta, 401'de tekrar yok, bilinenler haritas
 });
 
 test("tur: yeni haber yazılır, görselle yayınlanır, yayinlandi işaretlenir", async () => {
-  const bulut = sahteBulut(), model = { yaz: async () => ({ metin: MODEL_YANITI, engellendi: "", saglayici: "taklit" }) };
+  const bulut = sahteBulut(), model = { yaz: async () => ({ metin: yanitNo(), engellendi: "", saglayici: "taklit" }) };
   const tarama = { adaylar: [aday(1)], hatalar: [] };
   // görsel arama taklidi: gorselBul gerçek çağrı yapmasın diye araFn yerine fetch hep başarısız; bu yüzden GORSELSIZ_YAYIN ile yolu dene
   const o = await turCalistir({ ayar: ayar({ gorselsizYayin: true }), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama });
@@ -77,7 +81,7 @@ test("tur: yeni haber yazılır, görselle yayınlanır, yayinlandi işaretlenir
 });
 
 test("tur: görsel yoksa bekliyor_gorsel (yük saklanır), deneme sınırında elendi", async () => {
-  const model = { yaz: async () => ({ metin: MODEL_YANITI, engellendi: "", saglayici: "taklit" }) };
+  const model = { yaz: async () => ({ metin: yanitNo(), engellendi: "", saglayici: "taklit" }) };
   const bulut = sahteBulut();
   const o = await turCalistir({ ayar: ayar({ gorselsizYayin: false }), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {}, tarama: { adaylar: [aday(2)], hatalar: [] } });   // eski bekleme yolu (GORSELSIZ_YAYIN=0)
   assert.equal(o.bekleyenGorsel, 1);
@@ -120,7 +124,7 @@ test("tur: görülenler atlanır, hassas haber elenir, güvenilmeyen tek kaynak 
 });
 
 test("tur: tur başına en çok N yeni haber", async () => {
-  const model = { yaz: async () => ({ metin: MODEL_YANITI, engellendi: "", saglayici: "t" }) };
+  const model = { yaz: async () => ({ metin: yanitNo(), engellendi: "", saglayici: "t" }) };
   const bulut = sahteBulut();
   const o = await turCalistir({ ayar: ayar({ turBasinaEn: 2, gorselsizYayin: true, gorselsizUst: 9 }), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {},
     tarama: { adaylar: [aday(10), aday(11), aday(12), aday(13)], hatalar: [] } });
@@ -137,7 +141,7 @@ test("kuru mod: model ve yayın çağrılmaz", async () => {
 });
 
 test("tur: görselsiz yayın tur başına gorselsizUst ile sınırlı; fazlası bekliyor_gorsel", async () => {
-  const model = { yaz: async () => ({ metin: MODEL_YANITI, engellendi: "", saglayici: "t" }) };
+  const model = { yaz: async () => ({ metin: yanitNo(), engellendi: "", saglayici: "t" }) };
   const bulut = sahteBulut();
   const o = await turCalistir({ ayar: ayar({ turBasinaEn: 3, gorselsizYayin: true, gorselsizUst: 1 }), kaynaklar: {}, bulut, model, fetchFn, bekleFn: async () => {}, simdi: () => SIMDI, log: () => {},
     tarama: { adaylar: [aday(10), aday(11), aday(12)], hatalar: [] } });

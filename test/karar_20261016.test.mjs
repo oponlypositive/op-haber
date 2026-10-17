@@ -148,7 +148,7 @@ test("branş: Commons dosyası başka branşı gösteriyorsa (TBSL, BSL, EuroLea
 const jpeg = () => { const u = new Uint8Array(2500); u.set([0xff, 0xd8, 0xff, 0xc0, 0, 0x11, 8, 4, 0, 6, 0, 3], 0); return u; };
 const fImg = async () => ({ ok: true, status: 200, headers: new Headers(), arrayBuffer: async () => jpeg().buffer });
 const cand = (ek) => ({ baslik: "x.jpg", metin: "x", lisans: "CC BY-SA 4.0", w: 1280, h: 850, yil: 2019, yaratici: "Foto", url: "https://u/" + Math.random(), kaynak_url: "https://c/wiki", saglayici: "wikimedia", ...ek });
-const vlOk = () => ({ sorular: [], yaz: async function (s, g) { this.sorular.push(g); return { metin: JSON.stringify({ ...VL_OZNE_BEKLENEN, kisa_gerekce: "ok" }) }; } });
+const vlOk = () => ({ sorular: [], yaz: async function (s, g) { this.sorular.push(g); return { metin: JSON.stringify({ ...VL_OZNE_BEKLENEN, taninabilir_yuz_baskin: false, kisa_gerekce: "ok" }) }; } });
 
 test("branş: özne araması (ozneSec) başka branşın takım/oyuncu fotoğrafını ELER", () => {
   const basket = cand({ baslik: "Berkay Candan 32 Bursaspor MB TBSL 2022.jpg", metin: "Berkay Candan 32 Bursaspor MB TBSL 2022.jpg Bursaspor Basketbol" });

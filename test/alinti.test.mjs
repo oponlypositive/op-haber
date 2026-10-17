@@ -98,11 +98,19 @@ test("alıntı süzgeçleri: din, siyaset, savaş, ölüm ret; ton umutlu; çevi
   const kabul = alintiUygun(mk(iyi, "I, 3 (tr. George Long)"), "felsefe", cev);
   assert.equal(kabul.ok, true); assert.equal(kabul.cevirmen, "George Long");
   assert.equal(alintiUygun(mk(iyi, "Variant: tr. George Long", { tumKaynak: "" }), "felsefe", cev).ok, false, "Variant satırındaki çevirmen sayılmaz");
-  // şiir: 2-6 dize
-  const siir = "A little madness in the spring\nIs wholesome even for the king";
-  assert.equal(alintiUygun(mk(siir, "Poem (1861)"), "siir", { olum: 1886 }).ok, true);
+  // şiir (2026-10-17): 2 dize çok kısa -> bir kıta / anlam bütünü: 4-12 dize, 90-900 karakter
+  const kita = "I shot an arrow into the air,\nIt fell to earth, I knew not where;\nFor, so swiftly it flew, the sight\nCould not follow it in its flight.";
+  assert.equal(alintiUygun(mk(kita, "Poem (1845)"), "siir", { olum: 1882 }).ok, true);
+  assert.equal(alintiUygun(mk(kita, "Poem (1845)"), "siir", { olum: 1882 }).siir, true);
+  assert.equal(alintiUygun(mk("A little madness in the spring\nIs wholesome even for the king", "Poem (1861)"), "siir", { olum: 1886 }).ok, false, "2 dize artık kısa");
+  assert.equal(alintiUygun(mk(kita.split("\n").slice(0, 3).join("\n"), "Poem (1845)"), "siir", { olum: 1882 }).ok, false, "3 dize kısa");
   assert.equal(alintiUygun(mk("One single line of a poem that is far too short for a poem quote in our rules", "P (1861)"), "siir", { olum: 1886 }).ok, false);
-  assert.equal(alintiUygun(mk(Array(8).fill("A short line of a poem about spring").join("\n"), "P (1861)"), "siir", { olum: 1886 }).ok, false);
+  assert.equal(alintiUygun(mk(Array(8).fill("A short line of a poem about spring").join("\n"), "P (1861)"), "siir", { olum: 1886 }).ok, true, "8 dize kabul");
+  assert.equal(alintiUygun(mk(Array(13).fill("A short line of a poem about spring").join("\n"), "P (1861)"), "siir", { olum: 1886 }).ok, false, "13 dize çok uzun");
+  // edebiyatta şiir biçimli (4-12 kısa satır) alıntı da kıta olarak işlenir; düzyazı çok satırlı hâlâ ret
+  const edb = alintiUygun(mk(kita, "Poem (1845)"), "edebiyat", { olum: 1882 });
+  assert.equal(edb.ok, true); assert.equal(edb.siir, true);
+  assert.equal(alintiUygun(mk("A plain prose sentence about the garden in spring that is long enough to count as one.\nAnother plain prose sentence about the river that goes on for a good while longer than the first.", "Novel (1850)"), "edebiyat", { olum: 1882 }).ok, false);
 });
 
 test("antik eser: `*` satırı özgün dil, ilk `**` satırı İngilizce çeviri; telifsiz çevirmen şart", () => {

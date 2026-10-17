@@ -9,7 +9,7 @@ import { gorselBul, vlDegerlendir, VL_OZNE_BEKLENEN } from "../lib/gorsel.mjs";
 import { ozetSatiri, turCalistir } from "../hat.mjs";
 
 const jpeg = () => { const u = new Uint8Array(2500); u.set([0xff, 0xd8, 0xff, 0xc0, 0, 0x11, 8, 4, 0, 6, 0, 3], 0); return u; };
-const vlOzneOk = { ...VL_OZNE_BEKLENEN, kisa_gerekce: "ok" };
+const vlOzneOk = { ...VL_OZNE_BEKLENEN, taninabilir_yuz_baskin: false, kisa_gerekce: "ok" };   // 2026-10-17: kişi öznesinde yüz alanı zorunlu (özel kişi yasağı)
 const yanit = (o) => ({ metin: JSON.stringify(o) });
 const bekle = async () => {};
 
@@ -155,7 +155,7 @@ const DUNYA = { varliklar: [
 const GERCEK = [
   ["Es Devlin sergisi: sanatçı fotoğrafı (kişi) ilk aday", haber(), [{ tur: "kisi", ad_en: "Es Devlin" }, { tur: "mekan", ad_en: "Design Museum", sehir: "London" }], "kisi", "Es Devlin in Studio.jpg"],
   ["Es Devlin sergisi: sanatçı bulunamazsa müze (mekan)", haber({ en: { baslik: "Exhibition by Es Devlin opens at the Design Museum", ozet: "The show fills the gallery in London." } }), [{ tur: "kisi", ad_en: "Hiç Bulunmayan Kişi" }, { tur: "mekan", ad_en: "Design Museum", sehir: "London" }], "mekan", "Design Museum (2).jpg"],
-  ["Princeton Plasma Physics Laboratory: kurum binası (eski 'kurum öznesi aranmaz' yasağı kalktı, tam eşleşmeyle)", haber({ en: { baslik: "Princeton Plasma Physics Laboratory researchers tame plasma", ozet: "The team reports a steadier fusion experiment." }, yer: "ABD", gorselOzne: { ad: "Princeton Plasma Physics Laboratory", tur: "kurum" } }), [{ tur: "kurum", ad_en: "Princeton Plasma Physics Laboratory" }], "kurum", "PPPL aerial.jpg"],
+  ["Princeton Plasma Physics Laboratory: kurum binası (eski 'kurum öznesi aranmaz' yasağı kalktı, tam eşleşmeyle)", haber({ en: { baslik: "Princeton Plasma Physics Laboratory opens a new plasma research building", ozet: "The new building hosts a steadier fusion experiment." }, yer: "ABD", gorselOzne: { ad: "Princeton Plasma Physics Laboratory", tur: "kurum" } }), [{ tur: "kurum", ad_en: "Princeton Plasma Physics Laboratory" }], "kurum", "PPPL aerial.jpg"],
   ["Tohoku Üniversitesi silisyum karbür: malzeme (nesne) kuruma tercih edildiğinde", haber({ en: { baslik: "Tohoku University team improves silicon carbide chips", ozet: "The material tolerates more heat." }, yer: "Sendai, Japonya", gorselOzne: { ad: "Tohoku University", tur: "kurum" } }), [{ tur: "nesne", ad_en: "silicon carbide" }, { tur: "kurum", ad_en: "Tohoku University" }], "nesne", "Siliciumcarbid.jpg"],
   ["SEKA Kâğıt Müzesi: ressam sergisi mekânı (TR ad)", haber({ en: { baslik: "Painter opens exhibition at SEKA Paper Museum", ozet: "The show runs in Kocaeli." }, yer: "Kocaeli, Türkiye" }), [{ tur: "kisi", ad_en: "Ahmet Ressam" }, { tur: "mekan", ad_en: "SEKA Kağıt Müzesi", ad_tr: "SEKA Kağıt Müzesi" }], "mekan", "SEKA Kağıt Müzesi.jpg"],
   ["Maç haberi: stat fotoğrafı (kulüp armasına gidilmez)", haber({ en: { baslik: "Galatasaray win at Ataturk Olympic Stadium", ozet: "A big night in Istanbul." }, yer: "İstanbul, Türkiye" }), [{ tur: "kurum", ad_en: "Galatasaray" }, { tur: "mekan", ad_en: "Ataturk Olympic Stadium" }], "mekan", "Ataturk Olympic Stadium.jpg"],
@@ -180,7 +180,7 @@ test("sıra: ilk uygun aday kullanılır, sonrakiler aranmaz; kurum adayı eski 
   assert.ok(!f.cagrilar.some((u) => /Design\+Museum/.test(u) && /wbsearchentities/.test(u)), "ikinci aday Wikidata'da aranmadı");
   // Ankara etkinliği + başka üniversite: Wikidata'da o ada TAM eşleşme yok -> görsel yok; Commons'ta başka kurum adlı dosya kullanılmaz
   const f2 = sahteFetch({ ...DUNYA, commonsArama: { "Hacettepe University": [sayfa("IUPUI lecture hall.jpg", { aciklama: "IUPUI lecture hall university auditorium Indianapolis" })] } });
-  const r2 = await gorselBul({ en: { baslik: "Hacettepe University hosts science day in Ankara", ozet: "Students joined." }, tr: { baslik: "", ozet: "" }, yer: "Ankara, Türkiye", gorselAdaylari: [{ tur: "kurum", ad_en: "Hacettepe University" }] }, { model: modelKur(), fetchFn: f2, bekleFn: bekle });
+  const r2 = await gorselBul({ en: { baslik: "Hacettepe University opens science day in Ankara", ozet: "Students joined." }, tr: { baslik: "", ozet: "" }, yer: "Ankara, Türkiye", gorselAdaylari: [{ tur: "kurum", ad_en: "Hacettepe University" }] }, { model: modelKur(), fetchFn: f2, bekleFn: bekle });
   assert.equal(r2.sonuc, null);
   assert.equal(r2.retKodlari["p.yok"], 1);
 });
@@ -247,13 +247,13 @@ test("kişi: tam ad + insan + bağlam yoksa fotoğraf YOK (yanlış kişi görse
 
 test("lisans: lisansOk dışı (ör. non-free / NC) Wikidata görseli kullanılmaz", async () => {
   const dunya = { varliklar: [{ id: "Q50", label: "Nova Lab", aciklama: "laboratory in Berlin", sinif: [], p18: "Nova.jpg" }], dosyalar: { "Nova.jpg": sayfa("Nova.jpg", { lisans: "CC BY-NC 4.0", aciklama: "Nova Lab Berlin" }) } };
-  const r = await gorselBul({ en: { baslik: "Nova Lab in Berlin builds a sensor", ozet: "x" }, tr: { baslik: "", ozet: "" }, yer: "Berlin", gorselAdaylari: [{ tur: "kurum", ad_en: "Nova Lab" }] }, { model: modelKur(), fetchFn: sahteFetch(dunya), bekleFn: bekle });
+  const r = await gorselBul({ en: { baslik: "Nova Lab opens in Berlin with a new sensor", ozet: "x" }, tr: { baslik: "", ozet: "" }, yer: "Berlin", gorselAdaylari: [{ tur: "kurum", ad_en: "Nova Lab" }] }, { model: modelKur(), fetchFn: sahteFetch(dunya), bekleFn: bekle });
   assert.equal(r.sonuc, null); assert.equal(r.retKodlari["p.gorsel-yok"], 1);
 });
 
 // ---------------------------------------------------------------- logo
 test("logo: varsayılan KAPALI; açıkken yalnız kamu malı/CC0 + non-free değil + kulüp/siyasi/devlet kurumu değil; lisansa 'marka' notu eklenir", async () => {
-  const haberDM = { en: { baslik: "Design Museum announces new season", ozet: "Programme news." }, tr: { baslik: "", ozet: "" }, yer: "Londra", gorselAdaylari: [{ tur: "kurum", ad_en: "Design Museum", sehir: "London" }] };
+  const haberDM = { en: { baslik: "Design Museum opens new season", ozet: "Programme news." }, tr: { baslik: "", ozet: "" }, yer: "Londra", gorselAdaylari: [{ tur: "kurum", ad_en: "Design Museum", sehir: "London" }] };
   const yalnizLogo = { ...DUNYA, dosyalar: { ...DUNYA.dosyalar } }; delete yalnizLogo.dosyalar["Design Museum (2).jpg"];   // bina fotoğrafı yok: son çare logo
   const kapali = await gorselBul(haberDM, { model: modelKur(), fetchFn: sahteFetch(yalnizLogo), bekleFn: bekle });
   assert.equal(kapali.sonuc, null);

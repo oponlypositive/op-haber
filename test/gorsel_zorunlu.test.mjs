@@ -256,3 +256,53 @@ test("mufredatIsleriCalistir: bekletilen/atlanan toplamı ve kategori uyarısı 
   const satir = ozetSatiri({ aday: 1, gorselZorunlu: { bekletilen: 2, atlanan: 1 }, gorselAtlananDersler: ["op_oyun/d0"], kategoriUyari: ["op_oyun", "op_oyun"] });
   assert.match(satir, / gorselZorunlu=bekletilen:2,atlanan:1 gorselAtlananDers=op_oyun\/d0 kategoriUyari=op_oyun/);
 });
+
+// ================================================================ 2026-10-17: DERS DÜZEYİNDE görsel zorunluluğu (duruş / pozisyon / egzersiz / teknik dersleri)
+import { dersGorselZorunlu, dersPozAdi, HAREKET_HESAPLARI } from "../lib/gorsel_zorunlu.mjs";
+test("dersGorselZorunlu: op_yoga/op_hareket/op_spor(fitness-kalistenik-pilates)/op_meditasyon duruş-egzersiz dersleri zorunlu; kavram/tarih/dal dersleri değil; açık işaret kazanır", async () => {
+  const yukle = async (h) => (await import(`../lib/mufredat/${h}.mjs`)).default;
+  const zor = async (h) => { const m = await yukle(h); return m.seriler.flatMap((s) => s.dersler.map((d) => ({ ...d, yol: s.yol }))).filter((d) => dersGorselZorunlu(m, d)).map((d) => d.id); };
+  const yoga = await zor("op_yoga"), har = await zor("op_hareket"), spor = await zor("op_spor"), med = await zor("op_meditasyon");
+  for (const id of ["dag-durusu", "agac-durusu", "cocuk-durusu", "kobra-durusu", "asagi-yonlu-kopek", "kalca-acma", "oturarak-burma"]) assert.ok(yoga.includes(id), `yoga ${id}`);
+  for (const id of ["squat", "duvar-sinav", "plank-kolay", "durus", "kalca-esnetme", "tek-ayak"]) assert.ok(har.includes(id), `hareket ${id}`);
+  for (const id of ["sinav", "barfiks", "squat", "plank", "mekik", "egzersiz", "govde-merkezi"]) assert.ok(spor.includes(id), `spor ${id}`);
+  assert.ok(med.includes("rahat-oturus"), "meditasyon: beden duruşu dersi");
+  for (const id of ["yoga-nedir", "solunum-temeli", "yoga-hazirlik"]) assert.ok(!yoga.includes(id), `yoga ${id} zorunlu olmamalı`);
+  for (const id of ["futbol-nedir", "futbol-kurallari", "olimpiyat-komitesi", "joseph-pilates", "fitness-nedir", "spor-salonu", "satranc-acilis"]) assert.ok(!spor.includes(id), `spor ${id} zorunlu olmamalı`);
+  assert.ok(!med.includes("meditasyon-nedir") && !med.includes("sefkat"), "meditasyonun zihinsel dersleri serbest");
+  assert.deepEqual(HAREKET_HESAPLARI, ["op_yoga", "op_hareket", "op_spor", "op_meditasyon"]);
+  // açık işaret: gorselZorunlu true/false anahtar sözcüğü ezer; görsel zorunlu kategori her zaman zorunlu
+  assert.equal(dersGorselZorunlu({ hesap: "op_yoga", kategori: "huzur" }, { id: "yoga-nedir", baslik_tr: "Yoga Nedir?", gorselZorunlu: true }), true);
+  assert.equal(dersGorselZorunlu({ hesap: "op_yoga", kategori: "huzur" }, { id: "dag-durusu", baslik_tr: "Dağ Duruşu", gorselZorunlu: false }), false);
+  assert.equal(dersGorselZorunlu({ hesap: "op_oyun", kategori: "oyun" }, { id: "x", baslik_tr: "x" }), true);
+  assert.equal(dersGorselZorunlu({ hesap: "op_gelisim", kategori: "gelisim" }, { id: "duruş", baslik_tr: "Duruş" }), false, "hareket hesabı olmayan hesapta anahtar sözcük zorunluluk getirmez");
+  assert.equal(dersPozAdi({ hesap: "op_yoga", kategori: "huzur" }, { id: "agac-durusu", baslik_tr: "Ağaç Duruşu", baslik_en: "Tree Pose" }), "Tree Pose");
+  assert.equal(dersPozAdi({ hesap: "op_yoga", kategori: "huzur" }, { id: "yoga-nedir", baslik_tr: "Yoga Nedir?", baslik_en: "What Is Yoga?" }), "");
+});
+test("müfredat: duruş/egzersiz dersi görsel bulunamazsa YAYINLANMAZ ve bekletilir (kategori görsel zorunlu olmasa da); kavram dersi görselsiz yayınlanır", async () => {
+  const mk = (hesap, kategori, yol, idler) => {
+    const m = { hesap, kategori, gunlukUst: 9, seriler: [{ yol, aciklama_tr: "Seri açıklaması burada.", aciklama_en: "Series description.", dersler: idler.map(([id, yok]) => ders(id, yok ? "YOK.jpg" : "OK.jpg")) }] };
+    return { ...m, dersler: dersleriDuzle(m) };
+  };
+  // yoga: ağaç duruşu (görsel yok) bekler; yoga-nedir (görsel yok ama kavram dersi) görselsiz yayınlanır
+  const m0 = mk("op_yoga", "huzur", ["Temel Duruşlar"], [["agac-durusu", true]]), m1 = mk("op_yoga", "huzur", ["Yogaya Başlangıç"], [["yoga-nedir", true]]);
+  const mseri = { ...m0, seriler: [m0.seriler[0], m1.seriler[0]] }; const m = { ...mseri, dersler: dersleriDuzle(mseri) };
+  const b = mufBulut();
+  const r = await dene(m, b, 0, { gorselAyar });
+  assert.equal(r.durum, "yayinlandi"); assert.equal(b.yayin.length, 1); assert.match(b.yayin[0].haber.tr.baslik, /yoga-nedir/, "yoga-nedir yayınlandı");
+  assert.ok(!b.yayin[0].gorsel?.b64, "kavram dersi görselsiz"); assert.deepEqual(r.gorselZorunlu, { bekleyen: ["agac-durusu"], atlanan: [] });
+  assert.equal(b.kayit.has(dersAnahtari("op_yoga", "agac-durusu")), false, "duruş dersi atlanmadı, bekliyor");
+  // görsel bulunan duruş dersi görselle yayınlanır
+  const m2 = mk("op_yoga", "huzur", ["Temel Duruşlar"], [["dag-durusu", false]]);
+  const b2 = mufBulut();
+  const r2 = await dene(m2, b2, 0, { gorselAyar });
+  assert.equal(r2.durum, "yayinlandi"); assert.ok(b2.yayin[0].gorsel?.b64, "duruş dersi görselli");
+  // spor: dal dersi (futbol) görselsiz serbest; kalistenik plank görselsiz bekler
+  const ms = mk("op_spor", "spor", ["Spor Dalları", "Futbol"], [["futbol-nedir", true]]);
+  const bs = mufBulut();
+  assert.equal((await dene(ms, bs, 0, { gorselAyar })).durum, "yayinlandi"); assert.ok(!bs.yayin[0].gorsel?.b64);
+  const mp = mk("op_spor", "spor", ["Spor Dalları", "Kalistenik"], [["plank", true]]);
+  const bp = mufBulut();
+  const rp = await dene(mp, bp, 0, { gorselAyar });
+  assert.equal(rp.durum, "yok"); assert.equal(bp.yayin.length, 0); assert.deepEqual(rp.gorselZorunlu.bekleyen, ["plank"]);
+});
